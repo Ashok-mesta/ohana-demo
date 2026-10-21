@@ -94,7 +94,7 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
     <div class="steps" id="steps"></div>
     <div>
       <div class="frame" id="frame">
-        <iframe id="fr" src="prototype.html?demo=1" title="Create a Beneficiary in Ohana" tabindex="-1"></iframe>
+        <iframe id="fr" src="prototype.html?demo=1&b=v20261021c" title="Create a Beneficiary in Ohana" tabindex="-1"></iframe>
         <div class="ov" id="ov"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
       </div>
       <div class="ctl">
@@ -136,10 +136,11 @@ const STEPS = [
 ];
 document.getElementById('steps').innerHTML = STEPS.map(([t, d, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><span>${d}</span><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('');
 
+const BUILD = 'v' + 20261021 + 'c'; /* bump to bypass the Pages/browser cache for the embedded prototype */
 const lb = document.getElementById('lb'), lbf = document.getElementById('lbf'), lbplay = document.getElementById('lbplay');
 let guided = false, paused = false, slow = false;
 const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
-const src = () => guided ? 'prototype.html?demo=1&play=1' + (slow ? '&slow=1' : '') : 'prototype.html';
+const src = () => (guided ? 'prototype.html?demo=1&play=1' + (slow ? '&slow=1' : '') : 'prototype.html?manual=1') + '&b=' + BUILD;
 const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
 const open = g => {
   guided = g; paused = false; lb.hidden = false; lbf.src = src();
