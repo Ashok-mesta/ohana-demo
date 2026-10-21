@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <title>Ohana · Create a Beneficiary · click-through demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
-body{font-family:'Geist',system-ui,sans-serif;color:var(--ink);background:#e9eaee;-webkit-font-smoothing:antialiased;overflow:hidden}
+body{font-family:'Geist',system-ui,sans-serif;color:var(--ink);background:#0f1014;-webkit-font-smoothing:antialiased;overflow:hidden}
 button,input{font:inherit;color:inherit}
 input{outline:none}
 .mono{font-family:'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase}
@@ -28,7 +29,15 @@ input{outline:none}
 .ico.fill{fill:currentColor;stroke:none}
 
 /* ===== shell ===== */
-#shell{display:flex;flex-direction:column;height:100vh;min-width:1280px}
+#shell{position:absolute;left:50%;top:50%;width:1600px;height:900px;display:flex;flex-direction:column;background:#e9eaee;overflow:hidden;transform:translate(-50%,-50%)}
+#prompts{position:absolute;inset:0;pointer-events:none;z-index:9000}
+.beacon{position:absolute;border:2px solid var(--violet);border-radius:10px;box-shadow:0 0 0 4px rgba(107,91,207,.22);animation:beacon 1.6s ease-out infinite}
+@keyframes beacon{0%{box-shadow:0 0 0 2px rgba(107,91,207,.45)}70%{box-shadow:0 0 0 14px rgba(107,91,207,0)}100%{box-shadow:0 0 0 14px rgba(107,91,207,0)}}
+.tip{position:absolute;max-width:380px;background:var(--navy);color:#fff;font:500 13.5px/1.35 'DM Sans',sans-serif;padding:9px 13px;border-radius:10px;box-shadow:0 10px 30px rgba(15,15,22,.3);display:flex;gap:8px;align-items:flex-start;text-wrap:pretty}
+.tip .ico{color:#c9c1ff;margin-top:1px}
+.tip.below{transform:translate(-50%,0)}.tip.above{transform:translate(-50%,-100%)}
+.tip::before{content:'';position:absolute;left:50%;width:12px;height:12px;background:var(--navy);transform:translateX(-50%) rotate(45deg)}
+.tip.below::before{top:-5px}.tip.above::before{bottom:-5px}
 #presenter{background:var(--bar);color:#fff;padding:10px 16px;display:flex;flex-direction:column;gap:6px;flex:none;font-family:'DM Sans',sans-serif}
 #presenter .row{display:flex;align-items:center;gap:12px}
 #presenter .brand{font-size:13px;font-weight:600;letter-spacing:.04em;opacity:.7}
@@ -43,6 +52,12 @@ input{outline:none}
 #presenter .dots span{width:18px;height:6px;border-radius:3px;cursor:pointer;background:rgba(255,255,255,.18)}
 #presenter .dots span.past{background:rgba(255,255,255,.55)}
 #presenter .dots span.cur{background:#fff}
+#presenter .subs{gap:0;flex-wrap:wrap;row-gap:4px;margin-top:2px}
+#presenter .sub{display:inline-flex;align-items:center;gap:6px;font-size:12px;opacity:.55;padding:2px 8px 2px 2px;border-radius:999px}
+#presenter .sub i{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.18);font:600 10px/16px 'DM Sans',sans-serif;text-align:center;font-style:normal}
+#presenter .sub.done{opacity:.85}#presenter .sub.done i{background:#5dd39e;color:#0f1014}
+#presenter .sub.cur{opacity:1;background:rgba(255,255,255,.12);font-weight:600}#presenter .sub.cur i{background:#fff;color:var(--bar)}
+#presenter .sep{width:14px;height:1px;background:rgba(255,255,255,.3);margin:0 4px}
 #stage{flex:1;min-height:0;display:flex;padding:12px}
 #app{flex:1;min-width:0;display:flex;background:var(--bg);border-radius:10px;overflow:hidden;box-shadow:0 0 0 3px var(--accent),0 0 0 8px color-mix(in srgb,var(--accent) 18%,transparent),0 1px 3px rgba(0,0,0,.08);position:relative}
 
@@ -422,6 +437,7 @@ const OPTS = {
   pmtype: ['Bank account', 'Crypto wallet']
 };
 
+const OPEN_CREATE = { screen: 'create', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, methods: [], modal: null, success: false };
 const INIT = {
   step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
   entity: null, country: null, countryOpen: false, openSel: null,
@@ -433,14 +449,14 @@ const INIT = {
 /* ---------- demo op lists + captions ---------- */
 const DEMOS = {
   1: [
-    ['next', 0, ['Sign in · password']],
+    ['set', { screen: 'dashboard' }, ['Sign in · password']],
     ['set', {}],
-    ['next', 0, ['Beneficiaries']],
+    ['set', { screen: 'list' }, ['Beneficiaries']],
     ['set', {}],
-    ['next', 0, ['Create beneficiary']],
+    ['set', s => ({ ...OPEN_CREATE, form: { ...INIT.form } }), ['Create beneficiary']],
     ['set', { entity: 'business' }, ['Business']],
     ['set', { countryOpen: true }, ['Select country']],
-    ['next', 0, ['=IN 🇮🇳 India']],
+    ['set', { country: 'IN', countryOpen: false }, ['=IN 🇮🇳 India']],
     ['set', { _scroll: '#form-card' }],
     ['set', {}],
     ['set', { _scroll: '#pop-doc' }],
@@ -449,13 +465,13 @@ const DEMOS = {
     ['set', { upload: 'picked' }, ['Drop files here']],
     ['set', { upload: 'reading' }, ['Read documents']],
     ['set', { upload: 'results' }],
-    ['next', 0, ['Fill the form']],
+    ['set', s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }), ['Fill the form']],
     ['set', { upload: 'collapsed' }, ['Done']],
     ['set', { _scroll: '#fullname-field' }],
     ['set', { _type: ['fullName', 'Lincoln Strategy Labs LLP'] }, ['=Full name']],
     ['set', { _scroll: '#biz-details' }],
     ['set', { _scroll: '#pop-doc' }],
-    ['next', 0, ['Continue']],
+    ['set', { formStep: 2 }, ['Continue']],
     ['set', { methods: [BANK] }, ['Add payment method']],
     ['set', { methods: [BANK_SWIFT] }, ['Use SWIFT payment']],
     ['set', { methods: [BANK_SWIFT, WALLET] }, ['Add payment method']],
@@ -507,10 +523,10 @@ const CAPS = {
 };
 
 /* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label. */
-const demoFind = ([label, side, n = 0]) => {
+const demoFind = ([label, side, n = 0], allowBar = false) => {
   const exact = label[0] === '=', want = (exact ? label.slice(1) : label).toLowerCase();
   let c = [...document.querySelectorAll('button,a,span,div,label,input')].filter(el => {
-    if (el.closest('#presenter')) return false;
+    if (!allowBar && el.closest('#presenter')) return false;
     const isInput = el.tagName === 'INPUT';
     const t = (isInput ? (el.getAttribute('aria-label') || el.placeholder || '') : (el.textContent || '')).trim().replace(/\s+/g, ' ').toLowerCase();
     if (exact ? t !== want : !t.startsWith(want)) return false;
@@ -534,27 +550,51 @@ class Component {
     return {
       login: () => ({ screen: 'dashboard' }),
       openList: () => ({ screen: 'list' }),
-      openCreate: () => ({ screen: 'create', entity: null, country: null, upload: null, filled: false, formStep: 1, form: { ...INIT.form }, methods: [], success: false }),
+      openCreate: () => ({ ...OPEN_CREATE, form: { ...INIT.form } }),
       fillForm: s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }),
-      submit: () => ({ modal: 'sending' }),
       approve: () => ({ newStatus: 'approved' })
     };
   }
+  /* Five main steps; each carries its substeps. A substep = { t, target, say, act, done }.
+     `target` is the on-screen element the viewer must use (same label syntax as DEMOS);
+     `say` is the on-screen prompt; `act` is what "Do it for me" performs; `done` says when it is complete. */
   steps() {
     const T = this.T();
+    const past = ['picked', 'reading', 'results', 'filled', 'collapsed'];
     return [
-      { title: 'Log in', hint: 'Sign in to the merchant dashboard with your email and password.', screen: 'login', act: s => T.login(s), done: s => s.screen !== 'login' },
-      { title: 'Open Beneficiaries', hint: 'From the navigation menu on the left, select Beneficiaries.', screen: 'dashboard', act: s => T.openList(s), done: s => s.screen === 'list' || s.screen === 'create' },
-      { title: 'Create beneficiary', hint: 'Click Create beneficiary in the top-right corner.', screen: 'list', act: s => T.openCreate(s), done: s => s.screen === 'create' },
-      { title: 'Entity type and country', hint: 'Select Business, then pick the country where the beneficiary is registered. Ohana loads the payout fields for that rail.', screen: 'create', act: () => ({ entity: 'business', country: 'IN', countryOpen: false }), done: s => !!s.country },
-      { title: 'Upload a document', hint: 'Click Upload documents, drop the invoice and let Ohana read it. Then click Fill the form.', screen: 'create', act: s => ({ ...T.fillForm(s), upload: 'collapsed' }), done: s => s.filled },
-      { title: 'Complete the details', hint: 'Fill in what no document could prove: the full name. Then click Continue to payment information.', screen: 'create', act: s => ({ form: { ...s.form, fullName: s.form.fullName || 'Lincoln Strategy Labs LLP' }, formStep: 2 }), done: s => s.formStep === 2 },
-      { title: 'Add payment methods', hint: 'Add a bank account (SWIFT optional) and a crypto wallet with Add payment method.', screen: 'create', act: () => ({ methods: [BANK_SWIFT, WALLET] }), done: s => s.methods.length >= 1 },
-      { title: 'Create the beneficiary', hint: 'Click Create beneficiary in the bottom-right corner. Ohana saves it and sends it for verification.', screen: 'create', act: () => ({ modal: null, success: false, screen: 'list', created: true, newStatus: 'pending' }), done: s => s.created },
-      { title: 'Verification', hint: 'The new beneficiary shows as Pending. Once verification completes, the status moves to Approved.', screen: 'list', act: s => T.approve(s), done: s => s.newStatus === 'approved' },
-      { title: 'Flow complete', hint: 'The beneficiary is ready to receive payments through Ohana. Reset to run it again, or click through freely.', screen: 'list', act: () => ({}), done: () => false }
-    ];
+      { title: 'Log in and open Beneficiaries', screen: 'login', doneIf: s => s.screen === 'create', subs: [
+        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => T.login(), done: s => s.screen !== 'login' },
+        { t: 'Open Beneficiaries', target: ['Beneficiaries'], say: 'Select Beneficiaries in the navigation menu on the left.', act: () => T.openList(), done: s => s.screen === 'list' || s.screen === 'create' },
+        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the top-right corner.', act: () => T.openCreate(), done: s => s.screen === 'create' }
+      ] },
+      { title: 'Choose the entity type and country', screen: 'create', doneIf: s => !!s.country, subs: [
+        { t: 'Entity type', target: ['Business'], say: 'Select Business as the beneficiary type.', act: () => ({ entity: 'business' }), done: s => !!s.entity },
+        { t: 'Country list', target: ['Select country'], say: 'Open the country list.', act: () => ({ countryOpen: true }), done: s => s.countryOpen || !!s.country },
+        { t: 'Pick India', target: ['=IN 🇮🇳 India'], say: 'Pick India. Ohana loads the payout fields and documents for that rail.', act: () => ({ country: 'IN', countryOpen: false }), done: s => !!s.country }
+      ] },
+      { title: 'Upload a document and complete the details', screen: 'create', doneIf: s => s.formStep === 2, subs: [
+        { t: 'Upload documents', target: ['Upload documents'], say: 'Click Upload documents to fill the form from the beneficiary\'s business document.', act: () => ({ upload: 'drop' }), done: s => !!s.upload || s.filled },
+        { t: 'Pick the invoice', target: ['Drop files here'], say: 'Click the drop zone to pick the invoice.', act: () => ({ upload: 'picked' }), done: s => past.includes(s.upload) || s.filled },
+        { t: 'Read documents', target: ['Read documents'], say: 'Click Read documents. Ohana extracts the relevant information.', act: () => ({ upload: 'results' }), done: s => past.slice(1).includes(s.upload) || s.filled },
+        { t: 'Fill the form', target: ['Fill the form'], say: 'Click Fill the form to pre-fill the application for your review.', act: s => T.fillForm(s), done: s => s.filled },
+        { t: 'Done', target: ['Done'], say: 'Click Done to close the summary.', act: () => ({ upload: 'collapsed' }), done: s => s.upload === 'collapsed' },
+        { t: 'Full name', target: ['=Full name'], say: 'Type the full name here. It is the one field no document could prove.', act: s => ({ form: { ...s.form, fullName: 'Lincoln Strategy Labs LLP' } }), done: s => !!s.form.fullName.trim() },
+        { t: 'Continue', target: ['Continue'], say: 'Click Continue to go to payment information.', act: () => ({ formStep: 2 }), done: s => s.formStep === 2 }
+      ] },
+      { title: 'Add payment methods', screen: 'create', doneIf: s => s.created || !!s.modal, subs: [
+        { t: 'Bank account', target: ['Add payment method'], say: 'Click Add payment method to add a bank account.', act: () => ({ methods: [BANK] }), done: s => s.methods.length >= 1 },
+        { t: 'SWIFT', target: ['Use SWIFT payment'], say: 'Tick Use SWIFT payment to make it an international wire (optional).', act: s => ({ methods: s.methods.map((m, i) => i === 0 ? { ...m, swift: true } : m) }), done: s => s.methods.some(m => m.swift) || s.methods.length >= 2 },
+        { t: 'Crypto wallet', target: ['Add payment method'], say: 'Click Add payment method again to add a crypto wallet.', act: s => ({ methods: [...s.methods, WALLET] }), done: s => s.methods.length >= 2 }
+      ] },
+      { title: 'Create and verify', screen: 'create', subs: [
+        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the bottom-right corner. Ohana saves it and sends it for verification.', act: () => ({ modal: null, success: false, screen: 'list', created: true, newStatus: 'pending' }), done: s => s.created },
+        { t: 'Verification', target: ['Do it for me'], bar: true, say: 'Verification runs on Ohana\'s side. Click Do it for me to fast-forward from Pending to Approved.', act: () => T.approve(), done: s => s.newStatus === 'approved' }
+      ] }
+    ].map(st => ({ ...st, done: s => st.subs.every(x => x.done(s)) || (st.doneIf ? st.doneIf(s) : false) }));
   }
+  curSub(s, st = this.steps()[s.step]) { return st.subs.find(x => !x.done(s)) || null; }
+  subIndex(s, st = this.steps()[s.step]) { const i = st.subs.findIndex(x => !x.done(s)); return i < 0 ? st.subs.length : i; }
+  allDone(s) { const steps = this.steps(); return s.step === steps.length - 1 && steps[s.step].done(s); }
   screensFor(i) {
     const st = this.steps()[i];
     return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' };
@@ -562,21 +602,23 @@ class Component {
   stateAt(i) {
     const steps = this.steps();
     let s = { ...INIT };
-    for (let k = 0; k < i; k++) s = { ...s, ...steps[k].act(s) };
+    for (let k = 0; k < i; k++) for (const sub of steps[k].subs) s = { ...s, ...sub.act(s) };
     return { ...s, ...this.screensFor(i), step: i };
   }
   goStep = i => this.setState(this.stateAt(i));
-  next = () => {
-    const i = this.state.step, steps = this.steps();
-    if (i >= steps.length - 1) return;
-    const s = { ...this.state, ...steps[i].act(this.state) };
-    this.setState({ ...s, ...this.screensFor(i + 1), step: i + 1 });
-  };
+  /* "Do it for me" performs the current substep only */
+  next = () => { const sub = this.curSub(this.state); if (sub) this.setState(sub.act(this.state)); };
   prev = () => this.goStep(Math.max(0, this.state.step - 1));
   reset = () => { Object.values(this._t).forEach(clearTimeout); this.setState({ ...INIT }); };
+  fullscreen = () => {
+    if (document.fullscreenElement) return document.exitFullscreen();
+    const p = document.documentElement.requestFullscreen ? document.documentElement.requestFullscreen() : Promise.reject();
+    p.catch(() => parent !== window && parent.postMessage({ type: 'demo', cmd: 'fullscreen' }, '*'));
+  };
   componentDidUpdate(ps) {
-    const steps = this.steps(), i = this.state.step;
-    if (i < steps.length - 1 && steps[i].done(this.state)) this.setState({ step: i + 1 });
+    const steps = this.steps(); let i = this.state.step;
+    while (i < steps.length - 1 && steps[i].done(this.state)) i++;
+    if (i !== this.state.step) return this.setState({ step: i });
     if (this.state.toast && this.state.toast !== ps.toast) {
       clearTimeout(this._t.toast);
       this._t.toast = setTimeout(() => this.setState({ toast: '' }), 3200);
@@ -623,30 +665,58 @@ class Component {
   }
 
   /* ---------- render ---------- */
-  render() {
-    const s = this.state, steps = this.steps(), st = steps[s.step];
-    const bar = document.getElementById('presenter');
-    bar.innerHTML = `
+  render() { this.renderBar(); this.renderApp(); this.placePrompt(); }
+  renderBar() {
+    const s = this.state, steps = this.steps(), st = steps[s.step], ci = this.subIndex(s, st), sub = st.subs[ci] || null, finished = this.allDone(s);
+    const hint = finished ? 'Flow complete. The beneficiary is ready to receive payments through Ohana. Reset to run it again, or click through freely.' : sub ? sub.say : st.title;
+    const fs = !!document.fullscreenElement;
+    document.getElementById('presenter').innerHTML = `
       <div class="row">
         <span class="brand">OHANA DEMO</span>
         <span class="pill">Step ${s.step + 1} of ${steps.length}</span>
         <span class="pill actor">Create a Beneficiary</span>
-        <span class="title">${esc(st.title)}</span>
+        <span class="title">${esc(finished ? 'Flow complete' : st.title)}</span>
         <span class="sp"></span>
         <button class="btn" data-bar="prev">Back</button>
-        ${s.step < steps.length - 1 ? '<button class="btn primary" data-bar="next">Do it for me →</button>' : ''}
+        ${finished ? '' : '<button class="btn primary" data-bar="next">Do it for me →</button>'}
+        <button class="btn" data-bar="fullscreen" title="Toggle full screen">${fs ? 'Exit full screen' : '⤢ Full screen'}</button>
         <button class="btn" data-bar="reset">Reset</button>
       </div>
       <div class="row">
-        <span class="hint">${esc(st.hint)}</span>
+        <span class="hint">${esc(hint)}</span>
         <div class="dots">${steps.map((x, i) => `<span class="${i === s.step ? 'cur' : i < s.step ? 'past' : ''}" title="${i + 1}. ${esc(x.title)}" data-dot="${i}"></span>`).join('')}</div>
-      </div>`;
+      </div>
+      <div class="row subs">${st.subs.map((x, j) => `<span class="sub ${j < ci || finished ? 'done' : j === ci ? 'cur' : ''}"><i>${j < ci || finished ? '✓' : j + 1}</i>${esc(x.t)}</span>`).join('<span class="sep"></span>')}</div>`;
+  }
+  renderApp() {
+    const s = this.state;
     const app = document.getElementById('app');
     const main = app.querySelector('.content');
     const scroll = main ? main.scrollTop : 0;
     app.innerHTML = s.screen === 'login' ? this.rLogin() : this.rShell();
     const m2 = app.querySelector('.content');
     if (m2) { m2.style.scrollBehavior = 'auto'; m2.scrollTop = scroll; m2.style.scrollBehavior = ''; }
+  }
+  /* shell-local coordinates (the shell is scaled to fit the window) */
+  local(el) { const k = this._k || 1, sr = this._shell.getBoundingClientRect(), r = el.getBoundingClientRect(); return { x: (r.left - sr.left) / k, y: (r.top - sr.top) / k, w: r.width / k, h: r.height / k }; }
+  visible(el) { const c = el.closest('.content'); if (!c) return true; const cr = c.getBoundingClientRect(), r = el.getBoundingClientRect(); return r.bottom > cr.top + 4 && r.top < cr.bottom - 4; }
+  /* self-service prompt: ring + label on the exact element the viewer must use next */
+  placePrompt() {
+    const L = this._prompts; if (!L) return;
+    const hide = () => { L.style.display = 'none'; };
+    if (this._play) return hide();
+    const s = this.state, st = this.steps()[s.step], sub = this.curSub(s, st);
+    if (!sub || !sub.target || s.modal || s.success) return hide();
+    const el = demoFind(sub.target, !!sub.bar);
+    if (!el) return hide();
+    if (this._promptKey !== sub.t) { this._promptKey = sub.t; if (!this.visible(el)) el.scrollIntoView({ block: 'center', behavior: 'smooth' }); clearTimeout(this._t.pp); this._t.pp = setTimeout(() => this.placePrompt(), 520); }
+    if (!this.visible(el)) return hide();
+    const b = this.local(el), below = b.y + b.h + 90 < 900;
+    L.style.display = 'block';
+    Object.assign(this._beacon.style, { left: b.x - 6 + 'px', top: b.y - 6 + 'px', width: b.w + 12 + 'px', height: b.h + 12 + 'px' });
+    this._tip.className = 'tip ' + (below ? 'below' : 'above');
+    Object.assign(this._tip.style, { left: Math.min(Math.max(b.x + b.w / 2, 200), 1400) + 'px', top: (below ? b.y + b.h + 16 : b.y - 16) + 'px' });
+    this._tipText.textContent = sub.say;
   }
   rShell() {
     const s = this.state;
@@ -784,7 +854,7 @@ class Component {
         </div></div>
       <div class="fld" style="max-width:560px"><label class="lbl">Country<i>*</i></label>
         <div class="sel ${s.countryOpen ? 'focus' : ''}" data-act="toggleCountry">${ic('globe')}<span>${countryVal ? esc(countryVal) : 'Select country'}</span><span class="sp"></span>${ic('down', 'sm')}
-          ${s.countryOpen ? `<div class="dd" data-stop="1">${COUNTRIES.map(([c, fl, n]) => `<div class="${c === 'IN' && s.country === 'IN' ? 'on' : ''}" data-act="country" data-arg="${c}"><span class="cd">${c}</span><span>${fl}</span><span>${n}</span></div>`).join('')}</div>` : ''}
+          ${s.countryOpen ? `<div class="dd" data-stop="1">${COUNTRIES.map(([c, fl, n]) => `<div class="${c === 'IN' && s.country === 'IN' ? 'on' : ''}" data-act="country" data-arg="${c}"><span class="cd">${c}</span> <span>${fl}</span> <span>${n}</span></div>`).join('')}</div>` : ''}
         </div>
         <div class="help">Only countries we currently support for payouts appear here — each loads its local rail (PIX, SPEI, SEPA, UPI…) and payout fields.</div></div>`;
     if (s.success) {
@@ -878,6 +948,15 @@ class Component {
 
   /* ---------- mount ---------- */
   mount() {
+    this._shell = document.getElementById('shell');
+    const L = document.createElement('div'); L.id = 'prompts'; L.style.display = 'none';
+    L.innerHTML = '<div class="beacon"></div><div class="tip below"><svg class="ico" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z"/></svg><span></span></div>';
+    this._shell.appendChild(L); this._prompts = L; this._beacon = L.firstChild; this._tip = L.lastChild; this._tipText = this._tip.lastChild;
+    const q0 = new URLSearchParams(location.search); this._play = q0.get('play') === '1' && !!DEMOS[q0.get('demo')];
+    const fit = () => { const k = Math.min(innerWidth / 1600, innerHeight / 900); this._k = k; this._shell.style.transform = `translate(-50%,-50%) scale(${k})`; this.placePrompt(); };
+    addEventListener('resize', fit); fit();
+    document.addEventListener('fullscreenchange', () => { this.renderBar(); fit(); });
+    document.addEventListener('scroll', () => this.placePrompt(), true);
     this.render();
     document.addEventListener('click', e => {
       const bar = e.target.closest('[data-bar]');
@@ -892,6 +971,7 @@ class Component {
       const k = e.target.dataset.bind; if (!k) return;
       if (k.startsWith('m')) { const [mi, key] = k.split('.'); const i = +mi.slice(1); this.state.methods = this.state.methods.map((m, j) => j === i ? { ...m, [key]: e.target.value } : m); }
       else this.state.form = { ...this.state.form, [k]: e.target.value };
+      this.renderBar(); this.placePrompt();
     });
     this.componentDidMount();
   }
@@ -902,7 +982,7 @@ class Component {
     const apply = ([op, a]) => {
       if (op === 'go') return this.goStep(a);
       if (op === 'next') return this.next();
-      const p = { ...a }; const sc = p._scroll, ty = p._type; delete p._scroll; delete p._type;
+      const p = { ...(typeof a === 'function' ? a(this.state) : a) }; const sc = p._scroll, ty = p._type; delete p._scroll; delete p._type;
       this.setState(p);
       if (sc) { const el = document.querySelector(sc); el && el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
       if (ty) this.typeInto(ty[0], ty[1]);
@@ -910,17 +990,18 @@ class Component {
     if (!play) { if (ops[0][0] === 'go') apply(ops[0]); return; }
     const cur = document.createElement('div');
     cur.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z" fill="#0F0F16" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>';
-    Object.assign(cur.style, { position: 'fixed', left: '50%', top: '60%', zIndex: 9999, pointerEvents: 'none', transition: 'left .9s cubic-bezier(.22,1,.36,1), top .9s cubic-bezier(.22,1,.36,1)', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.3))' });
-    document.body.appendChild(cur);
+    Object.assign(cur.style, { position: 'absolute', left: '50%', top: '60%', zIndex: 9999, pointerEvents: 'none', transition: 'left .9s cubic-bezier(.22,1,.36,1), top .9s cubic-bezier(.22,1,.36,1)', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.3))' });
+    this._shell.appendChild(cur);
     const ripple = (x, y) => {
       const r = document.createElement('div');
-      Object.assign(r.style, { position: 'fixed', left: x - 18 + 'px', top: y - 18 + 'px', width: '36px', height: '36px', borderRadius: '50%', border: '3px solid #6b5bcf', zIndex: 9998, pointerEvents: 'none' });
-      document.body.appendChild(r);
-      r.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], { duration: 500, easing: 'ease-out' }).onfinish = () => r.remove();
+      Object.assign(r.style, { position: 'absolute', left: x - 18 + 'px', top: y - 18 + 'px', width: '36px', height: '36px', borderRadius: '50%', border: '3px solid #6b5bcf', zIndex: 9998, pointerEvents: 'none' });
+      this._shell.appendChild(r);
+      r.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], { duration: 500, easing: 'ease-out', fill: 'forwards' });
+      setTimeout(() => r.remove(), 600);
     };
     const cap = document.createElement('div');
-    Object.assign(cap.style, { position: 'fixed', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
-    document.body.appendChild(cap);
+    Object.assign(cap.style, { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
+    this._shell.appendChild(cap);
     const caps = CAPS[q.get('demo')] || [];
     const say = k => { cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + (k + 1) + '/' + ops.length + '</span><span></span>'; cap.lastChild.textContent = caps[k] || ''; cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
     this._cap = cap;
@@ -942,7 +1023,7 @@ class Component {
       const go = () => {
         const el = demoFind(o[2]);
         if (!el) { apply(o); return nextK(); }
-        const r = el.getBoundingClientRect(), x = r.left + Math.min(r.width / 2, 160), y = r.top + r.height / 2;
+        const b = this.local(el), x = b.x + Math.min(b.w / 2, 160), y = b.y + b.h / 2;
         cur.style.left = x - 5 + 'px'; cur.style.top = y - 3 + 'px';
         T(() => { ripple(x, y); cur.animate([{ transform: 'scale(1)' }, { transform: 'scale(.85)' }, { transform: 'scale(1)' }], { duration: 220 }); T(() => { apply(o); nextK(); }, 260); }, 1000);
       };

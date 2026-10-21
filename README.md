@@ -17,13 +17,17 @@ mesta-logo.svg    Mesta wordmark (inlined into prototype.html at the top of the 
 
 | URL | What it does |
 |---|---|
-| `prototype.html` | manual prototype: click the real buttons; the presenter bar advances when a step's `done()` is true |
+| `prototype.html` | self-service prototype: click the real buttons; a pulsing ring and a label mark the exact element to use next, and the presenter bar advances when a substep's `done()` is true |
 | `prototype.html?demo=1` | same, but a static preview for thumbnails |
-| `prototype.html?demo=1&play=1` | autoplay: cursor, ripple, captions, loops after the last op |
-| `prototype.html?demo=1&play=1&slow=1` | autoplay at 1.8x the hold times |
+| `prototype.html?demo=1&play=1` | guided demo: cursor, ripple, captions, loops after the last op |
+| `prototype.html?demo=1&play=1&slow=1` | guided demo at 1.8x the hold times |
 
-The page listens for `postMessage({type:'demo', cmd:'pause'|'play'|'restart', speed})` so a parent
-page can control it (see `index.html`). Debug: `app._jump(k)` applies ops `0..k-1` instantly and runs op `k`.
+The page is a fixed 1600x900 design that scales itself to fill whatever window or iframe it is in,
+and the presenter bar has a Full screen button (Fullscreen API; inside an iframe it asks the parent).
+`index.html` opens both the guided demo and the self-service run in a full-screen lightbox.
+
+The page listens for `postMessage({type:'demo', cmd:'pause'|'play'|'restart'|'fullscreen', speed})` so a
+parent page can control it. Debug: `app._jump(k)` applies ops `0..k-1` instantly and runs op `k`.
 
 Run locally with any static server, e.g. `python3 -m http.server 8765` in this folder.
 
@@ -32,19 +36,27 @@ Run locally with any static server, e.g. `python3 -m http.server 8765` in this f
 Everything lives in the `<script>` of `prototype.html`:
 
 1. **`INIT`** - the state object (`screen`, `entity`, `country`, `upload`, `form`, `methods`, `modal`, ...).
-2. **`steps()`** - one entry per presenter-bar step: `{ title, hint, screen, act(state), done(state) }`.
-   `act` is what "Do it for me" performs; `done` says when the viewer has completed the step by hand.
+2. **`steps()`** - five main steps, each with nested substeps:
+   `{ title, screen, doneIf?, subs: [{ t, target, say, act(state), done(state) }] }`.
+   - `target` is the on-screen element the viewer must use (same label syntax as the demo ops;
+     `bar: true` allows a presenter-bar button such as "Do it for me").
+   - `say` is the self-service prompt shown next to that element.
+   - `act` is what "Do it for me" performs for that substep; `done` says when it is complete.
+   - A main step is complete when all its substeps are, or when `doneIf` is true (lets a viewer
+     skip optional substeps, e.g. SWIFT). The current substep is the first one not done.
 3. **Screen renderers** - `rLogin`, `rDash`, `rList`, `rCreate` (+ `rUpload`, `rBasic`, `rPayment`, `rSending`).
    Every clickable element carries `data-act="name"` (+ `data-arg`), handled in `act(name, arg)`.
    Text inputs carry `data-bind="key"` and an `aria-label`.
-4. **`DEMOS[n]`** - the op list. Each op is `[kind, arg, target?]`:
-   - `['go', stepIdx]` jump to a step
-   - `['next', 0, ['Button label']]` perform the current step's `act` and advance
-   - `['set', { patch }, ['Button label']]` patch the state directly
+4. **`DEMOS[n]`** - the guided-demo op list. Each op is `[kind, arg, target?]`:
+   - `['go', stepIdx]` jump to a main step
+   - `['set', patch | state => patch, ['Button label']]` patch the state directly
+   - `['next', 0, ['Button label']]` perform the current substep's `act`
    - the optional third element is the click target: the visible text the cursor should find
      (`startsWith` match; `'=Exact text'` for an exact match; inputs match on their `aria-label`)
    - a `set` patch may also carry `_scroll: '#css-selector'` (scroll the pane there) or
      `_type: ['formKey', 'text to type']` (typewriter into that input)
+   Step and substep progress in the presenter bar follow from the `done()` checks, so the guided
+   demo and the self-service run share one definition of "complete".
 5. **`CAPS[n]`** - one caption per op, same length as `DEMOS[n]`. The captions are the narration of
    the approved tutorial video, split into short advancing chunks.
 
@@ -60,9 +72,11 @@ the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from 
    add a renderer per screen (`rSenders`, `rCreateSender`, ...), register it in `rShell()`'s
    `body` map, and add the sidebar highlight. Reuse `sel()`, `inp()`, `.fcard`, `.choice`, `.pm`,
    `.chip`, the stepper and the sending modal: they are the same components in the real product.
-3. **Add the steps.** Either append new entries to `steps()` with a `flow` key, or keep one
-   `steps()` per flow and pick by `?demo=`. `screensFor(i)` must return the screen each step
-   starts on; `stateAt(i)` replays `act` so Back / dots / Reset keep working.
+3. **Add the steps.** Keep five main steps per flow and nest the detail as substeps, each with a
+   `target` and a `say` prompt so the self-service run can point at the exact element. Either
+   append to `steps()` with a `flow` key or keep one `steps()` per flow and pick by `?demo=`.
+   `screensFor(i)` must return the screen each step starts on; `stateAt(i)` replays the substep
+   `act`s so Back / dots / Reset keep working.
 4. **Transcribe the narration.** `python3 transcribe.py "Sender- OHANA.mp4" out.json` with whisper
    `small.en` (word timestamps on), fix "Ojana" -> "Ohana", then split each sentence into short
    chunks: one chunk per click, `set` ops with no target for explanatory chunks.

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <title>Ohana · Create a Beneficiary · click-through demo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +40,21 @@ h2{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(26px,
 .step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font:600 11px 'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;margin-top:-2px}
 .step b{display:block;font-weight:600;color:var(--ink)}
 .step span{color:var(--mute);font-size:13px}
+.step ul{margin:6px 0 0;padding:0 0 0 2px;list-style:none;display:flex;flex-wrap:wrap;gap:4px 6px}
+.step li{font-size:12px;color:var(--ink2);background:var(--panel);border-radius:999px;padding:2px 9px}
+.lb{position:fixed;inset:0;z-index:50;background:#0f1014;display:flex;flex-direction:column}
+.lb[hidden]{display:none}
+.lb iframe{flex:1;width:100%;border:0;background:#0f1014}
+.lbc{flex:none;height:56px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#0f1014;border-top:1px solid rgba(255,255,255,.08)}
+.lbc .btn{background:rgba(255,255,255,.1);color:#fff}
+.lbc .btn.p{background:var(--violet)}
+.lbc .lbl{color:rgba(255,255,255,.7)}
+.lbc .seg{background:rgba(255,255,255,.1)}
+.lbc .seg button{color:#fff}
+.lbc .seg button.on{background:#fff;color:var(--ink)}
+.lbc .ttl{color:#fff;font-weight:600;font-size:15px;margin-right:8px}
 .frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--panel);border:1px solid var(--line);position:relative;box-shadow:0 8px 24px rgba(15,15,22,.08)}
-.frame iframe{position:absolute;top:0;left:0;width:1600px;height:900px;border:0;transform-origin:0 0}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
 .frame .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(15,15,22,.18)}
 .frame .ov span{width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(15,15,22,.16);display:flex;align-items:center;justify-content:center}
 .frame .ov svg{width:24px;height:24px;margin-left:4px;fill:var(--ink)}
@@ -84,16 +98,28 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
         <div class="ov" id="ov"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
       </div>
       <div class="ctl">
-        <button class="btn p" id="play">Play</button>
-        <button class="btn" id="restart">Restart</button>
+        <button class="btn p" id="play">▶ Play the guided demo</button>
+        <button class="btn" id="self">Try it yourself</button>
         <span class="sp"></span>
-        <span class="lbl">Speed</span>
-        <div class="seg"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
-        <a class="try" href="prototype.html" target="_blank" rel="noopener">Try it yourself ↗</a>
+        <span class="lbl">Both open full screen. Press Esc to leave.</span>
       </div>
     </div>
   </div>
 </div></section>
+
+<div class="lb" id="lb" hidden>
+  <iframe id="lbf" title="Create a Beneficiary in Ohana" allow="fullscreen" allowfullscreen></iframe>
+  <div class="lbc">
+    <span class="ttl" id="lbt">Create a Beneficiary</span>
+    <button class="btn p" id="lbplay">Pause</button>
+    <button class="btn" id="lbrestart">Restart</button>
+    <span class="lbl" id="lbspeedl">Speed</span>
+    <div class="seg" id="lbspeed"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
+    <span class="sp"></span>
+    <button class="btn" id="lbfs">⤢ Full screen</button>
+    <button class="btn" id="lbclose">Close</button>
+  </div>
+</div>
 
 <footer><div class="wrap">
   <div class="t"><b>Questions about Ohana?</b><p>Your Mesta account team can walk you through beneficiaries, senders and payment orders on your own data.</p></div>
@@ -102,31 +128,39 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 
 <script>
 const STEPS = [
-  ['Log in', 'Sign in to the merchant dashboard.'],
-  ['Open Beneficiaries', 'From the navigation menu on the left.'],
-  ['Create beneficiary', 'The button in the top-right corner.'],
-  ['Entity type and country', 'Business, then the country where the beneficiary is registered.'],
-  ['Upload a document', 'Ohana reads the invoice and pre-fills the form.'],
-  ['Complete the details', 'Fill what no document can prove, then continue.'],
-  ['Add payment methods', 'Bank account, SWIFT wire or crypto wallet.'],
-  ['Create the beneficiary', 'Saved and sent for verification.'],
-  ['Verification', 'Status moves from Pending to Approved.'],
-  ['Ready to pay', 'The beneficiary can receive payments through Ohana.']
+  ['Log in and open Beneficiaries', 'Sign in, open Beneficiaries from the left menu, click Create beneficiary.', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']],
+  ['Choose the entity type and country', 'Business, then the country where the beneficiary is registered. Ohana loads the payout fields for that rail.', ['Entity type', 'Country list', 'Pick India']],
+  ['Upload a document and complete the details', 'Ohana reads the invoice and pre-fills the form; you only add what no document can prove.', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']],
+  ['Add payment methods', 'Bank account, SWIFT wire or crypto wallet.', ['Bank account', 'SWIFT', 'Crypto wallet']],
+  ['Create and verify', 'Saved and sent for verification; the status moves from Pending to Approved.', ['Create beneficiary', 'Verification']]
 ];
-document.getElementById('steps').innerHTML = STEPS.map(([t, d], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><span>${d}</span></div></div>`).join('');
-const fr = document.getElementById('fr'), frame = document.getElementById('frame'), playBtn = document.getElementById('play');
-let playing = false, paused = false, slow = false;
-const fit = () => { fr.style.transform = `scale(${frame.clientWidth / 1600})`; };
-new ResizeObserver(fit).observe(frame); fit();
-const post = m => fr.contentWindow && fr.contentWindow.postMessage({ type: 'demo', ...m }, '*');
-const src = () => 'prototype.html?demo=1' + (playing ? '&play=1' + (slow ? '&slow=1' : '') : '');
-const start = () => { playing = true; paused = false; frame.classList.add('playing'); fr.src = src(); playBtn.textContent = 'Pause'; };
-document.getElementById('ov').onclick = start;
-playBtn.onclick = () => { if (!playing) return start(); paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); playBtn.textContent = paused ? 'Play' : 'Pause'; };
-document.getElementById('restart').onclick = () => { if (!playing) return start(); paused = false; playBtn.textContent = 'Pause'; post({ cmd: 'restart' }); };
+document.getElementById('steps').innerHTML = STEPS.map(([t, d, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><span>${d}</span><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('');
+
+const lb = document.getElementById('lb'), lbf = document.getElementById('lbf'), lbplay = document.getElementById('lbplay');
+let guided = false, paused = false, slow = false;
+const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
+const src = () => guided ? 'prototype.html?demo=1&play=1' + (slow ? '&slow=1' : '') : 'prototype.html';
+const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
+const open = g => {
+  guided = g; paused = false; lb.hidden = false; lbf.src = src();
+  document.getElementById('lbt').textContent = g ? 'Create a Beneficiary · guided demo' : 'Create a Beneficiary · try it yourself';
+  lbplay.style.display = g ? '' : 'none'; document.getElementById('lbspeed').style.display = g ? '' : 'none'; document.getElementById('lbspeedl').style.display = g ? '' : 'none';
+  lbplay.textContent = 'Pause'; goFull();
+};
+const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
+document.getElementById('play').onclick = () => open(true);
+document.getElementById('ov').onclick = () => open(true);
+document.getElementById('self').onclick = () => open(false);
+document.getElementById('lbclose').onclick = close;
+document.getElementById('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
+lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };
+document.getElementById('lbrestart').onclick = () => { paused = false; lbplay.textContent = 'Pause'; if (guided) post({ cmd: 'restart' }); else lbf.src = src(); };
 const seg = v => { slow = v; document.getElementById('slow').classList.toggle('on', v); document.getElementById('normal').classList.toggle('on', !v); post({ speed: v ? 1.8 : 1 }); };
 document.getElementById('slow').onclick = () => seg(true);
 document.getElementById('normal').onclick = () => seg(false);
+addEventListener('message', e => { const d = e.data || {}; if (d.type === 'demo' && d.cmd === 'fullscreen' && !lb.hidden) goFull(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden && !document.fullscreenElement) close(); });
+document.addEventListener('fullscreenchange', () => { document.getElementById('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : '⤢ Full screen'; });
 fetch('mesta-logo.svg').then(r => r.text()).then(t => { document.getElementById('logo').innerHTML = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); }).catch(() => {});
 </script>
 </body>
