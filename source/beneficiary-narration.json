@@ -1,0 +1,1078 @@
+{
+ "text": " Log in to Ohana. From the navigation menu on the left, select beneficiaries. To add a new beneficiary, click create beneficiary in the top right corner. First, select the entity type and the country where the beneficiary is registered. Based on your selection, Ohana automatically displays the appropriate onboarding fields and the supporting documents required for verification. You can complete the onboarding in one of two ways. The first option is to simply upload the beneficiaries business document. Ohana automatically extracts the relevant information from the document and pre-fills the application for your review. You only need to complete any information that couldn't be captured automatically, making the onboarding process even faster. Or you can enter the beneficiaries information manually, including business details, supporting documents and payment method details. You can add bank accounts, swift payment accounts, and wallet addresses as the payment methods. Once you've reviewed and completed all the required information, click create beneficiary in the bottom right corner. The beneficiary is now created and submitted for verification. Once the verification process is successfully completed, the status moves from pending to approved and the beneficiary is ready to receive payments through Ohana.",
+ "segments": [
+  {
+   "start": 2.4199999999999946,
+   "end": 11.98,
+   "text": " Log in to Ohana. From the navigation menu on the left, select beneficiaries. To add",
+   "words": [
+    {
+     "w": " Log",
+     "s": 2.4199999999999946,
+     "e": 3.219999999999997
+    },
+    {
+     "w": " in",
+     "s": 3.219999999999997,
+     "e": 4.02
+    },
+    {
+     "w": " to",
+     "s": 4.02,
+     "e": 4.36
+    },
+    {
+     "w": " Ohana.",
+     "s": 4.36,
+     "e": 4.78
+    },
+    {
+     "w": " From",
+     "s": 5.94,
+     "e": 6.2
+    },
+    {
+     "w": " the",
+     "s": 6.2,
+     "e": 6.36
+    },
+    {
+     "w": " navigation",
+     "s": 6.36,
+     "e": 6.8
+    },
+    {
+     "w": " menu",
+     "s": 6.8,
+     "e": 7.32
+    },
+    {
+     "w": " on",
+     "s": 7.32,
+     "e": 7.62
+    },
+    {
+     "w": " the",
+     "s": 7.62,
+     "e": 7.74
+    },
+    {
+     "w": " left,",
+     "s": 7.74,
+     "e": 8.08
+    },
+    {
+     "w": " select",
+     "s": 8.74,
+     "e": 9.04
+    },
+    {
+     "w": " beneficiaries.",
+     "s": 9.04,
+     "e": 9.66
+    },
+    {
+     "w": " To",
+     "s": 11.4,
+     "e": 11.74
+    },
+    {
+     "w": " add",
+     "s": 11.74,
+     "e": 11.98
+    }
+   ]
+  },
+  {
+   "start": 11.98,
+   "end": 19.56,
+   "text": " a new beneficiary, click create beneficiary in the top right corner. First, select the",
+   "words": [
+    {
+     "w": " a",
+     "s": 11.98,
+     "e": 12.14
+    },
+    {
+     "w": " new",
+     "s": 12.14,
+     "e": 12.3
+    },
+    {
+     "w": " beneficiary,",
+     "s": 12.3,
+     "e": 12.92
+    },
+    {
+     "w": " click",
+     "s": 13.7,
+     "e": 13.84
+    },
+    {
+     "w": " create",
+     "s": 13.84,
+     "e": 14.24
+    },
+    {
+     "w": " beneficiary",
+     "s": 14.24,
+     "e": 14.8
+    },
+    {
+     "w": " in",
+     "s": 14.8,
+     "e": 15.44
+    },
+    {
+     "w": " the",
+     "s": 15.44,
+     "e": 15.58
+    },
+    {
+     "w": " top",
+     "s": 15.58,
+     "e": 15.8
+    },
+    {
+     "w": " right",
+     "s": 15.8,
+     "e": 16.0
+    },
+    {
+     "w": " corner.",
+     "s": 16.0,
+     "e": 16.46
+    },
+    {
+     "w": " First,",
+     "s": 17.5,
+     "e": 18.3
+    },
+    {
+     "w": " select",
+     "s": 18.94,
+     "e": 19.32
+    },
+    {
+     "w": " the",
+     "s": 19.32,
+     "e": 19.56
+    }
+   ]
+  },
+  {
+   "start": 19.56,
+   "end": 27.38,
+   "text": " entity type and the country where the beneficiary is registered. Based on your selection, Ohana",
+   "words": [
+    {
+     "w": " entity",
+     "s": 19.56,
+     "e": 19.96
+    },
+    {
+     "w": " type",
+     "s": 19.96,
+     "e": 20.34
+    },
+    {
+     "w": " and",
+     "s": 20.34,
+     "e": 20.8
+    },
+    {
+     "w": " the",
+     "s": 20.8,
+     "e": 20.94
+    },
+    {
+     "w": " country",
+     "s": 20.94,
+     "e": 21.32
+    },
+    {
+     "w": " where",
+     "s": 21.32,
+     "e": 21.7
+    },
+    {
+     "w": " the",
+     "s": 21.7,
+     "e": 21.86
+    },
+    {
+     "w": " beneficiary",
+     "s": 21.86,
+     "e": 22.32
+    },
+    {
+     "w": " is",
+     "s": 22.32,
+     "e": 22.74
+    },
+    {
+     "w": " registered.",
+     "s": 22.74,
+     "e": 23.36
+    },
+    {
+     "w": " Based",
+     "s": 24.66,
+     "e": 25.32
+    },
+    {
+     "w": " on",
+     "s": 25.32,
+     "e": 25.62
+    },
+    {
+     "w": " your",
+     "s": 25.62,
+     "e": 25.8
+    },
+    {
+     "w": " selection,",
+     "s": 25.8,
+     "e": 26.34
+    },
+    {
+     "w": " Ohana",
+     "s": 27.1,
+     "e": 27.38
+    }
+   ]
+  },
+  {
+   "start": 27.38,
+   "end": 33.26,
+   "text": " automatically displays the appropriate onboarding fields and the supporting documents required for",
+   "words": [
+    {
+     "w": " automatically",
+     "s": 27.38,
+     "e": 28.0
+    },
+    {
+     "w": " displays",
+     "s": 28.0,
+     "e": 28.68
+    },
+    {
+     "w": " the",
+     "s": 28.68,
+     "e": 29.02
+    },
+    {
+     "w": " appropriate",
+     "s": 29.02,
+     "e": 29.58
+    },
+    {
+     "w": " onboarding",
+     "s": 29.58,
+     "e": 30.34
+    },
+    {
+     "w": " fields",
+     "s": 30.34,
+     "e": 30.72
+    },
+    {
+     "w": " and",
+     "s": 30.72,
+     "e": 31.3
+    },
+    {
+     "w": " the",
+     "s": 31.3,
+     "e": 31.46
+    },
+    {
+     "w": " supporting",
+     "s": 31.46,
+     "e": 31.86
+    },
+    {
+     "w": " documents",
+     "s": 31.86,
+     "e": 32.4
+    },
+    {
+     "w": " required",
+     "s": 32.4,
+     "e": 32.96
+    },
+    {
+     "w": " for",
+     "s": 32.96,
+     "e": 33.26
+    }
+   ]
+  },
+  {
+   "start": 33.26,
+   "end": 40.44,
+   "text": " verification. You can complete the onboarding in one of two ways. The first option is to simply",
+   "words": [
+    {
+     "w": " verification.",
+     "s": 33.26,
+     "e": 33.8
+    },
+    {
+     "w": " You",
+     "s": 35.48,
+     "e": 35.5
+    },
+    {
+     "w": " can",
+     "s": 35.5,
+     "e": 35.68
+    },
+    {
+     "w": " complete",
+     "s": 35.68,
+     "e": 36.06
+    },
+    {
+     "w": " the",
+     "s": 36.06,
+     "e": 36.24
+    },
+    {
+     "w": " onboarding",
+     "s": 36.24,
+     "e": 36.88
+    },
+    {
+     "w": " in",
+     "s": 36.88,
+     "e": 37.02
+    },
+    {
+     "w": " one",
+     "s": 37.02,
+     "e": 37.2
+    },
+    {
+     "w": " of",
+     "s": 37.2,
+     "e": 37.36
+    },
+    {
+     "w": " two",
+     "s": 37.36,
+     "e": 37.58
+    },
+    {
+     "w": " ways.",
+     "s": 37.58,
+     "e": 37.9
+    },
+    {
+     "w": " The",
+     "s": 38.72,
+     "e": 38.82
+    },
+    {
+     "w": " first",
+     "s": 38.82,
+     "e": 39.06
+    },
+    {
+     "w": " option",
+     "s": 39.06,
+     "e": 39.48
+    },
+    {
+     "w": " is",
+     "s": 39.48,
+     "e": 39.84
+    },
+    {
+     "w": " to",
+     "s": 39.84,
+     "e": 40.08
+    },
+    {
+     "w": " simply",
+     "s": 40.08,
+     "e": 40.44
+    }
+   ]
+  },
+  {
+   "start": 40.44,
+   "end": 47.36,
+   "text": " upload the beneficiaries business document. Ohana automatically extracts the relevant",
+   "words": [
+    {
+     "w": " upload",
+     "s": 40.44,
+     "e": 40.96
+    },
+    {
+     "w": " the",
+     "s": 40.96,
+     "e": 41.2
+    },
+    {
+     "w": " beneficiaries",
+     "s": 41.2,
+     "e": 41.66
+    },
+    {
+     "w": " business",
+     "s": 41.66,
+     "e": 42.2
+    },
+    {
+     "w": " document.",
+     "s": 42.2,
+     "e": 42.86
+    },
+    {
+     "w": " Ohana",
+     "s": 45.18,
+     "e": 45.44
+    },
+    {
+     "w": " automatically",
+     "s": 45.44,
+     "e": 46.3
+    },
+    {
+     "w": " extracts",
+     "s": 46.3,
+     "e": 46.86
+    },
+    {
+     "w": " the",
+     "s": 46.86,
+     "e": 47.1
+    },
+    {
+     "w": " relevant",
+     "s": 47.1,
+     "e": 47.36
+    }
+   ]
+  },
+  {
+   "start": 47.36,
+   "end": 54.26,
+   "text": " information from the document and pre-fills the application for your review. You only need to",
+   "words": [
+    {
+     "w": " information",
+     "s": 47.36,
+     "e": 47.96
+    },
+    {
+     "w": " from",
+     "s": 47.96,
+     "e": 48.64
+    },
+    {
+     "w": " the",
+     "s": 48.64,
+     "e": 48.8
+    },
+    {
+     "w": " document",
+     "s": 48.8,
+     "e": 49.24
+    },
+    {
+     "w": " and",
+     "s": 49.24,
+     "e": 49.78
+    },
+    {
+     "w": " pre",
+     "s": 49.78,
+     "e": 50.0
+    },
+    {
+     "w": "-fills",
+     "s": 50.0,
+     "e": 50.24
+    },
+    {
+     "w": " the",
+     "s": 50.24,
+     "e": 50.48
+    },
+    {
+     "w": " application",
+     "s": 50.48,
+     "e": 50.98
+    },
+    {
+     "w": " for",
+     "s": 50.98,
+     "e": 51.32
+    },
+    {
+     "w": " your",
+     "s": 51.32,
+     "e": 51.5
+    },
+    {
+     "w": " review.",
+     "s": 51.5,
+     "e": 51.8
+    },
+    {
+     "w": " You",
+     "s": 52.94,
+     "e": 53.62
+    },
+    {
+     "w": " only",
+     "s": 53.62,
+     "e": 53.88
+    },
+    {
+     "w": " need",
+     "s": 53.88,
+     "e": 54.12
+    },
+    {
+     "w": " to",
+     "s": 54.12,
+     "e": 54.5
+    }
+   ]
+  },
+  {
+   "start": 54.5,
+   "end": 59.98,
+   "text": " complete any information that couldn't be captured automatically, making the onboarding process even",
+   "words": [
+    {
+     "w": " complete",
+     "s": 54.5,
+     "e": 54.66
+    },
+    {
+     "w": " any",
+     "s": 54.66,
+     "e": 54.9
+    },
+    {
+     "w": " information",
+     "s": 54.9,
+     "e": 55.44
+    },
+    {
+     "w": " that",
+     "s": 55.44,
+     "e": 55.82
+    },
+    {
+     "w": " couldn't",
+     "s": 55.82,
+     "e": 56.16
+    },
+    {
+     "w": " be",
+     "s": 56.16,
+     "e": 56.34
+    },
+    {
+     "w": " captured",
+     "s": 56.34,
+     "e": 56.68
+    },
+    {
+     "w": " automatically,",
+     "s": 56.68,
+     "e": 57.42
+    },
+    {
+     "w": " making",
+     "s": 58.16,
+     "e": 58.34
+    },
+    {
+     "w": " the",
+     "s": 58.34,
+     "e": 58.62
+    },
+    {
+     "w": " onboarding",
+     "s": 58.62,
+     "e": 59.2
+    },
+    {
+     "w": " process",
+     "s": 59.2,
+     "e": 59.5
+    },
+    {
+     "w": " even",
+     "s": 59.5,
+     "e": 59.98
+    }
+   ]
+  },
+  {
+   "start": 59.98,
+   "end": 67.14,
+   "text": " faster. Or you can enter the beneficiaries information manually, including business details,",
+   "words": [
+    {
+     "w": " faster.",
+     "s": 59.98,
+     "e": 60.42
+    },
+    {
+     "w": " Or",
+     "s": 61.8,
+     "e": 62.16
+    },
+    {
+     "w": " you",
+     "s": 62.16,
+     "e": 62.64
+    },
+    {
+     "w": " can",
+     "s": 62.64,
+     "e": 62.76
+    },
+    {
+     "w": " enter",
+     "s": 62.76,
+     "e": 63.04
+    },
+    {
+     "w": " the",
+     "s": 63.04,
+     "e": 63.2
+    },
+    {
+     "w": " beneficiaries",
+     "s": 63.2,
+     "e": 63.74
+    },
+    {
+     "w": " information",
+     "s": 63.74,
+     "e": 64.44
+    },
+    {
+     "w": " manually,",
+     "s": 64.44,
+     "e": 65.06
+    },
+    {
+     "w": " including",
+     "s": 65.78,
+     "e": 66.18
+    },
+    {
+     "w": " business",
+     "s": 66.18,
+     "e": 66.56
+    },
+    {
+     "w": " details,",
+     "s": 66.56,
+     "e": 67.14
+    }
+   ]
+  },
+  {
+   "start": 67.88,
+   "end": 74.94,
+   "text": " supporting documents and payment method details. You can add bank accounts, swift payment accounts,",
+   "words": [
+    {
+     "w": " supporting",
+     "s": 67.88,
+     "e": 68.06
+    },
+    {
+     "w": " documents",
+     "s": 68.06,
+     "e": 68.58
+    },
+    {
+     "w": " and",
+     "s": 68.58,
+     "e": 69.48
+    },
+    {
+     "w": " payment",
+     "s": 69.48,
+     "e": 69.8
+    },
+    {
+     "w": " method",
+     "s": 69.8,
+     "e": 70.16
+    },
+    {
+     "w": " details.",
+     "s": 70.16,
+     "e": 70.68
+    },
+    {
+     "w": " You",
+     "s": 71.64,
+     "e": 71.78
+    },
+    {
+     "w": " can",
+     "s": 71.78,
+     "e": 71.94
+    },
+    {
+     "w": " add",
+     "s": 71.94,
+     "e": 72.16
+    },
+    {
+     "w": " bank",
+     "s": 72.16,
+     "e": 72.4
+    },
+    {
+     "w": " accounts,",
+     "s": 72.4,
+     "e": 72.88
+    },
+    {
+     "w": " swift",
+     "s": 73.92,
+     "e": 73.96
+    },
+    {
+     "w": " payment",
+     "s": 73.96,
+     "e": 74.4
+    },
+    {
+     "w": " accounts,",
+     "s": 74.4,
+     "e": 74.94
+    }
+   ]
+  },
+  {
+   "start": 75.7,
+   "end": 82.54,
+   "text": " and wallet addresses as the payment methods. Once you've reviewed and completed all the required",
+   "words": [
+    {
+     "w": " and",
+     "s": 75.7,
+     "e": 75.96
+    },
+    {
+     "w": " wallet",
+     "s": 75.96,
+     "e": 76.26
+    },
+    {
+     "w": " addresses",
+     "s": 76.26,
+     "e": 76.76
+    },
+    {
+     "w": " as",
+     "s": 76.76,
+     "e": 77.22
+    },
+    {
+     "w": " the",
+     "s": 77.22,
+     "e": 77.38
+    },
+    {
+     "w": " payment",
+     "s": 77.38,
+     "e": 77.66
+    },
+    {
+     "w": " methods.",
+     "s": 77.66,
+     "e": 78.14
+    },
+    {
+     "w": " Once",
+     "s": 79.5,
+     "e": 80.2
+    },
+    {
+     "w": " you've",
+     "s": 80.2,
+     "e": 80.54
+    },
+    {
+     "w": " reviewed",
+     "s": 80.54,
+     "e": 80.88
+    },
+    {
+     "w": " and",
+     "s": 80.88,
+     "e": 81.12
+    },
+    {
+     "w": " completed",
+     "s": 81.12,
+     "e": 81.58
+    },
+    {
+     "w": " all",
+     "s": 81.58,
+     "e": 81.98
+    },
+    {
+     "w": " the",
+     "s": 81.98,
+     "e": 82.14
+    },
+    {
+     "w": " required",
+     "s": 82.14,
+     "e": 82.54
+    }
+   ]
+  },
+  {
+   "start": 82.54,
+   "end": 89.7,
+   "text": " information, click create beneficiary in the bottom right corner. The beneficiary is now created",
+   "words": [
+    {
+     "w": " information,",
+     "s": 82.54,
+     "e": 83.18
+    },
+    {
+     "w": " click",
+     "s": 83.8,
+     "e": 83.98
+    },
+    {
+     "w": " create",
+     "s": 83.98,
+     "e": 84.4
+    },
+    {
+     "w": " beneficiary",
+     "s": 84.4,
+     "e": 84.86
+    },
+    {
+     "w": " in",
+     "s": 84.86,
+     "e": 85.36
+    },
+    {
+     "w": " the",
+     "s": 85.36,
+     "e": 85.5
+    },
+    {
+     "w": " bottom",
+     "s": 85.5,
+     "e": 85.78
+    },
+    {
+     "w": " right",
+     "s": 85.78,
+     "e": 86.02
+    },
+    {
+     "w": " corner.",
+     "s": 86.02,
+     "e": 86.4
+    },
+    {
+     "w": " The",
+     "s": 88.32,
+     "e": 88.4
+    },
+    {
+     "w": " beneficiary",
+     "s": 88.4,
+     "e": 88.72
+    },
+    {
+     "w": " is",
+     "s": 88.72,
+     "e": 89.02
+    },
+    {
+     "w": " now",
+     "s": 89.02,
+     "e": 89.2
+    },
+    {
+     "w": " created",
+     "s": 89.2,
+     "e": 89.7
+    }
+   ]
+  },
+  {
+   "start": 89.7,
+   "end": 96.0,
+   "text": " and submitted for verification. Once the verification process is successfully completed,",
+   "words": [
+    {
+     "w": " and",
+     "s": 89.7,
+     "e": 90.28
+    },
+    {
+     "w": " submitted",
+     "s": 90.28,
+     "e": 90.64
+    },
+    {
+     "w": " for",
+     "s": 90.64,
+     "e": 90.9
+    },
+    {
+     "w": " verification.",
+     "s": 90.9,
+     "e": 91.32
+    },
+    {
+     "w": " Once",
+     "s": 93.16,
+     "e": 93.42
+    },
+    {
+     "w": " the",
+     "s": 93.42,
+     "e": 93.62
+    },
+    {
+     "w": " verification",
+     "s": 93.62,
+     "e": 94.04
+    },
+    {
+     "w": " process",
+     "s": 94.04,
+     "e": 94.56
+    },
+    {
+     "w": " is",
+     "s": 94.56,
+     "e": 94.88
+    },
+    {
+     "w": " successfully",
+     "s": 94.88,
+     "e": 95.38
+    },
+    {
+     "w": " completed,",
+     "s": 95.38,
+     "e": 96.0
+    }
+   ]
+  },
+  {
+   "start": 96.42,
+   "end": 101.9,
+   "text": " the status moves from pending to approved and the beneficiary is ready to receive payments through Ohana.",
+   "words": [
+    {
+     "w": " the",
+     "s": 96.42,
+     "e": 96.68
+    },
+    {
+     "w": " status",
+     "s": 96.68,
+     "e": 96.94
+    },
+    {
+     "w": " moves",
+     "s": 96.94,
+     "e": 97.28
+    },
+    {
+     "w": " from",
+     "s": 97.28,
+     "e": 97.56
+    },
+    {
+     "w": " pending",
+     "s": 97.56,
+     "e": 97.86
+    },
+    {
+     "w": " to",
+     "s": 97.86,
+     "e": 98.12
+    },
+    {
+     "w": " approved",
+     "s": 98.12,
+     "e": 98.48
+    },
+    {
+     "w": " and",
+     "s": 98.48,
+     "e": 99.06
+    },
+    {
+     "w": " the",
+     "s": 99.06,
+     "e": 99.18
+    },
+    {
+     "w": " beneficiary",
+     "s": 99.18,
+     "e": 99.56
+    },
+    {
+     "w": " is",
+     "s": 99.56,
+     "e": 99.94
+    },
+    {
+     "w": " ready",
+     "s": 99.94,
+     "e": 100.16
+    },
+    {
+     "w": " to",
+     "s": 100.16,
+     "e": 100.38
+    },
+    {
+     "w": " receive",
+     "s": 100.38,
+     "e": 100.68
+    },
+    {
+     "w": " payments",
+     "s": 100.68,
+     "e": 101.1
+    },
+    {
+     "w": " through",
+     "s": 101.1,
+     "e": 101.56
+    },
+    {
+     "w": " Ohana.",
+     "s": 101.56,
+     "e": 101.9
+    }
+   ]
+  }
+ ]
+}

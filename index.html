@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohana · Create a Beneficiary · click-through demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15171f;--ink2:#3c3f46;--mute:#6b7280;--line:#e4e6ea;--bg:#fdfdfd;--navy:#1a162d;--violet:#6b5bcf;--panel:#f3f4f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--violet);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:rgba(253,253,253,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;padding:14px 24px}
+header svg{height:26px;width:auto;color:var(--ink)}
+header .ttl{font-family:'Geist',sans-serif;font-weight:600;font-size:14px;color:var(--ink2);padding-left:14px;border-left:1px solid var(--line)}
+header .sp{flex:1}
+header nav{display:flex;gap:22px;font-size:14px;font-weight:500}
+header nav a{color:var(--ink);padding:4px 0;border-bottom:2px solid transparent}
+header nav a.on{color:var(--violet);border-bottom-color:var(--violet)}
+.hero{background:linear-gradient(160deg,#f3f1fb 0%,#eef3fb 45%,#fdfdfd 100%)}
+.hero .wrap{padding:76px 24px 64px;display:flex;flex-direction:column;gap:18px}
+.tags{display:flex;gap:8px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.tag.v{color:var(--violet);background:color-mix(in srgb,var(--violet) 10%,#fff);border-color:transparent}
+h1{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.025em;color:var(--navy);max-width:820px;text-wrap:balance}
+.lead{margin:0;font-size:18px;line-height:28px;color:var(--ink2);max-width:680px;text-wrap:pretty}
+section.demo .wrap{padding:72px 24px 80px;display:flex;flex-direction:column;gap:28px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet)}
+h2{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.02em;color:var(--navy)}
+.sub{margin:0;font-size:16px;line-height:26px;color:var(--ink2);max-width:680px}
+.grid{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.steps{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line)}
+.step{display:flex;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);font-size:14px;line-height:20px}
+.step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font:600 11px 'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;margin-top:-2px}
+.step b{display:block;font-weight:600;color:var(--ink)}
+.step span{color:var(--mute);font-size:13px}
+.frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--panel);border:1px solid var(--line);position:relative;box-shadow:0 8px 24px rgba(15,15,22,.08)}
+.frame iframe{position:absolute;top:0;left:0;width:1600px;height:900px;border:0;transform-origin:0 0}
+.frame .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(15,15,22,.18)}
+.frame .ov span{width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(15,15,22,.16);display:flex;align-items:center;justify-content:center}
+.frame .ov svg{width:24px;height:24px;margin-left:4px;fill:var(--ink)}
+.frame.playing .ov{display:none}
+.ctl{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:999px;padding:9px 18px;font:500 14px 'DM Sans',sans-serif;cursor:pointer;background:var(--panel);color:var(--ink)}
+.btn.p{background:var(--violet);color:#fff;min-width:92px}
+.ctl .sp{flex:1}
+.ctl .lbl{font-size:13px;color:var(--mute)}
+.seg{display:flex;gap:3px;background:var(--panel);border-radius:999px;padding:3px}
+.seg button{border:0;border-radius:999px;padding:6px 14px;font:500 13px 'DM Sans',sans-serif;cursor:pointer;background:transparent;color:var(--ink)}
+.seg button.on{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.try{font-size:14px;font-weight:500}
+footer{background:var(--navy);color:#fff}
+footer .wrap{padding:52px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+footer .t{flex:1;min-width:260px}
+footer b{display:block;font-family:'Geist',sans-serif;font-size:24px;letter-spacing:-.02em;margin-bottom:6px}
+footer p{margin:0;font-size:15px;line-height:24px;opacity:.85}
+footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;padding:11px 18px;border-radius:999px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span id="logo"></span><span class="ttl">Ohana · Product demos</span><span class="sp"></span>
+  <nav><a class="on" href="#demo">Create a Beneficiary</a><a href="prototype.html" target="_blank" rel="noopener">Open the prototype ↗</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="tags"><span class="tag v">Ohana</span><span class="tag">Click-through demo</span></div>
+  <h1>Create a Beneficiary in Ohana</h1>
+  <p class="lead">Add a business beneficiary in a few clicks: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary is verified and moves from Pending to Approved.</p>
+</div></section>
+
+<section class="demo" id="demo"><div class="wrap">
+  <div><div class="eyebrow">Demo video</div><h2 style="margin-top:10px">See the full flow</h2><p class="sub" style="margin-top:10px">The product UI, replayed step by step with captions. Press play, slow it down, or open the prototype and click through it yourself.</p></div>
+  <div class="grid">
+    <div class="steps" id="steps"></div>
+    <div>
+      <div class="frame" id="frame">
+        <iframe id="fr" src="prototype.html?demo=1" title="Create a Beneficiary in Ohana" tabindex="-1"></iframe>
+        <div class="ov" id="ov"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
+      </div>
+      <div class="ctl">
+        <button class="btn p" id="play">Play</button>
+        <button class="btn" id="restart">Restart</button>
+        <span class="sp"></span>
+        <span class="lbl">Speed</span>
+        <div class="seg"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
+        <a class="try" href="prototype.html" target="_blank" rel="noopener">Try it yourself ↗</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="t"><b>Questions about Ohana?</b><p>Your Mesta account team can walk you through beneficiaries, senders and payment orders on your own data.</p></div>
+  <a href="mailto:support@mesta.xyz">Contact your account team</a>
+</div></footer>
+
+<script>
+const STEPS = [
+  ['Log in', 'Sign in to the merchant dashboard.'],
+  ['Open Beneficiaries', 'From the navigation menu on the left.'],
+  ['Create beneficiary', 'The button in the top-right corner.'],
+  ['Entity type and country', 'Business, then the country where the beneficiary is registered.'],
+  ['Upload a document', 'Ohana reads the invoice and pre-fills the form.'],
+  ['Complete the details', 'Fill what no document can prove, then continue.'],
+  ['Add payment methods', 'Bank account, SWIFT wire or crypto wallet.'],
+  ['Create the beneficiary', 'Saved and sent for verification.'],
+  ['Verification', 'Status moves from Pending to Approved.'],
+  ['Ready to pay', 'The beneficiary can receive payments through Ohana.']
+];
+document.getElementById('steps').innerHTML = STEPS.map(([t, d], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><span>${d}</span></div></div>`).join('');
+const fr = document.getElementById('fr'), frame = document.getElementById('frame'), playBtn = document.getElementById('play');
+let playing = false, paused = false, slow = false;
+const fit = () => { fr.style.transform = `scale(${frame.clientWidth / 1600})`; };
+new ResizeObserver(fit).observe(frame); fit();
+const post = m => fr.contentWindow && fr.contentWindow.postMessage({ type: 'demo', ...m }, '*');
+const src = () => 'prototype.html?demo=1' + (playing ? '&play=1' + (slow ? '&slow=1' : '') : '');
+const start = () => { playing = true; paused = false; frame.classList.add('playing'); fr.src = src(); playBtn.textContent = 'Pause'; };
+document.getElementById('ov').onclick = start;
+playBtn.onclick = () => { if (!playing) return start(); paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); playBtn.textContent = paused ? 'Play' : 'Pause'; };
+document.getElementById('restart').onclick = () => { if (!playing) return start(); paused = false; playBtn.textContent = 'Pause'; post({ cmd: 'restart' }); };
+const seg = v => { slow = v; document.getElementById('slow').classList.toggle('on', v); document.getElementById('normal').classList.toggle('on', !v); post({ speed: v ? 1.8 : 1 }); };
+document.getElementById('slow').onclick = () => seg(true);
+document.getElementById('normal').onclick = () => seg(false);
+fetch('mesta-logo.svg').then(r => r.text()).then(t => { document.getElementById('logo').innerHTML = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); }).catch(() => {});
+</script>
+</body>
+</html>

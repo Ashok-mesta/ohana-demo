@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ohana · Create a Beneficiary · click-through demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#15171f; --ink2:#2f3238; --mute:#6b7280; --faint:#9aa0a6; --line:#e4e6ea; --line2:#eef0f2;
+  --bg:#fdfdfd; --panel:#f3f6f8; --navy:#1a162d; --violet:#6b5bcf;
+  --green:#10a86a; --green-bg:#e8f6ef; --green-tx:#1f8a52;
+  --red:#c93b4b; --red-bg:#fbeaec; --red-tx:#b02a3a;
+  --amber:#c0822e; --amber-bg:#fdf5e1; --amber-tx:#9a6a1e;
+  --bar:#1a162d; --accent:#6b5bcf;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:'Geist',system-ui,sans-serif;color:var(--ink);background:#e9eaee;-webkit-font-smoothing:antialiased;overflow:hidden}
+button,input{font:inherit;color:inherit}
+input{outline:none}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase}
+.ico{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.ico.sm{width:13px;height:13px}
+.ico.lg{width:20px;height:20px}
+.ico.fill{fill:currentColor;stroke:none}
+
+/* ===== shell ===== */
+#shell{display:flex;flex-direction:column;height:100vh;min-width:1280px}
+#presenter{background:var(--bar);color:#fff;padding:10px 16px;display:flex;flex-direction:column;gap:6px;flex:none;font-family:'DM Sans',sans-serif}
+#presenter .row{display:flex;align-items:center;gap:12px}
+#presenter .brand{font-size:13px;font-weight:600;letter-spacing:.04em;opacity:.7}
+#presenter .pill{background:rgba(255,255,255,.14);border-radius:999px;padding:2px 10px;font-size:12.5px}
+#presenter .pill.actor{background:var(--accent);font-weight:600}
+#presenter .title{font-size:15px;font-weight:600}
+#presenter .hint{font-size:13.5px;opacity:.85;flex:1;text-wrap:pretty}
+#presenter .sp{flex:1}
+#presenter .btn{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 12px;font:500 13px 'DM Sans',sans-serif;cursor:pointer}
+#presenter .btn.primary{background:#fff;color:var(--bar);border:0;padding:6px 14px;font-weight:600}
+#presenter .dots{display:flex;gap:4px;flex:none}
+#presenter .dots span{width:18px;height:6px;border-radius:3px;cursor:pointer;background:rgba(255,255,255,.18)}
+#presenter .dots span.past{background:rgba(255,255,255,.55)}
+#presenter .dots span.cur{background:#fff}
+#stage{flex:1;min-height:0;display:flex;padding:12px}
+#app{flex:1;min-width:0;display:flex;background:var(--bg);border-radius:10px;overflow:hidden;box-shadow:0 0 0 3px var(--accent),0 0 0 8px color-mix(in srgb,var(--accent) 18%,transparent),0 1px 3px rgba(0,0,0,.08);position:relative}
+
+/* ===== app chrome ===== */
+.side{width:232px;flex:none;background:#fff;border-right:1px solid var(--line2);display:flex;flex-direction:column;overflow:hidden}
+.side .logo{padding:18px 20px 10px;display:flex;align-items:center}
+.side .logo svg{height:30px;width:auto;color:var(--ink)}
+.side .sec{padding:12px 20px 4px;font-size:10.5px;color:var(--faint)}
+.side .nav{display:flex;align-items:center;gap:10px;margin:1px 8px;padding:7px 12px;border-radius:8px;font-size:13.5px;color:var(--ink2);cursor:pointer;position:relative}
+.side .nav .ico{color:#4b4f57}
+.side .nav:hover{background:#f7f8fa}
+.side .nav.on{background:var(--panel);font-weight:600;color:var(--ink)}
+.side .nav.on::before{content:'';position:absolute;left:-8px;top:6px;bottom:6px;width:3px;border-radius:2px;background:var(--violet)}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.top{height:50px;flex:none;display:flex;align-items:center;gap:12px;padding:0 24px;border-bottom:1px solid var(--line2);font-size:13px}
+.top .crumb{color:var(--mute)}
+.top .crumb b{color:var(--ink);font-weight:500}
+.top .sp{flex:1}
+.top .search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--mute);font-size:12.5px;background:#fff}
+.top .search kbd{font:11px 'Geist Mono',monospace;background:#f1f2f4;border-radius:4px;padding:1px 5px;color:var(--faint)}
+.top .acct{display:flex;align-items:center;gap:10px}
+.top .acct .t{text-align:right;line-height:1.15}
+.top .acct .t b{display:block;font-size:12.5px;font-weight:600}
+.top .acct .t span{font-size:10.5px;color:var(--mute)}
+.top .acct .av{width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.top .acct .ico{color:var(--mute)}
+.content{flex:1;min-height:0;overflow:auto;padding:22px 26px 28px;scroll-behavior:smooth}
+.page-h{display:flex;align-items:flex-start;gap:16px}
+.page-h .sp{flex:1}
+.kicker{font-size:10.5px;color:var(--faint);margin-bottom:4px}
+h1{margin:0;font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.sub{color:var(--mute);font-size:13px;margin-top:6px;line-height:1.5;max-width:900px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;padding:9px 14px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;line-height:1.1}
+.btn:hover{background:#f7f8fa}
+.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.dark:hover{background:#231f3e}
+.btn.dark[disabled]{background:#9a9ba6;border-color:#9a9ba6;cursor:default}
+.btn.sm{padding:6px 11px;font-size:12.5px;border-radius:8px}
+.btn.link{border:0;background:transparent;color:var(--ink2);padding:6px 8px}
+.btn .ico{width:15px;height:15px}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 9px;font-size:11.5px;font-weight:600;line-height:1.3}
+.chip::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.g{background:var(--green-bg);color:var(--green-tx)}
+.chip.r{background:var(--red-bg);color:var(--red-tx)}
+.chip.a{background:var(--amber-bg);color:var(--amber-tx)}
+
+/* ===== list ===== */
+.card{background:#fff;border:1px solid var(--line);border-radius:14px}
+.tabs{display:flex;gap:4px;padding:0 10px;border-bottom:1px solid var(--line2)}
+.tabs div{padding:12px 12px;font-size:13.5px;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs div.on{font-weight:600;border-bottom-color:var(--ink);color:var(--ink)}
+.filters{display:flex;align-items:center;gap:8px;padding:12px 14px}
+.filters .f{border:1px solid var(--line);border-radius:9px;padding:6px 11px;font-size:12.5px;font-weight:500;cursor:pointer}
+.filters .sp{flex:1}
+.filters .sel{border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:13px;display:flex;gap:28px;align-items:center;cursor:pointer}
+.statrow{display:flex;align-items:center;gap:8px;padding:11px 16px;font-size:11px;color:var(--mute)}
+.statrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.statrow .sp{flex:1}
+.statrow .k{border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:11.5px;color:var(--mute);text-transform:none;letter-spacing:0;font-family:'Geist',sans-serif}
+.statrow .k b{color:var(--green-tx);font-weight:600;margin-left:3px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{text-align:left;font-weight:500;font-size:10.5px;color:var(--faint);background:var(--panel);padding:12px 16px}
+tbody td{padding:13px 16px;border-top:1px solid var(--line2);color:var(--ink2);white-space:nowrap}
+tbody tr.new td{background:#f7f9fb}
+tbody tr.new td:first-child{box-shadow:inset 3px 0 0 var(--navy)}
+.nm{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:500}
+.bi{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex:none}
+.bi.g{background:var(--green-bg);color:var(--green-tx)} .bi.r{background:var(--red-bg);color:var(--red-tx)} .bi.a{background:var(--amber-bg);color:var(--amber-tx)}
+.bi .ico{width:14px;height:14px}
+.ty{display:flex;align-items:center;gap:6px}
+.cc{display:flex;align-items:center;gap:6px}
+.cc .cur{color:var(--faint);font-size:11px;font-family:'Geist Mono',monospace}
+td.arr{color:var(--faint);text-align:right}
+
+/* ===== create ===== */
+.fcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 30px}
+.lbl{font-size:13px;font-weight:500;margin-bottom:7px;display:block}
+.lbl i{color:var(--red);font-style:normal;margin-left:2px}
+.help{font-size:12px;color:var(--mute);line-height:1.45;margin-top:7px}
+.choice{display:flex;gap:16px}
+.choice .c{flex:1;max-width:420px;border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:14px;cursor:pointer;align-items:flex-start}
+.choice .c .ico{margin-top:3px;color:var(--ink2)}
+.choice .c b{display:block;font-size:14.5px;font-weight:600;margin-bottom:3px}
+.choice .c span{font-size:12.5px;color:var(--mute);line-height:1.45}
+.choice .c.on{border-color:var(--violet);box-shadow:0 0 0 .5px var(--violet)}
+.sel{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13.5px;background:#fff;cursor:pointer;position:relative}
+.sel .ico{color:var(--mute)}
+.sel .sp{flex:1}
+.sel.dis{background:#f3f4f6;color:var(--mute);cursor:default}
+.sel .ph{color:var(--ink)}
+.sel.focus{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet)}
+.dd{position:absolute;left:0;top:calc(100% + 4px);width:560px;max-height:300px;overflow:auto;background:#5c5f66;color:#fff;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:20;padding:4px 0}
+.dd div{padding:6px 16px;font-size:13px;display:flex;gap:10px;align-items:center;cursor:pointer}
+.dd div:hover{background:#6c7079}
+.dd div.on{background:#3f74f0}
+.dd div .cd{width:26px;font-family:'Geist Mono',monospace;font-size:12px;opacity:.9}
+.dd.light{background:#fff;color:var(--ink);border:1px solid var(--line);width:100%}
+.dd.light div:hover{background:#f3f4f6}
+.dd.light div.on{background:#eef0ff;color:var(--ink)}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:70px 20px;text-align:center}
+.empty b{display:block;font-size:14px;margin-bottom:8px}
+.empty span{font-size:13.5px;color:var(--ink2)}
+.inp{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13.5px;background:#fff}
+.inp::placeholder{color:#9ca3af}
+.inp:focus{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet)}
+.inp.dis{background:#f3f4f6;color:var(--mute)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px 16px}
+.g2 .full{grid-column:1/-1}
+.box{border:1px solid var(--line);border-radius:14px;padding:18px 18px 14px;margin:14px 0}
+.box h4{margin:0 0 12px;font-size:14px;font-weight:600}
+.filechip{display:flex;align-items:center;gap:10px;background:#f3f4f6;border-radius:10px;padding:10px 14px;font-size:13px}
+.filechip .t{flex:1;min-width:0}
+.filechip .t b{display:block;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.filechip .t span{font-size:11.5px;color:var(--mute)}
+.filechip .rm{color:var(--red);font-size:12.5px;cursor:pointer}
+.stepper{display:flex;align-items:center;gap:14px;padding:22px 0 10px}
+.stepper .st{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12.5px;font-weight:600;width:120px}
+.stepper .st .d{width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.stepper .st .d::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--ink)}
+.stepper .st.off{color:var(--mute);font-weight:400}
+.stepper .st.off .d{border-color:transparent;background:#eceef1}
+.stepper .st.off .d::after{background:#8b8f98;width:8px;height:8px}
+.stepper .ln{flex:1;height:1px;background:var(--line)}
+.stephead{font-size:10.5px;color:var(--faint);margin-bottom:6px}
+.fcard h3{margin:0 0 8px;font-size:17px;font-weight:600;display:flex;align-items:center;gap:8px}
+.fcard .desc{font-size:13px;color:var(--ink2);margin-bottom:16px}
+.fld{margin-bottom:16px}
+.foot{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:14px;padding:12px 16px;margin-top:14px}
+.foot .sp{flex:1}
+.foot .draft{font-size:12.5px;color:var(--mute)}
+
+/* skip banner + upload */
+.banner{display:flex;align-items:center;gap:14px;background:#f1f1f2;border:1px solid #e3e4e7;border-radius:16px;padding:12px 16px}
+.banner .ic{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.banner .t{flex:1}
+.banner .t b{display:block;font-size:14px;font-weight:600}
+.banner .t span{font-size:12.5px;color:var(--ink2)}
+.ucard{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:#fff;position:relative;overflow:hidden}
+.ucard .lead{font-size:13.5px;color:var(--ink2);margin-bottom:12px}
+.drop{border:1.5px dashed #c9ccd2;border-radius:12px;padding:20px;text-align:center;font-size:13px;color:var(--ink2);cursor:pointer;background:#fff}
+.drop.has{display:flex;align-items:center;gap:10px;text-align:left;border-style:solid;border-color:var(--line)}
+.drop .pdf{width:22px;height:26px;border-radius:3px;background:var(--red-bg);color:var(--red);font:600 8px 'Geist Mono',monospace;display:flex;align-items:center;justify-content:center}
+.ucard .acts{display:flex;align-items:center;gap:10px;margin-top:12px}
+.rd{display:flex;flex-direction:column;gap:6px;font-size:13px}
+.rd .h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin-bottom:4px}
+.rd .h .ico{color:#8b5cf6}
+.rd .h .sp{flex:1}
+.rd .h .tm{font-size:11px;color:var(--faint);font-family:'Geist Mono',monospace;font-weight:400}
+.rd .ln{display:flex;align-items:flex-start;gap:8px;color:var(--ink2)}
+.rd .ln .ico{margin-top:2px}
+.rd .ln.ok .ico{color:var(--green)}
+.rd .ln.run .ico{color:#8b5cf6;animation:spin 1s linear infinite}
+.rd .ln.wait{color:var(--faint)}
+.rd .ln small{display:block;font-size:12px;color:var(--mute)}
+.rd .ln.run b{font-weight:600}
+.pbar{height:3px;border-radius:2px;background:#eef0f2;margin:8px 0 10px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7c3aed,#d946ef,#f472b6);animation:fillbar 3.2s cubic-bezier(.3,.7,.4,1) forwards}
+.ucard .glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 80% at 50% 50%,rgba(168,85,247,.09),transparent 70%)}
+.rd .note{font-size:12.5px;color:var(--mute)}
+.res .h{display:flex;align-items:center;gap:12px;font-size:13.5px}
+.res .h .chk{width:30px;height:30px;border-radius:50%;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+.res .h .sp{flex:1}
+.abox{border:1px solid #f1d7b6;background:#fffaf2;border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12.5px}
+.abox .k{font-size:10.5px;color:#a16207;margin-bottom:8px}
+.abox .it{margin-bottom:8px}
+.abox .it:last-child{margin-bottom:0}
+.abox .it span{display:block;color:var(--ink2)}
+.abox .it b{display:block;font-size:13.5px;font-weight:600}
+.abox .it small{display:block;font-size:11.5px;color:var(--mute)}
+.abox .it.row{display:flex;align-items:center;gap:12px}
+.abox .it.row .t{flex:1}
+.ledger{font-size:12.5px;color:var(--mute);margin-top:10px}
+.still{margin-top:10px;font-size:13px}
+.still .k{font-size:10.5px;color:var(--faint);margin:10px 0 4px}
+
+/* payment */
+.pm{border:1.5px solid var(--ink);border-radius:14px;padding:18px 18px 16px;margin-top:14px;position:relative}
+.pm .hd{display:flex;align-items:center;margin-bottom:14px}
+.pm .hd .tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:500}
+.pm .hd .sp{flex:1}
+.pm .hd .ico{color:var(--mute);cursor:pointer}
+.pm hr{border:0;border-top:1.5px solid var(--ink);margin:16px 0}
+.chk{display:flex;align-items:center;gap:10px;font-size:13.5px;cursor:pointer;margin-bottom:14px}
+.chk .b{width:18px;height:18px;border-radius:5px;border:1.5px solid #c4c7ce;display:flex;align-items:center;justify-content:center;background:#fff}
+.chk.on .b{background:var(--navy);border-color:var(--navy);color:#fff}
+.pm-empty{border:1px dashed var(--line);border-radius:14px;padding:26px;text-align:center;margin-top:14px;font-size:13px;color:var(--ink2)}
+.pm-empty b{display:block;font-size:13.5px;margin:6px 0 4px}
+.sec-h{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sec-h h4{margin:0;font-size:16px;font-weight:600;flex:1}
+
+/* modal */
+.ov{position:absolute;inset:0;background:rgba(20,22,28,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;z-index:30}
+.modal{background:#fff;border-radius:14px;width:560px;padding:30px 34px 28px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.msteps{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-bottom:22px}
+.msteps .s{width:120px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;position:relative}
+.msteps .s .c{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#f3f4f6;color:#aab0ba;position:relative;z-index:1}
+.msteps .s.ok .c{background:var(--green);color:#fff}
+.msteps .s.ok{color:var(--green-tx)}
+.msteps .s.run .c{background:#5b5e66;color:#fff}
+.msteps .s.run{font-weight:600}
+.msteps .s.off{color:var(--mute)}
+.msteps .s .c .ico{width:20px;height:20px}
+.msteps .s.off .c{border:1px solid var(--line);background:#fff}
+.msteps .s::after{content:'';position:absolute;top:24px;left:50%;width:100%;height:2px;background:#e5e7eb}
+.msteps .s.ok::after{background:var(--ink)}
+.msteps .s:last-child::after{display:none}
+.spin{width:66px;height:66px;border-radius:50%;border:4px solid var(--ink);border-left-color:transparent;margin:6px auto 18px;animation:spin 1s linear infinite}
+.modal h3{margin:0 0 8px;font-size:17px}
+.modal p{margin:0;font-size:13.5px;color:var(--ink2);line-height:1.5}
+.success{border:1px solid var(--line);border-radius:14px;padding:60px 20px;text-align:center;margin-top:20px}
+.success .ring{width:70px;height:70px;border-radius:50%;border:3px solid var(--green);color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.success .ring .ico{width:30px;height:30px;stroke-width:2.2}
+.success b{display:block;font-size:19px;margin-bottom:8px}
+.success span{font-size:14px;color:var(--ink2)}
+.success .rd2{margin-top:14px;font-size:12.5px;color:var(--mute);display:flex;align-items:center;justify-content:center;gap:8px}
+.success .rd2 i{width:14px;height:14px;border-radius:50%;border:2px solid var(--mute);border-left-color:transparent;animation:spin 1s linear infinite}
+
+/* dashboard */
+.pills{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:4px;background:#fff}
+.pills div{padding:7px 14px;border-radius:999px;font-size:13px;cursor:pointer}
+.pills div.on{background:var(--navy);color:#fff;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0}
+.stat{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:#fff;position:relative;overflow:hidden;min-height:124px}
+.stat .k{font-size:10px;color:var(--faint);margin-bottom:10px}
+.stat .v{font-size:25px;font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+.stat .d{font-size:11.5px;color:var(--mute);line-height:1.45}
+.stat .bar{display:flex;gap:2px;height:4px;margin:10px 0 8px}
+.stat .bar i{display:block;border-radius:2px}
+.stat .att{font-size:11.5px;color:#b45309;font-weight:600}
+.stat svg.spark{position:absolute;left:0;bottom:0;width:100%;height:28px}
+.two{display:grid;grid-template-columns:1fr 360px;gap:16px}
+.dcard{border:1px solid var(--line);border-radius:14px;padding:18px 20px;background:#fff}
+.dcard .h{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.dcard .h .ic{width:38px;height:38px;border-radius:10px;background:var(--panel);display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.dcard .h .t{flex:1}
+.dcard .h .t b{display:block;font-size:15px;font-weight:600}
+.dcard .h .t span{font-size:12px;color:var(--mute)}
+.dcard .h .kk{display:flex;gap:6px}
+.dcard .h .kk span{background:var(--panel);border-radius:999px;padding:4px 10px;font-size:11.5px;font-weight:500}
+.dcard .h a{font-size:12.5px;color:var(--ink);font-weight:500;cursor:pointer;white-space:nowrap}
+.chart{border:1px solid var(--line2);border-radius:12px;padding:10px 12px 6px}
+.chart .cap{font-size:11px;color:var(--mute);margin-top:6px}
+.ord{border:1px solid var(--line2);border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:12px}
+.ord .r1{display:flex;align-items:center;gap:6px;font-weight:600;font-size:12.5px}
+.ord .r1 .sp{flex:1}
+.ord .r1 .amt b{font-weight:600}.ord .r1 .amt span{font-size:10px;color:var(--faint);font-family:'Geist Mono',monospace;margin-left:3px}
+.ord .r1 .net{font-size:10px;color:var(--mute);font-family:'Geist Mono',monospace;background:#f1f2f4;border-radius:4px;padding:1px 5px}
+.ord .r1 .coin{color:#3b5bdb}
+.ord .r2{display:flex;align-items:center;gap:8px;margin-top:6px;font-family:'Geist Mono',monospace;font-size:10px;color:var(--mute)}
+.ord .r2 .sp{flex:1}
+.ord .r2 .st{color:#b42318;font-family:'Geist',sans-serif;font-weight:600;font-size:11px}
+.ord .r2 .st::before{content:'• '}
+.ord .r2 .st.ok{color:var(--green-tx)}
+.ord .r3{text-align:right;font-family:'Geist Mono',monospace;font-size:10px;color:var(--mute);margin-top:3px}
+
+/* login */
+.login{flex:1;display:flex;min-width:0}
+.login .left{width:50%;flex:none;position:relative;overflow:hidden;background:radial-gradient(70% 60% at 45% 50%,#1b2a2c 0%,#0e1416 55%,#0a0d10 100%);color:#c9d1d6;font-family:'Geist Mono',monospace}
+.login .left .meta{position:absolute;left:32px;top:30px;font-size:10px;letter-spacing:.1em;line-height:1.9;color:#8a949b}
+.login .left .meta .live{color:#5dd39e}
+.login .left .meta b{color:#c9d1d6;font-weight:500}
+.tk{position:absolute;background:rgba(10,14,17,.92);border:1px solid rgba(80,76,140,.55);border-left:2px solid #7c6cf0;border-radius:8px;padding:9px 12px;font-size:10px;letter-spacing:.06em;width:240px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.tk .a{display:flex;justify-content:space-between;color:#8a94c0;margin-bottom:6px}
+.tk .b{display:flex;align-items:center;gap:6px;color:#e8ecf2;font-size:11px;font-weight:500}
+.tk .b .n{font-size:9px;color:#9aa3c7;border:1px solid #3b3f5c;border-radius:4px;padding:0 4px}
+.tk .b .coin{color:#22d3ee}
+.tk .c{display:flex;justify-content:space-between;color:#c9d1d6;margin-top:6px}
+.tk .c .ar{color:#6b7280}
+.tk .a .ok{color:#5dd39e}
+.login .right{flex:1;display:flex;align-items:center;justify-content:center;background:#fdfdfd}
+.lform{width:420px}
+.lform .logo svg{height:30px;width:auto;color:var(--ink);margin-bottom:38px}
+.lform .k{font-size:10.5px;color:var(--faint);margin-bottom:12px}
+.lform h1{font-size:36px;letter-spacing:-.02em;margin-bottom:10px}
+.lform .s{font-size:14.5px;color:var(--ink2);margin-bottom:28px}
+.lform .pk{width:100%;justify-content:center;padding:13px;border-radius:10px;font-size:13.5px;margin-bottom:12px}
+.lform .n{font-size:11.5px;color:var(--mute);text-align:center;line-height:1.5;margin-bottom:18px}
+.lform .or{display:flex;align-items:center;gap:12px;font-size:10.5px;color:var(--faint);margin-bottom:18px}
+.lform .or::before,.lform .or::after{content:'';flex:1;height:1px;background:var(--line)}
+.lform .fld{margin-bottom:14px}
+.lform .rw{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;margin:6px 0 18px}
+.lform .rw .chk{margin:0;font-size:12.5px}
+.lform .rw a{color:var(--ink);font-weight:500;cursor:pointer}
+.lform .go{width:100%;justify-content:center;padding:14px;font-size:13.5px;border-radius:10px}
+.lform .bk{text-align:center;font-size:12.5px;margin-top:22px;color:var(--ink2);text-decoration:underline;text-underline-offset:3px}
+.lform .na{text-align:center;font-size:12px;color:var(--mute);margin-top:14px}
+
+.toast{position:absolute;right:20px;bottom:20px;background:var(--navy);color:#fff;border-radius:10px;padding:10px 14px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:40;animation:tin .26s cubic-bezier(.22,1,.36,1)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fillbar{from{width:0}to{width:62%}}
+@keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.typing{border-color:var(--violet)!important;box-shadow:0 0 0 1px var(--violet)!important}
+.caret::after{content:'';display:inline-block;width:1px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:1px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+</style>
+</head>
+<body>
+<div id="shell">
+  <div id="presenter"></div>
+  <div id="stage"><div id="app"></div></div>
+</div>
+<script>
+/* ============================================================
+   Ohana · Create a Beneficiary — click-through demo
+   Mechanism copied from the AiPrise Token Sharing prototype:
+   INIT state → steps() (title/hint/screen/act/done) → DEMOS[n] op list
+   → CAPS[n] captions → autoplay runner (cursor, ripple, caption pill).
+   ============================================================ */
+const LOGO = `<svg viewBox="0 28 697.003 365" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-60.41 -110.17)" fill="currentColor"><g transform="translate(60.41 110.17)"><path d="M65.539,462.205q59.448-74.7,118.838-149.32c7.926,9.937,15.5,19.408,23.226,29.112,21.681-27.247,43.1-54.115,64.49-80.984.262.087.5.146.758.233V381.863h41.964V138.62Q187.175,299,60.41,458.242c1.778,1.37,3.293,2.565,5.071,3.963Z" transform="translate(-60.41 -55.713)"></path><path d="M75.366,432.742C88.6,416.1,101.884,399.521,115,382.794a8.54,8.54,0,0,0,1.311-4.779c.087-19.525.058-39.049.058-58.574,0-1.282.117-2.594.2-4.575,9.092,11.307,17.66,21.944,26.46,32.9q93.194-117.061,185.747-233.393c-1.807-1.4-3.322-2.594-5.071-3.963q-79.031,99.314-158,198.482c-30.511-38.35-60.76-76.321-91.5-114.963V433.791a13.361,13.361,0,0,0,1.166-1.049Z" transform="translate(-34.014 -109.711)"></path><rect transform="matrix(0.634, -0.773, 0.773, 0.634, 180.33, 98.29)"></rect><path d="M182.358,115.124,176.3,110.17,121.54,173.7l6.061,4.954Z" transform="translate(56.601 -110.17)"></path><rect transform="matrix(0.634, -0.773, 0.773, 0.634, 28.155, 401.474)"></rect><path d="M79.51,289.858l6.061,4.954,54.757-63.528L134.3,226.33Z" transform="translate(-23.85 112.176)"></path></g><g transform="translate(334.863 280.151)"><path d="M154.59,242.2c0-35,23.721-62.159,58.254-62.159,38,0,58.254,29.025,58.254,71.134H185.451c2.3,18.184,12.443,29.462,30.161,29.462,12.21,0,19.35-5.537,22.789-14.512h30.861c-4.371,20.953-23.022,38.671-53.416,38.671-39.137,0-61.255-27.393-61.255-62.625Zm31.3-12.647h52.484c-.933-14.979-10.811-25.324-25.091-25.324C196.7,204.227,188.656,214.135,185.888,229.551Z" transform="translate(-154.59 -146.411)"></path><path d="M197.02,263.151h29.025c2.069,13.58,11.744,19.583,25.79,19.583s21.652-5.3,21.652-13.58c0-11.278-14.979-12.443-31.094-15.649-21.186-4.138-41.905-9.908-41.905-35.7S221.674,180.04,248.6,180.04c31.094,0,48.345,15.416,50.648,39.137H270.922c-1.37-12.647-9.442-17.281-22.789-17.281-12.21,0-20.253,4.6-20.253,13.114,0,10.141,15.649,11.045,32.463,14.512,19.787,4.138,41.672,9.675,41.672,37.3,0,23.721-20.253,38-49.744,38-34.3,0-53.416-16.581-55.252-41.672Z" transform="translate(-73.373 -146.411)"></path><path d="M234.71,205.335h16.348V168.5h30.628v36.835h20.253v20.719H281.686v62.625c0,8.742,4.838,11.744,11.744,11.744,3.9,0,9.209-.233,9.209-.233v23.022s-7.14.466-19.583.466c-15.183,0-32-5.974-32-28.325v-69.3H234.71V205.335Z" transform="translate(-1.23 -168.5)"></path><path d="M338.168,288.089H337.7c-5.974,8.976-14.512,15.882-34.766,15.882-24.187,0-41.206-12.677-41.206-36.135,0-26.023,21.186-34.3,47.442-38,19.583-2.768,28.558-4.371,28.558-13.347,0-8.509-6.673-14.046-19.787-14.046-14.745,0-21.885,5.3-22.789,16.581H267.3c.932-20.719,16.348-38.9,50.881-38.9S367.921,196,367.921,223.628v60.089c0,8.976,1.37,14.279,4.138,16.348v1.166H341.9c-1.836-2.3-3-7.839-3.672-13.114Zm.233-28.529V241.841c-5.537,3.235-14.046,5.071-21.885,6.906-16.348,3.672-24.42,7.373-24.42,18.417s7.373,14.979,18.417,14.979c17.951,0,27.859-11.045,27.859-22.555Z" transform="translate(50.49 -146.258)"></path></g></g></svg>`;
+const I = {
+  home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  orders:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  tx:'<path d="M4 8h14M15 5l3 3-3 3M20 16H6M9 13l-3 3 3 3"/>',
+  users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-5-6.3"/>',
+  portal:'<path d="M3 9l1.5-5h15L21 9M3 9v11h18V9M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9 20v-6h6v6"/>',
+  wallet:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M15 14.5h2.5"/>',
+  card:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/>',
+  alert:'<path d="M12 3 2.5 20h19z"/><path d="M12 9v5M12 17h.01"/>',
+  dollar:'<circle cx="12" cy="12" r="9"/><path d="M12 6.5v11M14.8 9.3c0-1.2-1.3-1.8-2.8-1.8s-2.8.7-2.8 1.9 1.1 1.6 2.8 1.9 2.8.8 2.8 2-1.3 1.9-2.8 1.9-2.8-.6-2.8-1.8"/>',
+  key:'<circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M17 6l2 2M14 9l2 2"/>',
+  hook:'<path d="M9.5 16.5a3 3 0 1 1-3-3M14 6.5a3 3 0 1 1 3 3l-3 5.5M18 14.5a3 3 0 1 1-2 5.2M11 15h6M12 9.5 8.5 15"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+  bldg:'<path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M3 21h18M8 7h2M12 7h2M8 11h2M12 11h2M8 15h2M12 15h2"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  down:'<path d="m6 9 6 6 6-6"/>', right:'<path d="m9 6 6 6-6 6"/>',
+  check:'<path d="m5 12 5 5 9-10"/>', plus:'<path d="M12 5v14M5 12h14"/>',
+  upload:'<path d="M12 16V4M6 10l6-6 6 6M4 20h16"/>',
+  export:'<path d="M12 3v12M8 7l4-4 4 4M5 14v5h14v-5"/>',
+  trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/>',
+  bank:'<path d="M3 21h18M4 10h16M5 10v8M9 10v8M15 10v8M19 10v8M12 3 3 10h18z"/>',
+  sparkle:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM5 3l.7 2 2 .7-2 .7L5 8.5l-.7-2-2-.7 2-.7zM19 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/>',
+  file:'<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/>',
+  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  refresh:'<path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/>',
+  userplus:'<circle cx="10" cy="8" r="4"/><path d="M2 21a8 8 0 0 1 14-5M19 8v6M16 11h6"/>',
+  finger:'<path d="M12 10a2 2 0 0 0-2 2c0 3-.5 5-1.5 7M12 6a6 6 0 0 1 6 6c0 2-.2 4-.6 5.5M8 7.6A6 6 0 0 0 6 12c0 1 0 2-.3 3M15.5 20c.5-1.5.8-3 .9-4.5M4 9.5a9 9 0 0 1 16 0"/>',
+  eye:'<path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  circle:'<circle cx="12" cy="12" r="8"/>', loader:'<path d="M12 3a9 9 0 1 1-6.4 2.6"/>',
+  dot:'<circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>'
+};
+const ic = (n, cls = '') => `<svg class="ico ${cls}" viewBox="0 0 24 24">${I[n]}</svg>`;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ---------- data (sampled from the Ohana footage) ---------- */
+const ROWS = [
+  { n: 'Manish Kumar111', t: 'Business', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Declined', c: 'Jul 2 · 7:07 PM', l: 'Jul 3 · 12:02 AM' },
+  { n: 'Manish Kumar123', t: 'Business', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Declined', c: 'Jul 2 · 7:00 PM', l: 'Jul 3 · 12:02 AM' },
+  { n: 'Mesta Payments LLC', t: 'Business', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Approved', c: 'Jun 15 · 11:44 PM', l: 'Jun 15 · 11:45 PM' },
+  { n: 'Do not use Prateek jain', t: 'Individual', f: '🇮🇳', cc: 'IN', cur: 'INR', s: 'Approved', c: 'Mar 23 · 8:50 PM', l: 'Apr 16 · 10:07 PM' },
+  { n: 'Fortull Inc', t: 'Business', f: '🇲🇽', cc: 'MX', cur: 'MXN', s: 'Approved', c: 'Mar 10 · 1:43 AM', l: 'Mar 10 · 1:44 AM' },
+  { n: 'testin123 r', t: 'Individual', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Approved', c: 'Feb 12 · 12:12 PM', l: 'May 17 · 8:32 PM' },
+  { n: 'HANGZHOU SUPER KING IMP AND EXP', t: 'Business', f: '🇨🇳', cc: 'CN', cur: 'CNY', s: 'Approved', c: 'Jan 31 · 3:30 AM', l: 'Jan 31 · 3:31 AM' },
+  { n: 'Hello', t: 'Individual', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Approved', c: 'Jan 12 · 9:14 AM', l: 'Jan 12 · 9:20 AM' }
+];
+const COUNTRIES = [['HN', '🇭🇳', 'Honduras'], ['HK', '🇭🇰', 'Hong Kong'], ['HU', '🇭🇺', 'Hungary'], ['IS', '🇮🇸', 'Iceland'], ['IN', '🇮🇳', 'India'], ['ID', '🇮🇩', 'Indonesia'], ['IE', '🇮🇪', 'Ireland'], ['IL', '🇮🇱', 'Israel'], ['IT', '🇮🇹', 'Italy'], ['JM', '🇯🇲', 'Jamaica'], ['JP', '🇯🇵', 'Japan']];
+const CNAME = Object.fromEntries(COUNTRIES.map(([c, f, n]) => [c, f + ' ' + n]));
+const DOC = 'Lincoln_Strategy_Labs_Invoice July 20.pdf';
+const POP_DOC = 'Sample_Purpose_of_Payment_Declaration_Brazil_to_India.pdf';
+const PREFILL = { street: '503 Prestige Meridian II Residency Road', city: 'Bengaluru', postal: '560001', relationship: 'Supplier', purpose: 'Vendor payment', businessType: 'Partnership', regNo: 'AAB-4471' };
+const BANK = { type: 'Bank account', label: 'Primary Bank Account', swift: false, bank: 'ICICI Bank', ifsc: 'ICIC0000097', acctType: 'Checking', acct: '009705000187', bic: 'ICICINBBCTS' };
+const BANK_SWIFT = { ...BANK, swift: true };
+const WALLET = { type: 'Crypto wallet', label: 'Stablecoin Wallet', address: 'TGTCcSvM3yHq2Kx9rLwB7nZ4pQ8dJ6aE1F', network: 'Tron (TRX)' };
+const OPTS = {
+  relationship: ['Supplier', 'Customer', 'Subsidiary', 'Parent company', 'Partner', 'Other'],
+  purpose: ['Vendor payment', 'Invoice settlement', 'Salary', 'Loan repayment', 'Other'],
+  businessType: ['Sole Proprietorship', 'Corporation', 'Limited Liability Company', 'Partnership', 'Other'],
+  bank: ['ICICI Bank', 'HDFC Bank', 'State Bank of India', 'Axis Bank', 'Kotak Mahindra Bank'],
+  acctType: ['Checking', 'Savings'],
+  network: ['Ethereum (ETH)', 'Polygon (POL)', 'Tron (TRX)', 'Solana (SOL)'],
+  pmtype: ['Bank account', 'Crypto wallet']
+};
+
+const INIT = {
+  step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
+  entity: null, country: null, countryOpen: false, openSel: null,
+  upload: null, filled: false, formStep: 1,
+  form: { fullName: '', street: '', city: '', postal: '', relationship: '', purpose: '', popDoc: POP_DOC, businessType: '', regNo: '' },
+  methods: [], modal: null, success: false, created: false, newStatus: null, toast: ''
+};
+
+/* ---------- demo op lists + captions ---------- */
+const DEMOS = {
+  1: [
+    ['next', 0, ['Sign in · password']],
+    ['set', {}],
+    ['next', 0, ['Beneficiaries']],
+    ['set', {}],
+    ['next', 0, ['Create beneficiary']],
+    ['set', { entity: 'business' }, ['Business']],
+    ['set', { countryOpen: true }, ['Select country']],
+    ['next', 0, ['=IN 🇮🇳 India']],
+    ['set', { _scroll: '#form-card' }],
+    ['set', {}],
+    ['set', { _scroll: '#pop-doc' }],
+    ['set', { _scroll: '#skip-banner' }],
+    ['set', { upload: 'drop' }, ['Upload documents']],
+    ['set', { upload: 'picked' }, ['Drop files here']],
+    ['set', { upload: 'reading' }, ['Read documents']],
+    ['set', { upload: 'results' }],
+    ['next', 0, ['Fill the form']],
+    ['set', { upload: 'collapsed' }, ['Done']],
+    ['set', { _scroll: '#fullname-field' }],
+    ['set', { _type: ['fullName', 'Lincoln Strategy Labs LLP'] }, ['=Full name']],
+    ['set', { _scroll: '#biz-details' }],
+    ['set', { _scroll: '#pop-doc' }],
+    ['next', 0, ['Continue']],
+    ['set', { methods: [BANK] }, ['Add payment method']],
+    ['set', { methods: [BANK_SWIFT] }, ['Use SWIFT payment']],
+    ['set', { methods: [BANK_SWIFT, WALLET] }, ['Add payment method']],
+    ['set', { _scroll: '#create-btn' }],
+    ['set', { modal: 'sending' }, ['Create beneficiary']],
+    ['set', { modal: null, success: true }],
+    ['set', { screen: 'list', success: false, created: true, newStatus: 'pending' }],
+    ['set', {}],
+    ['set', { newStatus: 'approved' }],
+    ['set', {}]
+  ]
+};
+const CAPS = {
+  1: [
+    'Log in to Ohana.',
+    'From the navigation menu on the left,',
+    'select Beneficiaries.',
+    'To add a new beneficiary,',
+    'click Create beneficiary in the top-right corner.',
+    'First, select the entity type',
+    'and the country',
+    'where the beneficiary is registered.',
+    'Based on your selection,',
+    'Ohana automatically displays the appropriate onboarding fields',
+    'and the supporting documents required for verification.',
+    'You can complete the onboarding in one of two ways.',
+    "The first option is to simply upload the beneficiary's business document.",
+    'Ohana automatically extracts',
+    'the relevant information from the document',
+    'and pre-fills the application for your review.',
+    'You only need to complete',
+    "any information that couldn't be captured automatically,",
+    'making the onboarding process even faster.',
+    "Or you can enter the beneficiary's information manually,",
+    'including business details,',
+    'supporting documents',
+    'and payment method details.',
+    'You can add bank accounts,',
+    'SWIFT payment accounts,',
+    'and wallet addresses as the payment methods.',
+    "Once you've reviewed and completed all the required information,",
+    'click Create beneficiary in the bottom-right corner.',
+    'The beneficiary is now created',
+    'and submitted for verification.',
+    'Once the verification process is successfully completed,',
+    'the status moves from Pending to Approved',
+    'and the beneficiary is ready to receive payments through Ohana.'
+  ]
+};
+
+/* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label. */
+const demoFind = ([label, side, n = 0]) => {
+  const exact = label[0] === '=', want = (exact ? label.slice(1) : label).toLowerCase();
+  let c = [...document.querySelectorAll('button,a,span,div,label,input')].filter(el => {
+    if (el.closest('#presenter')) return false;
+    const isInput = el.tagName === 'INPUT';
+    const t = (isInput ? (el.getAttribute('aria-label') || el.placeholder || '') : (el.textContent || '')).trim().replace(/\s+/g, ' ').toLowerCase();
+    if (exact ? t !== want : !t.startsWith(want)) return false;
+    const r = el.getBoundingClientRect(); if (!r.width || !r.height) return false;
+    const cur = getComputedStyle(el).cursor;
+    return isInput ? cur === 'text' || cur === 'auto' || cur === 'pointer' : cur === 'pointer';
+  });
+  c = c.filter(el => !c.some(o => o !== el && el.contains(o)));
+  return c.length ? c[n < 0 ? c.length + n : Math.min(n, c.length - 1)] : null;
+};
+
+class Component {
+  constructor() { this.state = { ...INIT }; this._t = {}; }
+  setState(p) {
+    const prev = this.state;
+    this.state = { ...prev, ...(typeof p === 'function' ? p(prev) : p) };
+    this.render();
+    this.componentDidUpdate(prev);
+  }
+  T() {
+    return {
+      login: () => ({ screen: 'dashboard' }),
+      openList: () => ({ screen: 'list' }),
+      openCreate: () => ({ screen: 'create', entity: null, country: null, upload: null, filled: false, formStep: 1, form: { ...INIT.form }, methods: [], success: false }),
+      fillForm: s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }),
+      submit: () => ({ modal: 'sending' }),
+      approve: () => ({ newStatus: 'approved' })
+    };
+  }
+  steps() {
+    const T = this.T();
+    return [
+      { title: 'Log in', hint: 'Sign in to the merchant dashboard with your email and password.', screen: 'login', act: s => T.login(s), done: s => s.screen !== 'login' },
+      { title: 'Open Beneficiaries', hint: 'From the navigation menu on the left, select Beneficiaries.', screen: 'dashboard', act: s => T.openList(s), done: s => s.screen === 'list' || s.screen === 'create' },
+      { title: 'Create beneficiary', hint: 'Click Create beneficiary in the top-right corner.', screen: 'list', act: s => T.openCreate(s), done: s => s.screen === 'create' },
+      { title: 'Entity type and country', hint: 'Select Business, then pick the country where the beneficiary is registered. Ohana loads the payout fields for that rail.', screen: 'create', act: () => ({ entity: 'business', country: 'IN', countryOpen: false }), done: s => !!s.country },
+      { title: 'Upload a document', hint: 'Click Upload documents, drop the invoice and let Ohana read it. Then click Fill the form.', screen: 'create', act: s => ({ ...T.fillForm(s), upload: 'collapsed' }), done: s => s.filled },
+      { title: 'Complete the details', hint: 'Fill in what no document could prove: the full name. Then click Continue to payment information.', screen: 'create', act: s => ({ form: { ...s.form, fullName: s.form.fullName || 'Lincoln Strategy Labs LLP' }, formStep: 2 }), done: s => s.formStep === 2 },
+      { title: 'Add payment methods', hint: 'Add a bank account (SWIFT optional) and a crypto wallet with Add payment method.', screen: 'create', act: () => ({ methods: [BANK_SWIFT, WALLET] }), done: s => s.methods.length >= 1 },
+      { title: 'Create the beneficiary', hint: 'Click Create beneficiary in the bottom-right corner. Ohana saves it and sends it for verification.', screen: 'create', act: () => ({ modal: null, success: false, screen: 'list', created: true, newStatus: 'pending' }), done: s => s.created },
+      { title: 'Verification', hint: 'The new beneficiary shows as Pending. Once verification completes, the status moves to Approved.', screen: 'list', act: s => T.approve(s), done: s => s.newStatus === 'approved' },
+      { title: 'Flow complete', hint: 'The beneficiary is ready to receive payments through Ohana. Reset to run it again, or click through freely.', screen: 'list', act: () => ({}), done: () => false }
+    ];
+  }
+  screensFor(i) {
+    const st = this.steps()[i];
+    return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' };
+  }
+  stateAt(i) {
+    const steps = this.steps();
+    let s = { ...INIT };
+    for (let k = 0; k < i; k++) s = { ...s, ...steps[k].act(s) };
+    return { ...s, ...this.screensFor(i), step: i };
+  }
+  goStep = i => this.setState(this.stateAt(i));
+  next = () => {
+    const i = this.state.step, steps = this.steps();
+    if (i >= steps.length - 1) return;
+    const s = { ...this.state, ...steps[i].act(this.state) };
+    this.setState({ ...s, ...this.screensFor(i + 1), step: i + 1 });
+  };
+  prev = () => this.goStep(Math.max(0, this.state.step - 1));
+  reset = () => { Object.values(this._t).forEach(clearTimeout); this.setState({ ...INIT }); };
+  componentDidUpdate(ps) {
+    const steps = this.steps(), i = this.state.step;
+    if (i < steps.length - 1 && steps[i].done(this.state)) this.setState({ step: i + 1 });
+    if (this.state.toast && this.state.toast !== ps.toast) {
+      clearTimeout(this._t.toast);
+      this._t.toast = setTimeout(() => this.setState({ toast: '' }), 3200);
+    }
+  }
+  later(name, ms, fn) { clearTimeout(this._t[name]); this._t[name] = setTimeout(fn, ms); }
+
+  /* ---------- manual-mode actions (data-act) ---------- */
+  act(name, arg) {
+    const s = this.state, T = this.T();
+    const A = {
+      login: () => this.setState(T.login()),
+      nav: () => { if (arg === 'dashboard' || arg === 'list') this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
+      tab: () => this.setState({ tab: arg }),
+      period: () => this.setState({ period: arg }),
+      openCreate: () => this.setState(T.openCreate()),
+      backToList: () => this.setState({ screen: 'list' }),
+      entity: () => this.setState({ entity: arg }),
+      toggleCountry: () => this.setState({ countryOpen: !s.countryOpen, openSel: null }),
+      country: () => this.setState({ country: arg, countryOpen: false }),
+      upload: () => this.setState({ upload: arg === 'cancel' ? null : arg }),
+      pick: () => { if (s.upload === 'drop') this.setState({ upload: 'picked' }); },
+      read: () => { if (s.upload !== 'picked') return; this.setState({ upload: 'reading' }); this.later('read', 3400, () => this.state.upload === 'reading' && this.setState({ upload: 'results' })); },
+      fill: () => this.setState(T.fillForm(s)),
+      done: () => this.setState({ upload: 'collapsed' }),
+      startOver: () => this.setState({ upload: null }),
+      sel: () => this.setState({ openSel: s.openSel === arg ? null : arg, countryOpen: false }),
+      pickOpt: () => { const [k, v] = arg.split('|'); const [grp, key, idx] = k.split('.'); if (grp === 'form') this.setState({ form: { ...s.form, [key]: v }, openSel: null }); else this.setState({ methods: s.methods.map((m, i) => i === +idx ? { ...m, [key]: v } : m), openSel: null }); },
+      removeDoc: () => this.setState({ form: { ...s.form, popDoc: '' } }),
+      continue: () => this.setState({ formStep: 2, openSel: null }),
+      back: () => this.setState({ formStep: 1, openSel: null }),
+      addMethod: () => this.setState({ methods: [...s.methods, s.methods.length === 0 ? BANK : WALLET] }),
+      removeMethod: () => this.setState({ methods: s.methods.filter((_, i) => i !== +arg) }),
+      swift: () => this.setState({ methods: s.methods.map((m, i) => i === +arg ? { ...m, swift: !m.swift } : m) }),
+      submit: () => {
+        this.setState({ modal: 'sending', openSel: null });
+        this.later('m1', 2600, () => this.setState({ modal: null, success: true }));
+        this.later('m2', 5200, () => this.setState({ screen: 'list', success: false, created: true, newStatus: 'pending' }));
+      },
+      saveExit: () => this.setState({ screen: 'list', toast: 'Draft saved · synced to your account' }),
+      closeDd: () => this.setState({ openSel: null, countryOpen: false })
+    };
+    A[name] && A[name]();
+  }
+
+  /* ---------- render ---------- */
+  render() {
+    const s = this.state, steps = this.steps(), st = steps[s.step];
+    const bar = document.getElementById('presenter');
+    bar.innerHTML = `
+      <div class="row">
+        <span class="brand">OHANA DEMO</span>
+        <span class="pill">Step ${s.step + 1} of ${steps.length}</span>
+        <span class="pill actor">Create a Beneficiary</span>
+        <span class="title">${esc(st.title)}</span>
+        <span class="sp"></span>
+        <button class="btn" data-bar="prev">Back</button>
+        ${s.step < steps.length - 1 ? '<button class="btn primary" data-bar="next">Do it for me →</button>' : ''}
+        <button class="btn" data-bar="reset">Reset</button>
+      </div>
+      <div class="row">
+        <span class="hint">${esc(st.hint)}</span>
+        <div class="dots">${steps.map((x, i) => `<span class="${i === s.step ? 'cur' : i < s.step ? 'past' : ''}" title="${i + 1}. ${esc(x.title)}" data-dot="${i}"></span>`).join('')}</div>
+      </div>`;
+    const app = document.getElementById('app');
+    const main = app.querySelector('.content');
+    const scroll = main ? main.scrollTop : 0;
+    app.innerHTML = s.screen === 'login' ? this.rLogin() : this.rShell();
+    const m2 = app.querySelector('.content');
+    if (m2) { m2.style.scrollBehavior = 'auto'; m2.scrollTop = scroll; m2.style.scrollBehavior = ''; }
+  }
+  rShell() {
+    const s = this.state;
+    const nav = (key, icon, label, on) => `<div class="nav ${on ? 'on' : ''}" data-act="nav" data-arg="${key}">${ic(icon)}${label}</div>`;
+    const crumb = { dashboard: '<b>Home</b>', list: 'Home &nbsp;/&nbsp; <b>Beneficiaries</b>', create: 'Home &nbsp;/&nbsp; <b>Create beneficiary</b>' }[s.screen];
+    const body = { dashboard: this.rDash, list: this.rList, create: this.rCreate }[s.screen].call(this);
+    return `
+      <div class="side">
+        <div class="logo">${LOGO}</div>
+        <div class="sec mono">Home</div>
+        ${nav('dashboard', 'home', 'Dashboard', s.screen === 'dashboard')}
+        <div class="sec mono">Payments</div>
+        ${nav('orders', 'orders', 'Orders')}${nav('tx', 'tx', 'Transactions')}
+        <div class="sec mono">Directory</div>
+        ${nav('senders', 'users', 'Senders')}${nav('list', 'users', 'Beneficiaries', s.screen !== 'dashboard')}
+        <div class="sec mono">Sender portal</div>
+        ${nav('portal', 'portal', 'Portal')}
+        <div class="sec mono">Money</div>
+        ${nav('balances', 'wallet', 'Balances')}${nav('deposits', 'card', 'Deposits')}${nav('third', 'alert', 'Third-party deposits')}${nav('earn', 'dollar', 'Earnings')}
+        <div class="sec mono">Developer</div>
+        ${nav('api', 'key', 'API keys')}${nav('hooks', 'hook', 'Webhooks')}${nav('settings', 'gear', 'Settings')}
+      </div>
+      <div class="main">
+        <div class="top">
+          <span class="crumb">${crumb}</span><span class="sp"></span>
+          <span class="search">${ic('search', 'sm')} Search <kbd>⌘K</kbd></span>
+          <span class="acct"><span class="t"><b>Mesta Payments LLC</b><span>ashok@mesta.xyz</span></span><span class="av">MP</span>${ic('down', 'sm')}</span>
+        </div>
+        <div class="content">${body}</div>
+        ${s.modal === 'sending' ? this.rSending() : ''}
+        ${s.toast ? `<div class="toast">${esc(s.toast)}</div>` : ''}
+      </div>`;
+  }
+  rLogin() {
+    const tk = (st, cls, a, b, c) => `<div class="tk" style="${st}"><div class="a">${a}</div><div class="b">${b}</div><div class="c">${c}</div></div>`;
+    return `<div class="login">
+      <div class="left">
+        <div class="meta"><div><span class="live">●</span> LIVE</div><div>70+ COUNTRIES · 50+ RAILS · 4 CHAINS</div><div style="margin-top:10px"><b>1,847,290</b> ORDERS SETTLED</div><div><b>$1,525,637,236</b> ROUTED</div></div>
+        ${tk('left:62%;top:19%', '', '<span>ON-RAMP · 8S</span><span>3S AGO</span>', '🇬🇧 GBP <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">SOL</span>', '<span>£ 940</span><span class="ar">→</span><span>1,180 USDC</span>')}
+        ${tk('left:14%;top:38%', '', '<span>SPEI · MEXICO CITY · 28S</span><span>2S AGO</span>', '🇺🇸 USD <span class="ar">→</span> 🇲🇽 MXN', '<span>$ 2,500</span><span class="ar">→</span><span>MX$ 42,800</span>')}
+        ${tk('left:54%;top:38%', '', '<span>ON-RAMP · 18S</span><span class="ok">✓ SETTLED</span>', '🇪🇺 EUR <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">POL</span>', '<span>€ 1,180</span><span class="ar">→</span><span>1,280 USDC</span>')}
+        ${tk('left:55%;top:60%', '', '<span>BRIDGE · 30S</span><span>3S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">POL</span> <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">ETH</span>', '<span>800 USDC</span><span class="ar">→</span><span>800 USDC</span>')}
+        ${tk('left:6%;top:79%', '', '<span>BANK · JOHANNESBURG</span><span>SAME DAY · 2S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">ETH</span> <span class="ar">→</span> 🇿🇦 ZAR', '<span>1,650 USDC</span><span class="ar">→</span><span>R 30,560</span>')}
+      </div>
+      <div class="right"><div class="lform">
+        <div class="logo">${LOGO}</div>
+        <div class="k mono">Sign in</div>
+        <h1>Welcome back</h1>
+        <div class="s">Sign in to your merchant dashboard</div>
+        <button class="btn pk" data-act="login">${ic('finger')} Sign in with a passkey</button>
+        <div class="n">Don't have a passkey yet? Sign in with password + code below — you can add one after.</div>
+        <div class="or mono">Or use your password</div>
+        <div class="fld"><label class="lbl">Email<i>*</i></label><input class="inp" aria-label="Email" value="ashok@mesta.xyz"></div>
+        <div class="fld"><label class="lbl">Password<i>*</i></label><div style="position:relative"><input class="inp" type="password" aria-label="Password" value="correct-horse-battery" style="padding-right:40px"><span style="position:absolute;right:12px;top:11px;color:var(--mute)">${ic('eye')}</span></div></div>
+        <div class="rw"><label class="chk"><span class="b"></span>Remember me</label><a>Forgot password?</a></div>
+        <button class="btn dark go" data-act="login">Sign in · password + code</button>
+        <div class="bk">Use a backup code</div>
+        <div class="na">Need access? Contact your Mesta administrator</div>
+      </div></div>
+    </div>`;
+  }
+  rDash() {
+    const s = this.state;
+    const pill = p => `<div class="${s.period === p ? 'on' : ''}" data-act="period" data-arg="${p}">${p}${p === 'Custom' ? ' ⌄' : ''}</div>`;
+    const stat = (k, v, d, extra = '') => `<div class="stat"><div class="k mono">${k}</div><div class="v">${v}</div><div class="d">${d}</div>${extra}</div>`;
+    const spark = '<svg class="spark" viewBox="0 0 300 28" preserveAspectRatio="none"><path d="M0 26 L18 24 L30 6 L42 22 L60 26 L300 26" fill="none" stroke="#c7cfdd" stroke-width="1.2"/></svg>';
+    const ord = (a, net, flag, b, amt, cur, hash, when, st, ok, note) => `<div class="ord"><div class="r1"><span class="coin">◎ ${a}</span><span class="net">${net}</span><span style="color:var(--faint)">→</span><span>${flag} ${b}</span><span class="sp"></span><span class="amt"><b>${amt}</b><span>${cur}</span></span></div><div class="r2"><span>${hash} · ${when}</span><span class="sp"></span><span class="st ${ok ? 'ok' : ''}">${st}</span></div>${note ? `<div class="r3">${note}</div>` : ''}</div>`;
+    return `
+      <div class="page-h"><div><h1>Dashboard</h1><div class="sub" style="margin-top:4px"><span style="color:var(--green)">●</span> Live · updated just now · recent settlement Jul 6 · 11:46 PM</div></div><div class="sp"></div>
+        <div class="pills">${['Today', 'Last 7 days', 'Last 30 days', 'Last 90 days', 'All time', 'Custom'].map(pill).join('')}</div><button class="btn" style="border-radius:999px;padding:9px">${ic('refresh')}</button></div>
+      <div class="stats">
+        ${stat('Volume', '$499,782.50', 'settled · orders created last 30 days', spark)}
+        ${stat('Orders', '34', '23 delivered · 0 in flight', '<div class="bar"><i style="flex:23;background:var(--green)"></i><i style="flex:11;background:#d97706"></i></div><div class="att">11 need attention →</div>' + spark)}
+        ${stat('Success rate', '67.6%', '23 of 34 created orders')}
+        ${stat('Avg order value', '$21,729.67', 'volume ÷ completed · orders created last 30 days')}
+        ${stat('Avg settlement', '24h 56m', 'created → settled · orders created last 30 days')}
+      </div>
+      <div class="two">
+        <div class="dcard">
+          <div class="h"><div class="ic">${ic('chart')}</div><div class="t"><b>Settled volume</b><span>Per day · UTC · orders counted in the day they were created</span></div><div class="kk"><span>$499.8K volume</span><span>23 completed</span></div></div>
+          <div class="chart"><svg viewBox="0 0 760 260" width="100%" height="260" font-family="Geist Mono" font-size="10" fill="#6b7280">
+            ${[0, 1, 2, 3, 4].map(i => `<line x1="56" x2="704" y1="${20 + i * 52}" y2="${20 + i * 52}" stroke="#eef0f2" stroke-dasharray="3 3"/><text x="48" y="${24 + i * 52}" text-anchor="end">${['$600.0K', '$450.0K', '$300.0K', '$150.0K', '$0'][i]}</text><text x="712" y="${24 + i * 52}">${[12, 9, 6, 3, 0][i]}</text>`).join('')}
+            <path d="M56 228 L70 212 L84 60 L96 228 L110 228 L704 228 Z" fill="rgba(107,91,207,.15)"/><path d="M56 228 L70 212 L84 60 L96 228 L110 228 L704 228" fill="none" stroke="#6b5bcf" stroke-width="2"/>
+            <path d="M56 228 L96 228 L112 90 L128 228 L150 228 L160 200 L172 228 L370 228 L384 170 L398 228 L430 228 L444 190 L458 228 L704 228" fill="none" stroke="#10a86a" stroke-width="1.5" stroke-dasharray="4 3"/>
+            ${['Jun 15', 'Jun 17', 'Jun 19', 'Jun 22', 'Jun 25', 'Jun 28', 'Jul 1', 'Jul 4', 'Jul 7', 'Jul 10', 'Jul 12', 'Jul 14'].map((d, i) => `<text x="${56 + i * 58}" y="250" text-anchor="middle">${d}</text>`).join('')}
+          </svg><div class="cap">Settled USD volume (area) · completed orders (dashed)</div></div>
+        </div>
+        <div class="dcard">
+          <div class="h"><div class="ic">${ic('orders')}</div><div class="t"><b>Recent orders</b><span>Latest payment activity across active corridors</span></div><a>View all →</a></div>
+          ${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'b23c77...8fe102', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}
+          ${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'f4c42b...84935d', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}
+          ${ord('USDC', 'POL', '🇮🇳', 'INR', '8K', 'USDC', 'c44602...0b37c3', 'Jul...', 'Awaiting funds timed out', false, 'action: resend funds')}
+          ${ord('USDT', 'TRX', '🇪🇺', 'EUR', '10', 'USDT', '363d7f...a93dba', 'Jul 6 · 11:29 PM', 'Success', true, '')}
+        </div>
+      </div>`;
+  }
+  rList() {
+    const s = this.state;
+    const rows = [...ROWS];
+    if (s.created) rows.unshift({ n: 'Lincoln Strategy Labs LLP', t: 'Business', f: '🇮🇳', cc: 'IN', cur: 'INR', s: s.newStatus === 'approved' ? 'Approved' : 'Pending', c: 'Just now', l: 'Just now', isNew: true });
+    const total = 55 + (s.created ? 1 : 0), active = 43 + (s.newStatus === 'approved' ? 1 : 0), pct = Math.round(active / total * 100);
+    const shown = rows.filter(r => s.tab === 'All' || r.s === s.tab);
+    const cls = { Approved: 'g', Declined: 'r', Pending: 'a' };
+    return `
+      <div class="page-h"><div><div class="kicker mono">Beneficiaries · ${total} total · ${active} verified · live</div><h1>Beneficiaries</h1><div class="sub">Verified recipients · KYC-screened and routed via local rails (PIX in BR, SPEI in MX, SEPA in EU, UPI in IN, M-Pesa in KE, USDC on-chain)</div></div><div class="sp"></div>
+        <button class="btn">${ic('export')} Export</button><button class="btn dark" data-act="openCreate">${ic('plus')} Create beneficiary · KYC screen + route</button></div>
+      <div class="card" style="margin-top:22px">
+        <div class="tabs">${['All', 'Approved', 'Pending', 'Declined', 'Unverified'].map(t => `<div class="${s.tab === t ? 'on' : ''}" data-act="tab" data-arg="${t}">${t}</div>`).join('')}</div>
+        <div class="filters"><span class="f">Name</span><span class="f">Email</span><span class="f">Phone number</span><span class="sp"></span><span class="sel" style="padding:8px 12px"><span>Newest</span>${ic('down', 'sm')}</span></div>
+      </div>
+      <div class="card" style="margin-top:14px"><div class="statrow mono"><span class="dot"></span>${total} beneficiaries · ${active} active · ${pct}% verified<span class="sp"></span><span class="k">Active:<b>${active}</b></span><span class="k">Verification:<b>${pct}%</b></span></div></div>
+      <div class="card" style="margin-top:14px;overflow:hidden"><table>
+        <thead><tr><th class="mono">Name</th><th class="mono">Type</th><th class="mono">Country</th><th class="mono">Status</th><th class="mono">Created</th><th class="mono">Last activity</th><th></th></tr></thead>
+        <tbody>${shown.map(r => `<tr class="${r.isNew ? 'new' : ''}"><td><span class="nm"><span class="bi ${cls[r.s]}">${ic(r.t === 'Business' ? 'bldg' : 'user')}</span>${esc(r.n)}</span></td><td><span class="ty">${ic(r.t === 'Business' ? 'bldg' : 'user', 'sm')}${r.t}</span></td><td><span class="cc">${r.f} ${r.cc} <span class="cur">· ${r.cur}</span></span></td><td><span class="chip ${cls[r.s]}">${r.s}</span></td><td>${r.c}</td><td>${r.l}</td><td class="arr">${ic('right', 'sm')}</td></tr>`).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--mute);padding:30px">No beneficiaries in this view</td></tr>'}</tbody>
+      </table></div>`;
+  }
+  /* custom select: looks like the product's select, opens a list on click */
+  sel(key, value, placeholder, opts, extra = '', dis = false) {
+    const s = this.state, open = s.openSel === key, grp = key.split('.')[0];
+    return `<div class="sel ${dis ? 'dis' : ''} ${open ? 'focus' : ''}" ${dis ? '' : `data-act="sel" data-arg="${key}"`}>${extra}<span class="${value ? 'ph' : ''}" style="${value ? '' : 'color:var(--ink)'}">${esc(value || placeholder)}</span><span class="sp"></span>${ic('down', 'sm')}
+      ${open ? `<div class="dd light" data-stop="1">${opts.map(o => `<div class="${o === value ? 'on' : ''}" data-act="pickOpt" data-arg="${key}|${esc(o)}">${esc(o)}</div>`).join('')}</div>` : ''}</div>`;
+  }
+  inp(key, value, label, placeholder = '', cls = '') {
+    return `<input class="inp ${cls}" data-bind="${key}" aria-label="${esc(label)}" placeholder="${esc(placeholder)}" value="${esc(value)}">`;
+  }
+  rCreate() {
+    const s = this.state, f = s.form;
+    const countryVal = s.country ? `IN 🇮🇳 India` : '';
+    const head = `<div class="page-h"><div><h1>Create beneficiary</h1><div class="sub">Pick recipient type + destination country first · we'll load the exact payout fields and compliance checklist for that rail (PIX/SPEI/SEPA/UPI/M-Pesa/USDC/+)</div></div><div class="sp"></div><button class="btn" data-act="backToList">Back to beneficiaries</button></div>`;
+    const typeCountry = `
+      <div class="fld"><label class="lbl">Beneficiary type<i>*</i></label>
+        <div class="choice">
+          <div class="c ${s.entity === 'business' ? 'on' : ''}" data-act="entity" data-arg="business">${ic('bldg', 'lg')}<div><b>Business</b><span>Company / org · KYC-screened, routed via local rails</span></div></div>
+          <div class="c ${s.entity === 'individual' ? 'on' : ''}" data-act="entity" data-arg="individual">${ic('user', 'lg')}<div><b>Individual</b><span>Personal recipient · KYC-screened, routed via local rails</span></div></div>
+        </div></div>
+      <div class="fld" style="max-width:560px"><label class="lbl">Country<i>*</i></label>
+        <div class="sel ${s.countryOpen ? 'focus' : ''}" data-act="toggleCountry">${ic('globe')}<span>${countryVal ? esc(countryVal) : 'Select country'}</span><span class="sp"></span>${ic('down', 'sm')}
+          ${s.countryOpen ? `<div class="dd" data-stop="1">${COUNTRIES.map(([c, fl, n]) => `<div class="${c === 'IN' && s.country === 'IN' ? 'on' : ''}" data-act="country" data-arg="${c}"><span class="cd">${c}</span><span>${fl}</span><span>${n}</span></div>`).join('')}</div>` : ''}
+        </div>
+        <div class="help">Only countries we currently support for payouts appear here — each loads its local rail (PIX, SPEI, SEPA, UPI…) and payout fields.</div></div>`;
+    if (s.success) {
+      return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="success"><div class="ring">${ic('check')}</div><b>Beneficiary created successfully</b><span>The beneficiary has been sent for verification. You will be redirected to the beneficiaries list shortly…</span><div class="rd2"><i></i>Redirecting…</div></div></div>`;
+    }
+    if (!s.country) {
+      return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="empty"><b>Pick a country to load its payout form</b><span>Brazil routes via PIX, Mexico via SPEI, the EU via SEPA, India via UPI — we fit the exact payout fields and compliance checklist to the rail.</span></div></div>`;
+    }
+    const stepper = `<div class="stepper"><div class="st ${s.formStep === 1 ? '' : 'off'}"><div class="d"></div>Basic information</div><div class="ln"></div><div class="st ${s.formStep === 2 ? '' : 'off'}"><div class="d"></div>Payment information</div></div>`;
+    const body = s.formStep === 1 ? this.rBasic() : this.rPayment();
+    return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<hr style="border:0;border-top:1px solid var(--line2);margin:8px 0 18px">${s.formStep === 1 ? this.rUpload() : ''}${stepper}${body}</div>`;
+  }
+  rUpload() {
+    const u = this.state.upload;
+    const dark = (label, act, extra = '') => `<button class="btn dark" data-act="${act}" ${extra}>${label}</button>`;
+    if (!u) return `<div class="banner" id="skip-banner"><div class="ic">${ic('sparkle', 'fill')}</div><div class="t"><b>Skip the typing · fill this form from documents</b><span>A bank letter, voided check, or invoice with payment instructions · I'll read it and fill the beneficiary's details and bank information, with receipts.</span></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
+    if (u === 'collapsed') return `<div class="banner" id="skip-banner" style="background:#fff"><div class="ic" style="background:var(--green-bg);color:var(--green)">${ic('check')}</div><div class="t"><b style="font-weight:500">Filled 14 fields from your documents — upload more anytime.</b></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
+    if (u === 'drop' || u === 'picked') return `<div class="ucard" id="skip-banner"><div class="lead">Drop whatever you have · bank letter, voided check, invoice with payment instructions. You review every value; nothing submits without you.</div>
+      <div class="drop ${u === 'picked' ? 'has' : ''}" data-act="pick">${u === 'picked' ? `<span class="pdf">PDF</span><span>${esc(DOC)}</span><span style="color:var(--mute);font-size:12px">· 184 KB</span>` : 'Drop files here or click to browse · PDF, PNG, JPG, WEBP, GIF — or an iPhone photo (HEIC)'}</div>
+      <div class="acts">${dark('Read documents', 'read', u === 'picked' ? '' : 'disabled')}<button class="btn link" data-act="upload" data-arg="cancel">Cancel</button></div></div>`;
+    if (u === 'reading') return `<div class="ucard" id="skip-banner"><div class="glow"></div><div class="rd">
+      <div class="h">${ic('sparkle', 'fill')}Reading your document<span class="sp"></span><span class="tm">19s</span></div>
+      <div class="ln ok">${ic('check', 'sm')}<span>Loaded your document</span></div>
+      <div class="ln run">${ic('loader', 'sm')}<span><b>Reading them</b><small>${esc(DOC)}</small><small>…deriving the risk profile from the financials</small></span></div>
+      <div class="ln wait">${ic('dot', 'sm')}<span>Compiling your receipts</span></div>
+      <div class="pbar"><i></i></div>
+      <div class="note">Every value arrives with its source and evidence — nothing fills in until you approve it.</div></div></div>`;
+    if (u === 'results') return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>Read 1 document · found <b>17 details</b>. Fill the form in one click — your answers are never overwritten, and nothing submits.</span><span class="sp"></span>${dark('Fill the form', 'fill')}<button class="btn link" data-act="startOver">Start over</button></div>
+      <div class="abox"><div class="k mono">Needs your eyes · 4 values were interpreted, not copied</div>
+        <div class="it"><span>Business type</span><b>Partnership</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Lincoln Labs LLP"</small></div>
+        <div class="it"><span>Address · state/region code</span><b>KA</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bengaluru Karnataka 560001 India"</small></div>
+        <div class="it"><span>Payment rail</span><b>Bank account</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bank Details … Account Number: 009705000187"</small></div></div>
+      <div class="abox"><div class="k mono">Confirm from your documents — 2 values we read but need you to attest</div>
+        <div class="it row"><div class="t"><span>Relationship to the beneficiary</span><b>Supplier</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Supplier Lincoln Labs LLP"</small></div><button class="btn sm">Confirm</button></div>
+        <div class="it row"><div class="t"><span>Purpose of payment</span><b>Vendor payment</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "TAX INVOICE (FICTIONAL SAMPLE)"</small></div><button class="btn sm">Confirm</button></div></div>
+      <div class="ledger">› 11 verbatim values · show the full ledger</div></div>`;
+    if (u === 'filled') return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>Filled 14 fields. Saved to your draft — step through to review; nothing submits until you do it.</span><span class="sp"></span><button class="btn" data-act="done">Done</button></div>
+      <div class="still"><div style="color:var(--ink2)">Left 1 field you'd already answered untouched.</div><div class="k mono">Still needs you · no document can prove these</div><div>Basic information · Full name, Purpose of payment document</div></div></div>`;
+    return '';
+  }
+  rBasic() {
+    const s = this.state, f = s.form;
+    return `<div class="fcard" id="form-card" style="padding:22px 26px">
+      <div class="stephead mono">Step 1 of 2 · Next: payment information</div>
+      <h3>${ic('userplus', 'lg')}Basic information</h3>
+      <div class="desc">Enter the business's details — we verify them during KYC screening.</div>
+      <div class="fld" id="fullname-field" style="max-width:640px"><label class="lbl">Full name<i>*</i></label>${this.inp('fullName', f.fullName, 'Full name')}</div>
+      <div class="box"><h4>Address</h4><div class="g2">
+        <div><label class="lbl">Street</label>${this.inp('street', f.street, 'Street', 'Start typing an address…')}</div>
+        <div><label class="lbl">City<i>*</i></label>${this.inp('city', f.city, 'City')}</div>
+        <div><label class="lbl">Postal code<i>*</i></label>${this.inp('postal', f.postal, 'Postal code')}</div>
+        <div><label class="lbl">Country</label>${this.sel('form.country', 'IN 🇮🇳 India', '', [], '', true)}</div>
+      </div></div>
+      <div class="g2" id="biz-details">
+        <div><label class="lbl">Beneficiary relationship<i>*</i></label>${this.sel('form.relationship', f.relationship, 'Select Beneficiary relationship', OPTS.relationship)}</div>
+        <div><label class="lbl">Purpose of payment<i>*</i></label>${this.sel('form.purpose', f.purpose, 'Select Purpose of payment', OPTS.purpose)}</div>
+        <div id="pop-doc"><label class="lbl">Purpose of payment document</label>${f.popDoc ? `<div class="filechip"><div class="t"><b>${esc(f.popDoc)}</b><span>Saved to your draft ✓ · restored on resume</span></div><span class="rm" data-act="removeDoc">Remove</span></div>` : `<div class="drop" style="padding:12px">Drop a file here or click to browse · PDF, PNG, JPG</div>`}</div>
+        <div><label class="lbl">Business type<i>*</i></label>${this.sel('form.businessType', f.businessType, 'Select Business type', OPTS.businessType)}</div>
+        <div><label class="lbl">Business registration number<i>*</i></label>${this.inp('regNo', f.regNo, 'Business registration number')}</div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-top:22px"><button class="btn dark" data-act="continue">Continue</button></div>
+    </div>`;
+  }
+  rPayment() {
+    const s = this.state;
+    const pm = (m, i) => {
+      const isBank = m.type === 'Bank account';
+      const fields = isBank ? (m.swift
+        ? `<div class="g2"><div><label class="lbl">Account number / IBAN</label>${this.inp('m' + i + '.acct', m.acct, 'Account number / IBAN')}</div><div><label class="lbl">BIC/SWIFT code</label>${this.inp('m' + i + '.bic', m.bic, 'BIC/SWIFT code')}</div><div><label class="lbl">IFSC code</label>${this.inp('m' + i + '.ifsc', m.ifsc, 'IFSC code')}</div></div>`
+        : `<div class="g2"><div><label class="lbl">Bank</label>${this.sel('methods.bank.' + i, m.bank, 'Select bank', OPTS.bank)}</div><div><label class="lbl">IFSC code</label>${this.inp('m' + i + '.ifsc', m.ifsc, 'IFSC code')}</div><div><label class="lbl">Account type</label>${this.sel('methods.acctType.' + i, m.acctType, 'Select', OPTS.acctType)}</div><div><label class="lbl">Account number</label>${this.inp('m' + i + '.acct', m.acct, 'Account number')}</div></div>`)
+        : `<div class="g2"><div><label class="lbl">Wallet address</label>${this.inp('m' + i + '.address', m.address, 'Wallet address')}</div><div><label class="lbl">Blockchain network</label>${this.sel('methods.network.' + i, m.network, 'Select…', OPTS.network)}</div></div>`;
+      return `<div class="pm"><div class="hd"><span class="tag">${isBank ? ic('bank') : '<b style="font-family:Geist Mono">$</b>'} Payment method ${i + 1}</span><span class="sp"></span><span data-act="removeMethod" data-arg="${i}">${ic('trash')}</span></div>
+        <div class="fld"><label class="lbl">Payment method type</label>${this.sel('methods.type.' + i, m.type, 'Select', OPTS.pmtype)}</div>
+        <div class="fld" style="margin-bottom:6px"><label class="lbl">Payment method label</label>${this.inp('m' + i + '.label', m.label, 'Payment method label', 'Enter a label for this payment method')}<div class="help">Give this payment method a descriptive label (e.g., "Primary Bank Account", "Business Checking")</div></div>
+        <hr>${isBank ? `<label class="chk ${m.swift ? 'on' : ''}" data-act="swift" data-arg="${i}"><span class="b">${m.swift ? ic('check', 'sm') : ''}</span>Use SWIFT payment (international wire)</label>` : ''}${fields}</div>`;
+    };
+    return `<div class="fcard" id="form-card" style="padding:22px 26px">
+      <div class="stephead mono">Step 2 of 2 · Review, then create</div>
+      <h3>${ic('card', 'lg')}Payment information</h3>
+      <div class="desc">Add payment methods for receiving funds</div>
+      <div class="sec-h"><h4>Payment methods</h4><button class="btn dark sm" data-act="addMethod" style="padding:8px 12px">${ic('plus')} Add payment method</button></div>
+      <div class="fld" style="max-width:320px"><label class="lbl">Destination country</label>${this.sel('form.dest', 'IN 🇮🇳 India', '', [], '', true)}<div class="help">Where the funds will be sent · determines available payment methods</div></div>
+      ${s.methods.length ? s.methods.map(pm).join('') : `<div class="pm-empty">${ic('card', 'lg')}<b>No payment methods yet</b>Add Bank account · Crypto Wallet details — the beneficiary is paid out through the method you add here.</div>`}
+    </div>
+    <div class="foot" id="create-btn"><button class="btn" data-act="back">Back</button><button class="btn" data-act="saveExit">Save &amp; exit</button><span class="draft">Draft saved just now · synced to your account</span><span class="sp"></span><button class="btn dark" data-act="submit">Create beneficiary</button></div>`;
+  }
+  rSending() {
+    const st = (cls, icon, label) => `<div class="s ${cls}"><div class="c">${ic(icon)}</div><span>${label}</span></div>`;
+    return `<div class="ov"><div class="modal"><div class="msteps">${st('ok', 'check', 'Creating beneficiary')}${st('ok', 'check', 'Adding payment methods')}${st('run', 'shield', 'Sending for verification')}${st('off', 'check', 'Complete!')}</div><div class="spin"></div><h3>Sending for verification</h3><p>Saving and validating against the country's compliance rules — typically a few seconds.</p></div></div>`;
+  }
+
+  /* ---------- mount ---------- */
+  mount() {
+    this.render();
+    document.addEventListener('click', e => {
+      const bar = e.target.closest('[data-bar]');
+      if (bar) return this[bar.dataset.bar]();
+      const dot = e.target.closest('[data-dot]');
+      if (dot) return this.goStep(+dot.dataset.dot);
+      const act = e.target.closest('[data-act]');
+      if (act) { e.stopPropagation(); return this.act(act.dataset.act, act.dataset.arg); }
+      if (this.state.openSel || this.state.countryOpen) this.act('closeDd');
+    });
+    document.addEventListener('input', e => {
+      const k = e.target.dataset.bind; if (!k) return;
+      if (k.startsWith('m')) { const [mi, key] = k.split('.'); const i = +mi.slice(1); this.state.methods = this.state.methods.map((m, j) => j === i ? { ...m, [key]: e.target.value } : m); }
+      else this.state.form = { ...this.state.form, [k]: e.target.value };
+    });
+    this.componentDidMount();
+  }
+  componentDidMount() {
+    const q = new URLSearchParams(location.search), ops = DEMOS[q.get('demo')];
+    if (!ops) return;
+    const play = q.get('play') === '1';
+    const apply = ([op, a]) => {
+      if (op === 'go') return this.goStep(a);
+      if (op === 'next') return this.next();
+      const p = { ...a }; const sc = p._scroll, ty = p._type; delete p._scroll; delete p._type;
+      this.setState(p);
+      if (sc) { const el = document.querySelector(sc); el && el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      if (ty) this.typeInto(ty[0], ty[1]);
+    };
+    if (!play) { if (ops[0][0] === 'go') apply(ops[0]); return; }
+    const cur = document.createElement('div');
+    cur.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z" fill="#0F0F16" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+    Object.assign(cur.style, { position: 'fixed', left: '50%', top: '60%', zIndex: 9999, pointerEvents: 'none', transition: 'left .9s cubic-bezier(.22,1,.36,1), top .9s cubic-bezier(.22,1,.36,1)', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.3))' });
+    document.body.appendChild(cur);
+    const ripple = (x, y) => {
+      const r = document.createElement('div');
+      Object.assign(r.style, { position: 'fixed', left: x - 18 + 'px', top: y - 18 + 'px', width: '36px', height: '36px', borderRadius: '50%', border: '3px solid #6b5bcf', zIndex: 9998, pointerEvents: 'none' });
+      document.body.appendChild(r);
+      r.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], { duration: 500, easing: 'ease-out' }).onfinish = () => r.remove();
+    };
+    const cap = document.createElement('div');
+    Object.assign(cap.style, { position: 'fixed', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
+    document.body.appendChild(cap);
+    const caps = CAPS[q.get('demo')] || [];
+    const say = k => { cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + (k + 1) + '/' + ops.length + '</span><span></span>'; cap.lastChild.textContent = caps[k] || ''; cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
+    this._cap = cap;
+    this._mult = q.get('slow') === '1' ? 1.8 : 1; this._paused = false;
+    const T = (fn, ms) => { this._demo = setTimeout(() => (this._paused ? (this._held = fn) : fn()), ms * this._mult); };
+    this._msg = e => {
+      const d = e.data || {}; if (d.type !== 'demo') return;
+      if ('speed' in d) this._mult = d.speed;
+      if (d.cmd === 'pause') this._paused = true;
+      if (d.cmd === 'play') { this._paused = false; const fn = this._held; this._held = null; fn && fn(); }
+      if (d.cmd === 'restart') { clearTimeout(this._demo); this._held = null; this._paused = false; run(0); }
+    };
+    addEventListener('message', this._msg);
+    const run = k => {
+      if (k === 0) { Object.values(this._t).forEach(clearTimeout); this.setState({ ...INIT }); }
+      const o = ops[k], last = k === ops.length - 1, nextK = () => T(() => run(last ? 0 : k + 1), last ? 6000 : 3400);
+      say(k);
+      if (!o[2]) { apply(o); return nextK(); }
+      const go = () => {
+        const el = demoFind(o[2]);
+        if (!el) { apply(o); return nextK(); }
+        const r = el.getBoundingClientRect(), x = r.left + Math.min(r.width / 2, 160), y = r.top + r.height / 2;
+        cur.style.left = x - 5 + 'px'; cur.style.top = y - 3 + 'px';
+        T(() => { ripple(x, y); cur.animate([{ transform: 'scale(1)' }, { transform: 'scale(.85)' }, { transform: 'scale(1)' }], { duration: 220 }); T(() => { apply(o); nextK(); }, 260); }, 1000);
+      };
+      const pre = demoFind(o[2]);
+      if (pre) { pre.scrollIntoView({ block: 'center', behavior: 'smooth' }); T(go, 450); } else go();
+    };
+    T(() => run(0), 300);
+    this._cur = cur; this._apply = apply; this._run = run; /* debug: app._jump(k) */
+    this._jump = k => { clearTimeout(this._demo); this._held = null; this.setState({ ...INIT }); for (let i = 0; i < k; i++) apply(ops[i]); run(k); };
+  }
+  typeInto(key, value) {
+    const el = document.querySelector(`[data-bind="${key}"]`); if (!el) { this.setState({ form: { ...this.state.form, [key]: value } }); return; }
+    el.classList.add('typing'); el.focus();
+    let i = 0; const step = () => { i++; el.value = value.slice(0, i); this.state.form = { ...this.state.form, [key]: el.value }; if (i < value.length) this._t.type = setTimeout(step, 42 * this._mult); else el.classList.remove('typing'); };
+    this._t.type = setTimeout(step, 120);
+  }
+}
+const app = new Component();
+app.mount();
+</script>
+</body>
+</html>
