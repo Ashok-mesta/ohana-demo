@@ -58,7 +58,8 @@ Everything lives in the `<script>` of `prototype.html`:
    Step and substep progress in the presenter bar follow from the `done()` checks, so the guided
    demo and the self-service run share one definition of "complete".
 5. **`CAPS[n]`** - one caption per op, same length as `DEMOS[n]`. The captions are the narration of
-   the approved tutorial video, split into short advancing chunks.
+   the approved tutorial video, split into short advancing chunks. The caption pill's counter shows
+   the main step (`1/5` ... `5/5`), not the op index.
 
 Timing (from the reference): the cursor travels 0.9s, waits 1.0s, clicks (ripple + press squash),
 the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from a fresh `INIT`.

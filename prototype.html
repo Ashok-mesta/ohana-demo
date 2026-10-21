@@ -1003,7 +1003,8 @@ class Component {
     Object.assign(cap.style, { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
     this._shell.appendChild(cap);
     const caps = CAPS[q.get('demo')] || [];
-    const say = k => { cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + (k + 1) + '/' + ops.length + '</span><span></span>'; cap.lastChild.textContent = caps[k] || ''; cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
+    /* the pill's counter is the main step (1-5), not the op index */
+    const say = k => { const n = this.state.step + 1, total = this.steps().length; cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + n + '/' + total + '</span><span></span>'; cap.lastChild.textContent = caps[k] || ''; cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
     this._cap = cap;
     this._mult = q.get('slow') === '1' ? 1.8 : 1; this._paused = false;
     const T = (fn, ms) => { this._demo = setTimeout(() => (this._paused ? (this._held = fn) : fn()), ms * this._mult); };
