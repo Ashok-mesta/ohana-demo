@@ -527,6 +527,139 @@ td .oid small{display:block;font-size:10px;color:var(--faint);letter-spacing:.06
 .ql{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13.5px;color:var(--ink2);cursor:pointer}
 .toast.ok{background:#e9f7ef;color:#1f8a52;border:1px solid #bfe6cf;display:flex;align-items:center;gap:8px}
 
+/* ===== Portal Studio ===== */
+.pcols{display:grid;grid-template-columns:1fr 560px;gap:30px;align-items:start}
+.ptab{display:flex;gap:4px;border-bottom:1px solid var(--line2);margin:18px 0 14px}
+.ptab div{padding:10px 14px;font-size:14px;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.ptab div.on{color:var(--ink);font-weight:600;border-bottom-color:var(--violet)}
+.ptnote{font-size:12.5px;color:var(--ink2);line-height:1.5;margin-bottom:14px}
+.warn{display:flex;gap:12px;align-items:flex-start;background:#fffbe6;border:1px solid #f1e3a3;border-radius:12px;padding:14px 16px;margin:14px 0 4px}
+.warn.on{background:#eefbf4;border-color:#bfe6cf}
+.warn .ic{width:22px;height:22px;border-radius:50%;background:#e8b86e;color:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-size:12px;font-weight:700}
+.warn.on .ic{background:var(--green)}
+.warn b{display:block;font-size:14.5px;margin-bottom:2px}
+.warn span{font-size:13px;color:var(--ink2)}
+.pcard{border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:14px}
+.pcard h3{margin:0 0 6px;font-size:16px;font-weight:600}
+.pcard .d{font-size:13px;color:var(--ink2);margin-bottom:14px;line-height:1.5}
+.pcard .lbl{font-size:13.5px}
+.togglerow{display:flex;align-items:center;gap:14px}
+.togglerow .gl{width:40px;height:40px;border-radius:50%;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.togglerow .t{flex:1}.togglerow .t b{display:block;font-size:15px}.togglerow .t span{font-size:13px;color:var(--ink2)}
+.tog{width:52px;height:30px;border-radius:999px;background:#d7d9df;position:relative;cursor:pointer;flex:none}
+.tog::after{content:'';position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:left .2s}
+.tog.on{background:var(--green)}.tog.on::after{left:25px}
+.lz{border:1.5px dashed #c9ccd2;border-radius:12px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13.5px;color:var(--ink2);cursor:pointer}
+.lz.has{border:1px solid var(--line);cursor:default}
+.lz.dark{background:#0f1014;color:#fff}
+.gf{display:inline-flex;align-items:center;gap:12px;font:600 22px 'Geist',sans-serif;line-height:1.05}
+.gf svg{width:60px;height:60px}
+.gf.sm{font-size:12px;gap:8px}.gf.sm svg{width:34px;height:34px}
+.fav{width:88px;height:88px;border:1.5px dashed #c9ccd2;border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
+.fav.has{border:1px solid var(--line);background:#0f1014;cursor:default}
+.fav svg{width:56px;height:56px}
+.okline{font-size:13px;color:var(--ink2);display:flex;align-items:center;gap:8px;margin:10px 0 4px}
+.okline .ico{color:var(--green)}
+.colr{display:flex;align-items:center;gap:10px}
+.colr .sw{width:44px;height:44px;border-radius:10px;border:1px solid var(--line)}
+.colr input{width:150px}
+.colr .rs{font-size:13.5px;color:var(--ink2);cursor:pointer}
+.mono2{font-family:'Geist Mono',monospace}
+.addr{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;padding:0 14px;height:48px;font:14px 'Geist Mono',monospace}
+.addr span{color:var(--mute)}.addr input{flex:1;border:0;outline:none;font:inherit;padding:0 6px;color:var(--ink);background:transparent;min-width:0}
+.linkbox{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font:13.5px 'Geist Mono',monospace;color:var(--ink);margin-top:10px}
+.linkbox span{flex:1}
+.prev{border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:11px;color:var(--ink2)}
+.prev .k{font-family:'Geist Mono',monospace;letter-spacing:.06em;color:var(--mute);margin-bottom:4px}
+.prev .v{font:13px 'Geist Mono',monospace}
+.cname{background:#f6f7f9;border:1px solid var(--line2);border-radius:10px;padding:10px 14px;margin-top:10px;display:flex;align-items:center;gap:14px;font:12.5px 'Geist Mono',monospace}
+.cname .t{flex:1;min-width:0}.cname .t div{display:flex;gap:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cname .t small{color:var(--faint);width:60px;flex:none}
+.netc{display:flex;gap:14px;margin-bottom:14px}
+.netc .n{flex:1;display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:12px;padding:14px;cursor:pointer}
+.netc .n.on{border-color:var(--violet)}
+.netc .n .rb{width:18px;height:18px;border-radius:50%;border:1.5px solid #c4c7ce;position:relative;flex:none}
+.netc .n.on .rb{border-color:var(--ink)}.netc .n.on .rb::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--ink)}
+.netc .n .ic{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#eef0ff;color:#4f5bd5;font-weight:700}
+.netc .n .ic.trx{background:#fdecec;color:#e0393e}
+.netc .n b{display:block;font-size:14.5px}.netc .n span{font-size:12px;color:var(--mute)}
+.savebar{position:sticky;bottom:-28px;margin:10px -26px -28px;background:#fff;border-top:1px solid var(--line);padding:12px 20px;display:flex;align-items:center;gap:12px;font-size:13.5px;z-index:5}
+.savebar .u{flex:1;color:var(--ink2)}.savebar .u b{color:var(--ink);font-weight:500}
+.lp h5{margin:0 0 4px;font:600 12px 'Geist Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.lp .d{font-size:13px;color:var(--ink2);margin-bottom:14px}
+.bsys{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.bsys .k{font:11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--mute);margin-bottom:12px}
+.bsys .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.bsys .tile{border:1px solid var(--line);border-radius:10px;height:62px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.bsys .tile .bt{color:#fff;border-radius:8px;padding:7px 16px;font-weight:600;font-size:13px}
+.bsys .cap{display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;font-size:12.5px;color:var(--ink2);margin-top:8px}
+.bsys .nt{font-size:12.5px;color:var(--ink2);margin-top:12px;display:flex;gap:6px;align-items:flex-start}
+.lptabs{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.lptabs .seg{display:flex;background:#f1f2f4;border-radius:999px;padding:3px}
+.lptabs .seg span{padding:5px 14px;border-radius:999px;font-size:13px}
+.lptabs .seg span.on{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.lptabs .sp{flex:1}.lptabs small{font-size:12px;color:var(--mute)}
+.bmock{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(15,15,22,.08)}
+.bmock .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#f1f2f4}
+.bmock .bar i{width:11px;height:11px;border-radius:50%}
+.bmock .bar .url{flex:1;background:#fff;border-radius:8px;padding:6px 12px;font:12.5px 'Geist Mono',monospace;color:var(--ink);margin-left:8px;display:flex;align-items:center;gap:8px}
+.bmock .bar .url i{background:#111;width:18px;height:18px}
+.bmock .body{padding:26px 30px 24px}
+.bmock h2{margin:18px 0 6px;font-size:30px;letter-spacing:-.02em}
+.bmock .s{font-size:13.5px;color:var(--ink2);margin-bottom:18px}
+.bmock .pk{border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center;font-size:14px;font-weight:500;margin-bottom:14px}
+.bmock .or{text-align:center;font:10.5px 'Geist Mono',monospace;letter-spacing:.1em;color:var(--mute);margin:0 0 12px}
+.bmock .fl{border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin-bottom:10px}
+.bmock .fl small{display:block;font:10px 'Geist Mono',monospace;letter-spacing:.1em;color:var(--mute)}
+.bmock .fl span{font-size:14px}
+.bmock .go{color:#fff;border-radius:10px;padding:14px;text-align:center;font-weight:600;font-size:14px;margin-top:6px}
+.bmock .na{font-size:12px;color:var(--mute);text-align:center;margin-top:12px}
+/* pricing tabs */
+.prhead{display:flex;align-items:flex-start;gap:16px}
+.prhead .sp{flex:1}
+.prhead h4{margin:4px 0 8px;font-size:18px;font-weight:600}
+.supt{display:flex;align-items:center;justify-content:flex-end;gap:10px;font-size:13px;color:var(--ink2);margin:10px 0}
+.pair{display:flex;align-items:center;gap:6px;font-size:14px}
+.pair .fl{width:22px;height:22px;border-radius:50%;background:#2775ca;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 10px Geist}
+.tiers b{display:block;font-size:14px}.tiers small{font-size:12px;color:var(--mute)}
+td .act{display:flex;align-items:center;gap:18px;color:var(--ink2);font-size:13px;justify-content:flex-end}
+.modal.pm2{width:850px;text-align:left;max-height:860px;overflow:auto;padding:28px 30px}
+.modal.pm2 .h{display:flex;align-items:center;margin-bottom:14px}
+.modal.pm2 .h h3{margin:0;font-size:20px;flex:1}
+.modal.pm2 .kk{font:11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--ink2);margin-bottom:16px;text-transform:uppercase}
+.tierrow{background:#f6f7f9;border-radius:12px;padding:14px;margin-bottom:10px;display:grid;grid-template-columns:1fr 1fr 1fr 40px;gap:12px;align-items:end}
+.tierrow .x{color:var(--mute);cursor:pointer;text-align:center;padding-bottom:12px}
+.modal.pm2 .foot{display:flex;justify-content:flex-end;gap:14px;align-items:center;margin-top:18px;border:0;padding:0}
+.rev .sec{font:600 13px 'Geist Mono',monospace;letter-spacing:.08em;margin:18px 0 4px}
+.rev .sd{font-size:12.5px;color:var(--ink2);margin-bottom:10px}
+.rev .box{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 10px}
+.rev .box .k{font:11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--mute)}
+.rev .box .kv{display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;margin:6px 0}
+.rev .box .n{font-size:12.5px;color:var(--ink2);line-height:1.5}
+.rev .inf{border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;margin-bottom:10px;background:#f6f7f9}
+.rev .tier{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.rev .tier .th{display:flex;justify-content:space-between;font-size:14.5px;font-weight:600;margin-bottom:10px}
+.rev .tier .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;font-size:12.5px;color:var(--ink2)}
+.rev .tier .g3 small{display:block;font:11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--mute)}
+.rev .tier .g3 b{display:block;font-size:17px;margin:2px 0;color:var(--ink)}
+.rev .tier .g3 b.gr{color:var(--green-tx)}
+.inv{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+.inv b{display:flex;align-items:center;gap:8px;font-size:14.5px;margin-bottom:4px}
+.inv .d{font-size:13px;color:var(--ink2);margin-bottom:10px}
+.inv .lk{display:flex;align-items:center;gap:10px}
+.inv .lk .lnk{flex:1;border:1px solid var(--line);background:#fff}
+.fchips{display:flex;align-items:center;gap:8px;font:11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--mute);margin:14px 0}
+.fchips span{font:13px 'Geist',sans-serif;letter-spacing:0;border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink2)}
+.fchips span.on{background:var(--navy);color:#fff}
+.fchips small{color:var(--mute)}
+.fchips .sp{flex:1}
+.fchips .inp{width:340px;padding:9px 12px;display:flex;gap:8px;align-items:center;color:#8a8f98;font-size:13px}
+.dlg{position:absolute;inset:0;background:rgba(20,22,28,.45);display:flex;align-items:center;justify-content:center;z-index:30}
+.dlg .bx{background:#fff;border-radius:14px;width:600px;padding:26px 30px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.dlg .bx h3{margin:0 0 14px;font-size:20px;display:flex;align-items:center;gap:10px}
+.dlg .bx p{margin:0 0 18px;font-size:14px;line-height:1.55;color:var(--ink2)}
+.dlg .bx .f{display:flex;justify-content:flex-end;gap:14px;align-items:center}
+.ptlogo .sidebar-dot{display:none}
+
 </style>
 </head>
 <body>
@@ -654,6 +787,26 @@ const O_EMPTY = { srcOpen: false, dstOpen: false, sendCur: 'USD', recvCur: null,
 const RATE = 0.9997;
 const fmt = n => Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
+/* ---------- Portal Studio data ---------- */
+const GF_SVG = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="32" cy="32" r="22"/><path d="M32 8v48M8 32h48" stroke-dasharray="6 4"/><path d="M32 18v28M22 24h20M26 40h12"/><circle cx="32" cy="32" r="28" stroke-dasharray="2 5"/></svg>';
+const gfLogo = (cls = '') => `<span class="gf ${cls}">${GF_SVG}<span>Global<br>Fincon</span></span>`;
+const DP_ROWS = [['🇨🇦', 'CAD', 'USDC', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:50', 'Active', 'Jul 16 · 7:50 PM'], ['🇦🇺', 'AUD', 'USDC', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:49', 'Active', 'Jul 16 · 7:49 PM'], ['🇦🇪', 'AED', 'USDT', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:49', 'Active', 'Jul 16 · 7:49 PM'], ['🇬🇧', 'GBP', 'USDT', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:48', 'Active', 'Jul 16 · 7:48 PM'], ['🇮🇳', 'INR', 'USDC', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:48', 'Active', 'Jul 16 · 7:48 PM'], ['🇪🇺', 'EUR', 'USDT', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:48', 'Active', 'Jul 16 · 7:48 PM'], ['🇪🇺', 'EUR', 'USDC', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:47', 'Active', 'Jul 16 · 7:47 PM'], ['🇺🇸', 'USD', 'USDT', '1 tier', 'First: 200 bps', 'Jul 16, 2026 19:46', 'Active', 'Jul 16 · 7:46 PM']];
+const SP_ROWS = [['Sender no longer listed', 'e187b85b… (copy)', '🇬🇧', 'GBP', 'USDC', '3 tiers', 'First: 125 bps', 'Aug 6, 2026 10:30', 'Active', '1h ago'], ['Sender no longer listed', '9676ac24… (copy)', '🇺🇸', 'USD', 'USDC', '1 tier', 'First: 100 bps', 'Jul 18, 2026 07:41', 'Active', 'Jul 18 · 7:41 AM']];
+const SN_ROWS = [['🇺🇸', 'Manish Kumar', 'United States of America', 'manish.kumar+al3@mesta.xyz', 'Active', 'Active', 'Approved', 'Enabled', 'Jul 26 · 5:57 PM'], ['🇺🇸', 'Manish Kumar', 'United States of America', 'manish.kumar+al4@mesta.xyz', 'Invited', 'Pending', 'Unverified', 'Enabled', 'Jul 26 · 5:59 PM'], ['🇮🇳', 'Prateek Jain', 'India', 'prateek-sender-reaa-13@mesta.xyz', 'Active', 'Active', 'Approved', 'Enabled', 'Jul 24 · 11:02 AM'], ['🇺🇸', 'Aloh Tech Onboarding', 'United States of America', 'aloha+onboarding@mesta.xyz', 'No access', 'Pending', 'Unverified', 'Disabled', '—'], ['🇧🇷', 'Nexo Harbor Ventures', 'Brazil', 'finance@nexoharbor.example', 'Active', 'Active', 'Approved', 'Enabled', 'Jul 22 · 9:14 AM']];
+const PT_SENDERS = ['Prateek Jain', 'Manish Kumar', 'Nexo Harbor Ventures'];
+const PT_EMPTY = { tab: 'setup', on: false, logoDark: false, logoLight: false, favicon: false, brand: '#3E93', accent: '#E8E8E8', name: '', terms: '', support: '', url: 'mathew-test-web3', domain: '', net: 'usdc', wallet: '', dirty: [], dialog: false, saved: false,
+  dp: { open: false, review: false, src: 'USDT', dst: 'EUR', eff: '', tiers: [{ from: '0', to: '10000000', fee: '175' }], rows: [] },
+  sp: { filter: 'All senders', filterOpen: false, open: false, review: false, sender: 'Prateek Jain', src: 'USDC', dst: 'GBP', eff: '', tiers: [{ from: '0', to: '10000000', fee: '125' }], rows: [] },
+  sn: { email: '', sent: false, copied: false, status: null, filter: 'All' } };
+const PT_FILLED = { logoDark: true, logoLight: true, favicon: true, brand: '#3E93A8', accent: '#A8533E', name: 'Global Fincon', terms: 'https://globalfincon.com/portal/terms', support: 'support@globalfincon.com', url: 'global-fincon', domain: 'portal.globalfincon.com', net: 'usdc', wallet: '0xca632abC39B49131d2D61B6c895E2E02aa2FA5Ca', dirty: ['portal name', 'portal URL', 'terms URL', 'brand color', 'accent color', 'support email', 'settlement address'] };
+const DP_TIERS = [{ from: '0', to: '10000000', fee: '175' }, { from: '10000000', to: '1000000000000', fee: '140' }];
+const SP_TIERS = [{ from: '0', to: '10000000', fee: '125' }, { from: '10000000', to: '50000000', fee: '110' }, { from: '50000000', to: '1000000000000', fee: '95' }];
+const ptPatch = (s, p) => ({ pt: { ...s.pt, ...p } });
+const dpPatch = (s, p) => ({ pt: { ...s.pt, dp: { ...s.pt.dp, ...p } } });
+const spPatch = (s, p) => ({ pt: { ...s.pt, sp: { ...s.pt.sp, ...p } } });
+const snPatch = (s, p) => ({ pt: { ...s.pt, sn: { ...s.pt.sn, ...p } } });
+const PT_LOGGED = { screen: 'portal' };
+
 /* ---------- state ---------- */
 const INIT = {
   flow: 'beneficiary', step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
@@ -661,7 +814,7 @@ const INIT = {
   upload: null, filled: false, formStep: 1,
   form: { fullName: '', street: '', city: '', postal: '', relationship: '', purpose: '', popDoc: POP_DOC, businessType: '', regNo: '' },
   methods: [], modal: null, success: false, created: false, newStatus: null, toast: '',
-  sf: { ...SF_EMPTY }, o: { ...O_EMPTY }
+  sf: { ...SF_EMPTY }, o: { ...O_EMPTY }, pt: PT_EMPTY
 };
 const OPEN_CREATE = { screen: 'create', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, methods: [], modal: null, success: false };
 const OPEN_SENDER = { screen: 'createSender', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, modal: null, success: false };
@@ -827,9 +980,158 @@ const FLOWS = {
       ['set', {}]
     ],
     caps: ['Log in to Ohana.', 'From the navigation menu on the left,', 'select Orders.', 'To create a new payment,', 'click Create payment in the top-right corner.', 'Creating a payment takes just three simple steps.', 'First, select your source', 'First, select your source', 'and destination currencies.', 'and destination currencies.', 'You can either specify the source amount you want to send', 'or the destination amount your beneficiary should receive.', 'Ohana automatically calculates the corresponding amount.', 'Next, choose the transfer type', 'and continue.', 'Select the approved sender', 'Select the approved sender', 'and beneficiary for the payment.', 'and beneficiary for the payment.', 'Choose the payment method,', 'fill in the details', 'and continue.', 'Finally, review the payment summary', 'and click Send payment.', 'Your payment order is now created', 'and your payment quote is locked for five minutes.', 'Head back to the Orders page, fund the order', 'and sit back while Ohana processes your payment.', 'You can track every stage of the transaction in real time', 'until the funds reach your beneficiary.']
-  }
+  },
+  'portal-setup': {
+    title: 'Portal Studio · Setup', nav: 'portal', account: 'Global Fincon',
+    steps: c => [
+      { title: 'Log in and open Portal Studio', screen: 'login', doneIf: s => s.screen === 'portal', subs: [
+        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => ({ screen: 'dashboard' }), done: s => s.screen !== 'login' },
+        { t: 'Open Portal Studio', target: ['Portal Studio'], say: 'Select Portal Studio under Sender portal in the navigation menu.', act: () => ({ screen: 'portal' }), done: s => s.screen === 'portal' } ] },
+      { title: 'Branding', screen: 'portal', doneIf: s => s.pt.saved, subs: [
+        { t: 'Dark logo', target: ['Drop files here'], say: 'Add your dark logo (for light backgrounds): click the first drop zone.', act: s => ptPatch(s, { logoDark: true }), done: s => s.pt.logoDark },
+        { t: 'Light logo', target: ['Drop files here'], say: 'Add the light logo (for dark backgrounds): click the second drop zone.', act: s => ptPatch(s, { logoLight: true }), done: s => s.pt.logoLight },
+        { t: 'Favicon', target: ['Drop a mark'], say: 'Add a favicon. It appears in the browser tab beside your portal name.', act: s => ptPatch(s, { favicon: true }), done: s => s.pt.favicon },
+        { t: 'Brand colour', target: ['=Brand'], say: 'Type your brand colour. The preview on the right updates as you type.', act: s => ptPatch(s, { brand: '#3E93A8', dirty: [...new Set([...s.pt.dirty, 'brand color'])] }), done: s => s.pt.brand.length >= 7 },
+        { t: 'Accent colour', target: ['=Accent'], say: 'Type the accent colour, used for the live path and badges.', act: s => ptPatch(s, { accent: '#A8533E', dirty: [...new Set([...s.pt.dirty, 'accent color'])] }), done: s => s.pt.accent !== '#E8E8E8' } ] },
+      { title: 'Portal details', screen: 'portal', doneIf: s => s.pt.saved, subs: [
+        { t: 'Portal name', target: ['=Portal name'], say: 'Type the portal name. Senders see it on the login screen and in emails.', act: s => ptPatch(s, { name: 'Global Fincon', dirty: [...new Set([...s.pt.dirty, 'portal name'])] }), done: s => !!s.pt.name },
+        { t: 'Terms URL', target: ['=Terms & conditions URL'], say: 'Add the URL of your terms and conditions. All senders must accept them.', act: s => ptPatch(s, { terms: 'https://globalfincon.com/portal/terms', dirty: [...new Set([...s.pt.dirty, 'terms URL'])] }), done: s => !!s.pt.terms },
+        { t: 'Support email', target: ['=Support email'], say: 'Add the support email. Amazon Web Services sends it a verification link you must confirm within 24 hours.', act: s => ptPatch(s, { support: 'support@globalfincon.com', dirty: [...new Set([...s.pt.dirty, 'support email'])] }), done: s => !!s.pt.support } ] },
+      { title: 'Portal URL and settlement wallet', screen: 'portal', doneIf: s => s.pt.saved, subs: [
+        { t: 'Portal address', target: ['=Portal address'], say: 'Set the portal address your senders will use. Mesta\'s name stays visible on this route.', act: s => ptPatch(s, { url: 'global-fincon', dirty: [...new Set([...s.pt.dirty, 'portal URL'])] }), done: s => s.pt.url === 'global-fincon' },
+        { t: 'Custom domain', target: ['=Domain'], say: 'Optionally add a custom domain. It needs DNS-level changes, so have your tech team handy.', act: s => ptPatch(s, { domain: 'portal.globalfincon.com' }), done: s => !!s.pt.domain },
+        { t: 'Settlement network', target: ['USDC on Ethereum'], say: 'Choose the settlement network: USDC on Ethereum or USDT on Tron.', act: s => ptPatch(s, { net: 'usdc', netTouched: true }), done: s => !!s.pt.netTouched || !!s.pt.wallet },
+        { t: 'Wallet address', target: ['=Wallet address'], say: 'Paste the settlement wallet address. Once saved it is irreversible; only your account manager can change it.', act: s => ptPatch(s, { wallet: '0xca632abC39B49131d2D61B6c895E2E02aa2FA5Ca', dirty: [...new Set([...s.pt.dirty, 'settlement address'])] }), done: s => s.pt.wallet.length > 20 } ] },
+      { title: 'Save and switch the portal on', screen: 'portal', subs: [
+        { t: 'Save changes', target: ['Save ·'], say: 'Click Save in the bar at the bottom.', act: s => ptPatch(s, { dialog: true }), done: s => s.pt.dialog || s.pt.saved },
+        { t: 'Update URL', target: ['Update URL'], say: 'Confirm the new portal URL.', act: s => ({ pt: { ...s.pt, dialog: false, saved: true, dirty: [] }, toast: 'Changes saved' }), done: s => s.pt.saved },
+        { t: 'Portal on', target: ['=Sender portal toggle'], say: 'Toggle the sender portal on so your senders can sign in and transact.', act: s => ptPatch(s, { on: true }), done: s => s.pt.on } ] }
+    ],
+    ops: [
+      ['set', { screen: 'dashboard' }, ['Sign in · password']], ['set', {}], ['set', { screen: 'portal' }, ['Portal Studio']],
+      ['set', {}], ['set', {}], ['set', { _scroll: '#ptabs' }], ['set', {}],
+      ['set', s => ptPatch(s, { tab: 'default' }), ['Default pricing']], ['set', s => ptPatch(s, { tab: 'sender' }), ['Sender pricing']], ['set', s => ptPatch(s, { tab: 'senders' }), ['=Senders', null, 1]],
+      ['set', s => ptPatch(s, { tab: 'setup' }), ['Setup']], ['set', { _scroll: '#pt-toggle' }], ['set', {}], ['set', {}],
+      ['set', { _scroll: '#pt-branding' }],
+      ['set', s => ptPatch(s, { logoDark: true }), ['Drop files here']], ['set', s => ptPatch(s, { logoLight: true }), ['Drop files here']],
+      ['set', s => ptPatch(s, { favicon: true }), ['Drop a mark']],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'brand color'])] }), _type: ['pt.brand', '#3E93A8'] }), ['=Brand']],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'accent color'])] }), _type: ['pt.accent', '#A8533E'] }), ['=Accent']],
+      ['set', { _scroll: '#pt-preview' }],
+      ['set', { _scroll: '#pt-details' }],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'portal name'])] }), _type: ['pt.name', 'Global Fincon'] }), ['=Portal name']],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'terms URL'])] }), _type: ['pt.terms', 'https://globalfincon.com/portal/terms'] }), ['=Terms & conditions URL']],
+      ['set', {}], ['set', {}],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'support email'])] }), _type: ['pt.support', 'support@globalfincon.com'] }), ['=Support email']],
+      ['set', { _scroll: '#pt-aws' }], ['set', {}],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'portal URL'])] }), _type: ['pt.url', 'global-fincon'] }), ['=Portal address']],
+      ['set', { _scroll: '#pt-url' }], ['set', {}],
+      ['set', s => ({ _type: ['pt.domain', 'portal.globalfincon.com'] }), ['=Domain']],
+      ['set', { _scroll: '#pt-cname' }], ['set', {}],
+      ['set', { _scroll: '#pt-settle' }], ['set', {}],
+      ['set', s => ptPatch(s, { net: 'usdc', netTouched: true }), ['USDC on Ethereum']], ['set', {}],
+      ['set', s => ({ ...ptPatch(s, { dirty: [...new Set([...s.pt.dirty, 'settlement address'])] }), _type: ['pt.wallet', '0xca632abC39B49131d2D61B6c895E2E02aa2FA5Ca'] }), ['=Wallet address']],
+      ['set', {}],
+      ['set', { _scroll: '#pt-savebar' }],
+      ['set', s => ptPatch(s, { dialog: true }), ['Save ·']],
+      ['set', s => ({ pt: { ...s.pt, dialog: false, saved: true, dirty: [] }, toast: 'Changes saved' }), ['Update URL']],
+      ['set', s => ptPatch(s, { on: true }), ['=Sender portal toggle']]
+    ],
+    caps: ['Log in to Ohana.', 'From the navigation menu on the left,', 'select Portal Studio.', 'Welcome to Portal Studio.', 'This is the onboarding setup for your white-label customer portal.', 'The onboarding happens in four stages:', 'the setup,', 'the default pricing,', 'the custom sender pricing', 'and sender management.', 'Currently, the portal is off.', 'After finishing setup, toggle this to the on position', 'so that your senders can transact and access this portal.', 'This is the setup page.', 'On this page, add your logo.', 'First, a dark one for a light background', 'and the light one for the dark background.', 'Add a favicon to appear next to your portal name on the top right.', 'Choose the colors for your brand', 'and the accent color.', 'All these changes appear on the panel on the right for your viewing.', 'Next, add the portal details:', 'the portal name', 'and the URL for terms and conditions.', 'All senders must accept these terms and conditions.', "Please remember, they also have to accept Mesta's terms and conditions by law.", 'Next, add the support email.', 'Remember, this email will be activated only after verification by Amazon Web Services.', 'You will need to verify the email ID within 24 hours, failing which a new verification has to be triggered.', 'Next, add the portal URL.', 'This is the URL your senders will use to access the portal, and you can add any chosen name here.', "Please notice that when you choose this route, your senders and customers can also see Mesta's name on it.", 'So if you choose, you may add a custom domain.', 'Adding a custom domain requires DNS-level changes in the admin panel of your domain.', 'So make sure your tech team is handy when you are adding the custom domain.', 'In the next step, you add a wallet address for settlement.', 'All settlement payments from Mesta to you will happen in this wallet.', 'You can add either a USDC on Ethereum', 'or a USDT on Tron wallet address.', 'Once added and saved, this is irreversible.', 'To change the wallet address, you will have to reach out to your account manager.', 'Once you finish the setup on this page,', 'click on Save Changes.', 'click on Save Changes.', 'so that your senders can transact and access this portal.']
+  },
+  'portal-default': {
+    title: 'Portal Studio · Default pricing', nav: 'portal', account: 'Global Fincon', start: { screen: 'portal', pt: { ...PT_EMPTY, ...PT_FILLED, saved: true, on: true, dirty: [] } },
+    steps: c => [
+      { title: 'Open Default pricing', screen: 'portal', subs: [
+        { t: 'Default pricing tab', target: ['Default pricing'], say: 'Open the Default pricing tab. These rules apply to all your senders uniformly.', act: s => ptPatch(s, { tab: 'default' }), done: s => s.pt.tab === 'default' || s.pt.dp.open || s.pt.dp.rows.length > 0 } ] },
+      { title: 'Add a default', screen: 'portal', doneIf: s => s.pt.dp.rows.length > 0, subs: [
+        { t: 'Add default', target: ['Add default'], say: 'Click Add default · applies to all senders.', act: s => dpPatch(s, { open: true }), done: s => s.pt.dp.open || s.pt.dp.rows.length > 0 },
+        { t: 'Currency pair', target: ['=USDT'], say: 'Pick the source and target currencies for this corridor.', act: s => dpPatch(s, { pairTouched: true }), done: s => !!s.pt.dp.pairTouched || s.pt.dp.review } ] },
+      { title: 'Tier ladder', screen: 'portal', doneIf: s => s.pt.dp.rows.length > 0, subs: [
+        { t: 'Add tier', target: ['Add tier'], say: 'Add as many tiers as you want with Add tier.', act: s => dpPatch(s, { tiers: DP_TIERS }), done: s => s.pt.dp.tiers.length >= 2 },
+        { t: 'Volume from', target: ['=Vol from 1'], say: 'The volume-from of the first tier must always be 0.', act: s => dpPatch(s, { tiers: s.pt.dp.tiers.map((t, i) => i === 0 ? { ...t, from: '0' } : t), fromTouched: true }), done: s => s.pt.dp.fromTouched || s.pt.dp.review },
+        { t: 'Volume to', target: ['=Vol to ' + Math.max(2, c.state.pt.dp.tiers.length)], say: 'The volume-to of the last tier must always be 1 trillion (1,000,000,000,000).', act: s => dpPatch(s, { tiers: s.pt.dp.tiers.map((t, i, a) => i === a.length - 1 ? { ...t, to: '1000000000000' } : t), toTouched: true }), done: s => s.pt.dp.toTouched || s.pt.dp.review } ] },
+      { title: 'Effective date and review', screen: 'portal', doneIf: s => s.pt.dp.rows.length > 0, subs: [
+        { t: 'Effective from', target: ['=Effective from'], say: 'Optionally set the date and time the pricing becomes effective. Leave it blank to apply immediately.', act: s => dpPatch(s, { eff: '08 / 06 / 2026, 12:30 PM' }), done: s => !!s.pt.dp.eff || s.pt.dp.review },
+        { t: 'Review pricing', target: ['Review pricing'], say: 'Click Review pricing to see the structure, the additional fees and what you earn per tier.', act: s => dpPatch(s, { review: true }), done: s => s.pt.dp.review || s.pt.dp.rows.length > 0 } ] },
+      { title: 'Confirm and save', screen: 'portal', subs: [
+        { t: 'Confirm & save', target: ['Confirm & save'], say: 'Click Confirm & save to add this pricing.', act: s => ({ pt: { ...s.pt, dp: { ...s.pt.dp, open: false, review: false, rows: [1] } }, toast: 'Default pricing saved · applies to all senders' }), done: s => s.pt.dp.rows.length > 0 } ] }
+    ],
+    ops: [
+      ['set', s => ptPatch(s, { tab: 'default' }), ['Default pricing']], ['set', {}], ['set', {}],
+      ['set', s => dpPatch(s, { open: true }), ['Add default']],
+      ['set', s => dpPatch(s, { tiers: DP_TIERS }), ['Add tier']],
+      ['set', s => dpPatch(s, { fromTouched: true }), ['=Vol from 1']],
+      ['set', s => dpPatch(s, { toTouched: true }), ['=Vol to 2']],
+      ['set', s => ({ _type: ['pt.dp.eff', '08 / 06 / 2026, 12:30 PM'] }), ['=Effective from']],
+      ['set', {}],
+      ['set', s => dpPatch(s, { review: true }), ['Review pricing']],
+      ['set', { _scroll: '#rev-top' }], ['set', { _scroll: '#rev-fees' }], ['set', { _scroll: '#rev-tiers' }],
+      ['set', s => ({ pt: { ...s.pt, dp: { ...s.pt.dp, open: false, review: false, rows: [1] } }, toast: 'Default pricing saved · applies to all senders' }), ['Confirm & save']]
+    ],
+    caps: ["Now, let's go to default pricing.", 'On this page, you can set your default pricing across the different corridors you operate in.', 'The default pricing rules apply to all your senders, uniformly.', 'You may add tier-based pricing based on the transaction volumes.', 'You can add as many tiers as you want,', 'but do remember: the volume-from column in the first tier must always be zero,', 'and the volume-to column in the last tier must always be set to 1 trillion.', 'You can choose the date and time at which any pricing can be effective from.', 'If you leave it blank, it will apply immediately.', "Once you've added the details, click on Review pricing.", 'You can see the pricing structure,', 'additional fee details,', 'and illustrative examples of how much you earn in each tier.', "Once you've reviewed it, click Confirm and save to add this pricing."]
+  },
+  'portal-sender': {
+    title: 'Portal Studio · Sender pricing', nav: 'portal', account: 'Global Fincon', start: { screen: 'portal', pt: { ...PT_EMPTY, ...PT_FILLED, saved: true, on: true, dirty: [] } },
+    steps: c => [
+      { title: 'Open Sender pricing', screen: 'portal', subs: [
+        { t: 'Sender pricing tab', target: ['Sender pricing'], say: 'Open the Sender pricing tab. A sender override replaces the default pricing for that sender.', act: s => ptPatch(s, { tab: 'sender' }), done: s => s.pt.tab === 'sender' || s.pt.sp.rows.length > 0 } ] },
+      { title: 'Select the sender', screen: 'portal', doneIf: s => s.pt.sp.rows.length > 0, subs: [
+        { t: 'Filter by sender', target: ['All senders'], say: 'Open the Filter by sender list.', act: s => spPatch(s, { filterOpen: true }), done: s => s.pt.sp.filterOpen || s.pt.sp.filter !== 'All senders' },
+        { t: 'Pick Prateek Jain', target: ['=Prateek Jain'], say: 'Pick the sender.', act: s => spPatch(s, { filter: 'Prateek Jain', filterOpen: false }), done: s => s.pt.sp.filter !== 'All senders' },
+        { t: 'Add override', target: ['Add override'], say: 'Click Add override.', act: s => spPatch(s, { open: true }), done: s => s.pt.sp.open || s.pt.sp.rows.length > 0 } ] },
+      { title: 'Tiers and pricing', screen: 'portal', doneIf: s => s.pt.sp.rows.length > 0, subs: [
+        { t: 'Add tiers', target: ['Add tier'], say: 'Add the tiers and pricing details for this sender.', act: s => spPatch(s, { tiers: SP_TIERS }), done: s => s.pt.sp.tiers.length >= 2 },
+        { t: 'Volume from', target: ['=Vol from 1'], say: 'The volume-from of the first tier must be 0.', act: s => spPatch(s, { fromTouched: true }), done: s => s.pt.sp.fromTouched || s.pt.sp.review },
+        { t: 'Volume to', target: ['=Vol to ' + Math.max(2, c.state.pt.sp.tiers.length)], say: 'The volume-to of the last tier must be 1 trillion.', act: s => spPatch(s, { toTouched: true }), done: s => s.pt.sp.toTouched || s.pt.sp.review } ] },
+      { title: 'Review', screen: 'portal', doneIf: s => s.pt.sp.rows.length > 0, subs: [
+        { t: 'Review pricing', target: ['Review pricing'], say: 'Click Review pricing.', act: s => spPatch(s, { review: true }), done: s => s.pt.sp.review || s.pt.sp.rows.length > 0 } ] },
+      { title: 'Confirm and save', screen: 'portal', subs: [
+        { t: 'Confirm & save', target: ['Confirm & save'], say: 'Click Confirm & save. The custom pricing now appears on this page.', act: s => ({ pt: { ...s.pt, sp: { ...s.pt.sp, open: false, review: false, rows: [1] } }, toast: 'Sender override saved · applies to one sender' }), done: s => s.pt.sp.rows.length > 0 } ] }
+    ],
+    ops: [
+      ['set', s => ptPatch(s, { tab: 'sender' }), ['Sender pricing']], ['set', {}], ['set', {}],
+      ['set', s => spPatch(s, { filterOpen: true }), ['All senders']],
+      ['set', s => spPatch(s, { filter: 'Prateek Jain', filterOpen: false }), ['=Prateek Jain']],
+      ['set', s => spPatch(s, { open: true }), ['Add override']],
+      ['set', s => spPatch(s, { tiers: SP_TIERS }), ['Add tier']],
+      ['set', s => spPatch(s, { fromTouched: true }), ['=Vol from 1']],
+      ['set', s => spPatch(s, { toTouched: true }), ['=Vol to 3']],
+      ['set', {}],
+      ['set', s => spPatch(s, { review: true }), ['Review pricing']],
+      ['set', s => ({ pt: { ...s.pt, sp: { ...s.pt.sp, open: false, review: false, rows: [1] } }, toast: 'Sender override saved · applies to one sender' }), ['Confirm & save']],
+      ['set', {}]
+    ],
+    caps: ['Now, sender pricing.', 'On this page, you can add custom sender pricing: specific, per-sender pricing.', 'This pricing tier overrides the default pricing setup when the chosen sender processes a transaction on the portal.', 'First, select the sender name,', 'First, select the sender name,', 'click on the Override button,', 'then add the tiers and pricing details for this sender.', 'Remember, the volume-from column in the first tier', 'and the volume-to column in the last tier', 'must always be set to 0 and 1 trillion.', 'Once you add the details, review the pricing', 'and click on Confirm and Save.', 'These custom pricing details will now appear on this page.']
+  },
+  'portal-senders': {
+    title: 'Portal Studio · Senders', nav: 'portal', account: 'Global Fincon', start: { screen: 'portal', pt: { ...PT_EMPTY, ...PT_FILLED, saved: true, on: true, dirty: [] } },
+    steps: c => [
+      { title: 'Open Senders', screen: 'portal', subs: [
+        { t: 'Senders tab', target: ['=Senders', null, 1], say: 'Open the Senders tab. This is where you manage all of your senders.', act: s => ptPatch(s, { tab: 'senders' }), done: s => s.pt.tab === 'senders' } ] },
+      { title: 'Invite a new sender', screen: 'portal', doneIf: s => s.pt.sn.sent, subs: [
+        { t: 'Sender email', target: ['=Sender email'], say: 'Type the email of the sender you want to invite.', act: s => snPatch(s, { email: 'ashyokk@gigpayroll.xyz' }), done: s => !!s.pt.sn.email },
+        { t: 'Send invitation', target: ['Send invitation'], say: 'Click Send invitation · valid for 7 days.', act: s => ({ pt: { ...s.pt, sn: { ...s.pt.sn, sent: true, status: 'Invited' } }, toast: 'Invitation sent to ' + (s.pt.sn.email || 'ashyokk@gigpayroll.xyz') }), done: s => s.pt.sn.sent } ] },
+      { title: 'Share the invite link', screen: 'portal', doneIf: s => s.pt.sn.copied, subs: [
+        { t: 'Copy the link', target: ['Copy'], say: 'Copy the invite link and share it on any communication channel.', act: s => ({ pt: { ...s.pt, sn: { ...s.pt.sn, copied: true } }, toast: 'Invite link copied' }), done: s => s.pt.sn.copied } ] },
+      { title: 'Track existing senders', screen: 'portal', doneIf: s => s.pt.sn.status === 'Active', subs: [
+        { t: 'Existing senders', target: ['=Invited'], say: 'Existing senders are listed below with their portal access and KYB status. Click a row to invite them or manage access.', act: s => snPatch(s, { filter: 'Invited' }), done: s => s.pt.sn.filter !== 'All' || s.pt.sn.status === 'Active' } ] },
+      { title: 'Verified senders can transact', screen: 'portal', subs: [
+        { t: 'Verification', target: ['Do it for me'], bar: true, say: 'After the sender completes the formalities and is verified, they can transact on the portal. Click Do it for me to fast-forward.', act: s => snPatch(s, { status: 'Active', filter: 'All' }), done: s => s.pt.sn.status === 'Active' } ] }
+    ],
+    ops: [
+      ['set', s => ptPatch(s, { tab: 'senders' }), ['=Senders', null, 1]], ['set', { _scroll: '#sn-table' }],
+      ['set', s => ({ _type: ['pt.sn.email', 'ashyokk@gigpayroll.xyz'], _scroll: '#sn-invite' }), ['=Sender email']],
+      ['set', s => ({ pt: { ...s.pt, sn: { ...s.pt.sn, sent: true, status: 'Invited' } }, toast: 'Invitation sent to ashyokk@gigpayroll.xyz' }), ['Send invitation']],
+      ['set', s => ({ pt: { ...s.pt, sn: { ...s.pt.sn, copied: true } }, toast: 'Invite link copied' }), ['Copy']],
+      ['set', {}],
+      ['set', s => ({ ...snPatch(s, { filter: 'Invited' }), _scroll: '#sn-table' }), ['=Invited']],
+      ['set', s => snPatch(s, { status: 'Active', filter: 'All' })]
+    ],
+    caps: ['Finally, sender management.', 'On this page, you can manage all of your senders.', 'To invite new users, add their email', 'and click on Send invitation.', 'Once you do this, you can also copy the invite link', 'and send it on any communication channel.', 'After your senders complete the formalities and are verified,', 'they will be able to transact on the portal.']
+  },
 };
-const DEMO_FLOW = { 1: 'beneficiary', 2: 'sender', 3: 'order' };
+const DEMO_FLOW = { 1: 'beneficiary', 2: 'sender', 3: 'order', 4: 'portal-setup', 5: 'portal-default', 6: 'portal-sender', 7: 'portal-senders' };
 for (const k in FLOWS) { const f = FLOWS[k]; if (f.ops.length !== f.caps.length) console.error('ops/caps length mismatch in', k, f.ops.length, f.caps.length); }
 
 /* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label / placeholder. */
@@ -838,7 +1140,7 @@ const demoFind = ([label, side, n = 0], allowBar = false) => {
   let c = [...document.querySelectorAll('button,a,span,div,label,input,b,em')].filter(el => {
     if (!allowBar && el.closest('#presenter')) return false;
     const isInput = el.tagName === 'INPUT';
-    const t = (isInput ? (el.getAttribute('aria-label') || el.placeholder || '') : (el.textContent || '')).trim().replace(/\s+/g, ' ').toLowerCase();
+    const t = (el.getAttribute('aria-label') || (isInput ? el.placeholder : el.textContent) || '').trim().replace(/\s+/g, ' ').toLowerCase();
     if (exact ? t !== want : !t.startsWith(want)) return false;
     const r = el.getBoundingClientRect(); if (!r.width || !r.height) return false;
     const cur = getComputedStyle(el).cursor;
@@ -859,7 +1161,7 @@ class Component {
   curSub(s, st = this.steps()[s.step]) { return st.subs.find(x => !x.done(s)) || null; }
   subIndex(s, st = this.steps()[s.step]) { const i = st.subs.findIndex(x => !x.done(s)); return i < 0 ? st.subs.length : i; }
   allDone(s) { const steps = this.steps(); return s.step === steps.length - 1 && steps[s.step].done(s); }
-  freshInit() { return { ...INIT, flow: this.state.flow, form: { ...INIT.form }, sf: { ...SF_EMPTY }, o: { ...O_EMPTY } }; }
+  freshInit() { const f = FLOWS[this.state.flow] || FLOWS.beneficiary; const st = f.start ? JSON.parse(JSON.stringify(f.start)) : {}; return { ...INIT, flow: this.state.flow, form: { ...INIT.form }, sf: { ...SF_EMPTY }, o: { ...O_EMPTY }, pt: JSON.parse(JSON.stringify(PT_EMPTY)), ...st }; }
   screensFor(i) { const st = this.steps()[i]; return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' }; }
   stateAt(i) { const steps = this.steps(); let s = this.freshInit(); for (let k = 0; k < i; k++) for (const sub of steps[k].subs) s = { ...s, ...sub.act(s) }; return { ...s, ...this.screensFor(i), step: i }; }
   goStep = i => this.setState(this.stateAt(i));
@@ -885,6 +1187,11 @@ class Component {
     const [grp, k] = key.split('.');
     if (grp === 'o') { const o = { ...s.o, [k]: value }; if (k === 'recv') { o.pinned = 'recv'; o.send = this.calcSend(value); } if (k === 'send') { o.pinned = 'send'; o.recv = this.calcRecv(value); } s.o = o; const el = document.querySelector(`[data-bind="o.${k === 'recv' ? 'send' : 'recv'}"]`); if (el) el.value = k === 'recv' ? o.send : o.recv; if (k === 'recv' || k === 'send') this.later('oq', 700, () => this.render()); return; }
     if (grp === 'sf') { s.sf = { ...s.sf, [k]: value }; return; }
+    if (grp === 'pt') { const path = key.split('.').slice(1); const pt = JSON.parse(JSON.stringify(s.pt)); let o = pt; for (let i = 0; i < path.length - 1; i++) o = o[path[i]]; o[path[path.length - 1]] = value;
+      const DIRTY = { name: 'portal name', terms: 'terms URL', support: 'support email', url: 'portal URL', brand: 'brand color', accent: 'accent color', wallet: 'settlement address' };
+      if (path.length === 1 && DIRTY[path[0]] && !pt.dirty.includes(DIRTY[path[0]])) pt.dirty = [...pt.dirty, DIRTY[path[0]]];
+      if (path[1] === 'tiers' && path[3] === 'from') pt[path[0]].fromTouched = true; if (path[1] === 'tiers' && path[3] === 'to') pt[path[0]].toTouched = true;
+      s.pt = pt; if (['brand', 'accent', 'name', 'url', 'domain', 'wallet'].includes(path[0]) && path.length === 1) this.later('ptq', 600, () => this.render()); return; }
     s.form = { ...s.form, [k]: value };
   }
 
@@ -894,7 +1201,7 @@ class Component {
     const O = p => this.setState({ o: { ...this.state.o, ...p } });
     const A = {
       login: () => this.setState({ screen: 'dashboard' }),
-      nav: () => { if (['dashboard', 'list', 'senders', 'orders'].includes(arg)) this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
+      nav: () => { if (['dashboard', 'list', 'senders', 'orders', 'portal'].includes(arg)) this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
       tab: () => this.setState({ tab: arg }), period: () => this.setState({ period: arg }),
       openCreate: () => this.setState({ ...OPEN_CREATE, form: { ...INIT.form } }),
       openSender: () => this.setState({ ...OPEN_SENDER, sf: { ...SF_EMPTY } }),
@@ -908,8 +1215,8 @@ class Component {
       read: () => { if (s.upload !== 'picked') return; this.setState({ upload: 'reading' }); this.later('read', 3400, () => this.state.upload === 'reading' && this.setState({ upload: 'results' })); },
       fill: () => this.setState(s.flow === 'sender' ? { upload: 'filled', filled: true, sf: { ...s.sf, ...SFILL } } : T.fillForm(s)),
       done: () => this.setState({ upload: 'collapsed' }), startOver: () => this.setState({ upload: null }),
-      sel: () => this.setState({ openSel: s.openSel === arg ? null : arg, countryOpen: false }),
-      pickOpt: () => { const [k, v] = arg.split('|'); const [grp, key, idx] = k.split('.'); if (grp === 'form') this.setState({ form: { ...s.form, [key]: v }, openSel: null }); else if (grp === 'sf') this.setState({ sf: { ...s.sf, [key]: v }, openSel: null }); else if (grp === 'o') this.setState({ o: { ...s.o, [key]: v }, openSel: null }); else this.setState({ methods: s.methods.map((m, i) => i === +idx ? { ...m, [key]: v } : m), openSel: null }); },
+      sel: () => { const extra = arg.startsWith('pt.dp.') ? dpPatch(s, { pairTouched: true }) : arg.startsWith('pt.sp.') ? spPatch(s, { pairTouched: true }) : {}; this.setState({ ...extra, openSel: s.openSel === arg ? null : arg, countryOpen: false }); },
+      pickOpt: () => { const [k, v] = arg.split('|'); const [grp, key, idx] = k.split('.'); if (grp === 'form') this.setState({ form: { ...s.form, [key]: v }, openSel: null }); else if (grp === 'sf') this.setState({ sf: { ...s.sf, [key]: v }, openSel: null }); else if (grp === 'o') this.setState({ o: { ...s.o, [key]: v }, openSel: null }); else if (grp === 'pt') { this.bindSet(k, v); this.setState({ openSel: null }); } else this.setState({ methods: s.methods.map((m, i) => i === +idx ? { ...m, [key]: v } : m), openSel: null }); },
       removeDoc: () => this.setState({ form: { ...s.form, popDoc: '' } }),
       continue: () => this.setState({ formStep: s.formStep + 1, openSel: null }),
       back: () => this.setState({ formStep: Math.max(1, s.formStep - 1), openSel: null }),
@@ -934,6 +1241,27 @@ class Component {
       toReview: () => { if (!o.from || !o.to || !o.method) return this.setState({ toast: 'Pick the sender, the beneficiary and a payment method first' }); this.setState({ formStep: 3, openSel: null }); },
       oback: () => this.setState(s.formStep === 1 ? { screen: 'orders' } : { formStep: s.formStep - 1 }),
       sendPayment: () => this.setState({ screen: 'orderDetail', created: true, o: { ...o, status: 'Created' }, toast: 'Payment created successfully!' }),
+      /* Portal Studio */
+      ptTab: () => this.setState(ptPatch(s, { tab: arg })),
+      ptToggle: () => this.setState(ptPatch(s, { on: !s.pt.on })),
+      ptLogo: () => this.setState(ptPatch(s, { [arg]: true })),
+      ptNet: () => this.setState(ptPatch(s, { net: arg, netTouched: true })),
+      ptSave: () => { if (!s.pt.dirty.length) return; this.setState(ptPatch(s, { dialog: s.pt.dirty.includes('portal URL') })); if (!s.pt.dirty.includes('portal URL')) this.setState({ pt: { ...this.state.pt, saved: true, dirty: [] }, toast: 'Changes saved' }); },
+      ptCancelSave: () => this.setState(ptPatch(s, { dialog: false })),
+      ptConfirmSave: () => this.setState({ pt: { ...s.pt, dialog: false, saved: true, dirty: [] }, toast: 'Changes saved' }),
+      ptDiscard: () => this.setState({ pt: { ...PT_EMPTY, tab: s.pt.tab, on: s.pt.on, logoDark: s.pt.logoDark, logoLight: s.pt.logoLight, favicon: s.pt.favicon, dp: s.pt.dp, sp: s.pt.sp, sn: s.pt.sn } }),
+      dpOpen: () => this.setState(dpPatch(s, { open: true, review: false })), dpClose: () => this.setState(dpPatch(s, { open: false, review: false })),
+      dpAddTier: () => this.setState(dpPatch(s, { tiers: s.pt.dp.tiers.length === 1 ? DP_TIERS : [...s.pt.dp.tiers, { from: s.pt.dp.tiers[s.pt.dp.tiers.length - 1].to, to: '1000000000000', fee: '' }] })),
+      dpReview: () => this.setState(dpPatch(s, { review: true })), dpBack: () => this.setState(dpPatch(s, { review: false })),
+      dpConfirm: () => this.setState({ pt: { ...s.pt, dp: { ...s.pt.dp, open: false, review: false, rows: [1] } }, toast: 'Default pricing saved · applies to all senders' }),
+      spFilter: () => this.setState(spPatch(s, { filterOpen: !s.pt.sp.filterOpen })), spPick: () => this.setState(spPatch(s, { filter: arg, filterOpen: false })),
+      spOpen: () => this.setState(spPatch(s, { open: true, review: false })), spClose: () => this.setState(spPatch(s, { open: false, review: false })),
+      spAddTier: () => this.setState(spPatch(s, { tiers: s.pt.sp.tiers.length === 1 ? SP_TIERS : [...s.pt.sp.tiers, { from: s.pt.sp.tiers[s.pt.sp.tiers.length - 1].to, to: '1000000000000', fee: '' }] })),
+      spReview: () => this.setState(spPatch(s, { review: true })), spBack: () => this.setState(spPatch(s, { review: false })),
+      spConfirm: () => this.setState({ pt: { ...s.pt, sp: { ...s.pt.sp, open: false, review: false, rows: [1], filter: 'Prateek Jain' } }, toast: 'Sender override saved · applies to one sender' }),
+      snSend: () => { if (!s.pt.sn.email) return this.setState({ toast: 'Enter the sender email first' }); this.setState({ pt: { ...s.pt, sn: { ...s.pt.sn, sent: true, status: 'Invited' } }, toast: 'Invitation sent to ' + s.pt.sn.email }); },
+      snCopy: () => this.setState({ pt: { ...s.pt, sn: { ...s.pt.sn, copied: true } }, toast: 'Invite link copied' }),
+      snFilter: () => this.setState(snPatch(s, { filter: arg })),
       backToOrders: () => this.setState({ screen: 'orders', o: { ...o, status: s.created && o.status === 'Created' ? 'Awaiting funds' : o.status } })
     };
     A[name] && A[name]();
@@ -992,10 +1320,10 @@ class Component {
 
   /* ---------- shared chrome ---------- */
   rShell() {
-    const s = this.state, navOf = { dashboard: 'dashboard', list: 'list', create: 'list', senders: 'senders', createSender: 'senders', orders: 'orders', createOrder: 'orders', orderDetail: 'orders' }[s.screen];
+    const s = this.state, navOf = { dashboard: 'dashboard', list: 'list', create: 'list', senders: 'senders', createSender: 'senders', orders: 'orders', createOrder: 'orders', orderDetail: 'orders', portal: 'portal' }[s.screen], acct = this.flow().account || 'Mesta Payments LLC';
     const nav = (key, icon, label) => `<div class="nav ${navOf === key ? 'on' : ''}" data-act="nav" data-arg="${key}">${ic(icon)}${label}</div>`;
-    const crumb = { dashboard: '<b>Home</b>', list: 'Home &nbsp;/&nbsp; <b>Beneficiaries</b>', create: 'Home &nbsp;/&nbsp; <b>Create beneficiary</b>', senders: 'Home &nbsp;/&nbsp; <b>Senders</b>', createSender: 'Home &nbsp;/&nbsp; <b>Create sender</b>', orders: 'Home &nbsp;/&nbsp; <b>Orders</b>', createOrder: 'Home &nbsp;/&nbsp; <b>Create payment</b>', orderDetail: 'Home &nbsp;/&nbsp; Orders &nbsp;/&nbsp; <b>adfb43…2609ac</b>' }[s.screen];
-    const body = { dashboard: this.rDash, list: this.rList, create: this.rCreate, senders: this.rSenders, createSender: this.rCreateSender, orders: this.rOrders, createOrder: this.rCreateOrder, orderDetail: this.rOrderDetail }[s.screen].call(this);
+    const crumb = { dashboard: '<b>Home</b>', list: 'Home &nbsp;/&nbsp; <b>Beneficiaries</b>', create: 'Home &nbsp;/&nbsp; <b>Create beneficiary</b>', senders: 'Home &nbsp;/&nbsp; <b>Senders</b>', createSender: 'Home &nbsp;/&nbsp; <b>Create sender</b>', orders: 'Home &nbsp;/&nbsp; <b>Orders</b>', createOrder: 'Home &nbsp;/&nbsp; <b>Create payment</b>', orderDetail: 'Home &nbsp;/&nbsp; Orders &nbsp;/&nbsp; <b>adfb43…2609ac</b>', portal: 'Home &nbsp;/&nbsp; <b>Portal Studio</b>' }[s.screen];
+    const body = { dashboard: this.rDash, list: this.rList, create: this.rCreate, senders: this.rSenders, createSender: this.rCreateSender, orders: this.rOrders, createOrder: this.rCreateOrder, orderDetail: this.rOrderDetail, portal: this.rPortal }[s.screen].call(this);
     const modal = s.modal === 'sending' ? this.rSending() : '';
     return `
       <div class="side">
@@ -1003,13 +1331,13 @@ class Component {
         <div class="sec mono">Home</div>${nav('dashboard', 'home', 'Dashboard')}
         <div class="sec mono">Payments</div>${nav('orders', 'orders', 'Orders')}${nav('tx', 'tx', 'Transactions')}
         <div class="sec mono">Directory</div>${nav('senders', 'users', 'Senders')}${nav('list', 'users', 'Beneficiaries')}
-        <div class="sec mono">Sender portal</div>${nav('portal', 'portal', 'Portal')}
-        <div class="sec mono">Money</div>${nav('balances', 'wallet', 'Balances')}${nav('deposits', 'card', 'Deposits')}${nav('third', 'alert', 'Third-party deposits')}${nav('earn', 'dollar', 'Earnings')}
+        <div class="sec mono">Sender portal</div>${nav('portal', 'portal', 'Portal Studio')}
+        <div class="sec mono">Money</div>${nav('balances', 'wallet', 'Balances')}${nav('deposits', 'card', 'Deposits')}${nav('depw', 'wallet', 'Deposit wallets')}${nav('third', 'alert', 'Third-party deposits')}${nav('earn', 'dollar', 'Earnings')}
         <div class="sec mono">Developer</div>${nav('api', 'key', 'API keys')}${nav('hooks', 'hook', 'Webhooks')}${nav('settings', 'gear', 'Settings')}
       </div>
       <div class="main">
         <div class="top"><span class="crumb">${crumb}</span><span class="sp"></span><span class="search">${ic('search', 'sm')} Search <kbd>⌘K</kbd></span>
-          <span class="acct"><span class="t"><b>Mesta Payments LLC</b><span>ashok@mesta.xyz</span></span><span class="av">MP</span>${ic('down', 'sm')}</span></div>
+          <span class="acct"><span class="t"><b>${esc(acct)}</b><span>ashok@mesta.xyz</span></span><span class="av">${acct.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()}</span>${ic('down', 'sm')}</span></div>
         <div class="content">${body}</div>${modal}
         ${s.toast ? `<div class="toast ${/success|locked/i.test(s.toast) ? 'ok' : ''}">${/success|locked/i.test(s.toast) ? ic('check', 'sm') : ''}${esc(s.toast)}</div>` : ''}
       </div>`;
@@ -1324,6 +1652,124 @@ class Component {
         <div class="card" style="padding:18px 20px;margin-top:14px"><h4 style="margin:0 0 8px;font-size:16px">Quick links</h4><div class="ql">${ic('user', 'sm')} View sender</div><div class="ql">${ic('users', 'sm')} View beneficiary</div><div class="ql">${ic('file', 'sm')} View quote</div></div></div></div>`;
   }
 
+  /* ---------- Portal Studio screens ---------- */
+  rPortal() {
+    const s = this.state, p = s.pt;
+    const tabs = [['setup', 'Setup'], ['default', 'Default pricing'], ['sender', 'Sender pricing'], ['senders', 'Senders']];
+    const banner = p.tab === 'setup' || !p.on ? (p.on ? '' : `<div class="warn"><span class="ic">!</span><div><b>Sender portal is not active</b><span>Toggle the portal on in the <b style="display:inline;font-size:13px">Setup</b> tab to start onboarding senders.</span></div></div>`) : '';
+    const body = { setup: this.rPtSetup, default: this.rPtDefault, sender: this.rPtSender, senders: this.rPtSenders }[p.tab].call(this);
+    const modal = p.dp.open ? this.rPricingModal('dp') : p.sp.open ? this.rPricingModal('sp') : '';
+    const dialog = p.dialog ? `<div class="dlg"><div class="bx"><h3>${ic('alert', 'sm')} Update your portal URL?<span style="flex:1"></span><span style="cursor:pointer;color:var(--mute)" data-act="ptCancelSave">✕</span></h3><p>Your portal will move to https://global-fincon.aloha.stg.mesta.xyz. Your old address (https://mathew-test-web3.aloha.stg.mesta.xyz) redirects here for now, but it becomes available for another merchant to claim — update your saved links and share the new address going forward.</p><div class="f"><span class="btn link" data-act="ptCancelSave">Cancel</span><button class="btn dark" data-act="ptConfirmSave">Update URL</button></div></div></div>` : '';
+    return `<h1>Portal Studio</h1><div class="sub">Your branded portal · custom domain · self-service onboarding · pricing you control</div>${banner}
+      <div class="ptab" id="ptabs">${tabs.map(([k, l]) => `<div class="${p.tab === k ? 'on' : ''}" data-act="ptTab" data-arg="${k}">${l}</div>`).join('')}</div>${body}${modal}${dialog}`;
+  }
+  rPtSetup() {
+    const s = this.state, p = s.pt, dirty = p.dirty;
+    const lz = (key, dark, label, help) => `<div><label class="lbl">${label}</label>${p[key] ? `<div class="lz has ${dark ? 'dark' : ''}">${gfLogo()}</div>` : `<div class="lz" data-act="ptLogo" data-arg="${key}">${ic('upload', 'lg')}Drop files here or click to browse</div>`}<div class="help">${help}</div></div>`;
+    const dom = p.domain.length > 3 && p.domain.includes('.');
+    return `<div class="pcols"><div>
+      <div class="ptnote">Edits stage locally — a <b>Save bar</b> appears at the bottom with your first change. The portal on/off switch and logo removals apply instantly.</div>
+      <div class="pcard" id="pt-toggle"><div class="togglerow"><span class="gl">${ic('globe')}</span><div class="t"><b>Sender portal</b><span>${p.on ? 'On — senders can sign in and transact' : "Off — senders can't sign in or transact until you enable this"}</span></div><span class="tog ${p.on ? 'on' : ''}" data-act="ptToggle" aria-label="Sender portal toggle"></span></div></div>
+      <div class="pcard" id="pt-branding"><h3>Branding</h3><div class="g2">${lz('logoDark', false, 'Dark logo (for light backgrounds)', "Used when the portal is in light mode. Upload a dark-colored logo so it's visible on white. PNG or SVG, max 2MB.")}${lz('logoLight', true, 'Light logo (for dark backgrounds)', "Used when the portal is in dark mode. Upload a light-colored logo so it's visible on black. PNG or SVG, max 2MB.")}</div>
+        ${p.logoDark && p.logoLight ? `<div class="okline">${ic('check', 'sm')} Your logo renders in both light and dark mode.</div>` : ''}
+        <label class="lbl" style="margin-top:16px">Favicon</label><div style="display:flex;gap:16px;align-items:center">${p.favicon ? `<div class="fav has" style="color:#fff">${GF_SVG}</div>` : `<div class="fav" data-act="ptLogo" data-arg="favicon" aria-label="Drop a mark">${ic('upload')}</div>`}<div class="help" style="margin:0">Shown in the browser tab beside your portal name. Drop in any mark — we fit it to a square automatically.</div></div>
+        <hr style="border:0;border-top:1px solid var(--line2);margin:18px 0">
+        <h3>Colors</h3><div class="d">Used for the brand mark, focus rings, live-payment highlights, and sender-portal accents. The main action stays high-contrast for readability.</div>
+        <div class="g2"><div><label class="lbl">Brand</label><div class="colr"><span class="sw" style="background:${esc(p.brand.length >= 7 ? p.brand : '#0f1014')}"></span><input class="inp mono2" data-bind="pt.brand" aria-label="Brand" value="${esc(p.brand)}"><span class="rs">Reset</span></div><div class="help">Logo fallback, links, focus rings</div></div>
+          <div><label class="lbl">Accent</label><div class="colr"><span class="sw" style="background:${esc(p.accent.length >= 7 ? p.accent : '#e8e8e8')}"></span><input class="inp mono2" data-bind="pt.accent" aria-label="Accent" value="${esc(p.accent)}"><span class="rs">Reset</span></div><div class="help">Live path, badges, secondary highlights</div></div></div>
+        ${p.accent !== '#E8E8E8' && p.accent.length >= 7 ? '<div class="help" style="margin-top:12px">ⓘ Brand and accent are nearly the same color, so highlights won\'t stand out from your buttons. A more distinct accent — or "Match accent to brand" below — keeps them separate.</div>' : ''}
+        <button class="btn" style="margin-top:12px"><span style="width:10px;height:10px;border-radius:50%;background:${esc(p.accent.length >= 7 ? p.accent : '#e8e8e8')};display:inline-block"></span> Match accent to brand</button></div>
+      <div class="pcard" id="pt-details"><h3>Portal details</h3><div class="d">How your portal introduces itself to senders — the name on the login screen and emails, the terms they accept, and where they reach you for support.</div>
+        <div class="fld"><label class="lbl">Portal name</label>${this.inp('pt.name', p.name, 'Portal name')}<div class="help">Displayed on the sender login screen and emails. ${p.name.length}/50</div></div>
+        <div class="fld"><label class="lbl">Terms &amp; conditions URL</label>${this.inp('pt.terms', p.terms, 'Terms & conditions URL', 'https://yourcompany.com/terms')}<div class="help">Senders must accept these terms before using the portal. If not provided, Mesta platform terms will apply.</div></div>
+        <div class="fld" style="margin-bottom:0"><label class="lbl">Support email</label>${this.inp('pt.support', p.support, 'Support email', 'support@yourcompany.com')}<div class="help">Where senders reach you for account help — portal access, onboarding follow-up.</div>
+          <div id="pt-aws" style="border:1px solid #cfd8f5;background:#f5f7ff;border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.5;margin-top:12px;color:var(--ink2)">ⓘ Every sender email — portal invitations, password resets, and account notices — is sent <b>from this address</b>. When you save, Amazon Web Services emails a verification link to it that you must click to confirm ownership. <b>Until it's verified, these emails are sent from Mesta (support@mesta.xyz) — your address can't be used for sending yet.</b></div></div></div>
+      <div class="pcard" id="pt-url"><h3>Portal URL</h3><div class="d">Your portal's default web address — senders sign in here. Share it directly, or keep it as the fallback when a custom domain isn't set up yet.</div>
+        <label class="lbl">Portal address</label><div class="addr"><span>https://</span><input data-bind="pt.url" aria-label="Portal address" value="${esc(p.url)}"><span>.aloha.stg.mesta.xyz</span></div><div class="help">The web address where your senders sign in. Always works, even before you add a custom domain.</div>
+        <div class="okline">${ic('check', 'sm')} Available</div><div class="linkbox">→ <span>https://${esc(p.url)}.aloha.stg.mesta.xyz</span>${ic('file', 'sm')}</div>
+        ${p.url !== 'mathew-test-web3' ? '<div class="prev"><div class="k">PREVIOUS ADDRESS — REDIRECTS FOR NOW</div><div class="v">↳ mathew-test-web3.aloha.stg.mesta.xyz <span style="font-family:Geist;color:var(--mute)">redirects here until reclaimed</span></div></div>' : ''}</div>
+      <div class="pcard"><h3>Custom domain</h3><div class="d">Connect a custom domain so your senders access the portal on your own URL.</div>
+        <label class="lbl">Domain</label>${this.inp('pt.domain', p.domain, 'Domain', 'dashboard.yourdomain.com')}<div class="help" style="${dom ? '' : 'color:var(--red-tx)'}">${dom ? 'Add both CNAME records below at your DNS provider. We\'ll detect each automatically — usually within 5–30 minutes.' : 'Enter a valid domain like dashboard.yourdomain.com — letters, numbers, dots and hyphens only.'}</div>
+        ${dom ? `<div id="pt-cname"><div class="cname"><small class="mono2" style="color:var(--mute)">CNAME</small><div class="t"><div><small>NAME</small>${esc(p.domain)}</div><div><small>VALUE</small>portal-666a7e0d509e4e7c80f9969a0e65735b.aloha.stg.mesta.xyz</div></div><span class="chip g">Pending</span></div><div class="cname"><small class="mono2" style="color:var(--mute)">CNAME</small><div class="t"><div><small>NAME</small>_5ec477578c2d10a80e2cd2692c626fb9.${esc(p.domain)}</div><div><small>VALUE</small>_2613d752729663be96316248291661cd.jkddzztsz.acm-validations.aws</div></div><span class="chip g">Pending</span></div><div class="help">Set TTL to 300 seconds and publish both as DNS-only (no proxying / orange cloud). We keep checking for 72 hours; if nothing is detected in the first 24, setup pauses — retry anytime.</div><div style="display:flex;gap:8px;margin-top:10px"><button class="btn sm">${ic('file', 'sm')} Copy all</button><button class="btn sm">${ic('refresh', 'sm')} Check now</button></div></div>` : ''}</div>
+      <div class="pcard" id="pt-settle"><div class="kicker mono" style="color:var(--ink2)">Settlement · irreversible after first save</div><div class="d">Choose the stablecoin and network Mesta settles your funds to. It can only be changed by contacting Mesta after it's set — confirm the address before saving.</div>
+        <div class="netc"><div class="n ${p.net === 'usdc' ? 'on' : ''}" data-act="ptNet" data-arg="usdc"><span class="rb"></span><span class="ic">Ξ</span><div><b>USDC on Ethereum</b><span>ERC-20 stablecoin · ~12s confirm</span></div></div><div class="n ${p.net === 'usdt' ? 'on' : ''}" data-act="ptNet" data-arg="usdt"><span class="rb"></span><span class="ic trx">T</span><div><b>USDT on Tron</b><span>TRC-20 stablecoin · ~3s confirm</span></div></div></div>
+        <label class="lbl">Wallet address</label>${this.inp('pt.wallet', p.wallet, 'Wallet address', '', 'mono2')}${p.wallet.length > 20 ? `<div class="okline">${ic('check', 'sm')} Valid Ethereum address</div>` : ''}<div class="help">This address receives every future settlement. It locks on the first save — double-check it before you save.</div></div>
+      ${dirty.length || !p.saved ? `<div class="savebar" id="pt-savebar"><span class="u">Unsaved: <b>${esc(dirty.length ? dirty.join(', ') : 'no changes yet')}</b></span><span class="btn link" data-act="ptDiscard">Discard</span><button class="btn dark" data-act="ptSave" ${dirty.length ? '' : 'disabled'}>Save · ${dirty.length} change${dirty.length === 1 ? '' : 's'}</button></div>` : ''}
+    </div>${this.rPtPreview()}</div>`;
+  }
+  rPtPreview() {
+    const p = this.state.pt, brand = p.brand.length >= 7 ? p.brand : '#0f1014', accent = p.accent.length >= 7 ? p.accent : '#8b8f98';
+    const dark = p.accent !== '#E8E8E8' && p.accent.length >= 7;
+    return `<div class="lp" id="pt-preview"><h5>Live preview</h5><div class="d">Exactly what your senders see — your color, resolved into a legible system.</div>
+      <div class="bsys"><div class="k">YOUR BRAND SYSTEM</div><div class="row3"><div class="tile"><span class="bt" style="background:${brand}">Sign in</span></div><div class="tile" style="color:${brand}">Get started</div><div class="tile"><span style="width:8px;height:8px;border-radius:50%;background:${accent};display:inline-block;margin-right:8px"></span>Live</div></div><div class="cap"><span>Button</span><span>Link</span><span>Accent</span></div>
+        <div class="nt">${dark ? 'Your brand color is a touch too light to read as link text on this background, so links and small icons automatically use a slightly darker shade of it — your buttons still show your exact color.' : '✓ Reads clearly as a button, link, and live badge.'}</div></div>
+      <div class="lptabs"><div class="seg"><span class="on">Sign in</span><span>Dashboard</span></div><span class="sp"></span><small>Sign-in always opens in light for your senders.</small></div>
+      <div class="bmock"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="url"><i></i>🔒 ${esc(p.url)}.aloha.stg.mesta.xyz</span></div>
+        <div class="body">${p.logoDark ? gfLogo('sm') : `<span style="display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px"><span style="width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center">G</span>${esc(p.name || 'Global Fincon')}</span>`}
+          <h2>Welcome back</h2><div class="s">Sign in to send payments, track funding, and follow settlement in real time.</div>
+          <div class="pk">${ic('finger', 'sm')} Sign in with a passkey</div><div class="or">OR USE YOUR PASSWORD</div>
+          <div class="fl"><small>EMAIL</small><span>maria@acme.co</span></div><div class="fl"><small>PASSWORD</small><span>••••••••••</span></div>
+          <div class="go" style="background:${brand}">Sign in · password + code</div><div class="na">Need access? Ask your administrator for an invitation.</div></div></div></div>`;
+  }
+  pair(f, a, b) { return `<span class="pair"><span style="font-size:18px">${f}</span><span class="fl">$</span>${a} ⇄ ${b}</span>`; }
+  rPtDefault() {
+    const p = this.state.pt, rows = p.dp.rows.length ? [['🇪🇺', 'EUR', 'USDT', '2 tiers', 'First: 175 bps', 'Aug 6, 2026 12:30', 'Pending', 'Just now'], ...DP_ROWS] : DP_ROWS;
+    const total = 16 + p.dp.rows.length;
+    return `<div class="pcard"><div class="prhead"><div><div class="kicker mono">Default pricing · ${total} total · 12 active · ${p.dp.rows.length} pending</div><h4>Default sender pricing</h4><div class="d" style="max-width:860px">Pair-level pricing applied to every sender without a per-sender override. Once a row goes live it cannot be edited — schedule a new row with a later start date to change pricing going forward.</div></div><span class="sp"></span><button class="btn dark" data-act="dpOpen">${ic('plus')} Add default · applies to all senders</button></div>
+      <div class="supt">Show superseded (4) <span class="tog" style="width:40px;height:22px"></span></div>
+      <div class="card" style="overflow:hidden"><table><thead><tr><th class="mono">Currency pair</th><th class="mono">Tiers</th><th class="mono">Effective from</th><th></th><th class="mono">Created</th><th></th></tr></thead><tbody>${rows.map((r, i) => `<tr class="${i === 0 && p.dp.rows.length ? 'new' : ''}"><td>${this.pair(r[0], r[1], r[2])}</td><td><span class="tiers"><b>${r[3]}</b><small>${r[4]}</small></span></td><td>${r[5]}</td><td><span class="chip ${r[6] === 'Active' ? 'g' : 'a'}">${r[6]}</span></td><td>${r[7]}</td><td><span class="act">View ${ic('file', 'sm')} ${ic('trash', 'sm')}</span></td></tr>`).join('')}</tbody></table></div></div>`;
+  }
+  rPtSender() {
+    const p = this.state.pt, sp = p.sp, filtered = sp.filter !== 'All senders';
+    const rows = filtered ? (sp.rows.length ? [['Prateek Jain', 'prateek-sender-reaa-13@mesta.xyz', '🇬🇧', 'GBP', 'USDC', '3 tiers', 'First: 125 bps', 'Aug 6, 2026 12:30', 'Pending', 'Just now']] : []) : SP_ROWS;
+    const total = SP_ROWS.length + sp.rows.length;
+    return `<div class="pcard"><div class="prhead"><div><div class="kicker mono">Sender pricing · ${total} rows · ${2 + sp.rows.length} senders · 2 active · ${sp.rows.length} pending</div><h4>Per-sender pricing overrides</h4><div class="d" style="max-width:860px">Custom pricing for a specific sender — overrides your default for their currency pair. To change it, schedule a new override with a future start date; the current one stays in effect until then.</div></div><span class="sp"></span><button class="btn dark" data-act="spOpen">${ic('plus')} Add override · applies to one sender</button></div>
+      <label class="lbl">Filter by sender</label><div class="sel ${sp.filterOpen ? 'focus' : ''}" style="max-width:400px" data-act="spFilter"><span>${esc(sp.filter)}</span><span class="sp"></span>${ic('down', 'sm')}${sp.filterOpen ? `<div class="dd light" data-stop="1">${['All senders', ...PT_SENDERS].map(n => `<div class="${n === sp.filter ? 'on' : ''}" data-act="spPick" data-arg="${esc(n)}">${esc(n)}</div>`).join('')}</div>` : ''}</div>
+      ${rows.length ? `<div class="card" style="overflow:hidden;margin-top:16px"><table><thead><tr><th class="mono">Sender</th><th class="mono">Currency pair</th><th class="mono">Tiers</th><th class="mono">Effective from</th><th></th><th class="mono">Created</th><th></th></tr></thead><tbody>${rows.map((r, i) => `<tr class="${filtered ? 'new' : ''}"><td><span class="tiers"><b>${esc(r[0])}</b><small class="mono2">${esc(r[1])}</small></span></td><td>${this.pair(r[2], r[3], r[4])}</td><td><span class="tiers"><b>${r[5]}</b><small>${r[6]}</small></span></td><td>${r[7]}</td><td><span class="chip ${r[8] === 'Active' ? 'g' : 'a'}">${r[8]}</span></td><td>${r[9]}</td><td><span class="act">View ${ic('file', 'sm')} ${ic('trash', 'sm')}</span></td></tr>`).join('')}</tbody></table><div style="text-align:right;padding:10px 16px;font-size:13px">Total rows: ${rows.length}</div></div>`
+        : `<div class="empty" style="margin-top:16px;padding:40px"><b>No overrides for prateek-sender-reaa-13@mesta.xyz yet</b><span>prateek-sender-reaa-13@mesta.xyz pays your default pricing on every pair — add an override to give them a different rate on one pair.</span><div style="margin-top:14px"><button class="btn dark sm" data-act="spOpen">Add override for prateek-sender-reaa-13@mesta.xyz</button></div></div>`}</div>`;
+  }
+  rPricingModal(kind) {
+    const s = this.state, m = s.pt[kind], isDp = kind === 'dp';
+    const tier = (t, i, n) => `<div class="tierrow"><div><label class="lbl">Vol from</label>${this.inp(`pt.${kind}.tiers.${i}.from`, t.from, 'Vol from ' + (i + 1), '', 'mono2')}</div><div><label class="lbl">Vol to</label>${this.inp(`pt.${kind}.tiers.${i}.to`, t.to, 'Vol to ' + (i + 1), '', 'mono2')}</div><div><label class="lbl">Fee (bps)<i>*</i></label>${this.inp(`pt.${kind}.tiers.${i}.fee`, t.fee, 'Fee ' + (i + 1), '', 'mono2')}</div><div class="x">✕</div></div>`;
+    if (m.review) {
+      const tiers = m.tiers.map((t, i) => { const bps = +t.fee || 0, fee = 10000 * bps / 10000; return { n: i + 1, from: (+t.from).toLocaleString('en-US'), to: (+t.to).toLocaleString('en-US'), bps, fee }; });
+      return `<div class="ov"><div class="modal pm2 rev"><div class="h"><h3>Review ${isDp ? 'default pricing' : 'sender pricing override'}</h3><span style="cursor:pointer;color:var(--mute)" data-act="${kind}Back">✕</span></div>
+        <div class="kk" id="rev-top">Pricing preview · ${m.src} → ${m.dst} · ${m.tiers.length} tier${m.tiers.length === 1 ? '' : 's'}${isDp ? '' : ' · ' + esc(m.sender)}</div>
+        <div class="sec" id="rev-fees">ADDITIONAL FEES</div><div class="sd">Per-quote fees added on top of the customer bps fee.</div>
+        <div class="box"><div class="k">PASS-THROUGH FEE</div><div class="kv"><span>Default</span><span>$5.00</span></div><div class="n">Pass-through covers rail/regulatory costs — not part of Mesta or merchant earnings. This fee is added per quote, regardless of transfer type. All flat fees are denominated in USD and converted to the source currency of the order at execution.</div></div>
+        <div class="sec" id="rev-tiers">ILLUSTRATION</div><div class="sd">Worked example on <b>$10,000.00</b>. All values shown in USD; the flat fee is converted to the source currency at execution.</div>
+        <div class="inf">ⓘ Mesta retains <b>50%</b> of your bps fee · You keep <b>50%</b></div>
+        ${tiers.map(t => `<div class="tier"><div class="th"><span>Tier ${t.n} · Volume ${t.from}–${t.to} USD</span><span>${t.bps} bps</span></div><div class="g3"><div><small>CUSTOMER PAYS</small><b>$${(10000 + t.fee + 5).toLocaleString('en-US', { minimumFractionDigits: 2 })}</b>$10,000.00 + $${t.fee.toFixed(2)} bps fee + $5.00 pass-through</div><div><small>MESTA TAKES</small><b>$${(t.fee / 2).toFixed(2)}</b>50% of $${t.fee.toFixed(2)} bps fee</div><div><small>YOU EARN</small><b class="gr">$${(t.fee / 2).toFixed(2)}</b>50% of $${t.fee.toFixed(2)} bps fee</div></div></div>`).join('')}
+        <div class="foot"><span class="btn link" data-act="${kind}Back">← Back to edit</span><button class="btn dark" data-act="${kind}Confirm">Confirm &amp; save</button></div></div></div>`;
+    }
+    return `<div class="ov"><div class="modal pm2"><div class="h"><h3>${isDp ? 'Add default pricing' : 'Add sender pricing override'}</h3><span style="cursor:pointer;color:var(--mute)" data-act="${kind}Close">✕</span></div>
+      <div class="kk">${isDp ? 'Merchant default · applies to all senders · starts now unless you schedule it' : 'Per-sender override · replaces the default · starts now unless you schedule it'}</div>
+      ${isDp ? '' : `<div class="fld"><label class="lbl">Sender<i>*</i></label><div class="sel"><span>${esc(m.sender)}</span><span class="chip g" style="margin-left:10px">Approved</span><span class="sp"></span>${ic('down', 'sm')}</div></div>`}
+      <div class="g2"><div><label class="lbl">Source currency<i>*</i></label>${this.sel('pt.' + kind + '.src', m.src, 'Select', ['USDC', 'USDT', 'USD', 'EUR', 'GBP'])}</div><div><label class="lbl">Target currency<i>*</i></label>${this.sel('pt.' + kind + '.dst', m.dst, 'Select', ['EUR', 'GBP', 'USD', 'INR', 'BRL', 'USDC'])}</div></div>
+      <div class="help" style="margin:8px 0 14px">Only pairs with an active revenue share configured for your account are shown. For stablecoins use the symbol only (USDC / USDT); the chain is resolved at quote time.</div>
+      <div class="fld"><label class="lbl">Effective from (optional)</label>${this.inp('pt.' + kind + '.eff', m.eff, 'Effective from', 'mm / dd / yyyy, --:-- --', 'mono2')}<div class="help">Leave blank to apply immediately. Set a future date to apply later — once active, the row cannot be edited or deleted.</div></div>
+      <div style="display:flex;align-items:center;margin-bottom:10px"><span style="font-size:14px;font-weight:500">Tier ladder</span><span style="flex:1"></span><span class="btn link" data-act="${kind}AddTier">${ic('plus', 'sm')} Add tier</span></div>
+      ${m.tiers.map((t, i) => tier(t, i, m.tiers.length)).join('')}
+      <div class="help">Fees are set in basis points (bps): 100 bps = 1%. First tier must start at 0. Adjacent tiers connect on shared boundary. Use 1,000,000,000,000 as "unlimited" on the last tier. Flat fees and Mesta's underlying costs are set on your revenue share by your account team — the tier fee you set here is the customer-facing bps.</div>
+      <div class="foot"><span class="btn link" data-act="${kind}Close">Cancel</span><button class="btn dark" data-act="${kind}Review">Review pricing</button></div></div></div>`;
+  }
+  rPtSenders() {
+    const p = this.state.pt, sn = p.sn;
+    const rows = [...SN_ROWS.map(r => [...r])];
+    if (sn.sent) rows.unshift(['🌐', '—', 'Invited by email', sn.email || 'ashyokk@gigpayroll.xyz', sn.status === 'Active' ? 'Active' : 'Invited', sn.status === 'Active' ? 'Active' : 'Pending', sn.status === 'Active' ? 'Approved' : 'Unverified', 'Enabled', sn.status === 'Active' ? 'Just now' : '—', true]);
+    const shown = rows.filter(r => sn.filter === 'All' || r[4] === sn.filter);
+    const counts = { All: 212 + (sn.sent ? 1 : 0), Active: 16 + (sn.status === 'Active' ? 1 : 0), Invited: 6 + (sn.sent && sn.status !== 'Active' ? 1 : 0), Disabled: 0, 'No access': 190 };
+    const cls = v => ({ Active: 'g', Approved: 'g', Enabled: 'g', Invited: 'b', Pending: 'a', Unverified: 'a', Disabled: 'k', 'No access': 'k' })[v] || 'k';
+    return `<div class="warn" style="margin-top:0"><span class="ic">!</span><div><span><b style="display:inline;font-size:14px">Verify your support email.</b> We sent a verification link from Amazon Web Services to <b style="display:inline;font-size:14px">support@globalfincon.com</b>. Until you verify it, portal invitations and password resets go out in Mesta's name (<b style="display:inline;font-size:14px">support@mesta.xyz</b>) — not your address. <a style="color:var(--violet)">Review</a></span></div></div>
+      <div class="pcard" id="sn-invite"><div style="display:flex;gap:14px;align-items:flex-start"><span class="gl" style="width:40px;height:40px;border-radius:50%;background:#f1f2f4;display:flex;align-items:center;justify-content:center;flex:none">${ic('userplus')}</span><div><h3>Invite new sender</h3><div class="d">For someone who isn't a sender yet — this creates their account and emails a setup link. Already have this person in your senders below? Use the Invite to Portal button on their row instead of adding them again.</div></div></div>
+        <label class="lbl">Sender email</label><div style="display:flex;gap:16px;align-items:center"><div style="flex:0 0 560px">${this.inp('pt.sn.email', sn.email, 'Sender email', 'sender@example.com')}</div><button class="btn dark" data-act="snSend">${ic('file', 'sm')} Send invitation · valid for 7 days</button></div>
+        ${sn.sent ? `<div class="inv"><b>${ic('file', 'sm')} Invitation sent</b><div class="d">You can also share this link directly:</div><div class="lk"><div class="lnk"><span>https://global-fincon.aloha.stg.mesta.xyz/auth/setup?token=b3bfc036-67fe-41d2-a3ec-a8ae6f0e7e02</span></div><button class="btn sm" data-act="snCopy">${ic('file', 'sm')} ${sn.copied ? 'Copied' : 'Copy'}</button></div><div class="help">Link expires in 7 days.</div></div>` : ''}</div>
+      <div class="pcard" style="display:flex;gap:14px;align-items:center;padding:16px 22px"><span style="width:36px;height:36px;border-radius:50%;background:#f1f2f4;display:flex;align-items:center;justify-content:center;flex:none">ⓘ</span><span style="font-size:14px">Already have a sender below? Click their row to invite them to the portal or manage existing access — no need to re-add them above.</span></div>
+      <div class="kicker mono" id="sn-table" style="margin-top:6px">Existing senders — click a row to invite to the portal or manage access</div>
+      <div class="fchips">PORTAL ACCESS ${Object.entries(counts).map(([k, v]) => `<span class="${sn.filter === k ? 'on' : ''}" data-act="snFilter" data-arg="${k}" aria-label="${k}">${k} <small style="${sn.filter === k ? 'color:rgba(255,255,255,.7)' : ''}">(${v})</small></span>`).join('')}<span class="sp"></span><span class="inp">${ic('search', 'sm')} Search by name or email…</span></div>
+      <div class="card" style="overflow:hidden"><table><thead><tr><th class="mono">Sender</th><th class="mono">Email</th><th class="mono">Portal access</th><th class="mono">Sender status</th><th class="mono">KYB/KYC</th><th class="mono">2FA</th><th class="mono">Last login</th><th></th></tr></thead><tbody>${shown.map(r => `<tr class="${r[9] ? 'new' : ''}"><td><span class="nm"><span style="font-size:18px">${r[0]}</span><span><span style="display:block">${esc(r[1])}</span><span style="display:block;font-size:11.5px;color:var(--mute);font-weight:400">${esc(r[2])}</span></span></span></td><td>${esc(r[3])}</td><td><span class="chip ${cls(r[4])}">${r[4]}</span></td><td><span class="chip ${cls(r[5])}">${r[5]}</span></td><td><span class="chip ${cls(r[6])}">${r[6]}</span></td><td><span class="chip ${cls(r[7])}">${r[7]}</span></td><td>${r[8]}</td><td class="arr">View</td></tr>`).join('') || '<tr><td colspan="8" style="text-align:center;color:var(--mute);padding:30px">No senders in this view</td></tr>'}</tbody></table></div>`;
+  }
+
   /* ---------- mount + autoplay ---------- */
   mount() {
     this._shell = document.getElementById('shell');
@@ -1332,7 +1778,7 @@ class Component {
     this._shell.appendChild(L); this._prompts = L; this._beacon = L.firstChild; this._tip = L.lastChild; this._tipText = this._tip.lastChild;
     const q = new URLSearchParams(location.search);
     const flow = FLOWS[q.get('flow')] ? q.get('flow') : DEMO_FLOW[q.get('demo')] || 'beneficiary';
-    this.state = { ...this.state, flow };
+    this.state = { ...this.state, flow }; this.state = this.freshInit();
     this._play = q.get('play') === '1';
     const fit = () => { const k = Math.min(innerWidth / 1600, innerHeight / 900); this._k = k; this._shell.style.transform = `translate(-50%,-50%) scale(${k})`; this.placePrompt(); };
     addEventListener('resize', fit); fit();
@@ -1346,7 +1792,7 @@ class Component {
       if (e.target.closest('[data-stop]')) return;
       const s = this.state; if (s.openSel || s.countryOpen || s.o.srcOpen || s.o.dstOpen || s.o.fromOpen || s.o.toOpen) this.act('closeDd');
     });
-    document.addEventListener('input', e => { const k = e.target.dataset.bind; if (!k) return; this.bindSet(k, e.target.value); this.renderBar(); this.placePrompt(); });
+    document.addEventListener('input', e => { const k = e.target.dataset.bind; if (!k) return; this.bindSet(k, e.target.value); const steps = this.steps(); let i = this.state.step; while (i < steps.length - 1 && steps[i].done(this.state)) i++; if (i !== this.state.step) { this.setState({ step: i }); return; } this.renderBar(); this.placePrompt(); });
     this.componentDidMount(q);
   }
   componentDidMount(q) {
@@ -1397,7 +1843,7 @@ class Component {
   typeInto(key, value) {
     const el = document.querySelector(`[data-bind="${key}"]`); if (!el) { this.bindSet(key, value); return; }
     el.classList.add('typing'); el.focus();
-    let i = 0; const step = () => { i++; el.value = value.slice(0, i); this.bindSet(key, el.value); if (i < value.length) this._t.type = setTimeout(step, 42 * this._mult); else el.classList.remove('typing'); };
+    let i = 0; const step = () => { i++; el.value = value.slice(0, i); this.bindSet(key, el.value); if (i < value.length) this._t.type = setTimeout(step, 42 * this._mult); else { el.classList.remove('typing'); this.componentDidUpdate(this.state); } };
     this._t.type = setTimeout(step, 120);
   }
 }

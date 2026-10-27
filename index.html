@@ -88,7 +88,7 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 <section class="hero"><div class="wrap">
   <div class="tags"><span class="tag v">Ohana</span><span class="tag">Click-through demo</span></div>
   <h1>Ohana product demos</h1>
-  <p class="lead">Click-through demos of the Ohana merchant dashboard: create a beneficiary, onboard a business sender, and create a payment order. Each one plays as a guided demo with captions, or opens as a self-service run that points at the exact element to use next.</p>
+  <p class="lead">Click-through demos of the Ohana merchant dashboard: create a beneficiary, onboard a business sender, create a payment order, and set up the white-label sender portal in Portal Studio. Each one plays as a guided demo with captions, or opens as a self-service run that points at the exact element to use next.</p>
 </div></section>
 
 <section class="demo" id="demo"><div class="wrap">
@@ -117,28 +117,24 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 
 <script>
 const DEMOS = [
-  { flow: 'beneficiary', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
-    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']],
-    ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']],
-    ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']],
-    ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']],
-    ['Create and verify', ['Create beneficiary', 'Verification']] ] },
-  { flow: 'sender', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
-    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']],
-    ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']],
-    ['Business details and documents', ['Business details', 'Supporting documents']],
-    ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']],
-    ['Create and verify', ['Verification links', 'KYB approved']] ] },
-  { flow: 'order', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
-    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']],
-    ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']],
-    ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']],
-    ['Review and send', ['Send payment']],
-    ['Track the order', ['Back to orders', 'Funds and settlement']] ] }
+  { flow: 'beneficiary', group: 'Ohana', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']], ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'sender', group: 'Ohana', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
+    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']], ['Business details and documents', ['Business details', 'Supporting documents']], ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']], ['Create and verify', ['Verification links', 'KYB approved']] ] },
+  { flow: 'order', group: 'Ohana', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
+    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']], ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']], ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']], ['Review and send', ['Send payment']], ['Track the order', ['Back to orders', 'Funds and settlement']] ] },
+  { flow: 'portal-setup', group: 'Portal Studio', num: '04', title: 'Set up your portal', intro: 'The white-label sender portal in four stages. Step 1: branding (logos, favicon, colours), portal details (name, terms, support email), the portal URL and a custom domain, the settlement wallet, then Save Changes and switch the portal on.', steps: [
+    ['Log in and open Portal Studio', ['Sign in', 'Open Portal Studio']], ['Branding', ['Dark logo', 'Light logo', 'Favicon', 'Brand colour', 'Accent colour']], ['Portal details', ['Portal name', 'Terms URL', 'Support email']], ['Portal URL and settlement wallet', ['Portal address', 'Custom domain', 'Settlement network', 'Wallet address']], ['Save and switch the portal on', ['Save changes', 'Update URL', 'Portal on']] ] },
+  { flow: 'portal-default', group: 'Portal Studio', num: '05', title: 'Set your default pricing', intro: 'Tiered pricing across every corridor you operate in, applied to all senders uniformly. Add tiers by transaction volume (first tier from 0, last tier to 1 trillion), set an effective date, review the structure, fees and what you earn, then confirm and save.', steps: [
+    ['Open Default pricing', ['Default pricing tab']], ['Add a default', ['Add default', 'Currency pair']], ['Tier ladder', ['Add tier', 'Volume from', 'Volume to']], ['Effective date and review', ['Effective from', 'Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-sender', group: 'Portal Studio', num: '06', title: 'Add custom sender pricing', intro: 'Per-sender overrides that replace the default pricing when that sender transacts on the portal. Select the sender, add an override with its tiers, review and confirm.', steps: [
+    ['Open Sender pricing', ['Sender pricing tab']], ['Select the sender', ['Filter by sender', 'Pick Prateek Jain', 'Add override']], ['Tiers and pricing', ['Add tiers', 'Volume from', 'Volume to']], ['Review', ['Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-senders', group: 'Portal Studio', num: '07', title: 'Manage your senders', intro: 'Invite new senders by email, share the invite link on any channel, and track existing senders through verification until they can transact on the portal.', steps: [
+    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] }
 ];
-const BUILD = 'v' + 20261027 + 'a'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+const BUILD = 'v' + 20261027 + 'c'; /* bump to bypass the Pages/browser cache for the embedded prototype */
 document.getElementById('demos').innerHTML = DEMOS.map(d => `<div class="grid" id="demo-${d.flow}">
-  <div><div class="num">${d.num} / Ohana</div><h3>${d.title}</h3><p class="intro">${d.intro}</p>
+  <div><div class="num">${d.num} / ${d.group}</div><h3>${d.title}</h3><p class="intro">${d.intro}</p>
     <div class="steps">${d.steps.map(([t, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('')}</div></div>
   <div><div class="frame"><iframe src="prototype.html?flow=${d.flow}&demo=1&b=${BUILD}" title="${d.title}" tabindex="-1" loading="lazy"></iframe><div class="ov" data-play="${d.flow}"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
     <div class="ctl"><button class="btn p" data-play="${d.flow}">▶ Play the guided demo</button><button class="btn" data-self="${d.flow}">Try it yourself</button><span class="sp"></span><span class="lbl">Both open full screen. Press Esc to leave.</span></div></div>
