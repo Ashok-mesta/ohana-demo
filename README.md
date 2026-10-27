@@ -23,6 +23,9 @@ mesta-logo.svg    Mesta wordmark (inlined into prototype.html at the top of the 
 | `prototype.html?flow=sender&play=1` | guided demo: cursor, ripple, captions, loops after the last op |
 | `prototype.html?flow=order&play=1&slow=1` | guided demo at 1.8x the hold times |
 | `prototype.html?demo=1` (2, 3) | legacy aliases for beneficiary / sender / order; `&demo=1` without `play` is a static preview for thumbnails |
+| `prototype.html?flow=portal-setup` / `portal-default` / `portal-sender` / `portal-senders` | the four Portal Studio flows (Ohana admin, Global Fincon account) |
+| `prototype.html?flow=aloha-register` / `aloha-wallet` / `aloha-account` / `aloha-beneficiary` / `aloha-payment` | the five Aloha sender-portal flows (the white-label portal a sender uses; `aloha.css` + `aloha.js` add the skin, screens and flows on top of the same engine) |
+| `prototype.html?demo=4` … `demo=12` | numeric aliases: 4–7 Portal Studio, 8–12 Aloha |
 
 The page is a fixed 1600x900 design that scales itself to fill whatever window or iframe it is in,
 and the presenter bar has a Full screen button (Fullscreen API; inside an iframe it asks the parent).
@@ -67,6 +70,10 @@ Everything lives in the `<script>` of `prototype.html`. `FLOWS` is the registry:
 
 Timing (from the reference): the cursor travels 0.9s, waits 1.0s, clicks (ripple + press squash),
 the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from a fresh `INIT`.
+
+## Aloha · the sender-portal skin
+
+`aloha.js` is loaded after the engine and before `app.mount()`. It extends `Component.prototype` with the Aloha screens (`rAlShell`, `rAlOnb`, `rAlWalletNew`, `rAlPay`, …), a second action map (`alAct`, consulted before the Ohana one), a dotted-path binder for `data-bind="al.…"` inputs, and five `FLOWS` entries whose `shell: 'aloha'` switches the chrome. Per-flow state lives in `state.al` (`reg`, `onb`, `w`, `fa`, `p`), screens are prefixed `al-`, and the Aloha beneficiary flow reuses the Ohana `rCreate` form inside the Aloha shell, exactly as the footage does. Substep targets that open a dropdown and then pick a value are one substep with a target computed from `c.state.openSel` (see `dyn()`), so the self-service prompt moves from the select to the option.
 
 ## Adding another flow
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:,">
-<title>Ohana · Create a Beneficiary · click-through demo</title>
+<title>Ohana &amp; Aloha · click-through demos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -81,13 +81,13 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 </head>
 <body>
 <header><div class="wrap">
-  <span id="logo"></span><span class="ttl">Ohana · Product demos</span><span class="sp"></span>
+  <span id="logo"></span><span class="ttl">Ohana &amp; Aloha · Product demos</span><span class="sp"></span>
   <nav><a class="on" href="#demo">Demos</a><a href="prototype.html?flow=beneficiary" target="_blank" rel="noopener">Open the prototype ↗</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
   <div class="tags"><span class="tag v">Ohana</span><span class="tag">Click-through demo</span></div>
-  <h1>Ohana product demos</h1>
+  <h1>Ohana &amp; Aloha product demos</h1>
   <p class="lead">Click-through demos of the Ohana merchant dashboard: create a beneficiary, onboard a business sender, create a payment order, and set up the white-label sender portal in Portal Studio. Each one plays as a guided demo with captions, or opens as a self-service run that points at the exact element to use next.</p>
 </div></section>
 
@@ -130,9 +130,19 @@ const DEMOS = [
   { flow: 'portal-sender', group: 'Portal Studio', num: '06', title: 'Add custom sender pricing', intro: 'Per-sender overrides that replace the default pricing when that sender transacts on the portal. Select the sender, add an override with its tiers, review and confirm.', steps: [
     ['Open Sender pricing', ['Sender pricing tab']], ['Select the sender', ['Filter by sender', 'Pick Prateek Jain', 'Add override']], ['Tiers and pricing', ['Add tiers', 'Volume from', 'Volume to']], ['Review', ['Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
   { flow: 'portal-senders', group: 'Portal Studio', num: '07', title: 'Manage your senders', intro: 'Invite new senders by email, share the invite link on any channel, and track existing senders through verification until they can transact on the portal.', steps: [
-    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] }
+    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] },
+  { flow: 'aloha-register', group: 'Aloha · sender portal', num: '08', title: 'Sender registration', intro: 'From the invitation email to a verified, onboarded profile on the white-label sender portal: create the account with multi-factor authentication, select the country, provide the business information by manual entry or by uploading a business document the portal reads and fills in, submit for review, then share the UBO verification link.', steps: [
+    ['Open the invitation and create your account', ['Invitation link', 'Password', 'Confirm password', 'Accept the terms', 'Set up account', 'Scan the QR code', 'Authentication code', 'Verify code', 'Passkey (later)']], ['Select the country and enter business details', ['Country', 'Continue', 'Full name', 'Phone number', 'Business type', 'Continue · Documents']], ['Documents, risk profile and beneficial owners', ['Business registration document', 'Proof of address', 'Continue · Risk profile', 'Number of employees', 'Source of funds', 'Continue · Owners', 'First name', 'Last name', 'Ownership percentage']], ['Or upload documents and let the portal fill the form', ['Business details', 'Upload documents', 'Pick a business document', 'Read documents', 'Fill the form']], ['Submit for review and get verified', ['Review the owners', 'PEP declaration', 'Submit for review', 'UBO verification link', 'Verification']] ] },
+  { flow: 'aloha-wallet', group: 'Aloha · sender portal', num: '09', title: 'Create a self-custody wallet', intro: 'Pick a network, create the wallet, and keep an encrypted backup: the security overview, Ethereum / Polygon / Tron, key generation in the browser, the password-protected backup file, and the acknowledgement before the wallet is ready.', steps: [
+    ['Log in and open Wallets', ['Sign in', 'Open Wallets', 'Create wallet']], ['Read the security overview', ['Continue']], ['Pick a network and generate the wallet', ['Polygon', 'Create wallet']], ['Back up with a password', ['Back up with password', 'Encryption password', 'Download backup', 'Acknowledge', 'Continue to wallet']], ['Your wallet is ready', ['Done']] ] },
+  { flow: 'aloha-account', group: 'Aloha · sender portal', num: '10', title: 'Generate a virtual named account', intro: 'Request a named fiat account in USD, EUR, GBP or MXN: open Fiat accounts, request the first account, choose the currency, generate it, wait for provisioning, then reveal the account number.', steps: [
+    ['Log in and open Fiat accounts', ['Sign in', 'Fiat accounts']], ['Request your first account', ['Request your first account']], ['Choose the currency', ['Currency']], ['Generate the account', ['Generate account']], ['Your account is live', ['Reveal the account number', 'Next accounts']] ] },
+  { flow: 'aloha-beneficiary', group: 'Aloha · sender portal', num: '11', title: 'Add a beneficiary', intro: 'Create a verified payee from the sender portal: entity type and country, then either upload the invoice and let the portal pre-fill the application, or enter the details and a payment method manually. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Beneficiaries', 'Add beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Option 1 · upload the invoice', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done']], ['Option 2 · enter the details manually', ['Full name', 'Continue', 'Bank account']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'aloha-payment', group: 'Aloha · sender portal', num: '12', title: 'Create a payment', intro: 'Three payment types from the sender portal: fiat to stablecoin from a fiat account, stablecoin to fiat and stablecoin to stablecoin from the self-custody wallet, each with the beneficiary, payment method, purpose, source of funds and relationship, the review, and for wallet payments the authorization with a 6-digit code. All three orders then appear on the Orders page.', steps: [
+    ['Log in, open Orders and choose a payment type', ['Sign in', 'Orders', 'Create payment']], ['Option 1 · Fiat to stable', ['Fiat → Stable', 'Source account', 'Stablecoin', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Send payment']], ['Option 2 · Stable to fiat', ['Back to orders', 'Create payment', 'Stable → Fiat', 'Source wallet', 'Recipient currency', 'Payment rail', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Option 3 · Stable to stable', ['Back to orders', 'Create payment', 'Stable → Stable', 'Source wallet', 'Receive asset', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Track all three orders', ['Back to orders', 'Track the status']] ] }
 ];
-const BUILD = 'v' + 20261027 + 'c'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+const BUILD = 'v' + 20261027 + 'd'; /* bump to bypass the Pages/browser cache for the embedded prototype */
 document.getElementById('demos').innerHTML = DEMOS.map(d => `<div class="grid" id="demo-${d.flow}">
   <div><div class="num">${d.num} / ${d.group}</div><h3>${d.title}</h3><p class="intro">${d.intro}</p>
     <div class="steps">${d.steps.map(([t, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('')}</div></div>
