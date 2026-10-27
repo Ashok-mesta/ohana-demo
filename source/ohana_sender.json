@@ -1,0 +1,1130 @@
+{
+ "text": " Log in to Ohana. From the navigation menu on the left, select senders. To add a new business sender, click create sender in the top right corner. First, select the entity type and the country where the business is registered. Based on the country you choose, Ohana automatically loads the appropriate onboarding form, displays the required fields, and tells you exactly which supporting documents are needed. You can complete the onboarding in one of two ways. The first option is to fill in the information manually, business details, supporting documents, onboarding and risk profile information, and ultimate beneficial owner details, or you can simply upload the business documents. Ohana automatically extracts the relevant information from the uploaded documents and pre-fills the application for your review. You only need to complete any information that couldn't be captured automatically, making the onboarding process significantly faster. Once you've reviewed and completed all the required information, click create sender in the bottom right corner. The sender is now created and verification links are generated. These links must be sent to the business's beneficial owners. Once the KYB process is successfully completed, the status moves from pending to approved. After that, the sender is ready to start transacting.",
+ "segments": [
+  {
+   "start": 3.2200000000000006,
+   "end": 12.42,
+   "text": " Log in to Ohana. From the navigation menu on the left, select senders. To add a new",
+   "words": [
+    {
+     "w": " Log",
+     "s": 3.2200000000000006,
+     "e": 3.92
+    },
+    {
+     "w": " in",
+     "s": 3.92,
+     "e": 4.14
+    },
+    {
+     "w": " to",
+     "s": 4.14,
+     "e": 4.34
+    },
+    {
+     "w": " Ohana.",
+     "s": 4.34,
+     "e": 4.74
+    },
+    {
+     "w": " From",
+     "s": 5.98,
+     "e": 6.22
+    },
+    {
+     "w": " the",
+     "s": 6.22,
+     "e": 6.36
+    },
+    {
+     "w": " navigation",
+     "s": 6.36,
+     "e": 6.76
+    },
+    {
+     "w": " menu",
+     "s": 6.76,
+     "e": 7.2
+    },
+    {
+     "w": " on",
+     "s": 7.2,
+     "e": 7.4
+    },
+    {
+     "w": " the",
+     "s": 7.4,
+     "e": 7.54
+    },
+    {
+     "w": " left,",
+     "s": 7.54,
+     "e": 7.86
+    },
+    {
+     "w": " select",
+     "s": 8.4,
+     "e": 8.7
+    },
+    {
+     "w": " senders.",
+     "s": 8.7,
+     "e": 9.62
+    },
+    {
+     "w": " To",
+     "s": 11.3,
+     "e": 11.66
+    },
+    {
+     "w": " add",
+     "s": 11.66,
+     "e": 11.96
+    },
+    {
+     "w": " a",
+     "s": 11.96,
+     "e": 12.2
+    },
+    {
+     "w": " new",
+     "s": 12.2,
+     "e": 12.42
+    }
+   ]
+  },
+  {
+   "start": 12.42,
+   "end": 19.88,
+   "text": " business sender, click create sender in the top right corner. First, select the entity",
+   "words": [
+    {
+     "w": " business",
+     "s": 12.42,
+     "e": 12.7
+    },
+    {
+     "w": " sender,",
+     "s": 12.7,
+     "e": 13.1
+    },
+    {
+     "w": " click",
+     "s": 13.62,
+     "e": 13.84
+    },
+    {
+     "w": " create",
+     "s": 13.84,
+     "e": 14.5
+    },
+    {
+     "w": " sender",
+     "s": 14.5,
+     "e": 14.98
+    },
+    {
+     "w": " in",
+     "s": 14.98,
+     "e": 15.52
+    },
+    {
+     "w": " the",
+     "s": 15.52,
+     "e": 15.62
+    },
+    {
+     "w": " top",
+     "s": 15.62,
+     "e": 15.82
+    },
+    {
+     "w": " right",
+     "s": 15.82,
+     "e": 16.0
+    },
+    {
+     "w": " corner.",
+     "s": 16.0,
+     "e": 16.36
+    },
+    {
+     "w": " First,",
+     "s": 17.58,
+     "e": 18.26
+    },
+    {
+     "w": " select",
+     "s": 18.84,
+     "e": 19.18
+    },
+    {
+     "w": " the",
+     "s": 19.18,
+     "e": 19.46
+    },
+    {
+     "w": " entity",
+     "s": 19.46,
+     "e": 19.88
+    }
+   ]
+  },
+  {
+   "start": 19.88,
+   "end": 26.22,
+   "text": " type and the country where the business is registered. Based on the country you choose,",
+   "words": [
+    {
+     "w": " type",
+     "s": 19.88,
+     "e": 20.26
+    },
+    {
+     "w": " and",
+     "s": 20.26,
+     "e": 20.7
+    },
+    {
+     "w": " the",
+     "s": 20.7,
+     "e": 20.86
+    },
+    {
+     "w": " country",
+     "s": 20.86,
+     "e": 21.26
+    },
+    {
+     "w": " where",
+     "s": 21.26,
+     "e": 21.6
+    },
+    {
+     "w": " the",
+     "s": 21.6,
+     "e": 21.76
+    },
+    {
+     "w": " business",
+     "s": 21.76,
+     "e": 22.06
+    },
+    {
+     "w": " is",
+     "s": 22.06,
+     "e": 22.28
+    },
+    {
+     "w": " registered.",
+     "s": 22.28,
+     "e": 22.8
+    },
+    {
+     "w": " Based",
+     "s": 24.2,
+     "e": 24.9
+    },
+    {
+     "w": " on",
+     "s": 24.9,
+     "e": 25.1
+    },
+    {
+     "w": " the",
+     "s": 25.1,
+     "e": 25.2
+    },
+    {
+     "w": " country",
+     "s": 25.2,
+     "e": 25.54
+    },
+    {
+     "w": " you",
+     "s": 25.54,
+     "e": 25.8
+    },
+    {
+     "w": " choose,",
+     "s": 25.8,
+     "e": 26.22
+    }
+   ]
+  },
+  {
+   "start": 26.22,
+   "end": 33.18,
+   "text": " Ohana automatically loads the appropriate onboarding form, displays the required fields,",
+   "words": [
+    {
+     "w": " Ohana",
+     "s": 26.22,
+     "e": 27.22
+    },
+    {
+     "w": " automatically",
+     "s": 27.22,
+     "e": 28.0
+    },
+    {
+     "w": " loads",
+     "s": 28.0,
+     "e": 28.52
+    },
+    {
+     "w": " the",
+     "s": 28.52,
+     "e": 28.78
+    },
+    {
+     "w": " appropriate",
+     "s": 28.78,
+     "e": 29.36
+    },
+    {
+     "w": " onboarding",
+     "s": 29.36,
+     "e": 30.14
+    },
+    {
+     "w": " form,",
+     "s": 30.14,
+     "e": 30.74
+    },
+    {
+     "w": " displays",
+     "s": 31.04,
+     "e": 32.04
+    },
+    {
+     "w": " the",
+     "s": 32.04,
+     "e": 32.3
+    },
+    {
+     "w": " required",
+     "s": 32.3,
+     "e": 32.7
+    },
+    {
+     "w": " fields,",
+     "s": 32.7,
+     "e": 33.18
+    }
+   ]
+  },
+  {
+   "start": 33.52,
+   "end": 40.8,
+   "text": " and tells you exactly which supporting documents are needed. You can complete the onboarding in",
+   "words": [
+    {
+     "w": " and",
+     "s": 33.52,
+     "e": 34.04
+    },
+    {
+     "w": " tells",
+     "s": 34.04,
+     "e": 34.3
+    },
+    {
+     "w": " you",
+     "s": 34.3,
+     "e": 34.64
+    },
+    {
+     "w": " exactly",
+     "s": 34.64,
+     "e": 35.06
+    },
+    {
+     "w": " which",
+     "s": 35.06,
+     "e": 35.68
+    },
+    {
+     "w": " supporting",
+     "s": 35.68,
+     "e": 36.2
+    },
+    {
+     "w": " documents",
+     "s": 36.2,
+     "e": 36.62
+    },
+    {
+     "w": " are",
+     "s": 36.62,
+     "e": 37.06
+    },
+    {
+     "w": " needed.",
+     "s": 37.06,
+     "e": 37.44
+    },
+    {
+     "w": " You",
+     "s": 38.84,
+     "e": 39.04
+    },
+    {
+     "w": " can",
+     "s": 39.04,
+     "e": 39.24
+    },
+    {
+     "w": " complete",
+     "s": 39.24,
+     "e": 39.64
+    },
+    {
+     "w": " the",
+     "s": 39.64,
+     "e": 39.82
+    },
+    {
+     "w": " onboarding",
+     "s": 39.82,
+     "e": 40.52
+    },
+    {
+     "w": " in",
+     "s": 40.52,
+     "e": 40.8
+    }
+   ]
+  },
+  {
+   "start": 40.8,
+   "end": 46.94,
+   "text": " one of two ways. The first option is to fill in the information manually, business details,",
+   "words": [
+    {
+     "w": " one",
+     "s": 40.8,
+     "e": 40.98
+    },
+    {
+     "w": " of",
+     "s": 40.98,
+     "e": 41.14
+    },
+    {
+     "w": " two",
+     "s": 41.14,
+     "e": 41.3
+    },
+    {
+     "w": " ways.",
+     "s": 41.3,
+     "e": 41.62
+    },
+    {
+     "w": " The",
+     "s": 42.48,
+     "e": 42.74
+    },
+    {
+     "w": " first",
+     "s": 42.74,
+     "e": 43.0
+    },
+    {
+     "w": " option",
+     "s": 43.0,
+     "e": 43.48
+    },
+    {
+     "w": " is",
+     "s": 43.48,
+     "e": 44.04
+    },
+    {
+     "w": " to",
+     "s": 44.04,
+     "e": 44.24
+    },
+    {
+     "w": " fill",
+     "s": 44.24,
+     "e": 44.42
+    },
+    {
+     "w": " in",
+     "s": 44.42,
+     "e": 44.54
+    },
+    {
+     "w": " the",
+     "s": 44.54,
+     "e": 44.66
+    },
+    {
+     "w": " information",
+     "s": 44.66,
+     "e": 45.14
+    },
+    {
+     "w": " manually,",
+     "s": 45.14,
+     "e": 45.68
+    },
+    {
+     "w": " business",
+     "s": 46.1,
+     "e": 46.32
+    },
+    {
+     "w": " details,",
+     "s": 46.32,
+     "e": 46.94
+    }
+   ]
+  },
+  {
+   "start": 47.86,
+   "end": 54.34,
+   "text": " supporting documents, onboarding and risk profile information, and ultimate beneficial owner details,",
+   "words": [
+    {
+     "w": " supporting",
+     "s": 47.86,
+     "e": 48.06
+    },
+    {
+     "w": " documents,",
+     "s": 48.06,
+     "e": 48.72
+    },
+    {
+     "w": " onboarding",
+     "s": 49.24,
+     "e": 49.9
+    },
+    {
+     "w": " and",
+     "s": 49.9,
+     "e": 50.28
+    },
+    {
+     "w": " risk",
+     "s": 50.28,
+     "e": 50.54
+    },
+    {
+     "w": " profile",
+     "s": 50.54,
+     "e": 51.0
+    },
+    {
+     "w": " information,",
+     "s": 51.0,
+     "e": 51.62
+    },
+    {
+     "w": " and",
+     "s": 52.3,
+     "e": 52.42
+    },
+    {
+     "w": " ultimate",
+     "s": 52.42,
+     "e": 52.86
+    },
+    {
+     "w": " beneficial",
+     "s": 52.86,
+     "e": 53.32
+    },
+    {
+     "w": " owner",
+     "s": 53.32,
+     "e": 53.8
+    },
+    {
+     "w": " details,",
+     "s": 53.8,
+     "e": 54.34
+    }
+   ]
+  },
+  {
+   "start": 54.86000000000001,
+   "end": 62.74,
+   "text": " or you can simply upload the business documents. Ohana automatically extracts the relevant",
+   "words": [
+    {
+     "w": " or",
+     "s": 54.86000000000001,
+     "e": 55.68
+    },
+    {
+     "w": " you",
+     "s": 55.68,
+     "e": 56.56
+    },
+    {
+     "w": " can",
+     "s": 56.56,
+     "e": 56.74
+    },
+    {
+     "w": " simply",
+     "s": 56.74,
+     "e": 57.24
+    },
+    {
+     "w": " upload",
+     "s": 57.24,
+     "e": 57.94
+    },
+    {
+     "w": " the",
+     "s": 57.94,
+     "e": 58.16
+    },
+    {
+     "w": " business",
+     "s": 58.16,
+     "e": 58.46
+    },
+    {
+     "w": " documents.",
+     "s": 58.46,
+     "e": 59.1
+    },
+    {
+     "w": " Ohana",
+     "s": 60.68,
+     "e": 60.94
+    },
+    {
+     "w": " automatically",
+     "s": 60.94,
+     "e": 61.64
+    },
+    {
+     "w": " extracts",
+     "s": 61.64,
+     "e": 62.22
+    },
+    {
+     "w": " the",
+     "s": 62.22,
+     "e": 62.48
+    },
+    {
+     "w": " relevant",
+     "s": 62.48,
+     "e": 62.74
+    }
+   ]
+  },
+  {
+   "start": 62.74,
+   "end": 68.52,
+   "text": " information from the uploaded documents and pre-fills the application for your review.",
+   "words": [
+    {
+     "w": " information",
+     "s": 62.74,
+     "e": 63.3
+    },
+    {
+     "w": " from",
+     "s": 63.3,
+     "e": 63.98
+    },
+    {
+     "w": " the",
+     "s": 63.98,
+     "e": 64.16
+    },
+    {
+     "w": " uploaded",
+     "s": 64.16,
+     "e": 64.56
+    },
+    {
+     "w": " documents",
+     "s": 64.56,
+     "e": 65.12
+    },
+    {
+     "w": " and",
+     "s": 65.12,
+     "e": 65.8
+    },
+    {
+     "w": " pre",
+     "s": 65.8,
+     "e": 66.08
+    },
+    {
+     "w": "-fills",
+     "s": 66.08,
+     "e": 66.38
+    },
+    {
+     "w": " the",
+     "s": 66.38,
+     "e": 66.9
+    },
+    {
+     "w": " application",
+     "s": 66.9,
+     "e": 67.38
+    },
+    {
+     "w": " for",
+     "s": 67.38,
+     "e": 68.08
+    },
+    {
+     "w": " your",
+     "s": 68.08,
+     "e": 68.24
+    },
+    {
+     "w": " review.",
+     "s": 68.24,
+     "e": 68.52
+    }
+   ]
+  },
+  {
+   "start": 69.68,
+   "end": 74.36,
+   "text": " You only need to complete any information that couldn't be captured automatically,",
+   "words": [
+    {
+     "w": " You",
+     "s": 69.68,
+     "e": 69.98
+    },
+    {
+     "w": " only",
+     "s": 69.98,
+     "e": 70.22
+    },
+    {
+     "w": " need",
+     "s": 70.22,
+     "e": 70.48
+    },
+    {
+     "w": " to",
+     "s": 70.48,
+     "e": 70.64
+    },
+    {
+     "w": " complete",
+     "s": 70.64,
+     "e": 71.02
+    },
+    {
+     "w": " any",
+     "s": 71.02,
+     "e": 71.4
+    },
+    {
+     "w": " information",
+     "s": 71.4,
+     "e": 71.96
+    },
+    {
+     "w": " that",
+     "s": 71.96,
+     "e": 72.68
+    },
+    {
+     "w": " couldn't",
+     "s": 72.68,
+     "e": 72.94
+    },
+    {
+     "w": " be",
+     "s": 72.94,
+     "e": 73.1
+    },
+    {
+     "w": " captured",
+     "s": 73.1,
+     "e": 73.52
+    },
+    {
+     "w": " automatically,",
+     "s": 73.52,
+     "e": 74.36
+    }
+   ]
+  },
+  {
+   "start": 74.68,
+   "end": 81.22,
+   "text": " making the onboarding process significantly faster. Once you've reviewed and completed all",
+   "words": [
+    {
+     "w": " making",
+     "s": 74.68,
+     "e": 75.4
+    },
+    {
+     "w": " the",
+     "s": 75.4,
+     "e": 75.64
+    },
+    {
+     "w": " onboarding",
+     "s": 75.64,
+     "e": 76.2
+    },
+    {
+     "w": " process",
+     "s": 76.2,
+     "e": 76.54
+    },
+    {
+     "w": " significantly",
+     "s": 76.54,
+     "e": 77.24
+    },
+    {
+     "w": " faster.",
+     "s": 77.24,
+     "e": 77.82
+    },
+    {
+     "w": " Once",
+     "s": 78.98,
+     "e": 79.58
+    },
+    {
+     "w": " you've",
+     "s": 79.58,
+     "e": 79.86
+    },
+    {
+     "w": " reviewed",
+     "s": 79.86,
+     "e": 80.14
+    },
+    {
+     "w": " and",
+     "s": 80.14,
+     "e": 80.4
+    },
+    {
+     "w": " completed",
+     "s": 80.4,
+     "e": 80.86
+    },
+    {
+     "w": " all",
+     "s": 80.86,
+     "e": 81.22
+    }
+   ]
+  },
+  {
+   "start": 81.22,
+   "end": 88.28,
+   "text": " the required information, click create sender in the bottom right corner. The sender is now",
+   "words": [
+    {
+     "w": " the",
+     "s": 81.22,
+     "e": 81.38
+    },
+    {
+     "w": " required",
+     "s": 81.38,
+     "e": 81.72
+    },
+    {
+     "w": " information,",
+     "s": 81.72,
+     "e": 82.3
+    },
+    {
+     "w": " click",
+     "s": 82.94,
+     "e": 83.18
+    },
+    {
+     "w": " create",
+     "s": 83.18,
+     "e": 83.84
+    },
+    {
+     "w": " sender",
+     "s": 83.84,
+     "e": 84.12
+    },
+    {
+     "w": " in",
+     "s": 84.12,
+     "e": 84.54
+    },
+    {
+     "w": " the",
+     "s": 84.54,
+     "e": 84.66
+    },
+    {
+     "w": " bottom",
+     "s": 84.66,
+     "e": 84.92
+    },
+    {
+     "w": " right",
+     "s": 84.92,
+     "e": 85.12
+    },
+    {
+     "w": " corner.",
+     "s": 85.12,
+     "e": 85.56
+    },
+    {
+     "w": " The",
+     "s": 87.14,
+     "e": 87.3
+    },
+    {
+     "w": " sender",
+     "s": 87.3,
+     "e": 87.56
+    },
+    {
+     "w": " is",
+     "s": 87.56,
+     "e": 88.06
+    },
+    {
+     "w": " now",
+     "s": 88.06,
+     "e": 88.28
+    }
+   ]
+  },
+  {
+   "start": 88.28,
+   "end": 94.8,
+   "text": " created and verification links are generated. These links must be sent to the business's",
+   "words": [
+    {
+     "w": " created",
+     "s": 88.28,
+     "e": 88.72
+    },
+    {
+     "w": " and",
+     "s": 88.72,
+     "e": 89.82
+    },
+    {
+     "w": " verification",
+     "s": 89.82,
+     "e": 90.2
+    },
+    {
+     "w": " links",
+     "s": 90.2,
+     "e": 90.7
+    },
+    {
+     "w": " are",
+     "s": 90.7,
+     "e": 90.92
+    },
+    {
+     "w": " generated.",
+     "s": 90.92,
+     "e": 91.48
+    },
+    {
+     "w": " These",
+     "s": 92.44,
+     "e": 92.76
+    },
+    {
+     "w": " links",
+     "s": 92.76,
+     "e": 93.04
+    },
+    {
+     "w": " must",
+     "s": 93.04,
+     "e": 93.42
+    },
+    {
+     "w": " be",
+     "s": 93.42,
+     "e": 93.62
+    },
+    {
+     "w": " sent",
+     "s": 93.62,
+     "e": 93.86
+    },
+    {
+     "w": " to",
+     "s": 93.86,
+     "e": 94.18
+    },
+    {
+     "w": " the",
+     "s": 94.18,
+     "e": 94.3
+    },
+    {
+     "w": " business's",
+     "s": 94.3,
+     "e": 94.8
+    }
+   ]
+  },
+  {
+   "start": 94.8,
+   "end": 101.72,
+   "text": " beneficial owners. Once the KYB process is successfully completed, the status moves from",
+   "words": [
+    {
+     "w": " beneficial",
+     "s": 94.8,
+     "e": 95.18
+    },
+    {
+     "w": " owners.",
+     "s": 95.18,
+     "e": 95.72
+    },
+    {
+     "w": " Once",
+     "s": 97.26,
+     "e": 97.52
+    },
+    {
+     "w": " the",
+     "s": 97.52,
+     "e": 97.76
+    },
+    {
+     "w": " KYB",
+     "s": 97.76,
+     "e": 98.22
+    },
+    {
+     "w": " process",
+     "s": 98.22,
+     "e": 98.52
+    },
+    {
+     "w": " is",
+     "s": 98.52,
+     "e": 98.86
+    },
+    {
+     "w": " successfully",
+     "s": 98.86,
+     "e": 99.38
+    },
+    {
+     "w": " completed,",
+     "s": 99.38,
+     "e": 100.04
+    },
+    {
+     "w": " the",
+     "s": 100.46,
+     "e": 100.76
+    },
+    {
+     "w": " status",
+     "s": 100.76,
+     "e": 101.02
+    },
+    {
+     "w": " moves",
+     "s": 101.02,
+     "e": 101.38
+    },
+    {
+     "w": " from",
+     "s": 101.38,
+     "e": 101.72
+    }
+   ]
+  },
+  {
+   "start": 101.72,
+   "end": 106.54,
+   "text": " pending to approved. After that, the sender is ready to start transacting.",
+   "words": [
+    {
+     "w": " pending",
+     "s": 101.72,
+     "e": 102.02
+    },
+    {
+     "w": " to",
+     "s": 102.02,
+     "e": 102.54
+    },
+    {
+     "w": " approved.",
+     "s": 102.54,
+     "e": 102.92
+    },
+    {
+     "w": " After",
+     "s": 103.96,
+     "e": 104.2
+    },
+    {
+     "w": " that,",
+     "s": 104.2,
+     "e": 104.46
+    },
+    {
+     "w": " the",
+     "s": 104.66,
+     "e": 104.8
+    },
+    {
+     "w": " sender",
+     "s": 104.8,
+     "e": 105.0
+    },
+    {
+     "w": " is",
+     "s": 105.0,
+     "e": 105.26
+    },
+    {
+     "w": " ready",
+     "s": 105.26,
+     "e": 105.46
+    },
+    {
+     "w": " to",
+     "s": 105.46,
+     "e": 105.7
+    },
+    {
+     "w": " start",
+     "s": 105.7,
+     "e": 105.92
+    },
+    {
+     "w": " transacting.",
+     "s": 105.92,
+     "e": 106.54
+    }
+   ]
+  }
+ ]
+}

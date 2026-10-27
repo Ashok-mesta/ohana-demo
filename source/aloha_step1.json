@@ -1,0 +1,2012 @@
+{
+ "text": " Log in to Ohana. From the navigation menu on the left, select Portal Studio. Welcome to Portal Studio. This is the onboarding setup for your white label customer portal. The onboarding happens in four stages. The setup, the default pricing, the custom sender pricing and sender management. Currently, the portal is off. After finishing setup, toggle this to the on position so that your senders can transact and access this portal. This is the setup page. On this page, add your logo. First, a dark one for a light background and the light one for the dark background. Add a favicon to appear next to your portal name on the top right. Choose the colors for your brand and the accent color. All these changes appear on the panel on the right for your viewing. Next, add the portal details, the portal name and the URL for terms and conditions. All senders must accept these terms and conditions. Please remember, they also have to accept Mesta's terms and conditions by law. Next, add the support email. Remember, this email will be activated only after verification by Amazon Web Services. You will need to verify the email ID within 24 hours, failing which a new verification has to be triggered. Next, add the portal URL. This is the URL your senders will use to access the portal and you can add any chosen name here. Please notice that when you choose this route, your senders and customers can also see Mesta's name on it. So if you choose, you may add a custom domain. Adding a custom domain requires DNS level changes in the admin panel of your domain. So make sure your tech team is handy when you are adding the custom domain. In the next step, you add a wallet address for settlement. All settlement payments from Mesta to you will happen in this wallet. You can add either a USDC on Ethereum or a USDT on Tron Wallet Address. Once added and saved, this is irreversible. To change the wallet address, you will have to reach out to your account manager. Once you finish the setup on this page, click on Save Changes.",
+ "segments": [
+  {
+   "start": 2.699999999999999,
+   "end": 9.6,
+   "text": " Log in to Ohana. From the navigation menu on the left, select Portal Studio.",
+   "words": [
+    {
+     "w": " Log",
+     "s": 2.699999999999999,
+     "e": 3.44
+    },
+    {
+     "w": " in",
+     "s": 3.44,
+     "e": 3.82
+    },
+    {
+     "w": " to",
+     "s": 3.82,
+     "e": 4.32
+    },
+    {
+     "w": " Ohana.",
+     "s": 4.32,
+     "e": 4.82
+    },
+    {
+     "w": " From",
+     "s": 5.68,
+     "e": 5.92
+    },
+    {
+     "w": " the",
+     "s": 5.92,
+     "e": 6.08
+    },
+    {
+     "w": " navigation",
+     "s": 6.08,
+     "e": 6.44
+    },
+    {
+     "w": " menu",
+     "s": 6.44,
+     "e": 6.84
+    },
+    {
+     "w": " on",
+     "s": 6.84,
+     "e": 7.04
+    },
+    {
+     "w": " the",
+     "s": 7.04,
+     "e": 7.18
+    },
+    {
+     "w": " left,",
+     "s": 7.18,
+     "e": 7.48
+    },
+    {
+     "w": " select",
+     "s": 8.08,
+     "e": 8.48
+    },
+    {
+     "w": " Portal",
+     "s": 8.48,
+     "e": 9.12
+    },
+    {
+     "w": " Studio.",
+     "s": 9.12,
+     "e": 9.6
+    }
+   ]
+  },
+  {
+   "start": 12.78,
+   "end": 18.46,
+   "text": " Welcome to Portal Studio. This is the onboarding setup for your white label",
+   "words": [
+    {
+     "w": " Welcome",
+     "s": 12.78,
+     "e": 13.52
+    },
+    {
+     "w": " to",
+     "s": 13.52,
+     "e": 13.88
+    },
+    {
+     "w": " Portal",
+     "s": 13.88,
+     "e": 14.14
+    },
+    {
+     "w": " Studio.",
+     "s": 14.14,
+     "e": 14.6
+    },
+    {
+     "w": " This",
+     "s": 15.54,
+     "e": 15.86
+    },
+    {
+     "w": " is",
+     "s": 15.86,
+     "e": 16.18
+    },
+    {
+     "w": " the",
+     "s": 16.18,
+     "e": 16.36
+    },
+    {
+     "w": " onboarding",
+     "s": 16.36,
+     "e": 16.92
+    },
+    {
+     "w": " setup",
+     "s": 16.92,
+     "e": 17.12
+    },
+    {
+     "w": " for",
+     "s": 17.12,
+     "e": 17.72
+    },
+    {
+     "w": " your",
+     "s": 17.72,
+     "e": 17.9
+    },
+    {
+     "w": " white",
+     "s": 17.9,
+     "e": 18.1
+    },
+    {
+     "w": " label",
+     "s": 18.1,
+     "e": 18.46
+    }
+   ]
+  },
+  {
+   "start": 18.46,
+   "end": 25.0,
+   "text": " customer portal. The onboarding happens in four stages. The setup, the default",
+   "words": [
+    {
+     "w": " customer",
+     "s": 18.46,
+     "e": 18.9
+    },
+    {
+     "w": " portal.",
+     "s": 18.9,
+     "e": 19.36
+    },
+    {
+     "w": " The",
+     "s": 20.26,
+     "e": 20.46
+    },
+    {
+     "w": " onboarding",
+     "s": 20.46,
+     "e": 21.06
+    },
+    {
+     "w": " happens",
+     "s": 21.06,
+     "e": 21.28
+    },
+    {
+     "w": " in",
+     "s": 21.28,
+     "e": 21.58
+    },
+    {
+     "w": " four",
+     "s": 21.58,
+     "e": 21.78
+    },
+    {
+     "w": " stages.",
+     "s": 21.78,
+     "e": 22.18
+    },
+    {
+     "w": " The",
+     "s": 23.14,
+     "e": 23.4
+    },
+    {
+     "w": " setup,",
+     "s": 23.4,
+     "e": 23.72
+    },
+    {
+     "w": " the",
+     "s": 24.62,
+     "e": 24.66
+    },
+    {
+     "w": " default",
+     "s": 24.66,
+     "e": 25.0
+    }
+   ]
+  },
+  {
+   "start": 25.0,
+   "end": 31.14,
+   "text": " pricing, the custom sender pricing and sender management. Currently, the portal",
+   "words": [
+    {
+     "w": " pricing,",
+     "s": 25.0,
+     "e": 25.54
+    },
+    {
+     "w": " the",
+     "s": 26.0,
+     "e": 26.1
+    },
+    {
+     "w": " custom",
+     "s": 26.1,
+     "e": 26.44
+    },
+    {
+     "w": " sender",
+     "s": 26.44,
+     "e": 26.76
+    },
+    {
+     "w": " pricing",
+     "s": 26.76,
+     "e": 27.2
+    },
+    {
+     "w": " and",
+     "s": 27.2,
+     "e": 27.8
+    },
+    {
+     "w": " sender",
+     "s": 27.8,
+     "e": 28.14
+    },
+    {
+     "w": " management.",
+     "s": 28.14,
+     "e": 28.62
+    },
+    {
+     "w": " Currently,",
+     "s": 29.82,
+     "e": 30.16
+    },
+    {
+     "w": " the",
+     "s": 30.8,
+     "e": 30.86
+    },
+    {
+     "w": " portal",
+     "s": 30.86,
+     "e": 31.14
+    }
+   ]
+  },
+  {
+   "start": 31.14,
+   "end": 36.64,
+   "text": " is off. After finishing setup, toggle this to the on position so that your",
+   "words": [
+    {
+     "w": " is",
+     "s": 31.14,
+     "e": 31.36
+    },
+    {
+     "w": " off.",
+     "s": 31.36,
+     "e": 31.68
+    },
+    {
+     "w": " After",
+     "s": 32.56,
+     "e": 32.8
+    },
+    {
+     "w": " finishing",
+     "s": 32.8,
+     "e": 33.12
+    },
+    {
+     "w": " setup,",
+     "s": 33.12,
+     "e": 33.58
+    },
+    {
+     "w": " toggle",
+     "s": 34.14,
+     "e": 34.3
+    },
+    {
+     "w": " this",
+     "s": 34.3,
+     "e": 34.64
+    },
+    {
+     "w": " to",
+     "s": 34.64,
+     "e": 34.86
+    },
+    {
+     "w": " the",
+     "s": 34.86,
+     "e": 35.0
+    },
+    {
+     "w": " on",
+     "s": 35.0,
+     "e": 35.18
+    },
+    {
+     "w": " position",
+     "s": 35.18,
+     "e": 35.54
+    },
+    {
+     "w": " so",
+     "s": 35.54,
+     "e": 36.3
+    },
+    {
+     "w": " that",
+     "s": 36.3,
+     "e": 36.46
+    },
+    {
+     "w": " your",
+     "s": 36.46,
+     "e": 36.64
+    }
+   ]
+  },
+  {
+   "start": 36.64,
+   "end": 43.08,
+   "text": " senders can transact and access this portal. This is the setup page. On this",
+   "words": [
+    {
+     "w": " senders",
+     "s": 36.64,
+     "e": 37.06
+    },
+    {
+     "w": " can",
+     "s": 37.06,
+     "e": 37.26
+    },
+    {
+     "w": " transact",
+     "s": 37.26,
+     "e": 37.86
+    },
+    {
+     "w": " and",
+     "s": 37.86,
+     "e": 38.36
+    },
+    {
+     "w": " access",
+     "s": 38.36,
+     "e": 38.66
+    },
+    {
+     "w": " this",
+     "s": 38.66,
+     "e": 38.92
+    },
+    {
+     "w": " portal.",
+     "s": 38.92,
+     "e": 39.28
+    },
+    {
+     "w": " This",
+     "s": 40.14,
+     "e": 40.6
+    },
+    {
+     "w": " is",
+     "s": 40.6,
+     "e": 40.92
+    },
+    {
+     "w": " the",
+     "s": 40.92,
+     "e": 41.12
+    },
+    {
+     "w": " setup",
+     "s": 41.12,
+     "e": 41.36
+    },
+    {
+     "w": " page.",
+     "s": 41.36,
+     "e": 41.74
+    },
+    {
+     "w": " On",
+     "s": 42.74,
+     "e": 42.9
+    },
+    {
+     "w": " this",
+     "s": 42.9,
+     "e": 43.08
+    }
+   ]
+  },
+  {
+   "start": 43.08,
+   "end": 49.72,
+   "text": " page, add your logo. First, a dark one for a light background and the light one for",
+   "words": [
+    {
+     "w": " page,",
+     "s": 43.08,
+     "e": 43.46
+    },
+    {
+     "w": " add",
+     "s": 43.86,
+     "e": 44.06
+    },
+    {
+     "w": " your",
+     "s": 44.06,
+     "e": 44.24
+    },
+    {
+     "w": " logo.",
+     "s": 44.24,
+     "e": 44.54
+    },
+    {
+     "w": " First,",
+     "s": 45.44,
+     "e": 45.72
+    },
+    {
+     "w": " a",
+     "s": 45.86,
+     "e": 46.0
+    },
+    {
+     "w": " dark",
+     "s": 46.0,
+     "e": 46.26
+    },
+    {
+     "w": " one",
+     "s": 46.26,
+     "e": 46.5
+    },
+    {
+     "w": " for",
+     "s": 46.5,
+     "e": 46.88
+    },
+    {
+     "w": " a",
+     "s": 46.88,
+     "e": 47.02
+    },
+    {
+     "w": " light",
+     "s": 47.02,
+     "e": 47.2
+    },
+    {
+     "w": " background",
+     "s": 47.2,
+     "e": 47.68
+    },
+    {
+     "w": " and",
+     "s": 47.68,
+     "e": 48.56
+    },
+    {
+     "w": " the",
+     "s": 48.56,
+     "e": 48.68
+    },
+    {
+     "w": " light",
+     "s": 48.68,
+     "e": 48.92
+    },
+    {
+     "w": " one",
+     "s": 48.92,
+     "e": 49.2
+    },
+    {
+     "w": " for",
+     "s": 49.2,
+     "e": 49.72
+    }
+   ]
+  },
+  {
+   "start": 49.72,
+   "end": 54.9,
+   "text": " the dark background. Add a favicon to appear next to your portal name on the",
+   "words": [
+    {
+     "w": " the",
+     "s": 49.72,
+     "e": 49.86
+    },
+    {
+     "w": " dark",
+     "s": 49.86,
+     "e": 50.1
+    },
+    {
+     "w": " background.",
+     "s": 50.1,
+     "e": 50.58
+    },
+    {
+     "w": " Add",
+     "s": 51.26,
+     "e": 51.68
+    },
+    {
+     "w": " a",
+     "s": 51.68,
+     "e": 51.82
+    },
+    {
+     "w": " favicon",
+     "s": 51.82,
+     "e": 52.24
+    },
+    {
+     "w": " to",
+     "s": 52.24,
+     "e": 52.66
+    },
+    {
+     "w": " appear",
+     "s": 52.66,
+     "e": 53.02
+    },
+    {
+     "w": " next",
+     "s": 53.02,
+     "e": 53.38
+    },
+    {
+     "w": " to",
+     "s": 53.38,
+     "e": 53.6
+    },
+    {
+     "w": " your",
+     "s": 53.6,
+     "e": 53.72
+    },
+    {
+     "w": " portal",
+     "s": 53.72,
+     "e": 54.04
+    },
+    {
+     "w": " name",
+     "s": 54.04,
+     "e": 54.34
+    },
+    {
+     "w": " on",
+     "s": 54.34,
+     "e": 54.76
+    },
+    {
+     "w": " the",
+     "s": 54.76,
+     "e": 54.9
+    }
+   ]
+  },
+  {
+   "start": 54.9,
+   "end": 60.62,
+   "text": " top right. Choose the colors for your brand and the accent color. All these",
+   "words": [
+    {
+     "w": " top",
+     "s": 54.9,
+     "e": 55.08
+    },
+    {
+     "w": " right.",
+     "s": 55.08,
+     "e": 55.44
+    },
+    {
+     "w": " Choose",
+     "s": 56.42,
+     "e": 56.58
+    },
+    {
+     "w": " the",
+     "s": 56.58,
+     "e": 56.8
+    },
+    {
+     "w": " colors",
+     "s": 56.8,
+     "e": 57.0
+    },
+    {
+     "w": " for",
+     "s": 57.0,
+     "e": 57.28
+    },
+    {
+     "w": " your",
+     "s": 57.28,
+     "e": 57.44
+    },
+    {
+     "w": " brand",
+     "s": 57.44,
+     "e": 57.72
+    },
+    {
+     "w": " and",
+     "s": 57.72,
+     "e": 58.5
+    },
+    {
+     "w": " the",
+     "s": 58.5,
+     "e": 58.64
+    },
+    {
+     "w": " accent",
+     "s": 58.64,
+     "e": 58.9
+    },
+    {
+     "w": " color.",
+     "s": 58.9,
+     "e": 59.24
+    },
+    {
+     "w": " All",
+     "s": 60.24,
+     "e": 60.42
+    },
+    {
+     "w": " these",
+     "s": 60.42,
+     "e": 60.62
+    }
+   ]
+  },
+  {
+   "start": 60.62,
+   "end": 66.26,
+   "text": " changes appear on the panel on the right for your viewing. Next, add the portal",
+   "words": [
+    {
+     "w": " changes",
+     "s": 60.62,
+     "e": 60.92
+    },
+    {
+     "w": " appear",
+     "s": 60.92,
+     "e": 61.22
+    },
+    {
+     "w": " on",
+     "s": 61.22,
+     "e": 61.4
+    },
+    {
+     "w": " the",
+     "s": 61.4,
+     "e": 61.54
+    },
+    {
+     "w": " panel",
+     "s": 61.54,
+     "e": 61.8
+    },
+    {
+     "w": " on",
+     "s": 61.8,
+     "e": 62.04
+    },
+    {
+     "w": " the",
+     "s": 62.04,
+     "e": 62.16
+    },
+    {
+     "w": " right",
+     "s": 62.16,
+     "e": 62.42
+    },
+    {
+     "w": " for",
+     "s": 62.42,
+     "e": 63.06
+    },
+    {
+     "w": " your",
+     "s": 63.06,
+     "e": 63.22
+    },
+    {
+     "w": " viewing.",
+     "s": 63.22,
+     "e": 63.56
+    },
+    {
+     "w": " Next,",
+     "s": 64.82,
+     "e": 65.02
+    },
+    {
+     "w": " add",
+     "s": 65.5,
+     "e": 65.82
+    },
+    {
+     "w": " the",
+     "s": 65.82,
+     "e": 65.98
+    },
+    {
+     "w": " portal",
+     "s": 65.98,
+     "e": 66.26
+    }
+   ]
+  },
+  {
+   "start": 66.26,
+   "end": 73.46,
+   "text": " details, the portal name and the URL for terms and conditions. All senders must",
+   "words": [
+    {
+     "w": " details,",
+     "s": 66.26,
+     "e": 66.7
+    },
+    {
+     "w": " the",
+     "s": 67.52,
+     "e": 67.58
+    },
+    {
+     "w": " portal",
+     "s": 67.58,
+     "e": 67.86
+    },
+    {
+     "w": " name",
+     "s": 67.86,
+     "e": 68.14
+    },
+    {
+     "w": " and",
+     "s": 68.14,
+     "e": 69.08
+    },
+    {
+     "w": " the",
+     "s": 69.08,
+     "e": 69.22
+    },
+    {
+     "w": " URL",
+     "s": 69.22,
+     "e": 69.52
+    },
+    {
+     "w": " for",
+     "s": 69.52,
+     "e": 70.04
+    },
+    {
+     "w": " terms",
+     "s": 70.04,
+     "e": 70.26
+    },
+    {
+     "w": " and",
+     "s": 70.26,
+     "e": 70.44
+    },
+    {
+     "w": " conditions.",
+     "s": 70.44,
+     "e": 70.9
+    },
+    {
+     "w": " All",
+     "s": 72.06,
+     "e": 72.28
+    },
+    {
+     "w": " senders",
+     "s": 72.28,
+     "e": 72.86
+    },
+    {
+     "w": " must",
+     "s": 72.86,
+     "e": 73.46
+    }
+   ]
+  },
+  {
+   "start": 73.46,
+   "end": 79.16,
+   "text": " accept these terms and conditions. Please remember, they also have to accept",
+   "words": [
+    {
+     "w": " accept",
+     "s": 73.46,
+     "e": 73.94
+    },
+    {
+     "w": " these",
+     "s": 73.94,
+     "e": 74.26
+    },
+    {
+     "w": " terms",
+     "s": 74.26,
+     "e": 74.52
+    },
+    {
+     "w": " and",
+     "s": 74.52,
+     "e": 74.74
+    },
+    {
+     "w": " conditions.",
+     "s": 74.74,
+     "e": 75.18
+    },
+    {
+     "w": " Please",
+     "s": 76.28,
+     "e": 76.48
+    },
+    {
+     "w": " remember,",
+     "s": 76.48,
+     "e": 76.94
+    },
+    {
+     "w": " they",
+     "s": 77.54,
+     "e": 77.82
+    },
+    {
+     "w": " also",
+     "s": 77.82,
+     "e": 78.12
+    },
+    {
+     "w": " have",
+     "s": 78.12,
+     "e": 78.4
+    },
+    {
+     "w": " to",
+     "s": 78.4,
+     "e": 78.56
+    },
+    {
+     "w": " accept",
+     "s": 78.56,
+     "e": 79.16
+    }
+   ]
+  },
+  {
+   "start": 79.16,
+   "end": 88.26,
+   "text": " Mesta's terms and conditions by law. Next, add the support email. Remember, this email",
+   "words": [
+    {
+     "w": " Mesta's",
+     "s": 79.16,
+     "e": 80.02
+    },
+    {
+     "w": " terms",
+     "s": 80.02,
+     "e": 80.22
+    },
+    {
+     "w": " and",
+     "s": 80.22,
+     "e": 80.54
+    },
+    {
+     "w": " conditions",
+     "s": 80.54,
+     "e": 81.04
+    },
+    {
+     "w": " by",
+     "s": 81.04,
+     "e": 82.02
+    },
+    {
+     "w": " law.",
+     "s": 82.02,
+     "e": 82.5
+    },
+    {
+     "w": " Next,",
+     "s": 83.74,
+     "e": 83.74
+    },
+    {
+     "w": " add",
+     "s": 84.24,
+     "e": 84.52
+    },
+    {
+     "w": " the",
+     "s": 84.52,
+     "e": 84.7
+    },
+    {
+     "w": " support",
+     "s": 84.7,
+     "e": 85.04
+    },
+    {
+     "w": " email.",
+     "s": 85.04,
+     "e": 85.52
+    },
+    {
+     "w": " Remember,",
+     "s": 86.88,
+     "e": 86.88
+    },
+    {
+     "w": " this",
+     "s": 87.54,
+     "e": 87.82
+    },
+    {
+     "w": " email",
+     "s": 87.82,
+     "e": 88.26
+    }
+   ]
+  },
+  {
+   "start": 88.26,
+   "end": 94.24,
+   "text": " will be activated only after verification by Amazon Web Services. You",
+   "words": [
+    {
+     "w": " will",
+     "s": 88.26,
+     "e": 88.86
+    },
+    {
+     "w": " be",
+     "s": 88.86,
+     "e": 89.02
+    },
+    {
+     "w": " activated",
+     "s": 89.02,
+     "e": 89.58
+    },
+    {
+     "w": " only",
+     "s": 89.58,
+     "e": 90.0
+    },
+    {
+     "w": " after",
+     "s": 90.0,
+     "e": 90.44
+    },
+    {
+     "w": " verification",
+     "s": 90.44,
+     "e": 90.96
+    },
+    {
+     "w": " by",
+     "s": 90.96,
+     "e": 91.46
+    },
+    {
+     "w": " Amazon",
+     "s": 91.46,
+     "e": 91.9
+    },
+    {
+     "w": " Web",
+     "s": 91.9,
+     "e": 92.14
+    },
+    {
+     "w": " Services.",
+     "s": 92.14,
+     "e": 92.5
+    },
+    {
+     "w": " You",
+     "s": 93.82,
+     "e": 94.24
+    }
+   ]
+  },
+  {
+   "start": 94.24,
+   "end": 99.2,
+   "text": " will need to verify the email ID within 24 hours, failing which a new",
+   "words": [
+    {
+     "w": " will",
+     "s": 94.24,
+     "e": 94.38
+    },
+    {
+     "w": " need",
+     "s": 94.38,
+     "e": 94.56
+    },
+    {
+     "w": " to",
+     "s": 94.56,
+     "e": 94.7
+    },
+    {
+     "w": " verify",
+     "s": 94.7,
+     "e": 95.0
+    },
+    {
+     "w": " the",
+     "s": 95.0,
+     "e": 95.26
+    },
+    {
+     "w": " email",
+     "s": 95.26,
+     "e": 95.56
+    },
+    {
+     "w": " ID",
+     "s": 95.56,
+     "e": 95.8
+    },
+    {
+     "w": " within",
+     "s": 95.8,
+     "e": 96.18
+    },
+    {
+     "w": " 24",
+     "s": 96.18,
+     "e": 96.76
+    },
+    {
+     "w": " hours,",
+     "s": 96.76,
+     "e": 97.32
+    },
+    {
+     "w": " failing",
+     "s": 97.86,
+     "e": 98.2
+    },
+    {
+     "w": " which",
+     "s": 98.2,
+     "e": 98.58
+    },
+    {
+     "w": " a",
+     "s": 98.58,
+     "e": 98.96
+    },
+    {
+     "w": " new",
+     "s": 98.96,
+     "e": 99.2
+    }
+   ]
+  },
+  {
+   "start": 99.2,
+   "end": 106.88,
+   "text": " verification has to be triggered. Next, add the portal URL. This is the URL your",
+   "words": [
+    {
+     "w": " verification",
+     "s": 99.2,
+     "e": 99.56
+    },
+    {
+     "w": " has",
+     "s": 99.56,
+     "e": 100.04
+    },
+    {
+     "w": " to",
+     "s": 100.04,
+     "e": 100.18
+    },
+    {
+     "w": " be",
+     "s": 100.18,
+     "e": 100.3
+    },
+    {
+     "w": " triggered.",
+     "s": 100.3,
+     "e": 100.62
+    },
+    {
+     "w": " Next,",
+     "s": 102.28,
+     "e": 102.8
+    },
+    {
+     "w": " add",
+     "s": 103.28,
+     "e": 103.62
+    },
+    {
+     "w": " the",
+     "s": 103.62,
+     "e": 103.84
+    },
+    {
+     "w": " portal",
+     "s": 103.84,
+     "e": 104.16
+    },
+    {
+     "w": " URL.",
+     "s": 104.16,
+     "e": 104.54
+    },
+    {
+     "w": " This",
+     "s": 105.42,
+     "e": 105.72
+    },
+    {
+     "w": " is",
+     "s": 105.72,
+     "e": 105.86
+    },
+    {
+     "w": " the",
+     "s": 105.86,
+     "e": 106.04
+    },
+    {
+     "w": " URL",
+     "s": 106.04,
+     "e": 106.44
+    },
+    {
+     "w": " your",
+     "s": 106.44,
+     "e": 106.88
+    }
+   ]
+  },
+  {
+   "start": 106.88,
+   "end": 111.44,
+   "text": " senders will use to access the portal and you can add any chosen name here.",
+   "words": [
+    {
+     "w": " senders",
+     "s": 106.88,
+     "e": 107.32
+    },
+    {
+     "w": " will",
+     "s": 107.32,
+     "e": 107.46
+    },
+    {
+     "w": " use",
+     "s": 107.46,
+     "e": 107.72
+    },
+    {
+     "w": " to",
+     "s": 107.72,
+     "e": 107.92
+    },
+    {
+     "w": " access",
+     "s": 107.92,
+     "e": 108.28
+    },
+    {
+     "w": " the",
+     "s": 108.28,
+     "e": 108.48
+    },
+    {
+     "w": " portal",
+     "s": 108.48,
+     "e": 108.82
+    },
+    {
+     "w": " and",
+     "s": 108.82,
+     "e": 109.44
+    },
+    {
+     "w": " you",
+     "s": 109.44,
+     "e": 109.54
+    },
+    {
+     "w": " can",
+     "s": 109.54,
+     "e": 109.7
+    },
+    {
+     "w": " add",
+     "s": 109.7,
+     "e": 109.92
+    },
+    {
+     "w": " any",
+     "s": 109.92,
+     "e": 110.34
+    },
+    {
+     "w": " chosen",
+     "s": 110.34,
+     "e": 110.7
+    },
+    {
+     "w": " name",
+     "s": 110.7,
+     "e": 111.0
+    },
+    {
+     "w": " here.",
+     "s": 111.0,
+     "e": 111.44
+    }
+   ]
+  },
+  {
+   "start": 112.3,
+   "end": 116.82,
+   "text": " Please notice that when you choose this route, your senders and customers can also",
+   "words": [
+    {
+     "w": " Please",
+     "s": 112.3,
+     "e": 112.44
+    },
+    {
+     "w": " notice",
+     "s": 112.44,
+     "e": 112.74
+    },
+    {
+     "w": " that",
+     "s": 112.74,
+     "e": 113.48
+    },
+    {
+     "w": " when",
+     "s": 113.48,
+     "e": 113.66
+    },
+    {
+     "w": " you",
+     "s": 113.66,
+     "e": 113.82
+    },
+    {
+     "w": " choose",
+     "s": 113.82,
+     "e": 114.02
+    },
+    {
+     "w": " this",
+     "s": 114.02,
+     "e": 114.2
+    },
+    {
+     "w": " route,",
+     "s": 114.2,
+     "e": 114.5
+    },
+    {
+     "w": " your",
+     "s": 115.08,
+     "e": 115.3
+    },
+    {
+     "w": " senders",
+     "s": 115.3,
+     "e": 115.7
+    },
+    {
+     "w": " and",
+     "s": 115.7,
+     "e": 115.86
+    },
+    {
+     "w": " customers",
+     "s": 115.86,
+     "e": 116.26
+    },
+    {
+     "w": " can",
+     "s": 116.26,
+     "e": 116.6
+    },
+    {
+     "w": " also",
+     "s": 116.6,
+     "e": 116.82
+    }
+   ]
+  },
+  {
+   "start": 116.82,
+   "end": 123.02,
+   "text": " see Mesta's name on it. So if you choose, you may add a custom domain. Adding a",
+   "words": [
+    {
+     "w": " see",
+     "s": 116.82,
+     "e": 117.1
+    },
+    {
+     "w": " Mesta's",
+     "s": 117.1,
+     "e": 117.6
+    },
+    {
+     "w": " name",
+     "s": 117.6,
+     "e": 117.7
+    },
+    {
+     "w": " on",
+     "s": 117.7,
+     "e": 117.9
+    },
+    {
+     "w": " it.",
+     "s": 117.9,
+     "e": 118.18
+    },
+    {
+     "w": " So",
+     "s": 118.88,
+     "e": 119.12
+    },
+    {
+     "w": " if",
+     "s": 119.12,
+     "e": 119.44
+    },
+    {
+     "w": " you",
+     "s": 119.44,
+     "e": 119.58
+    },
+    {
+     "w": " choose,",
+     "s": 119.58,
+     "e": 119.96
+    },
+    {
+     "w": " you",
+     "s": 120.34,
+     "e": 120.6
+    },
+    {
+     "w": " may",
+     "s": 120.6,
+     "e": 120.72
+    },
+    {
+     "w": " add",
+     "s": 120.72,
+     "e": 120.9
+    },
+    {
+     "w": " a",
+     "s": 120.9,
+     "e": 121.04
+    },
+    {
+     "w": " custom",
+     "s": 121.04,
+     "e": 121.32
+    },
+    {
+     "w": " domain.",
+     "s": 121.32,
+     "e": 121.68
+    },
+    {
+     "w": " Adding",
+     "s": 122.62,
+     "e": 122.84
+    },
+    {
+     "w": " a",
+     "s": 122.84,
+     "e": 123.02
+    }
+   ]
+  },
+  {
+   "start": 123.02,
+   "end": 129.42,
+   "text": " custom domain requires DNS level changes in the admin panel of your domain. So",
+   "words": [
+    {
+     "w": " custom",
+     "s": 123.02,
+     "e": 123.36
+    },
+    {
+     "w": " domain",
+     "s": 123.36,
+     "e": 123.8
+    },
+    {
+     "w": " requires",
+     "s": 123.8,
+     "e": 124.7
+    },
+    {
+     "w": " DNS",
+     "s": 124.7,
+     "e": 125.7
+    },
+    {
+     "w": " level",
+     "s": 125.7,
+     "e": 125.96
+    },
+    {
+     "w": " changes",
+     "s": 125.96,
+     "e": 126.42
+    },
+    {
+     "w": " in",
+     "s": 126.42,
+     "e": 127.02
+    },
+    {
+     "w": " the",
+     "s": 127.02,
+     "e": 127.16
+    },
+    {
+     "w": " admin",
+     "s": 127.16,
+     "e": 127.42
+    },
+    {
+     "w": " panel",
+     "s": 127.42,
+     "e": 127.8
+    },
+    {
+     "w": " of",
+     "s": 127.8,
+     "e": 127.98
+    },
+    {
+     "w": " your",
+     "s": 127.98,
+     "e": 128.14
+    },
+    {
+     "w": " domain.",
+     "s": 128.14,
+     "e": 128.48
+    },
+    {
+     "w": " So",
+     "s": 129.08,
+     "e": 129.42
+    }
+   ]
+  },
+  {
+   "start": 129.42,
+   "end": 134.72,
+   "text": " make sure your tech team is handy when you are adding the custom domain. In the",
+   "words": [
+    {
+     "w": " make",
+     "s": 129.42,
+     "e": 129.64
+    },
+    {
+     "w": " sure",
+     "s": 129.64,
+     "e": 129.96
+    },
+    {
+     "w": " your",
+     "s": 129.96,
+     "e": 130.54
+    },
+    {
+     "w": " tech",
+     "s": 130.54,
+     "e": 130.74
+    },
+    {
+     "w": " team",
+     "s": 130.74,
+     "e": 131.0
+    },
+    {
+     "w": " is",
+     "s": 131.0,
+     "e": 131.18
+    },
+    {
+     "w": " handy",
+     "s": 131.18,
+     "e": 131.56
+    },
+    {
+     "w": " when",
+     "s": 131.56,
+     "e": 132.08
+    },
+    {
+     "w": " you",
+     "s": 132.08,
+     "e": 132.2
+    },
+    {
+     "w": " are",
+     "s": 132.2,
+     "e": 132.28
+    },
+    {
+     "w": " adding",
+     "s": 132.28,
+     "e": 132.58
+    },
+    {
+     "w": " the",
+     "s": 132.58,
+     "e": 132.76
+    },
+    {
+     "w": " custom",
+     "s": 132.76,
+     "e": 133.08
+    },
+    {
+     "w": " domain.",
+     "s": 133.08,
+     "e": 133.4
+    },
+    {
+     "w": " In",
+     "s": 134.02,
+     "e": 134.62
+    },
+    {
+     "w": " the",
+     "s": 134.62,
+     "e": 134.72
+    }
+   ]
+  },
+  {
+   "start": 134.72,
+   "end": 140.38,
+   "text": " next step, you add a wallet address for settlement. All settlement payments from",
+   "words": [
+    {
+     "w": " next",
+     "s": 134.72,
+     "e": 134.94
+    },
+    {
+     "w": " step,",
+     "s": 134.94,
+     "e": 135.3
+    },
+    {
+     "w": " you",
+     "s": 135.68,
+     "e": 135.7
+    },
+    {
+     "w": " add",
+     "s": 135.7,
+     "e": 136.02
+    },
+    {
+     "w": " a",
+     "s": 136.02,
+     "e": 136.26
+    },
+    {
+     "w": " wallet",
+     "s": 136.26,
+     "e": 136.52
+    },
+    {
+     "w": " address",
+     "s": 136.52,
+     "e": 136.98
+    },
+    {
+     "w": " for",
+     "s": 136.98,
+     "e": 137.48
+    },
+    {
+     "w": " settlement.",
+     "s": 137.48,
+     "e": 137.9
+    },
+    {
+     "w": " All",
+     "s": 138.8,
+     "e": 139.14
+    },
+    {
+     "w": " settlement",
+     "s": 139.14,
+     "e": 139.58
+    },
+    {
+     "w": " payments",
+     "s": 139.58,
+     "e": 140.02
+    },
+    {
+     "w": " from",
+     "s": 140.02,
+     "e": 140.38
+    }
+   ]
+  },
+  {
+   "start": 140.38,
+   "end": 147.68,
+   "text": " Mesta to you will happen in this wallet. You can add either a USDC on Ethereum or",
+   "words": [
+    {
+     "w": " Mesta",
+     "s": 140.38,
+     "e": 140.7
+    },
+    {
+     "w": " to",
+     "s": 140.7,
+     "e": 141.0
+    },
+    {
+     "w": " you",
+     "s": 141.0,
+     "e": 141.3
+    },
+    {
+     "w": " will",
+     "s": 141.3,
+     "e": 142.04
+    },
+    {
+     "w": " happen",
+     "s": 142.04,
+     "e": 142.36
+    },
+    {
+     "w": " in",
+     "s": 142.36,
+     "e": 142.54
+    },
+    {
+     "w": " this",
+     "s": 142.54,
+     "e": 142.74
+    },
+    {
+     "w": " wallet.",
+     "s": 142.74,
+     "e": 143.08
+    },
+    {
+     "w": " You",
+     "s": 144.04,
+     "e": 144.26
+    },
+    {
+     "w": " can",
+     "s": 144.26,
+     "e": 144.4
+    },
+    {
+     "w": " add",
+     "s": 144.4,
+     "e": 144.7
+    },
+    {
+     "w": " either",
+     "s": 144.7,
+     "e": 144.96
+    },
+    {
+     "w": " a",
+     "s": 144.96,
+     "e": 145.14
+    },
+    {
+     "w": " USDC",
+     "s": 145.14,
+     "e": 145.58
+    },
+    {
+     "w": " on",
+     "s": 145.58,
+     "e": 146.16
+    },
+    {
+     "w": " Ethereum",
+     "s": 146.16,
+     "e": 146.48
+    },
+    {
+     "w": " or",
+     "s": 146.48,
+     "e": 147.68
+    }
+   ]
+  },
+  {
+   "start": 147.68,
+   "end": 155.74,
+   "text": " a USDT on Tron Wallet Address. Once added and saved, this is irreversible. To change",
+   "words": [
+    {
+     "w": " a",
+     "s": 147.68,
+     "e": 147.8
+    },
+    {
+     "w": " USDT",
+     "s": 147.8,
+     "e": 148.54
+    },
+    {
+     "w": " on",
+     "s": 148.54,
+     "e": 148.98
+    },
+    {
+     "w": " Tron",
+     "s": 148.98,
+     "e": 149.24
+    },
+    {
+     "w": " Wallet",
+     "s": 149.24,
+     "e": 149.46
+    },
+    {
+     "w": " Address.",
+     "s": 149.46,
+     "e": 149.84
+    },
+    {
+     "w": " Once",
+     "s": 151.04,
+     "e": 151.32
+    },
+    {
+     "w": " added",
+     "s": 151.32,
+     "e": 151.72
+    },
+    {
+     "w": " and",
+     "s": 151.72,
+     "e": 151.92
+    },
+    {
+     "w": " saved,",
+     "s": 151.92,
+     "e": 152.34
+    },
+    {
+     "w": " this",
+     "s": 152.84,
+     "e": 153.24
+    },
+    {
+     "w": " is",
+     "s": 153.24,
+     "e": 153.58
+    },
+    {
+     "w": " irreversible.",
+     "s": 153.58,
+     "e": 154.26
+    },
+    {
+     "w": " To",
+     "s": 155.16,
+     "e": 155.44
+    },
+    {
+     "w": " change",
+     "s": 155.44,
+     "e": 155.74
+    }
+   ]
+  },
+  {
+   "start": 155.74,
+   "end": 160.9,
+   "text": " the wallet address, you will have to reach out to your account manager. Once",
+   "words": [
+    {
+     "w": " the",
+     "s": 155.74,
+     "e": 155.92
+    },
+    {
+     "w": " wallet",
+     "s": 155.92,
+     "e": 156.16
+    },
+    {
+     "w": " address,",
+     "s": 156.16,
+     "e": 156.56
+    },
+    {
+     "w": " you",
+     "s": 157.3,
+     "e": 157.62
+    },
+    {
+     "w": " will",
+     "s": 157.62,
+     "e": 157.78
+    },
+    {
+     "w": " have",
+     "s": 157.78,
+     "e": 157.94
+    },
+    {
+     "w": " to",
+     "s": 157.94,
+     "e": 158.08
+    },
+    {
+     "w": " reach",
+     "s": 158.08,
+     "e": 158.24
+    },
+    {
+     "w": " out",
+     "s": 158.24,
+     "e": 158.46
+    },
+    {
+     "w": " to",
+     "s": 158.46,
+     "e": 158.64
+    },
+    {
+     "w": " your",
+     "s": 158.64,
+     "e": 158.82
+    },
+    {
+     "w": " account",
+     "s": 158.82,
+     "e": 159.12
+    },
+    {
+     "w": " manager.",
+     "s": 159.12,
+     "e": 159.62
+    },
+    {
+     "w": " Once",
+     "s": 160.64,
+     "e": 160.9
+    }
+   ]
+  },
+  {
+   "start": 160.9,
+   "end": 164.44,
+   "text": " you finish the setup on this page, click on Save Changes.",
+   "words": [
+    {
+     "w": " you",
+     "s": 160.9,
+     "e": 161.04
+    },
+    {
+     "w": " finish",
+     "s": 161.04,
+     "e": 161.32
+    },
+    {
+     "w": " the",
+     "s": 161.32,
+     "e": 161.48
+    },
+    {
+     "w": " setup",
+     "s": 161.48,
+     "e": 161.72
+    },
+    {
+     "w": " on",
+     "s": 161.72,
+     "e": 161.9
+    },
+    {
+     "w": " this",
+     "s": 161.9,
+     "e": 162.06
+    },
+    {
+     "w": " page,",
+     "s": 162.06,
+     "e": 162.44
+    },
+    {
+     "w": " click",
+     "s": 163.14,
+     "e": 163.22
+    },
+    {
+     "w": " on",
+     "s": 163.22,
+     "e": 163.56
+    },
+    {
+     "w": " Save",
+     "s": 163.56,
+     "e": 164.04
+    },
+    {
+     "w": " Changes.",
+     "s": 164.04,
+     "e": 164.44
+    }
+   ]
+  }
+ ]
+}

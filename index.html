@@ -33,7 +33,10 @@ section.demo .wrap{padding:72px 24px 80px;display:flex;flex-direction:column;gap
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet)}
 h2{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.02em;color:var(--navy)}
 .sub{margin:0;font-size:16px;line-height:26px;color:var(--ink2);max-width:680px}
-.grid{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+.grid{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start;padding:40px 0;border-top:1px solid var(--line)}
+.grid h3{margin:0 0 4px;font-family:'Geist',sans-serif;font-size:22px;letter-spacing:-.02em;color:var(--navy)}
+.grid .num{font-size:13px;font-weight:600;color:var(--violet);margin-bottom:6px}
+.grid .intro{font-size:14px;color:var(--ink2);margin:0 0 14px;line-height:1.5}
 @media (max-width:900px){.grid{grid-template-columns:1fr}}
 .steps{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line)}
 .step{display:flex;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);font-size:14px;line-height:20px}
@@ -79,32 +82,18 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 <body>
 <header><div class="wrap">
   <span id="logo"></span><span class="ttl">Ohana · Product demos</span><span class="sp"></span>
-  <nav><a class="on" href="#demo">Create a Beneficiary</a><a href="prototype.html" target="_blank" rel="noopener">Open the prototype ↗</a></nav>
+  <nav><a class="on" href="#demo">Demos</a><a href="prototype.html?flow=beneficiary" target="_blank" rel="noopener">Open the prototype ↗</a></nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
   <div class="tags"><span class="tag v">Ohana</span><span class="tag">Click-through demo</span></div>
-  <h1>Create a Beneficiary in Ohana</h1>
-  <p class="lead">Add a business beneficiary in a few clicks: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary is verified and moves from Pending to Approved.</p>
+  <h1>Ohana product demos</h1>
+  <p class="lead">Click-through demos of the Ohana merchant dashboard: create a beneficiary, onboard a business sender, and create a payment order. Each one plays as a guided demo with captions, or opens as a self-service run that points at the exact element to use next.</p>
 </div></section>
 
 <section class="demo" id="demo"><div class="wrap">
-  <div><div class="eyebrow">Demo video</div><h2 style="margin-top:10px">See the full flow</h2><p class="sub" style="margin-top:10px">The product UI, replayed step by step with captions. Press play, slow it down, or open the prototype and click through it yourself.</p></div>
-  <div class="grid">
-    <div class="steps" id="steps"></div>
-    <div>
-      <div class="frame" id="frame">
-        <iframe id="fr" src="prototype.html?demo=1&b=v20261021c" title="Create a Beneficiary in Ohana" tabindex="-1"></iframe>
-        <div class="ov" id="ov"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div>
-      </div>
-      <div class="ctl">
-        <button class="btn p" id="play">▶ Play the guided demo</button>
-        <button class="btn" id="self">Try it yourself</button>
-        <span class="sp"></span>
-        <span class="lbl">Both open full screen. Press Esc to leave.</span>
-      </div>
-    </div>
-  </div>
+  <div><div class="eyebrow">Demo videos</div><h2 style="margin-top:10px">See each flow end to end</h2><p class="sub" style="margin-top:10px">The product UI, replayed step by step with captions. Press play, slow it down, or try it yourself with on-screen prompts. Every demo opens full screen.</p></div>
+  <div id="demos"></div>
 </div></section>
 
 <div class="lb" id="lb" hidden>
@@ -127,31 +116,46 @@ footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;paddin
 </div></footer>
 
 <script>
-const STEPS = [
-  ['Log in and open Beneficiaries', 'Sign in, open Beneficiaries from the left menu, click Create beneficiary.', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']],
-  ['Choose the entity type and country', 'Business, then the country where the beneficiary is registered. Ohana loads the payout fields for that rail.', ['Entity type', 'Country list', 'Pick India']],
-  ['Upload a document and complete the details', 'Ohana reads the invoice and pre-fills the form; you only add what no document can prove.', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']],
-  ['Add payment methods', 'Bank account, SWIFT wire or crypto wallet.', ['Bank account', 'SWIFT', 'Crypto wallet']],
-  ['Create and verify', 'Saved and sent for verification; the status moves from Pending to Approved.', ['Create beneficiary', 'Verification']]
+const DEMOS = [
+  { flow: 'beneficiary', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']],
+    ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']],
+    ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']],
+    ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']],
+    ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'sender', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
+    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']],
+    ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']],
+    ['Business details and documents', ['Business details', 'Supporting documents']],
+    ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']],
+    ['Create and verify', ['Verification links', 'KYB approved']] ] },
+  { flow: 'order', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
+    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']],
+    ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']],
+    ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']],
+    ['Review and send', ['Send payment']],
+    ['Track the order', ['Back to orders', 'Funds and settlement']] ] }
 ];
-document.getElementById('steps').innerHTML = STEPS.map(([t, d, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><span>${d}</span><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('');
-
-const BUILD = 'v' + 20261021 + 'c'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+const BUILD = 'v' + 20261027 + 'a'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+document.getElementById('demos').innerHTML = DEMOS.map(d => `<div class="grid" id="demo-${d.flow}">
+  <div><div class="num">${d.num} / Ohana</div><h3>${d.title}</h3><p class="intro">${d.intro}</p>
+    <div class="steps">${d.steps.map(([t, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('')}</div></div>
+  <div><div class="frame"><iframe src="prototype.html?flow=${d.flow}&demo=1&b=${BUILD}" title="${d.title}" tabindex="-1" loading="lazy"></iframe><div class="ov" data-play="${d.flow}"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+    <div class="ctl"><button class="btn p" data-play="${d.flow}">▶ Play the guided demo</button><button class="btn" data-self="${d.flow}">Try it yourself</button><span class="sp"></span><span class="lbl">Both open full screen. Press Esc to leave.</span></div></div>
+</div>`).join('');
 const lb = document.getElementById('lb'), lbf = document.getElementById('lbf'), lbplay = document.getElementById('lbplay');
-let guided = false, paused = false, slow = false;
+let guided = false, paused = false, slow = false, flow = 'beneficiary';
 const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
-const src = () => (guided ? 'prototype.html?demo=1&play=1' + (slow ? '&slow=1' : '') : 'prototype.html?manual=1') + '&b=' + BUILD;
+const src = () => 'prototype.html?flow=' + flow + (guided ? '&play=1' + (slow ? '&slow=1' : '') : '&manual=1') + '&b=' + BUILD;
 const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
-const open = g => {
-  guided = g; paused = false; lb.hidden = false; lbf.src = src();
-  document.getElementById('lbt').textContent = g ? 'Create a Beneficiary · guided demo' : 'Create a Beneficiary · try it yourself';
+const open = (g, f) => {
+  guided = g; flow = f; paused = false; lb.hidden = false; lbf.src = src();
+  const d = DEMOS.find(x => x.flow === f); document.getElementById('lbt').textContent = d.title + (g ? ' · guided demo' : ' · try it yourself');
   lbplay.style.display = g ? '' : 'none'; document.getElementById('lbspeed').style.display = g ? '' : 'none'; document.getElementById('lbspeedl').style.display = g ? '' : 'none';
   lbplay.textContent = 'Pause'; goFull();
 };
 const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
-document.getElementById('play').onclick = () => open(true);
-document.getElementById('ov').onclick = () => open(true);
-document.getElementById('self').onclick = () => open(false);
+document.addEventListener('click', e => { const p = e.target.closest('[data-play]'); if (p) return open(true, p.dataset.play); const m = e.target.closest('[data-self]'); if (m) return open(false, m.dataset.self); });
 document.getElementById('lbclose').onclick = close;
 document.getElementById('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
 lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };

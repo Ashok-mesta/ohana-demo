@@ -1,0 +1,890 @@
+{
+ "text": " Log in to Ohana. From the navigation menu on the left, select orders. To create a new payment, click create payment in the top right corner. Creating a payment takes just three simple steps. First, select your source and destination currencies. You can either specify the source amount you want to send or the destination amount your beneficiary should receive. Ohana automatically calculates the corresponding amount. Next, choose the transfer type and continue. Select the approved sender and beneficiary for the payment. Choose the payment method, fill in the details and continue. Finally, review the payment summary and click send payment. Your payment order is now created and your payment quote is locked for five minutes. Head back to the orders page, fund the order and sit back while Ohana processes your payment. You can track every stage of the transaction in real time until the funds reach your beneficiary. Thank you for watching this tutorial.",
+ "segments": [
+  {
+   "start": 2.660000000000002,
+   "end": 4.26,
+   "text": " Log in to Ohana.",
+   "words": [
+    {
+     "w": " Log",
+     "s": 2.660000000000002,
+     "e": 3.42
+    },
+    {
+     "w": " in",
+     "s": 3.42,
+     "e": 3.64
+    },
+    {
+     "w": " to",
+     "s": 3.64,
+     "e": 3.78
+    },
+    {
+     "w": " Ohana.",
+     "s": 3.78,
+     "e": 4.26
+    }
+   ]
+  },
+  {
+   "start": 7.34,
+   "end": 10.34,
+   "text": " From the navigation menu on the left, select orders.",
+   "words": [
+    {
+     "w": " From",
+     "s": 7.34,
+     "e": 7.56
+    },
+    {
+     "w": " the",
+     "s": 7.56,
+     "e": 7.68
+    },
+    {
+     "w": " navigation",
+     "s": 7.68,
+     "e": 8.04
+    },
+    {
+     "w": " menu",
+     "s": 8.04,
+     "e": 8.54
+    },
+    {
+     "w": " on",
+     "s": 8.54,
+     "e": 8.78
+    },
+    {
+     "w": " the",
+     "s": 8.78,
+     "e": 8.92
+    },
+    {
+     "w": " left,",
+     "s": 8.92,
+     "e": 9.28
+    },
+    {
+     "w": " select",
+     "s": 9.76,
+     "e": 9.96
+    },
+    {
+     "w": " orders.",
+     "s": 9.96,
+     "e": 10.34
+    }
+   ]
+  },
+  {
+   "start": 12.76,
+   "end": 17.36,
+   "text": " To create a new payment, click create payment in the top right corner.",
+   "words": [
+    {
+     "w": " To",
+     "s": 12.76,
+     "e": 13.06
+    },
+    {
+     "w": " create",
+     "s": 13.06,
+     "e": 13.32
+    },
+    {
+     "w": " a",
+     "s": 13.32,
+     "e": 13.56
+    },
+    {
+     "w": " new",
+     "s": 13.56,
+     "e": 13.72
+    },
+    {
+     "w": " payment,",
+     "s": 13.72,
+     "e": 14.1
+    },
+    {
+     "w": " click",
+     "s": 14.5,
+     "e": 14.62
+    },
+    {
+     "w": " create",
+     "s": 14.62,
+     "e": 15.04
+    },
+    {
+     "w": " payment",
+     "s": 15.04,
+     "e": 15.82
+    },
+    {
+     "w": " in",
+     "s": 15.82,
+     "e": 16.3
+    },
+    {
+     "w": " the",
+     "s": 16.3,
+     "e": 16.42
+    },
+    {
+     "w": " top",
+     "s": 16.42,
+     "e": 16.64
+    },
+    {
+     "w": " right",
+     "s": 16.64,
+     "e": 16.92
+    },
+    {
+     "w": " corner.",
+     "s": 16.92,
+     "e": 17.36
+    }
+   ]
+  },
+  {
+   "start": 19.0,
+   "end": 22.42,
+   "text": " Creating a payment takes just three simple steps.",
+   "words": [
+    {
+     "w": " Creating",
+     "s": 19.0,
+     "e": 19.38
+    },
+    {
+     "w": " a",
+     "s": 19.38,
+     "e": 19.62
+    },
+    {
+     "w": " payment",
+     "s": 19.62,
+     "e": 19.98
+    },
+    {
+     "w": " takes",
+     "s": 19.98,
+     "e": 20.46
+    },
+    {
+     "w": " just",
+     "s": 20.46,
+     "e": 20.9
+    },
+    {
+     "w": " three",
+     "s": 20.9,
+     "e": 21.36
+    },
+    {
+     "w": " simple",
+     "s": 21.36,
+     "e": 22.02
+    },
+    {
+     "w": " steps.",
+     "s": 22.02,
+     "e": 22.42
+    }
+   ]
+  },
+  {
+   "start": 23.4,
+   "end": 26.78,
+   "text": " First, select your source and destination currencies.",
+   "words": [
+    {
+     "w": " First,",
+     "s": 23.4,
+     "e": 23.82
+    },
+    {
+     "w": " select",
+     "s": 24.62,
+     "e": 25.02
+    },
+    {
+     "w": " your",
+     "s": 25.02,
+     "e": 25.26
+    },
+    {
+     "w": " source",
+     "s": 25.26,
+     "e": 25.54
+    },
+    {
+     "w": " and",
+     "s": 25.54,
+     "e": 25.78
+    },
+    {
+     "w": " destination",
+     "s": 25.78,
+     "e": 26.22
+    },
+    {
+     "w": " currencies.",
+     "s": 26.22,
+     "e": 26.78
+    }
+   ]
+  },
+  {
+   "start": 28.440000000000005,
+   "end": 36.2,
+   "text": " You can either specify the source amount you want to send or the destination amount your beneficiary should receive.",
+   "words": [
+    {
+     "w": " You",
+     "s": 28.440000000000005,
+     "e": 29.28
+    },
+    {
+     "w": " can",
+     "s": 29.28,
+     "e": 29.44
+    },
+    {
+     "w": " either",
+     "s": 29.44,
+     "e": 29.68
+    },
+    {
+     "w": " specify",
+     "s": 29.68,
+     "e": 30.0
+    },
+    {
+     "w": " the",
+     "s": 30.0,
+     "e": 30.42
+    },
+    {
+     "w": " source",
+     "s": 30.42,
+     "e": 30.72
+    },
+    {
+     "w": " amount",
+     "s": 30.72,
+     "e": 31.12
+    },
+    {
+     "w": " you",
+     "s": 31.12,
+     "e": 31.36
+    },
+    {
+     "w": " want",
+     "s": 31.36,
+     "e": 31.54
+    },
+    {
+     "w": " to",
+     "s": 31.54,
+     "e": 31.74
+    },
+    {
+     "w": " send",
+     "s": 31.74,
+     "e": 32.0
+    },
+    {
+     "w": " or",
+     "s": 32.0,
+     "e": 32.92
+    },
+    {
+     "w": " the",
+     "s": 32.92,
+     "e": 33.08
+    },
+    {
+     "w": " destination",
+     "s": 33.08,
+     "e": 33.54
+    },
+    {
+     "w": " amount",
+     "s": 33.54,
+     "e": 34.06
+    },
+    {
+     "w": " your",
+     "s": 34.06,
+     "e": 34.48
+    },
+    {
+     "w": " beneficiary",
+     "s": 34.48,
+     "e": 34.98
+    },
+    {
+     "w": " should",
+     "s": 34.98,
+     "e": 35.42
+    },
+    {
+     "w": " receive.",
+     "s": 35.42,
+     "e": 36.2
+    }
+   ]
+  },
+  {
+   "start": 37.0,
+   "end": 39.86,
+   "text": " Ohana automatically calculates the corresponding amount.",
+   "words": [
+    {
+     "w": " Ohana",
+     "s": 37.0,
+     "e": 37.28
+    },
+    {
+     "w": " automatically",
+     "s": 37.28,
+     "e": 37.78
+    },
+    {
+     "w": " calculates",
+     "s": 37.78,
+     "e": 38.54
+    },
+    {
+     "w": " the",
+     "s": 38.54,
+     "e": 38.76
+    },
+    {
+     "w": " corresponding",
+     "s": 38.76,
+     "e": 39.22
+    },
+    {
+     "w": " amount.",
+     "s": 39.22,
+     "e": 39.86
+    }
+   ]
+  },
+  {
+   "start": 42.38,
+   "end": 45.8,
+   "text": " Next, choose the transfer type and continue.",
+   "words": [
+    {
+     "w": " Next,",
+     "s": 42.38,
+     "e": 42.86
+    },
+    {
+     "w": " choose",
+     "s": 43.16,
+     "e": 43.44
+    },
+    {
+     "w": " the",
+     "s": 43.44,
+     "e": 43.68
+    },
+    {
+     "w": " transfer",
+     "s": 43.68,
+     "e": 43.94
+    },
+    {
+     "w": " type",
+     "s": 43.94,
+     "e": 44.42
+    },
+    {
+     "w": " and",
+     "s": 44.42,
+     "e": 44.84
+    },
+    {
+     "w": " continue.",
+     "s": 44.84,
+     "e": 45.8
+    }
+   ]
+  },
+  {
+   "start": 47.22,
+   "end": 50.48,
+   "text": " Select the approved sender and beneficiary for the payment.",
+   "words": [
+    {
+     "w": " Select",
+     "s": 47.22,
+     "e": 47.7
+    },
+    {
+     "w": " the",
+     "s": 47.7,
+     "e": 47.94
+    },
+    {
+     "w": " approved",
+     "s": 47.94,
+     "e": 48.3
+    },
+    {
+     "w": " sender",
+     "s": 48.3,
+     "e": 48.64
+    },
+    {
+     "w": " and",
+     "s": 48.64,
+     "e": 49.04
+    },
+    {
+     "w": " beneficiary",
+     "s": 49.04,
+     "e": 49.46
+    },
+    {
+     "w": " for",
+     "s": 49.46,
+     "e": 49.9
+    },
+    {
+     "w": " the",
+     "s": 49.9,
+     "e": 50.1
+    },
+    {
+     "w": " payment.",
+     "s": 50.1,
+     "e": 50.48
+    }
+   ]
+  },
+  {
+   "start": 52.72,
+   "end": 57.14,
+   "text": " Choose the payment method, fill in the details and continue.",
+   "words": [
+    {
+     "w": " Choose",
+     "s": 52.72,
+     "e": 53.42
+    },
+    {
+     "w": " the",
+     "s": 53.42,
+     "e": 53.66
+    },
+    {
+     "w": " payment",
+     "s": 53.66,
+     "e": 53.84
+    },
+    {
+     "w": " method,",
+     "s": 53.84,
+     "e": 54.34
+    },
+    {
+     "w": " fill",
+     "s": 54.9,
+     "e": 55.2
+    },
+    {
+     "w": " in",
+     "s": 55.2,
+     "e": 55.36
+    },
+    {
+     "w": " the",
+     "s": 55.36,
+     "e": 55.48
+    },
+    {
+     "w": " details",
+     "s": 55.48,
+     "e": 55.86
+    },
+    {
+     "w": " and",
+     "s": 55.86,
+     "e": 56.78
+    },
+    {
+     "w": " continue.",
+     "s": 56.78,
+     "e": 57.14
+    }
+   ]
+  },
+  {
+   "start": 59.5,
+   "end": 65.04,
+   "text": " Finally, review the payment summary and click send payment.",
+   "words": [
+    {
+     "w": " Finally,",
+     "s": 59.5,
+     "e": 60.2
+    },
+    {
+     "w": " review",
+     "s": 61.12,
+     "e": 61.42
+    },
+    {
+     "w": " the",
+     "s": 61.42,
+     "e": 61.68
+    },
+    {
+     "w": " payment",
+     "s": 61.68,
+     "e": 61.96
+    },
+    {
+     "w": " summary",
+     "s": 61.96,
+     "e": 62.38
+    },
+    {
+     "w": " and",
+     "s": 62.38,
+     "e": 62.96
+    },
+    {
+     "w": " click",
+     "s": 62.96,
+     "e": 63.32
+    },
+    {
+     "w": " send",
+     "s": 63.32,
+     "e": 64.42
+    },
+    {
+     "w": " payment.",
+     "s": 64.42,
+     "e": 65.04
+    }
+   ]
+  },
+  {
+   "start": 66.6,
+   "end": 71.54,
+   "text": " Your payment order is now created and your payment quote is locked for five minutes.",
+   "words": [
+    {
+     "w": " Your",
+     "s": 66.6,
+     "e": 66.76
+    },
+    {
+     "w": " payment",
+     "s": 66.76,
+     "e": 67.04
+    },
+    {
+     "w": " order",
+     "s": 67.04,
+     "e": 67.32
+    },
+    {
+     "w": " is",
+     "s": 67.32,
+     "e": 67.82
+    },
+    {
+     "w": " now",
+     "s": 67.82,
+     "e": 68.1
+    },
+    {
+     "w": " created",
+     "s": 68.1,
+     "e": 68.5
+    },
+    {
+     "w": " and",
+     "s": 68.5,
+     "e": 68.9
+    },
+    {
+     "w": " your",
+     "s": 68.9,
+     "e": 69.04
+    },
+    {
+     "w": " payment",
+     "s": 69.04,
+     "e": 69.48
+    },
+    {
+     "w": " quote",
+     "s": 69.48,
+     "e": 69.82
+    },
+    {
+     "w": " is",
+     "s": 69.82,
+     "e": 70.06
+    },
+    {
+     "w": " locked",
+     "s": 70.06,
+     "e": 70.42
+    },
+    {
+     "w": " for",
+     "s": 70.42,
+     "e": 70.84
+    },
+    {
+     "w": " five",
+     "s": 70.84,
+     "e": 71.1
+    },
+    {
+     "w": " minutes.",
+     "s": 71.1,
+     "e": 71.54
+    }
+   ]
+  },
+  {
+   "start": 72.86,
+   "end": 78.62,
+   "text": " Head back to the orders page, fund the order and sit back while Ohana processes your payment.",
+   "words": [
+    {
+     "w": " Head",
+     "s": 72.86,
+     "e": 73.1
+    },
+    {
+     "w": " back",
+     "s": 73.1,
+     "e": 73.34
+    },
+    {
+     "w": " to",
+     "s": 73.34,
+     "e": 73.52
+    },
+    {
+     "w": " the",
+     "s": 73.52,
+     "e": 73.66
+    },
+    {
+     "w": " orders",
+     "s": 73.66,
+     "e": 73.84
+    },
+    {
+     "w": " page,",
+     "s": 73.84,
+     "e": 74.3
+    },
+    {
+     "w": " fund",
+     "s": 75.08,
+     "e": 75.56
+    },
+    {
+     "w": " the",
+     "s": 75.56,
+     "e": 75.74
+    },
+    {
+     "w": " order",
+     "s": 75.74,
+     "e": 76.04
+    },
+    {
+     "w": " and",
+     "s": 76.04,
+     "e": 76.36
+    },
+    {
+     "w": " sit",
+     "s": 76.36,
+     "e": 76.54
+    },
+    {
+     "w": " back",
+     "s": 76.54,
+     "e": 76.82
+    },
+    {
+     "w": " while",
+     "s": 76.82,
+     "e": 77.06
+    },
+    {
+     "w": " Ohana",
+     "s": 77.06,
+     "e": 77.4
+    },
+    {
+     "w": " processes",
+     "s": 77.4,
+     "e": 77.88
+    },
+    {
+     "w": " your",
+     "s": 77.88,
+     "e": 78.28
+    },
+    {
+     "w": " payment.",
+     "s": 78.28,
+     "e": 78.62
+    }
+   ]
+  },
+  {
+   "start": 80.24000000000001,
+   "end": 86.52,
+   "text": " You can track every stage of the transaction in real time until the funds reach your beneficiary.",
+   "words": [
+    {
+     "w": " You",
+     "s": 80.24000000000001,
+     "e": 80.84
+    },
+    {
+     "w": " can",
+     "s": 80.84,
+     "e": 81.04
+    },
+    {
+     "w": " track",
+     "s": 81.04,
+     "e": 81.34
+    },
+    {
+     "w": " every",
+     "s": 81.34,
+     "e": 81.84
+    },
+    {
+     "w": " stage",
+     "s": 81.84,
+     "e": 82.18
+    },
+    {
+     "w": " of",
+     "s": 82.18,
+     "e": 82.42
+    },
+    {
+     "w": " the",
+     "s": 82.42,
+     "e": 82.54
+    },
+    {
+     "w": " transaction",
+     "s": 82.54,
+     "e": 83.02
+    },
+    {
+     "w": " in",
+     "s": 83.02,
+     "e": 83.54
+    },
+    {
+     "w": " real",
+     "s": 83.54,
+     "e": 83.78
+    },
+    {
+     "w": " time",
+     "s": 83.78,
+     "e": 84.34
+    },
+    {
+     "w": " until",
+     "s": 84.34,
+     "e": 85.04
+    },
+    {
+     "w": " the",
+     "s": 85.04,
+     "e": 85.26
+    },
+    {
+     "w": " funds",
+     "s": 85.26,
+     "e": 85.52
+    },
+    {
+     "w": " reach",
+     "s": 85.52,
+     "e": 85.84
+    },
+    {
+     "w": " your",
+     "s": 85.84,
+     "e": 86.08
+    },
+    {
+     "w": " beneficiary.",
+     "s": 86.08,
+     "e": 86.52
+    }
+   ]
+  },
+  {
+   "start": 88.72,
+   "end": 90.2,
+   "text": " Thank you for watching this tutorial.",
+   "words": [
+    {
+     "w": " Thank",
+     "s": 88.72,
+     "e": 88.86
+    },
+    {
+     "w": " you",
+     "s": 88.86,
+     "e": 89.06
+    },
+    {
+     "w": " for",
+     "s": 89.06,
+     "e": 89.26
+    },
+    {
+     "w": " watching",
+     "s": 89.26,
+     "e": 89.54
+    },
+    {
+     "w": " this",
+     "s": 89.54,
+     "e": 89.78
+    },
+    {
+     "w": " tutorial.",
+     "s": 89.78,
+     "e": 90.2
+    }
+   ]
+  }
+ ]
+}

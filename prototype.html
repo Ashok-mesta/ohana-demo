@@ -356,6 +356,177 @@ td.arr{color:var(--faint);text-align:right}
 .typing{border-color:var(--violet)!important;box-shadow:0 0 0 1px var(--violet)!important}
 .caret::after{content:'';display:inline-block;width:1px;height:1em;background:var(--ink);vertical-align:-2px;margin-left:1px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
+/* ===== multi-flow additions ===== */
+.stepper.s4 .st{width:150px}
+.stepper .st.done .d{border-color:var(--ink);background:#fff}.stepper .st.done .d::after{display:none}
+.stepper .st.done .d svg{width:14px;height:14px}
+.stepper .st small{display:block;font-size:11px;color:var(--mute);font-weight:400;margin-top:2px}
+.owner{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0}
+.owner .oh{display:flex;align-items:center;font-size:10.5px;color:var(--ink2);margin-bottom:12px}
+.owner .oh .sp{flex:1}.owner .oh .ico{color:var(--mute);cursor:pointer}
+.owner h5{margin:14px 0 10px;font-size:14px;font-weight:600}
+.pep{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pep div{border:1px solid var(--line);border-radius:10px;padding:11px;text-align:center;font-size:13.5px;cursor:pointer}
+.pep div.on{border-color:var(--green);background:#eefbf4}
+.chipsel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:7px 10px;min-height:44px;cursor:pointer}
+.chipsel span{background:#f1f2f4;border-radius:999px;padding:3px 9px;font-size:12.5px;display:inline-flex;gap:6px;align-items:center}
+.chipsel .sp{flex:1}
+.flagpre{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:10px;padding:0 12px;font-size:13.5px}
+.flagpre input{border:0;flex:1;padding:11px 6px;font:inherit;outline:none;background:transparent}
+.secbox{border:1px solid var(--line);border-radius:14px;padding:18px 18px 8px;margin-bottom:8px}
+.secbox h4{margin:0 0 4px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.secbox .d{font-size:12.5px;color:var(--mute);margin-bottom:14px}
+.links{max-width:640px;margin:22px auto 0;text-align:left}
+.links h5{margin:16px 0 4px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.links .d{font-size:12.5px;color:var(--mute);margin-bottom:8px}
+.lnk{display:flex;align-items:center;gap:10px;background:#f6f7f9;border:1px solid var(--line2);border-radius:10px;padding:10px 14px;font:12.5px 'Geist Mono',monospace;color:var(--ink2)}
+.lnk span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ubo{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:8px}
+.ubo .h{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;margin-bottom:6px}
+.ubo .h .sp{flex:1}
+.ubo .ns{font:600 10.5px 'Geist Mono',monospace;color:var(--amber-tx);background:var(--amber-bg);border-radius:6px;padding:2px 8px;letter-spacing:.04em}
+.ubo .ex{font:11px 'Geist Mono',monospace;color:var(--mute);margin-top:6px}
+/* orders */
+.qf{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 12px}
+.qf span{border:1px solid var(--line);border-radius:8px;padding:6px 11px;font-size:12.5px;cursor:pointer}
+.qf .lbl{font-size:10.5px;color:var(--faint);width:100%;border:0;padding:0 0 2px}
+td .oid{font:13px 'Geist Mono',monospace;color:var(--ink)}
+td .oid small{display:block;font-size:10px;color:var(--faint);letter-spacing:.06em;margin-top:3px}
+.amt2{display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:13px}
+.amt2 .coin{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:700 10px 'Geist',sans-serif;color:#fff;flex:none}
+.amt2 .c-usdc{background:#2775ca}.amt2 .c-usdt{background:#26a17b}.amt2 .c-fiat{background:transparent;font-size:18px}
+.amt2 small{display:block;font-size:10px;color:var(--faint);letter-spacing:.04em}
+.amt2 .ar{color:var(--faint);margin:0 4px}
+.chip.b{background:#eef0ff;color:#3b3bc9}.chip.k{background:#f1f2f4;color:var(--ink2)}
+.ohead{display:flex;align-items:center;margin-bottom:6px}
+.ohead .bk{display:flex;align-items:center;gap:8px;font-size:13.5px;cursor:pointer;color:var(--ink)}
+.ohead .ttl{flex:1;text-align:center;font-size:20px;font-weight:600}
+.ohead .stp{font-size:10.5px;color:var(--mute)}
+.stepper.s3 .st{width:110px}
+.ocols{display:grid;grid-template-columns:1fr 460px;gap:26px;align-items:start;margin-top:10px}
+.acard{border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.acard .tag{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:10px;color:var(--mute);margin-bottom:14px}
+.acard .lb{display:flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;margin-bottom:8px}
+.arow{display:grid;grid-template-columns:1fr 180px;gap:12px}
+.arow .amt{border:1px solid var(--line);border-radius:12px;padding:0 16px;font:400 28px 'Geist Mono',monospace;height:58px;width:100%;color:var(--ink);background:#fff}
+.arow .amt::placeholder{color:#c6c9cf}
+.arow .amt:focus{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet)}
+.cur{position:relative;border:1px solid var(--line);border-radius:12px;height:58px;display:flex;align-items:center;gap:10px;padding:0 12px;cursor:pointer;background:#fff}
+.cur .ic{font-size:20px;flex:none;width:24px;text-align:center}
+.cur .t{flex:1;min-width:0;line-height:1.15}
+.cur .t b{display:block;font-size:17px;font-weight:600}
+.cur .t small{display:block;font-size:10.5px;color:var(--mute);font-family:'Geist Mono',monospace}
+.cur .t .ph{font-size:14px;color:var(--ink2)}
+.cur.on{box-shadow:0 0 0 2px #f2c14e}
+.cdd{position:absolute;right:0;top:calc(100% + 6px);width:330px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 40px rgba(15,15,22,.16);padding:10px;z-index:30;cursor:default}
+.cdd .srch{display:flex;align-items:center;gap:8px;border:1.5px solid #f2c14e;border-radius:8px;padding:7px 10px;font-size:13px;color:var(--ink);margin-bottom:10px}
+.cdd .srch .ico{color:var(--mute)}
+.cdd .sec{font-size:10px;color:var(--mute);padding:6px 8px 4px;letter-spacing:.08em}
+.cdd .row{display:flex;align-items:center;gap:12px;padding:9px 8px;border-radius:8px;cursor:pointer}
+.cdd .row:hover{background:#f6f7f9}
+.cdd .row .ic{font-size:20px;width:26px;text-align:center}
+.cdd .row .t b{display:block;font-size:14.5px}
+.cdd .row .t span{display:block;font-size:11.5px;color:var(--mute);font-family:'Geist Mono',monospace}
+.swap{display:flex;align-items:center;gap:0;margin:14px 0}
+.swap i{flex:1;height:1px;background:var(--line2)}
+.swap span{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.route{font:12px 'Geist Mono',monospace;color:var(--ink2);border-top:1px solid var(--line2);margin-top:14px;padding-top:12px}
+.route b{color:var(--ink)}
+.xfer{border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:16px}
+.xfer .h{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.xfer .h .sp{flex:1}.xfer .h .mn{font-size:10px;color:var(--mute);font-weight:400;font-family:'Geist Mono',monospace;letter-spacing:.08em}
+.xfer .d{font-size:12.5px;color:var(--mute);margin:4px 0 12px}
+.xo{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.xo.on{border-color:var(--ink);box-shadow:0 0 0 .5px var(--ink)}
+.xo.off{opacity:.55;cursor:default}
+.xo .rb{width:18px;height:18px;border-radius:50%;border:1.5px solid #c4c7ce;flex:none;position:relative}
+.xo.on .rb{border-color:var(--ink)}.xo.on .rb::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--ink)}
+.xo .ic{width:34px;height:34px;border-radius:50%;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2);flex:none}
+.xo .t{flex:1}.xo .t b{font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.xo .t b em{font-style:normal;font-size:10.5px;color:var(--mute);background:#f1f2f4;border-radius:4px;padding:1px 6px}
+.xo .t span{display:block;font-size:12px;color:var(--mute);margin-top:2px}
+.xo .pr{font:600 14px 'Geist Mono',monospace}
+.xo .soon{font:10px 'Geist Mono',monospace;color:var(--mute);letter-spacing:.08em;border:1px solid var(--line);border-radius:4px;padding:2px 6px}
+.adv{font-size:14px;color:var(--ink2);margin:18px 0 0;cursor:pointer}
+.ofoot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line2);margin-top:18px;padding-top:16px}
+.sum{border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.sum h4{margin:0 0 12px;font-size:15px;font-weight:600}
+.sum .emp{font-size:13px;color:var(--mute)}
+.sum .ln{display:flex;align-items:center;gap:8px;font:600 15px 'Geist Mono',monospace;margin:6px 0}
+.sum .ln .net{font:400 10.5px 'Geist Mono',monospace;background:#f1f2f4;border-radius:4px;padding:2px 6px;color:var(--ink2)}
+.sum .dn{color:var(--mute);margin:2px 0 2px 6px}
+.sum .kv{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);padding:5px 0;font-family:'Geist Mono',monospace}
+.sum .kv b{color:var(--ink);font-weight:600;font-family:'Geist',sans-serif}
+.sum .tot{display:flex;justify-content:space-between;border-top:1px solid var(--line2);margin-top:8px;padding-top:10px;font-size:13.5px}
+.sum .tot b{font-family:'Geist Mono',monospace}
+.sum .tot small{display:block;font-size:11.5px;color:var(--mute);font-weight:400}
+.sum .q{display:inline-flex;align-items:center;gap:6px;background:#f1f2f4;border-radius:10px;padding:8px 12px;font-size:12.5px;font-weight:500;margin:14px 0}
+.sum .nx{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--line2);padding-top:10px;line-height:1.9}
+.plabel{font-size:14px;font-weight:600;letter-spacing:.06em;color:var(--ink2);margin:14px 0 8px}
+.psearch{position:relative;display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;padding:0 14px;height:48px;font-size:14px;color:#8a8f98;cursor:text;background:#fff}
+.psearch.filled{color:var(--ink)}
+.psearch .q{flex:1}
+.psearch .x{color:var(--mute);cursor:pointer}
+.psearch.on{border-color:var(--violet);box-shadow:0 0 0 1px var(--violet)}
+.pdd{position:absolute;left:0;right:0;top:calc(100% + 8px);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 40px rgba(15,15,22,.16);padding:8px;z-index:30;cursor:default}
+.pdd .row{display:flex;align-items:center;gap:14px;padding:10px 12px;border-radius:10px;cursor:pointer}
+.pdd .row:hover{background:#f6f7f9}
+.pdd .row .bi{width:34px;height:34px;border-radius:8px;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.pdd .row .t{flex:1}.pdd .row .t b{display:block;font-size:14.5px;font-weight:600}.pdd .row .t span{font-size:12.5px;color:var(--mute)}
+.pdd .row .ok{color:var(--green)}
+.pm-opt{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.pm-opt.on{border-color:var(--ink);box-shadow:0 0 0 .5px var(--ink)}
+.pm-opt .ic{width:40px;height:40px;border-radius:10px;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2);flex:none}
+.pm-opt .ic.eth{background:#eef0ff;color:#4f5bd5}.pm-opt .ic.trx{background:#fdecec;color:#e0393e}
+.pm-opt .t{flex:1}.pm-opt .t b{font-size:14.5px;font-weight:600;display:flex;align-items:center;gap:8px}
+.pm-opt .t b em{font-style:normal;font-size:11px;color:var(--mute);background:#f1f2f4;border-radius:4px;padding:1px 6px;font-weight:500}
+.pm-opt .t span{display:block;font:12px 'Geist Mono',monospace;color:var(--mute);margin-top:4px}
+.pm-opt .t span i{font-style:normal;background:#f1f2f4;border-radius:4px;padding:1px 5px;margin-right:6px;color:var(--ink2)}
+.pm-opt .rb{width:22px;height:22px;border-radius:50%;border:1.5px solid #c4c7ce;flex:none;display:flex;align-items:center;justify-content:center}
+.pm-opt.on .rb{background:var(--ink);border-color:var(--ink);color:#fff}
+.pm-opt.on .rb .ico{width:12px;height:12px;stroke-width:3}
+.sec-t{font-size:15px;font-weight:600;margin:20px 0 4px}
+.sec-d{font-size:13px;color:var(--mute);margin-bottom:12px}
+.rcard{border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:14px}
+.rcard .h{display:flex;align-items:center;font-size:15px;font-weight:600;margin-bottom:14px}
+.rcard .h .sp{flex:1}.rcard .h .ed{font-size:12.5px;font-weight:500;color:var(--ink2);display:flex;align-items:center;gap:6px;cursor:pointer}
+.rcard .kv{display:flex;justify-content:space-between;font-size:13.5px;padding:7px 0;color:var(--ink2)}
+.rcard .kv b{font-weight:500;color:var(--ink)}
+.rcard .kv .mono{font-size:13px;text-transform:none;letter-spacing:0}
+.party{display:flex;align-items:flex-start;gap:12px;margin:6px 0}
+.party .bi{width:34px;height:34px;border-radius:8px;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.party .t small{display:block;font-size:12px;color:var(--mute)}.party .t b{display:block;font-size:14.5px}.party .t span{font-size:12px;color:var(--mute)}
+.via{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px}
+.via .bi{width:34px;height:34px;border-radius:8px;background:#f1f2f4;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+.via .t small{display:block;font-size:12px;color:var(--mute)}.via .t b{display:block;font-size:14.5px}.via .t span{font:12px 'Geist Mono',monospace;color:var(--mute)}
+.auth{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;font-size:13px;color:var(--mute);margin-top:14px}
+.auth b{color:var(--ink);font-family:'Geist Mono',monospace}
+.pill-st{display:inline-flex;align-items:center;gap:8px;font:12px 'Geist Mono',monospace;color:var(--ink2)}
+.pill-st .chip{font-family:'Geist',sans-serif}
+.big2{display:grid;grid-template-columns:1fr 60px 1fr;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.big2 .bx{border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.big2 .bx small{display:block;font:10.5px 'Geist Mono',monospace;color:var(--faint);letter-spacing:.08em;margin-bottom:8px}
+.big2 .bx .v{display:flex;align-items:center;gap:12px;font:600 28px 'Geist Mono',monospace}
+.big2 .bx .v .coin{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:700 12px 'Geist',sans-serif;color:#fff}
+.big2 .bx .v .coin.c-usdc{background:#2775ca}
+.big2 .bx .v small{display:block;font-size:12px;letter-spacing:0;color:var(--mute);margin:0}
+.big2 .ar{text-align:center;color:var(--ink2)}
+.dcols{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
+.kvt{display:flex;align-items:center;padding:12px 0;border-top:1px solid var(--line2);font-size:13.5px}
+.kvt span:first-child{width:170px;color:var(--ink2)}
+.kvt .mono{text-transform:none;letter-spacing:0;font-size:13px}
+.stage{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}
+.stage small{display:block;font:10.5px 'Geist Mono',monospace;color:var(--faint);letter-spacing:.08em}
+.stage b{display:block;font-size:20px;margin:4px 0 2px}
+.stage .bar{height:3px;background:var(--line2);border-radius:2px;margin:12px 0 8px}
+.stage .bar i{display:block;height:100%;width:6%;background:var(--ink);border-radius:2px}
+.stage .mn{font:11px 'Geist Mono',monospace;color:var(--mute)}
+.tl{display:flex;align-items:center;gap:14px;background:#f6f7f9;border-radius:12px;padding:14px;margin-top:12px}
+.tl .d{width:20px;height:20px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center}.tl .d::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.tl b{display:block;font-size:14px}.tl span{font-size:12px;color:var(--mute)}
+.ql{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:13.5px;color:var(--ink2);cursor:pointer}
+.toast.ok{background:#e9f7ef;color:#1f8a52;border:1px solid #bfe6cf;display:flex;align-items:center;gap:8px}
+
 </style>
 </head>
 <body>
@@ -364,12 +535,6 @@ td.arr{color:var(--faint);text-align:right}
   <div id="stage"><div id="app"></div></div>
 </div>
 <script>
-/* ============================================================
-   Ohana · Create a Beneficiary — click-through demo
-   Mechanism copied from the AiPrise Token Sharing prototype:
-   INIT state → steps() (title/hint/screen/act/done) → DEMOS[n] op list
-   → CAPS[n] captions → autoplay runner (cursor, ripple, caption pill).
-   ============================================================ */
 const LOGO = `<svg viewBox="0 28 697.003 365" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-60.41 -110.17)" fill="currentColor"><g transform="translate(60.41 110.17)"><path d="M65.539,462.205q59.448-74.7,118.838-149.32c7.926,9.937,15.5,19.408,23.226,29.112,21.681-27.247,43.1-54.115,64.49-80.984.262.087.5.146.758.233V381.863h41.964V138.62Q187.175,299,60.41,458.242c1.778,1.37,3.293,2.565,5.071,3.963Z" transform="translate(-60.41 -55.713)"></path><path d="M75.366,432.742C88.6,416.1,101.884,399.521,115,382.794a8.54,8.54,0,0,0,1.311-4.779c.087-19.525.058-39.049.058-58.574,0-1.282.117-2.594.2-4.575,9.092,11.307,17.66,21.944,26.46,32.9q93.194-117.061,185.747-233.393c-1.807-1.4-3.322-2.594-5.071-3.963q-79.031,99.314-158,198.482c-30.511-38.35-60.76-76.321-91.5-114.963V433.791a13.361,13.361,0,0,0,1.166-1.049Z" transform="translate(-34.014 -109.711)"></path><rect transform="matrix(0.634, -0.773, 0.773, 0.634, 180.33, 98.29)"></rect><path d="M182.358,115.124,176.3,110.17,121.54,173.7l6.061,4.954Z" transform="translate(56.601 -110.17)"></path><rect transform="matrix(0.634, -0.773, 0.773, 0.634, 28.155, 401.474)"></rect><path d="M79.51,289.858l6.061,4.954,54.757-63.528L134.3,226.33Z" transform="translate(-23.85 112.176)"></path></g><g transform="translate(334.863 280.151)"><path d="M154.59,242.2c0-35,23.721-62.159,58.254-62.159,38,0,58.254,29.025,58.254,71.134H185.451c2.3,18.184,12.443,29.462,30.161,29.462,12.21,0,19.35-5.537,22.789-14.512h30.861c-4.371,20.953-23.022,38.671-53.416,38.671-39.137,0-61.255-27.393-61.255-62.625Zm31.3-12.647h52.484c-.933-14.979-10.811-25.324-25.091-25.324C196.7,204.227,188.656,214.135,185.888,229.551Z" transform="translate(-154.59 -146.411)"></path><path d="M197.02,263.151h29.025c2.069,13.58,11.744,19.583,25.79,19.583s21.652-5.3,21.652-13.58c0-11.278-14.979-12.443-31.094-15.649-21.186-4.138-41.905-9.908-41.905-35.7S221.674,180.04,248.6,180.04c31.094,0,48.345,15.416,50.648,39.137H270.922c-1.37-12.647-9.442-17.281-22.789-17.281-12.21,0-20.253,4.6-20.253,13.114,0,10.141,15.649,11.045,32.463,14.512,19.787,4.138,41.672,9.675,41.672,37.3,0,23.721-20.253,38-49.744,38-34.3,0-53.416-16.581-55.252-41.672Z" transform="translate(-73.373 -146.411)"></path><path d="M234.71,205.335h16.348V168.5h30.628v36.835h20.253v20.719H281.686v62.625c0,8.742,4.838,11.744,11.744,11.744,3.9,0,9.209-.233,9.209-.233v23.022s-7.14.466-19.583.466c-15.183,0-32-5.974-32-28.325v-69.3H234.71V205.335Z" transform="translate(-1.23 -168.5)"></path><path d="M338.168,288.089H337.7c-5.974,8.976-14.512,15.882-34.766,15.882-24.187,0-41.206-12.677-41.206-36.135,0-26.023,21.186-34.3,47.442-38,19.583-2.768,28.558-4.371,28.558-13.347,0-8.509-6.673-14.046-19.787-14.046-14.745,0-21.885,5.3-22.789,16.581H267.3c.932-20.719,16.348-38.9,50.881-38.9S367.921,196,367.921,223.628v60.089c0,8.976,1.37,14.279,4.138,16.348v1.166H341.9c-1.836-2.3-3-7.839-3.672-13.114Zm.233-28.529V241.841c-5.537,3.235-14.046,5.071-21.885,6.906-16.348,3.672-24.42,7.373-24.42,18.417s7.373,14.979,18.417,14.979c17.951,0,27.859-11.045,27.859-22.555Z" transform="translate(50.49 -146.258)"></path></g></g></svg>`;
 const I = {
   home:'<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
@@ -408,7 +573,16 @@ const I = {
 const ic = (n, cls = '') => `<svg class="ico ${cls}" viewBox="0 0 24 24">${I[n]}</svg>`;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-/* ---------- data (sampled from the Ohana footage) ---------- */
+
+/* ============================================================
+   Ohana click-through demos — multi-flow shell
+   Flows: beneficiary (demo=1) · sender (demo=2) · order (demo=3)
+   Mechanism from the AiPrise Token Sharing prototype: INIT state → five main
+   steps with nested substeps {t,target,say,act,done} → DEMOS op list → CAPS →
+   autoplay runner (cursor, ripple, caption pill) + self-service prompt beacon.
+   ============================================================ */
+
+/* ---------- Beneficiary data (sampled from the Ohana footage) ---------- */
 const ROWS = [
   { n: 'Manish Kumar111', t: 'Business', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Declined', c: 'Jul 2 · 7:07 PM', l: 'Jul 3 · 12:02 AM' },
   { n: 'Manish Kumar123', t: 'Business', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Declined', c: 'Jul 2 · 7:00 PM', l: 'Jul 3 · 12:02 AM' },
@@ -420,7 +594,8 @@ const ROWS = [
   { n: 'Hello', t: 'Individual', f: '🇺🇸', cc: 'US', cur: 'USD', s: 'Approved', c: 'Jan 12 · 9:14 AM', l: 'Jan 12 · 9:20 AM' }
 ];
 const COUNTRIES = [['HN', '🇭🇳', 'Honduras'], ['HK', '🇭🇰', 'Hong Kong'], ['HU', '🇭🇺', 'Hungary'], ['IS', '🇮🇸', 'Iceland'], ['IN', '🇮🇳', 'India'], ['ID', '🇮🇩', 'Indonesia'], ['IE', '🇮🇪', 'Ireland'], ['IL', '🇮🇱', 'Israel'], ['IT', '🇮🇹', 'Italy'], ['JM', '🇯🇲', 'Jamaica'], ['JP', '🇯🇵', 'Japan']];
-const CNAME = Object.fromEntries(COUNTRIES.map(([c, f, n]) => [c, f + ' ' + n]));
+const SCOUNTRIES = [['AR', '🇦🇷', 'Argentina'], ['AU', '🇦🇺', 'Australia'], ['AT', '🇦🇹', 'Austria'], ['BD', '🇧🇩', 'Bangladesh'], ['BE', '🇧🇪', 'Belgium'], ['BO', '🇧🇴', 'Bolivia'], ['BR', '🇧🇷', 'Brazil'], ['CA', '🇨🇦', 'Canada'], ['CL', '🇨🇱', 'Chile'], ['CO', '🇨🇴', 'Colombia'], ['CR', '🇨🇷', 'Costa Rica']];
+const CNAME = { IN: '🇮🇳 India', BR: '🇧🇷 Brazil' };
 const DOC = 'Lincoln_Strategy_Labs_Invoice July 20.pdf';
 const POP_DOC = 'Sample_Purpose_of_Payment_Declaration_Brazil_to_India.pdf';
 const PREFILL = { street: '503 Prestige Meridian II Residency Road', city: 'Bengaluru', postal: '560001', relationship: 'Supplier', purpose: 'Vendor payment', businessType: 'Partnership', regNo: 'AAB-4471' };
@@ -432,100 +607,235 @@ const OPTS = {
   purpose: ['Vendor payment', 'Invoice settlement', 'Salary', 'Loan repayment', 'Other'],
   businessType: ['Sole Proprietorship', 'Corporation', 'Limited Liability Company', 'Partnership', 'Other'],
   bank: ['ICICI Bank', 'HDFC Bank', 'State Bank of India', 'Axis Bank', 'Kotak Mahindra Bank'],
-  acctType: ['Checking', 'Savings'],
-  network: ['Ethereum (ETH)', 'Polygon (POL)', 'Tron (TRX)', 'Solana (SOL)'],
-  pmtype: ['Bank account', 'Crypto wallet']
+  acctType: ['Checking', 'Savings'], network: ['Ethereum (ETH)', 'Polygon (POL)', 'Tron (TRX)', 'Solana (SOL)'], pmtype: ['Bank account', 'Crypto wallet'],
+  senderType: ['Business', 'Individual'], yesno: ['No', 'Yes'], employees: ['1', '2-10', '11-50', '51-200', '200+'],
+  sof: ['Business Income', 'Investment Returns', 'Loan', 'Other'], volume: ['<500K', '500K–1M', '1M–5M', '>5M'],
+  docType: ['National Id', 'Passport', 'Driver licence'],
+  opurpose: ['Vendor payment', 'Invoice settlement', 'Payroll', 'Services', 'Other'], osof: ['Business income', 'Investment returns', 'Loan', 'Other'], orel: ['Supplier', 'Customer', 'Subsidiary', 'Partner', 'Other']
 };
 
-const OPEN_CREATE = { screen: 'create', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, methods: [], modal: null, success: false };
+/* ---------- Sender data ---------- */
+const SROWS = [
+  { n: 'SerraViva Alimentos Natura…', e: 'financeiro@serravivanaturais.com…', f: '🇧🇷', cc: 'BR', cur: 'BRL', kyb: 'Pending', ubo: '0/2 Approved', tos: 'Pending', st: 'Inactive', c: '12m ago' },
+  { n: 'Atlântica BioComércio Ltda.', e: 'financeiro@atlanticabiotrade.com…', f: '🇧🇷', cc: 'BR', cur: 'BRL', kyb: 'Pending', ubo: '0/2 Approved', tos: 'Pending', st: 'Inactive', c: 'Jul 10 · 11:41 AM' },
+  { n: 'Test Sender', e: 'test+sender@mesta.xyz', f: '🇺🇸', cc: 'US', cur: 'USD', kyb: 'Approved', ubo: '0/1 Approved', tos: 'Pending', st: 'Active', c: 'Jul 10 · 4:41 AM' },
+  { n: 'onboarding testct', e: 'ctnewextra+obtest@gmail.com', f: '🇺🇸', cc: 'US', cur: 'USD', kyb: 'Pending', ubo: '0/1 Approved', tos: 'Pending', st: 'Inactive', c: 'Jul 9 · 5:37 AM' },
+  { n: 'VerdeNexo Agroexportaçã…', e: 'financeiro@verdenexo.example', f: '🇧🇷', cc: 'BR', cur: 'BRL', kyb: 'Declined', ubo: '0/2 Approved', tos: 'Pending', st: 'Inactive', c: 'Jul 7 · 8:13 PM' },
+  { n: 'test coffee', e: 'manish.kumar+testc@mesta.xyz', f: '🇨🇴', cc: 'CO', cur: 'COP', kyb: 'Declined', ubo: '0/1 Approved', tos: 'Pending', st: 'Inactive', c: 'Jun 30 · 4:35 PM' },
+  { n: 'Mesta Payments LLC', e: 'kiran+web3@mestafi.com', f: '🇺🇸', cc: 'US', cur: 'USD', kyb: 'Approved', ubo: '0/1 Approved', tos: 'Accepted', st: 'Active', c: 'Jun 12 · 9:13 PM' },
+  { n: 'Test Naitik', e: 'naitik@mesta.xyz', f: '🇨🇷', cc: 'CR', cur: 'CRC', kyb: 'Declined', ubo: '0/1 Approved', tos: 'Pending', st: 'Inactive', c: 'May 29 · 2:13 AM' },
+  { n: 'manish ar', e: 'manish.kumar+ar@mesta.xyz', f: '🇦🇷', cc: 'AR', cur: 'ARS', kyb: 'Declined', ubo: '0/1 Approved', tos: 'Expired', st: 'Inactive', c: 'May 14 · 4:04 PM' }
+];
+const SF_EMPTY = { fullName: '', email: '', phone: '', senderType: 'Business', regDate: '07 / 13 / 2026', regNo: '', businessType: '', street: '', city: '', postal: '', docReg: 'Brazil_Mock_CNPJ_Certificate_Authentic.pdf', docAddr: 'Brazil_Mock_Utility_Bill.pdf', fin: '', employees: '', website: '', sof: '', volume: '', avgTx: '', nature: [], juris: [], owners: null };
+const SFILL = { fullName: 'Atlântico Nexus Comércio Ltda.', email: 'contato@atlanticonexus.com.br', phone: '11 3456 7890', regDate: '03 / 15 / 2018', regNo: '12.345.678/0001-90', businessType: 'Limited Liability Company', street: 'Av. Paulista, 1578', city: 'São Paulo', postal: '01310-200', fin: 'No', website: 'https://atlanticonexus.com.br', sof: 'Business Income', volume: '<500K', avgTx: '104862', nature: ['Payroll', 'Vendor Payment', 'Business Profits'] };
+const OWNERS = [
+  { first: 'Lucas Henrique', last: 'Almeida', email: 'lucas.almeida@example.com', phone: '+55 11 98123 4567', pct: '62', dob: '08 / 18 / 1986', street: 'Rua Nebraska', city: 'São Paulo', postal: '04566-060', doc: '384.917.620-21' },
+  { first: 'Mariana', last: 'Costa Ribeiro', email: 'mariana.ribeiro@example.com', phone: '+55 21 99234 5678', pct: '38', dob: '02 / 02 / 1990', street: 'Rua Nebraska', city: 'São Paulo', postal: '04614-010', doc: '529.381.470-08' }
+];
+const SDOCS = ['Brazil_Mock_CNPJ_Certificate_Authentic.pdf', 'Brazil_Mock_Contrato_Social.pdf', 'Brazil_Mock_Bank_Statement_Authentic.pdf'];
+
+/* ---------- Order data ---------- */
+const OROWS = [
+  { id: '8204a7...ec02e9', d: 'JUL 14 · 8:01 PM', sa: '20.00', sc: 'USDC-ETH', sk: 'usdc', ra: '20.01', rc: 'USDT-ETH', rk: 'usdt', st: 'Success', from: 'FORTULL INC', to: 'FORTULL INC' },
+  { id: 'b23c77...8fe102', d: 'JUL 13 · 6:55 AM', sa: '8,500.00', sc: 'USDC-ETH', sk: 'usdc', ra: '8,499.99', rc: 'USD', rk: '🇺🇸', st: 'Funds timeout', from: 'Mesta Payments LLC', to: 'FORTULL INC' },
+  { id: 'f4c42b...84935d', d: 'JUL 13 · 6:46 AM', sa: '8,500.00', sc: 'USDC-ETH', sk: 'usdc', ra: '8,499.99', rc: 'USD', rk: '🇺🇸', st: 'Funds timeout', from: 'Mesta Payments LLC', to: 'FORTULL INC' },
+  { id: 'c44602...0b37c3', d: 'JUL 7 · 9:06 PM', sa: '8,000.00', sc: 'USDC-POL', sk: 'usdc', ra: '759,113.32', rc: 'INR', rk: '🇮🇳', st: 'Funds timeout', from: 'FORTULL INC', to: 'Lingineni Consulting LLP' },
+  { id: '363d7f...a93dba', d: 'JUL 6 · 11:29 PM', sa: '10.00', sc: 'USDT-TRX', sk: 'usdt', ra: '8.72', rc: 'EUR', rk: '🇪🇺', st: 'Success', from: 'FORTULL INC', to: 'Abhinav Kumar Sinha' },
+  { id: 'a19bc2...e4613a', d: 'JUL 6 · 11:19 PM', sa: '10.00', sc: 'USDT-TRX', sk: 'usdt', ra: '8.73', rc: 'EUR', rk: '🇪🇺', st: 'Success', from: 'FORTULL INC', to: 'Abhinav Kumar Sinha' },
+  { id: '848996...4b726d', d: 'JUL 6 · 9:02 PM', sa: '30.00', sc: 'USDC-ETH', sk: 'usdc', ra: '20.94', rc: 'GBP', rk: '🇬🇧', st: 'Success', from: 'FORTULL INC', to: 'Abhinav Kumar Sinha' }
+];
+const CURS = {
+  stable: [['USDC-ETH', 'USDC', 'USDC (Ethereum)', 'usdc'], ['USDC-POL', 'USDC', 'USDC (Polygon)', 'usdc'], ['USDC-SOL', 'USDC', 'USDC (Solana)', 'usdc']],
+  fiat: [['USD', 'USD', 'United States Dollar', '🇺🇸'], ['EUR', 'EUR', 'Euro', '🇪🇺'], ['GBP', 'GBP', 'British Pound', '🇬🇧'], ['INR', 'INR', 'Indian Rupee', '🇮🇳'], ['BRL', 'BRL', 'Brazilian Real', '🇧🇷']]
+};
+const CUR_BY = Object.fromEntries([...CURS.stable, ...CURS.fiat].map(c => [c[0], c]));
+const XFERS = [['wire', 'Domestic Wire', 'Same-day before bank cut-off', '8,502.56', true, 'zap'], ['ach', 'ACH Transfer', 'Lowest fee · usually T+1–2', '8,503.56', false, 'bank'], ['swift', 'International Wire (SWIFT)', 'Cross-border · usually T+1–3', '8,501.00', false, 'globe']];
+const O_EMPTY = { srcOpen: false, dstOpen: false, sendCur: 'USD', recvCur: null, send: '', recv: '', pinned: 'send', transfer: 'wire', fromOpen: false, from: '', toOpen: false, toQuery: '', to: '', method: '', purpose: '', sof: '', rel: '', status: null };
+const RATE = 0.9997;
+const fmt = n => Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+/* ---------- state ---------- */
 const INIT = {
-  step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
+  flow: 'beneficiary', step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
   entity: null, country: null, countryOpen: false, openSel: null,
   upload: null, filled: false, formStep: 1,
   form: { fullName: '', street: '', city: '', postal: '', relationship: '', purpose: '', popDoc: POP_DOC, businessType: '', regNo: '' },
-  methods: [], modal: null, success: false, created: false, newStatus: null, toast: ''
+  methods: [], modal: null, success: false, created: false, newStatus: null, toast: '',
+  sf: { ...SF_EMPTY }, o: { ...O_EMPTY }
 };
+const OPEN_CREATE = { screen: 'create', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, methods: [], modal: null, success: false };
+const OPEN_SENDER = { screen: 'createSender', entity: null, country: null, countryOpen: false, openSel: null, upload: null, filled: false, formStep: 1, modal: null, success: false };
+const OPEN_ORDER = { screen: 'createOrder', formStep: 1, openSel: null, modal: null, success: false };
+const SCREEN_OF = { beneficiary: 'list', sender: 'senders', order: 'orders' };
 
-/* ---------- demo op lists + captions ---------- */
-const DEMOS = {
-  1: [
-    ['set', { screen: 'dashboard' }, ['Sign in · password']],
-    ['set', {}],
-    ['set', { screen: 'list' }, ['Beneficiaries']],
-    ['set', {}],
-    ['set', s => ({ ...OPEN_CREATE, form: { ...INIT.form } }), ['Create beneficiary']],
-    ['set', { entity: 'business' }, ['Business']],
-    ['set', { countryOpen: true }, ['Select country']],
-    ['set', { country: 'IN', countryOpen: false }, ['=IN 🇮🇳 India']],
-    ['set', { _scroll: '#form-card' }],
-    ['set', {}],
-    ['set', { _scroll: '#pop-doc' }],
-    ['set', { _scroll: '#skip-banner' }],
-    ['set', { upload: 'drop' }, ['Upload documents']],
-    ['set', { upload: 'picked' }, ['Drop files here']],
-    ['set', { upload: 'reading' }, ['Read documents']],
-    ['set', { upload: 'results' }],
-    ['set', s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }), ['Fill the form']],
-    ['set', { upload: 'collapsed' }, ['Done']],
-    ['set', { _scroll: '#fullname-field' }],
-    ['set', { _type: ['fullName', 'Lincoln Strategy Labs LLP'] }, ['=Full name']],
-    ['set', { _scroll: '#biz-details' }],
-    ['set', { _scroll: '#pop-doc' }],
-    ['set', { formStep: 2 }, ['Continue']],
-    ['set', { methods: [BANK] }, ['Add payment method']],
-    ['set', { methods: [BANK_SWIFT] }, ['Use SWIFT payment']],
-    ['set', { methods: [BANK_SWIFT, WALLET] }, ['Add payment method']],
-    ['set', { _scroll: '#create-btn' }],
-    ['set', { modal: 'sending' }, ['Create beneficiary']],
-    ['set', { modal: null, success: true }],
-    ['set', { screen: 'list', success: false, created: true, newStatus: 'pending' }],
-    ['set', {}],
-    ['set', { newStatus: 'approved' }],
-    ['set', {}]
-  ]
-};
-const CAPS = {
-  1: [
-    'Log in to Ohana.',
-    'From the navigation menu on the left,',
-    'select Beneficiaries.',
-    'To add a new beneficiary,',
-    'click Create beneficiary in the top-right corner.',
-    'First, select the entity type',
-    'and the country',
-    'where the beneficiary is registered.',
-    'Based on your selection,',
-    'Ohana automatically displays the appropriate onboarding fields',
-    'and the supporting documents required for verification.',
-    'You can complete the onboarding in one of two ways.',
-    "The first option is to simply upload the beneficiary's business document.",
-    'Ohana automatically extracts',
-    'the relevant information from the document',
-    'and pre-fills the application for your review.',
-    'You only need to complete',
-    "any information that couldn't be captured automatically,",
-    'making the onboarding process even faster.',
-    "Or you can enter the beneficiary's information manually,",
-    'including business details,',
-    'supporting documents',
-    'and payment method details.',
-    'You can add bank accounts,',
-    'SWIFT payment accounts,',
-    'and wallet addresses as the payment methods.',
-    "Once you've reviewed and completed all the required information,",
-    'click Create beneficiary in the bottom-right corner.',
-    'The beneficiary is now created',
-    'and submitted for verification.',
-    'Once the verification process is successfully completed,',
-    'the status moves from Pending to Approved',
-    'and the beneficiary is ready to receive payments through Ohana.'
-  ]
-};
+/* ---------- the three flows: five main steps each, nested substeps, op lists, captions ---------- */
+const past = ['picked', 'reading', 'results', 'filled', 'collapsed'];
+const FLOWS = {
+  beneficiary: {
+    title: 'Create a Beneficiary', nav: 'list',
+    steps: c => [
+      { title: 'Log in and open Beneficiaries', screen: 'login', doneIf: s => s.screen === 'create', subs: [
+        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => ({ screen: 'dashboard' }), done: s => s.screen !== 'login' },
+        { t: 'Open Beneficiaries', target: ['Beneficiaries'], say: 'Select Beneficiaries in the navigation menu on the left.', act: () => ({ screen: 'list' }), done: s => s.screen === 'list' || s.screen === 'create' },
+        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the top-right corner.', act: () => ({ ...OPEN_CREATE, form: { ...INIT.form } }), done: s => s.screen === 'create' } ] },
+      { title: 'Choose the entity type and country', screen: 'create', doneIf: s => !!s.country, subs: [
+        { t: 'Entity type', target: ['=Business'], say: 'Select Business as the beneficiary type.', act: () => ({ entity: 'business' }), done: s => !!s.entity },
+        { t: 'Country list', target: ['Select country'], say: 'Open the country list.', act: () => ({ countryOpen: true }), done: s => s.countryOpen || !!s.country },
+        { t: 'Pick India', target: ['=IN 🇮🇳 India'], say: 'Pick India. Ohana loads the payout fields and documents for that rail.', act: () => ({ country: 'IN', countryOpen: false }), done: s => !!s.country } ] },
+      { title: 'Upload a document and complete the details', screen: 'create', doneIf: s => s.formStep === 2, subs: [
+        { t: 'Upload documents', target: ['Upload documents'], say: "Click Upload documents to fill the form from the beneficiary's business document.", act: () => ({ upload: 'drop' }), done: s => !!s.upload || s.filled },
+        { t: 'Pick the invoice', target: ['Drop files here'], say: 'Click the drop zone to pick the invoice.', act: () => ({ upload: 'picked' }), done: s => past.includes(s.upload) || s.filled },
+        { t: 'Read documents', target: ['Read documents'], say: 'Click Read documents. Ohana extracts the relevant information.', act: () => ({ upload: 'results' }), done: s => past.slice(1).includes(s.upload) || s.filled },
+        { t: 'Fill the form', target: ['Fill the form'], say: 'Click Fill the form to pre-fill the application for your review.', act: s => c.T().fillForm(s), done: s => s.filled },
+        { t: 'Done', target: ['Done'], say: 'Click Done to close the summary.', act: () => ({ upload: 'collapsed' }), done: s => s.upload === 'collapsed' },
+        { t: 'Full name', target: ['=Full name'], say: 'Type the full name here. It is the one field no document could prove.', act: s => ({ form: { ...s.form, fullName: 'Lincoln Strategy Labs LLP' } }), done: s => !!s.form.fullName.trim() },
+        { t: 'Continue', target: ['Continue'], say: 'Click Continue to go to payment information.', act: () => ({ formStep: 2 }), done: s => s.formStep === 2 } ] },
+      { title: 'Add payment methods', screen: 'create', doneIf: s => s.created || !!s.modal, subs: [
+        { t: 'Bank account', target: ['Add payment method'], say: 'Click Add payment method to add a bank account.', act: () => ({ methods: [BANK] }), done: s => s.methods.length >= 1 },
+        { t: 'SWIFT', target: ['Use SWIFT payment'], say: 'Tick Use SWIFT payment to make it an international wire (optional).', act: s => ({ methods: s.methods.map((m, i) => i === 0 ? { ...m, swift: true } : m) }), done: s => s.methods.some(m => m.swift) || s.methods.length >= 2 },
+        { t: 'Crypto wallet', target: ['Add payment method'], say: 'Click Add payment method again to add a crypto wallet.', act: s => ({ methods: [...s.methods, WALLET] }), done: s => s.methods.length >= 2 } ] },
+      { title: 'Create and verify', screen: 'create', subs: [
+        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the bottom-right corner. Ohana saves it and sends it for verification.', act: () => ({ modal: null, success: false, screen: 'list', created: true, newStatus: 'pending' }), done: s => s.created },
+        { t: 'Verification', target: ['Do it for me'], bar: true, say: "Verification runs on Ohana's side. Click Do it for me to fast-forward from Pending to Approved.", act: () => ({ newStatus: 'approved' }), done: s => s.newStatus === 'approved' } ] }
+    ],
+    ops: [
+      ['set', { screen: 'dashboard' }, ['Sign in · password']], ['set', {}], ['set', { screen: 'list' }, ['Beneficiaries']], ['set', {}],
+      ['set', s => ({ ...OPEN_CREATE, form: { ...INIT.form } }), ['Create beneficiary']],
+      ['set', { entity: 'business' }, ['=Business']], ['set', { countryOpen: true }, ['Select country']], ['set', { country: 'IN', countryOpen: false }, ['=IN 🇮🇳 India']],
+      ['set', { _scroll: '#form-card' }], ['set', {}], ['set', { _scroll: '#pop-doc' }], ['set', { _scroll: '#skip-banner' }],
+      ['set', { upload: 'drop' }, ['Upload documents']], ['set', { upload: 'picked' }, ['Drop files here']], ['set', { upload: 'reading' }, ['Read documents']], ['set', { upload: 'results' }],
+      ['set', s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }), ['Fill the form']],
+      ['set', { upload: 'collapsed' }, ['Done']], ['set', { _scroll: '#fullname-field' }],
+      ['set', { _type: ['form.fullName', 'Lincoln Strategy Labs LLP'] }, ['=Full name']], ['set', { _scroll: '#biz-details' }], ['set', { _scroll: '#pop-doc' }],
+      ['set', { formStep: 2 }, ['Continue']],
+      ['set', { methods: [BANK] }, ['Add payment method']], ['set', { methods: [BANK_SWIFT] }, ['Use SWIFT payment']], ['set', { methods: [BANK_SWIFT, WALLET] }, ['Add payment method']],
+      ['set', { _scroll: '#create-btn' }], ['set', { modal: 'sending' }, ['Create beneficiary']], ['set', { modal: null, success: true }],
+      ['set', { screen: 'list', success: false, created: true, newStatus: 'pending' }], ['set', {}], ['set', { newStatus: 'approved' }], ['set', {}]
+    ],
+    caps: ['Log in to Ohana.', 'From the navigation menu on the left,', 'select Beneficiaries.', 'To add a new beneficiary,', 'click Create beneficiary in the top-right corner.', 'First, select the entity type', 'and the country', 'where the beneficiary is registered.', 'Based on your selection,', 'Ohana automatically displays the appropriate onboarding fields', 'and the supporting documents required for verification.', 'You can complete the onboarding in one of two ways.', "The first option is to simply upload the beneficiary's business document.", 'Ohana automatically extracts', 'the relevant information from the document', 'and pre-fills the application for your review.', 'You only need to complete', "any information that couldn't be captured automatically,", 'making the onboarding process even faster.', "Or you can enter the beneficiary's information manually,", 'including business details,', 'supporting documents', 'and payment method details.', 'You can add bank accounts,', 'SWIFT payment accounts,', 'and wallet addresses as the payment methods.', "Once you've reviewed and completed all the required information,", 'click Create beneficiary in the bottom-right corner.', 'The beneficiary is now created', 'and submitted for verification.', 'Once the verification process is successfully completed,', 'the status moves from Pending to Approved', 'and the beneficiary is ready to receive payments through Ohana.']
+  },
 
-/* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label. */
+  sender: {
+    title: 'Create a Sender', nav: 'senders',
+    steps: c => [
+      { title: 'Log in and open Senders', screen: 'login', doneIf: s => s.screen === 'createSender', subs: [
+        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => ({ screen: 'dashboard' }), done: s => s.screen !== 'login' },
+        { t: 'Open Senders', target: ['Senders'], say: 'Select Senders in the navigation menu on the left.', act: () => ({ screen: 'senders' }), done: s => s.screen === 'senders' || s.screen === 'createSender' },
+        { t: 'Create sender', target: ['Create sender'], say: 'Click Create sender in the top-right corner.', act: () => ({ ...OPEN_SENDER, sf: { ...SF_EMPTY } }), done: s => s.screen === 'createSender' } ] },
+      { title: 'Choose the entity type and country', screen: 'createSender', doneIf: s => !!s.country, subs: [
+        { t: 'Entity type', target: ['=Business'], say: 'Select Business as the entity type.', act: () => ({ entity: 'business' }), done: s => !!s.entity },
+        { t: 'Country list', target: ['Select country'], say: 'Open the country list.', act: () => ({ countryOpen: true }), done: s => s.countryOpen || !!s.country },
+        { t: 'Pick Brazil', target: ['=BR 🇧🇷 Brazil'], say: "Pick Brazil. Ohana loads that jurisdiction's KYC form and document checklist.", act: () => ({ country: 'BR', countryOpen: false }), done: s => !!s.country } ] },
+      { title: 'Business details and documents', screen: 'createSender', doneIf: s => s.formStep >= 3, subs: [
+        { t: 'Business details', target: ['Continue'], say: 'Fill in the business details (or use Upload documents above to pre-fill them), then click Continue.', act: s => ({ sf: { ...s.sf, ...SFILL }, formStep: 2 }), done: s => s.formStep >= 2 },
+        { t: 'Supporting documents', target: ['Continue'], say: 'The required documents are listed here: business registration and proof of address. Click Continue.', act: () => ({ formStep: 3 }), done: s => s.formStep >= 3 } ] },
+      { title: 'Risk profile and beneficial owners', screen: 'createSender', doneIf: s => s.created || !!s.modal, subs: [
+        { t: 'Onboarding & risk profile', target: ['Continue'], say: 'Complete the onboarding and risk-profile details, then click Continue.', act: s => ({ sf: { ...s.sf, ...SFILL, employees: '2-10', juris: ['IN'] }, formStep: 4 }), done: s => s.formStep >= 4 },
+        { t: 'Beneficial owners', target: ['Create sender'], say: 'Review the ultimate beneficial owners. When everything is complete, click Create sender in the bottom-right corner.', act: () => ({ modal: null, success: true, created: true, newStatus: 'pending' }), done: s => s.success || s.created || !!s.modal } ] },
+      { title: 'Create and verify', screen: 'createSender', subs: [
+        { t: 'Verification links', target: ['Senders'], say: 'The sender is created and verification links are generated for each owner. Open Senders to see it in the list.', act: () => ({ screen: 'senders', success: false }), done: s => s.created && s.screen === 'senders' },
+        { t: 'KYB approved', target: ['Do it for me'], bar: true, say: 'Once the KYB process completes, the status moves from Pending to Approved. Click Do it for me to fast-forward.', act: () => ({ newStatus: 'approved' }), done: s => s.newStatus === 'approved' } ] }
+    ],
+    ops: [
+      ['set', { screen: 'dashboard' }, ['Sign in · password']], ['set', {}], ['set', { screen: 'senders' }, ['Senders']], ['set', {}],
+      ['set', s => ({ ...OPEN_SENDER, sf: { ...SF_EMPTY } }), ['Create sender']],
+      ['set', { entity: 'business' }, ['=Business']], ['set', { countryOpen: true }, ['Select country']], ['set', { country: 'BR', countryOpen: false }, ['=BR 🇧🇷 Brazil']],
+      ['set', { _scroll: '#form-card' }], ['set', {}], ['set', { _scroll: '#biz-fields' }],
+      ['set', { formStep: 2 }, ['Continue']], ['set', {}],
+      ['set', { formStep: 1 }, ['=Back']],
+      ['set', s => ({ sf: { ...s.sf, ...SFILL }, _scroll: '#biz-fields' })],
+      ['set', { formStep: 2 }, ['Continue']],
+      ['set', s => ({ sf: { ...s.sf, employees: '2-10', juris: ['IN'] }, formStep: 3 }), ['Continue']],
+      ['set', { formStep: 4 }, ['Continue']],
+      ['set', { upload: 'drop' }, ['Upload documents']],
+      ['set', { upload: 'picked' }, ['Drop files here']],
+      ['set', { upload: 'reading' }, ['Read documents']],
+      ['set', { upload: 'results' }],
+      ['set', s => ({ upload: 'filled', filled: true, formStep: 3, sf: { ...s.sf, employees: '', juris: [] } }), ['Fill the form']],
+      ['set', { upload: 'collapsed', _scroll: '#risk-fields' }, ['Done']],
+      ['set', s => ({ sf: { ...s.sf, employees: '2-10', juris: ['IN'] } })],
+      ['set', { formStep: 4, _scroll: '#create-btn' }, ['Continue']],
+      ['set', { modal: 'sending' }, ['Create sender']],
+      ['set', { modal: null, success: true, created: true, newStatus: 'pending' }],
+      ['set', { _scroll: '#links' }],
+      ['set', { _scroll: '#ubo-links' }],
+      ['set', { screen: 'senders', success: false, created: true, newStatus: 'pending' }],
+      ['set', { newStatus: 'approved' }],
+      ['set', {}]
+    ],
+    caps: ['Log in to Ohana.', 'From the navigation menu on the left,', 'select Senders.', 'To add a new business sender,', 'click Create sender in the top-right corner.', 'First, select the entity type', 'and the country', 'where the business is registered.', 'Based on the country you choose,', 'Ohana automatically loads the appropriate onboarding form,', 'displays the required fields,', 'and tells you exactly which supporting documents are needed.', 'You can complete the onboarding in one of two ways.', 'The first option is to fill in the information manually:', 'business details,', 'supporting documents,', 'onboarding and risk profile information,', 'and ultimate beneficial owner details.', 'Or you can simply upload the business documents.', 'Ohana automatically extracts the relevant information', 'from the uploaded documents', 'and pre-fills the application for your review.', 'You only need to complete any information', "that couldn't be captured automatically,", 'making the onboarding process significantly faster.', "Once you've reviewed and completed all the required information,", 'click Create sender in the bottom-right corner.', 'The sender is now created', 'and verification links are generated.', "These links must be sent to the business's beneficial owners.", 'Once the KYB process is successfully completed,', 'the status moves from Pending to Approved.', 'After that, the sender is ready to start transacting.']
+  },
+
+  order: {
+    title: 'Create a Payment Order', nav: 'orders',
+    steps: c => [
+      { title: 'Log in and open Orders', screen: 'login', doneIf: s => s.screen === 'createOrder', subs: [
+        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => ({ screen: 'dashboard' }), done: s => s.screen !== 'login' },
+        { t: 'Open Orders', target: ['Orders'], say: 'Select Orders in the navigation menu on the left.', act: () => ({ screen: 'orders' }), done: s => s.screen === 'orders' || s.screen === 'createOrder' },
+        { t: 'Create payment', target: ['Create payment'], say: 'Click Create payment in the top-right corner.', act: () => ({ ...OPEN_ORDER, o: { ...O_EMPTY } }), done: s => s.screen === 'createOrder' } ] },
+      { title: 'Set the amount and lock the rate', screen: 'createOrder', doneIf: s => s.formStep >= 2, subs: [
+        { t: 'Source currency', target: ['=USD'], say: 'Open the source currency list.', act: s => ({ o: { ...s.o, srcOpen: true } }), done: s => s.o.srcOpen || s.o.sendCur !== 'USD' },
+        { t: 'Pick USDC', target: ['=USDC (Ethereum)'], say: 'Pick USDC on Ethereum as the source currency.', act: s => ({ o: { ...s.o, sendCur: 'USDC-ETH', srcOpen: false } }), done: s => s.o.sendCur !== 'USD' },
+        { t: 'Destination currency', target: ['Select currency'], say: 'Open the destination currency list.', act: s => ({ o: { ...s.o, dstOpen: true } }), done: s => s.o.dstOpen || !!s.o.recvCur },
+        { t: 'Pick USD', target: ['=United States Dollar'], say: 'Pick USD as the destination currency.', act: s => ({ o: { ...s.o, recvCur: 'USD', dstOpen: false } }), done: s => !!s.o.recvCur },
+        { t: 'Amount', target: ['=They receive'], say: 'Type the amount the beneficiary should receive. Ohana calculates the source amount.', act: s => ({ o: { ...s.o, recv: '8500', pinned: 'recv', send: c.calcSend('8500') } }), done: s => !!s.o.recv || !!s.o.send },
+        { t: 'Transfer type', target: ['Domestic Wire'], say: 'Choose the transfer type. Domestic Wire is the default.', act: s => ({ o: { ...s.o, transfer: 'wire' } }), done: s => s.formStep >= 2 || s.o.xferTouched },
+        { t: 'Lock the rate', target: ['Continue · lock'], say: 'Click Continue · lock your rate.', act: () => ({ formStep: 2, toast: 'Rate locked successfully' }), done: s => s.formStep >= 2 } ] },
+      { title: 'Choose the parties', screen: 'createOrder', doneIf: s => s.formStep >= 3, subs: [
+        { t: 'Sender', target: ['Search senders'], say: 'Click the FROM field to pick the approved sender.', act: s => ({ o: { ...s.o, fromOpen: true } }), done: s => s.o.fromOpen || !!s.o.from },
+        { t: 'Pick Mesta Payments LLC', target: ['=Mesta Payments LLC'], say: 'Pick Mesta Payments LLC.', act: s => ({ o: { ...s.o, from: 'Mesta Payments LLC', fromOpen: false } }), done: s => !!s.o.from },
+        { t: 'Beneficiary', target: ['Search beneficiaries'], say: 'Click the TO field and search for the beneficiary.', act: s => ({ o: { ...s.o, toOpen: true, toQuery: 'fort' } }), done: s => s.o.toOpen || !!s.o.to },
+        { t: 'Pick FORTULL INC', target: ['=FORTULL INC', null, 1], say: 'Pick FORTULL INC (United States of America).', act: s => ({ o: { ...s.o, to: 'FORTULL INC', toOpen: false } }), done: s => !!s.o.to },
+        { t: 'Payment method', target: ['Bank Account'], say: 'Choose the Bank Account (Brex Acc) wire as the payment method.', act: s => ({ o: { ...s.o, method: 'brex' } }), done: s => !!s.o.method },
+        { t: 'Purpose', target: ['Select purpose'], say: 'Select the purpose of the payment.', act: s => ({ o: { ...s.o, purpose: 'Vendor payment' } }), done: s => !!s.o.purpose },
+        { t: 'Source of funds', target: ['Select source'], say: 'Select the source of funds.', act: s => ({ o: { ...s.o, sof: 'Business income' } }), done: s => !!s.o.sof },
+        { t: 'Relationship', target: ['Select relationship'], say: 'Select your relationship to the beneficiary.', act: s => ({ o: { ...s.o, rel: 'Supplier' } }), done: s => !!s.o.rel },
+        { t: 'Continue', target: ['Continue · review'], say: 'Click Continue · review your payment next.', act: () => ({ formStep: 3 }), done: s => s.formStep >= 3 } ] },
+      { title: 'Review and send', screen: 'createOrder', doneIf: s => s.created, subs: [
+        { t: 'Send payment', target: ['Send payment'], say: 'Review the payment summary, then click Send payment · dispatch irreversibly.', act: s => ({ screen: 'orderDetail', created: true, o: { ...s.o, status: 'Created' }, toast: 'Payment created successfully!' }), done: s => s.created } ] },
+      { title: 'Track the order', screen: 'orderDetail', subs: [
+        { t: 'Back to orders', target: ['Back to orders'], say: 'The quote is locked for five minutes. Click Back to orders to track the payment.', act: s => ({ screen: 'orders', o: { ...s.o, status: 'Awaiting funds' } }), done: s => s.created && s.screen === 'orders' },
+        { t: 'Funds and settlement', target: ['Do it for me'], bar: true, say: 'Fund the order and Ohana processes the payment. Click Do it for me to fast-forward through the stages.', act: s => ({ o: { ...s.o, status: 'Success' } }), done: s => s.o.status === 'Success' } ] }
+    ],
+    ops: [
+      ['set', { screen: 'dashboard' }, ['Sign in · password']], ['set', {}], ['set', { screen: 'orders' }, ['Orders']], ['set', {}],
+      ['set', s => ({ ...OPEN_ORDER, o: { ...O_EMPTY } }), ['Create payment']],
+      ['set', { _scroll: '#ostepper' }],
+      ['set', s => ({ o: { ...s.o, srcOpen: true } }), ['=USD']],
+      ['set', s => ({ o: { ...s.o, sendCur: 'USDC-ETH', srcOpen: false } }), ['=USDC (Ethereum)']],
+      ['set', s => ({ o: { ...s.o, dstOpen: true } }), ['Select currency']],
+      ['set', s => ({ o: { ...s.o, recvCur: 'USD', dstOpen: false } }), ['=United States Dollar']],
+      ['set', { _scroll: '#you-send' }],
+      ['set', s => ({ o: { ...s.o, pinned: 'recv' }, _type: ['o.recv', '8500'] }), ['=They receive']],
+      ['set', s => ({ o: { ...s.o, recv: '8500', pinned: 'recv', send: app.calcSend('8500') } })],
+      ['set', s => ({ o: { ...s.o, transfer: 'wire' } }), ['Domestic Wire']],
+      ['set', { formStep: 2, toast: 'Rate locked successfully' }, ['Continue · lock']],
+      ['set', s => ({ o: { ...s.o, fromOpen: true } }), ['Search senders']],
+      ['set', s => ({ o: { ...s.o, from: 'Mesta Payments LLC', fromOpen: false } }), ['=Mesta Payments LLC']],
+      ['set', s => ({ o: { ...s.o, toOpen: true, toQuery: 'fort' } }), ['Search beneficiaries']],
+      ['set', s => ({ o: { ...s.o, to: 'FORTULL INC', toOpen: false } }), ['=FORTULL INC', null, 1]],
+      ['set', s => ({ o: { ...s.o, method: 'brex' } }), ['Bank Account']],
+      ['set', s => ({ o: { ...s.o, purpose: 'Vendor payment', sof: 'Business income', rel: 'Supplier' }, _scroll: '#pay-details' })],
+      ['set', { formStep: 3 }, ['Continue · review']],
+      ['set', { _scroll: '#review-top' }],
+      ['set', s => ({ screen: 'orderDetail', created: true, o: { ...s.o, status: 'Created' }, toast: 'Payment created successfully!' }), ['Send payment']],
+      ['set', {}],
+      ['set', s => ({ screen: 'orders', o: { ...s.o, status: 'Awaiting funds' } }), ['Back to orders']],
+      ['set', {}],
+      ['set', s => ({ o: { ...s.o, status: 'In progress' } })],
+      ['set', s => ({ o: { ...s.o, status: 'Success' } })],
+      ['set', {}]
+    ],
+    caps: ['Log in to Ohana.', 'From the navigation menu on the left,', 'select Orders.', 'To create a new payment,', 'click Create payment in the top-right corner.', 'Creating a payment takes just three simple steps.', 'First, select your source', 'First, select your source', 'and destination currencies.', 'and destination currencies.', 'You can either specify the source amount you want to send', 'or the destination amount your beneficiary should receive.', 'Ohana automatically calculates the corresponding amount.', 'Next, choose the transfer type', 'and continue.', 'Select the approved sender', 'Select the approved sender', 'and beneficiary for the payment.', 'and beneficiary for the payment.', 'Choose the payment method,', 'fill in the details', 'and continue.', 'Finally, review the payment summary', 'and click Send payment.', 'Your payment order is now created', 'and your payment quote is locked for five minutes.', 'Head back to the Orders page, fund the order', 'and sit back while Ohana processes your payment.', 'You can track every stage of the transaction in real time', 'until the funds reach your beneficiary.']
+  }
+};
+const DEMO_FLOW = { 1: 'beneficiary', 2: 'sender', 3: 'order' };
+for (const k in FLOWS) { const f = FLOWS[k]; if (f.ops.length !== f.caps.length) console.error('ops/caps length mismatch in', k, f.ops.length, f.caps.length); }
+
+/* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label / placeholder. */
 const demoFind = ([label, side, n = 0], allowBar = false) => {
   const exact = label[0] === '=', want = (exact ? label.slice(1) : label).toLowerCase();
-  let c = [...document.querySelectorAll('button,a,span,div,label,input')].filter(el => {
+  let c = [...document.querySelectorAll('button,a,span,div,label,input,b,em')].filter(el => {
     if (!allowBar && el.closest('#presenter')) return false;
     const isInput = el.tagName === 'INPUT';
     const t = (isInput ? (el.getAttribute('aria-label') || el.placeholder || '') : (el.textContent || '')).trim().replace(/\s+/g, ' ').toLowerCase();
@@ -535,81 +845,27 @@ const demoFind = ([label, side, n = 0], allowBar = false) => {
     return isInput ? cur === 'text' || cur === 'auto' || cur === 'pointer' : cur === 'pointer';
   });
   c = c.filter(el => !c.some(o => o !== el && el.contains(o)));
-  return c.length ? c[n < 0 ? c.length + n : Math.min(n, c.length - 1)] : null;
+  return c.length ? c[n < 0 ? c.length + n : Math.min(n || 0, c.length - 1)] : null;
 };
 
 class Component {
   constructor() { this.state = { ...INIT }; this._t = {}; }
-  setState(p) {
-    const prev = this.state;
-    this.state = { ...prev, ...(typeof p === 'function' ? p(prev) : p) };
-    this.render();
-    this.componentDidUpdate(prev);
-  }
-  T() {
-    return {
-      login: () => ({ screen: 'dashboard' }),
-      openList: () => ({ screen: 'list' }),
-      openCreate: () => ({ ...OPEN_CREATE, form: { ...INIT.form } }),
-      fillForm: s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }),
-      approve: () => ({ newStatus: 'approved' })
-    };
-  }
-  /* Five main steps; each carries its substeps. A substep = { t, target, say, act, done }.
-     `target` is the on-screen element the viewer must use (same label syntax as DEMOS);
-     `say` is the on-screen prompt; `act` is what "Do it for me" performs; `done` says when it is complete. */
-  steps() {
-    const T = this.T();
-    const past = ['picked', 'reading', 'results', 'filled', 'collapsed'];
-    return [
-      { title: 'Log in and open Beneficiaries', screen: 'login', doneIf: s => s.screen === 'create', subs: [
-        { t: 'Sign in', target: ['Sign in · password'], say: 'Click Sign in · password + code to open the merchant dashboard.', act: () => T.login(), done: s => s.screen !== 'login' },
-        { t: 'Open Beneficiaries', target: ['Beneficiaries'], say: 'Select Beneficiaries in the navigation menu on the left.', act: () => T.openList(), done: s => s.screen === 'list' || s.screen === 'create' },
-        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the top-right corner.', act: () => T.openCreate(), done: s => s.screen === 'create' }
-      ] },
-      { title: 'Choose the entity type and country', screen: 'create', doneIf: s => !!s.country, subs: [
-        { t: 'Entity type', target: ['Business'], say: 'Select Business as the beneficiary type.', act: () => ({ entity: 'business' }), done: s => !!s.entity },
-        { t: 'Country list', target: ['Select country'], say: 'Open the country list.', act: () => ({ countryOpen: true }), done: s => s.countryOpen || !!s.country },
-        { t: 'Pick India', target: ['=IN 🇮🇳 India'], say: 'Pick India. Ohana loads the payout fields and documents for that rail.', act: () => ({ country: 'IN', countryOpen: false }), done: s => !!s.country }
-      ] },
-      { title: 'Upload a document and complete the details', screen: 'create', doneIf: s => s.formStep === 2, subs: [
-        { t: 'Upload documents', target: ['Upload documents'], say: 'Click Upload documents to fill the form from the beneficiary\'s business document.', act: () => ({ upload: 'drop' }), done: s => !!s.upload || s.filled },
-        { t: 'Pick the invoice', target: ['Drop files here'], say: 'Click the drop zone to pick the invoice.', act: () => ({ upload: 'picked' }), done: s => past.includes(s.upload) || s.filled },
-        { t: 'Read documents', target: ['Read documents'], say: 'Click Read documents. Ohana extracts the relevant information.', act: () => ({ upload: 'results' }), done: s => past.slice(1).includes(s.upload) || s.filled },
-        { t: 'Fill the form', target: ['Fill the form'], say: 'Click Fill the form to pre-fill the application for your review.', act: s => T.fillForm(s), done: s => s.filled },
-        { t: 'Done', target: ['Done'], say: 'Click Done to close the summary.', act: () => ({ upload: 'collapsed' }), done: s => s.upload === 'collapsed' },
-        { t: 'Full name', target: ['=Full name'], say: 'Type the full name here. It is the one field no document could prove.', act: s => ({ form: { ...s.form, fullName: 'Lincoln Strategy Labs LLP' } }), done: s => !!s.form.fullName.trim() },
-        { t: 'Continue', target: ['Continue'], say: 'Click Continue to go to payment information.', act: () => ({ formStep: 2 }), done: s => s.formStep === 2 }
-      ] },
-      { title: 'Add payment methods', screen: 'create', doneIf: s => s.created || !!s.modal, subs: [
-        { t: 'Bank account', target: ['Add payment method'], say: 'Click Add payment method to add a bank account.', act: () => ({ methods: [BANK] }), done: s => s.methods.length >= 1 },
-        { t: 'SWIFT', target: ['Use SWIFT payment'], say: 'Tick Use SWIFT payment to make it an international wire (optional).', act: s => ({ methods: s.methods.map((m, i) => i === 0 ? { ...m, swift: true } : m) }), done: s => s.methods.some(m => m.swift) || s.methods.length >= 2 },
-        { t: 'Crypto wallet', target: ['Add payment method'], say: 'Click Add payment method again to add a crypto wallet.', act: s => ({ methods: [...s.methods, WALLET] }), done: s => s.methods.length >= 2 }
-      ] },
-      { title: 'Create and verify', screen: 'create', subs: [
-        { t: 'Create beneficiary', target: ['Create beneficiary'], say: 'Click Create beneficiary in the bottom-right corner. Ohana saves it and sends it for verification.', act: () => ({ modal: null, success: false, screen: 'list', created: true, newStatus: 'pending' }), done: s => s.created },
-        { t: 'Verification', target: ['Do it for me'], bar: true, say: 'Verification runs on Ohana\'s side. Click Do it for me to fast-forward from Pending to Approved.', act: () => T.approve(), done: s => s.newStatus === 'approved' }
-      ] }
-    ].map(st => ({ ...st, done: s => st.subs.every(x => x.done(s)) || (st.doneIf ? st.doneIf(s) : false) }));
-  }
+  setState(p) { const prev = this.state; this.state = { ...prev, ...(typeof p === 'function' ? p(prev) : p) }; this.render(); this.componentDidUpdate(prev); }
+  T() { return { fillForm: s => ({ upload: 'filled', filled: true, form: { ...s.form, ...PREFILL } }) }; }
+  calcSend(recv) { const v = parseFloat(String(recv).replace(/,/g, '')); return isNaN(v) ? '' : (Math.ceil(v / RATE * 100) / 100).toFixed(2); }
+  calcRecv(send) { const v = parseFloat(String(send).replace(/,/g, '')); return isNaN(v) ? '' : (Math.floor(v * RATE * 100) / 100).toFixed(2); }
+  flow() { return FLOWS[this.state.flow]; }
+  steps() { const f = this.flow(); return f.steps(this).map(st => ({ ...st, done: s => st.subs.every(x => x.done(s)) || (st.doneIf ? st.doneIf(s) : false) })); }
   curSub(s, st = this.steps()[s.step]) { return st.subs.find(x => !x.done(s)) || null; }
   subIndex(s, st = this.steps()[s.step]) { const i = st.subs.findIndex(x => !x.done(s)); return i < 0 ? st.subs.length : i; }
   allDone(s) { const steps = this.steps(); return s.step === steps.length - 1 && steps[s.step].done(s); }
-  screensFor(i) {
-    const st = this.steps()[i];
-    return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' };
-  }
-  stateAt(i) {
-    const steps = this.steps();
-    let s = { ...INIT };
-    for (let k = 0; k < i; k++) for (const sub of steps[k].subs) s = { ...s, ...sub.act(s) };
-    return { ...s, ...this.screensFor(i), step: i };
-  }
+  freshInit() { return { ...INIT, flow: this.state.flow, form: { ...INIT.form }, sf: { ...SF_EMPTY }, o: { ...O_EMPTY } }; }
+  screensFor(i) { const st = this.steps()[i]; return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' }; }
+  stateAt(i) { const steps = this.steps(); let s = this.freshInit(); for (let k = 0; k < i; k++) for (const sub of steps[k].subs) s = { ...s, ...sub.act(s) }; return { ...s, ...this.screensFor(i), step: i }; }
   goStep = i => this.setState(this.stateAt(i));
-  /* "Do it for me" performs the current substep only */
   next = () => { const sub = this.curSub(this.state); if (sub) this.setState(sub.act(this.state)); };
   prev = () => this.goStep(Math.max(0, this.state.step - 1));
-  reset = () => { Object.values(this._t).forEach(clearTimeout); this.setState({ ...INIT }); };
+  reset = () => { Object.values(this._t).forEach(clearTimeout); this.setState(this.freshInit()); };
   fullscreen = () => {
     if (document.fullscreenElement) return document.exitFullscreen();
     const p = document.documentElement.requestFullscreen ? document.documentElement.requestFullscreen() : Promise.reject();
@@ -619,47 +875,66 @@ class Component {
     const steps = this.steps(); let i = this.state.step;
     while (i < steps.length - 1 && steps[i].done(this.state)) i++;
     if (i !== this.state.step) return this.setState({ step: i });
-    if (this.state.toast && this.state.toast !== ps.toast) {
-      clearTimeout(this._t.toast);
-      this._t.toast = setTimeout(() => this.setState({ toast: '' }), 3200);
-    }
+    if (this.state.toast && this.state.toast !== ps.toast) { clearTimeout(this._t.toast); this._t.toast = setTimeout(() => this.setState({ toast: '' }), 3200); }
   }
   later(name, ms, fn) { clearTimeout(this._t[name]); this._t[name] = setTimeout(fn, ms); }
+  /* dotted-path state write without re-render (used by inputs and the typewriter) */
+  bindSet(key, value) {
+    const s = this.state;
+    if (key.startsWith('m')) { const [mi, k] = key.split('.'); const i = +mi.slice(1); s.methods = s.methods.map((m, j) => j === i ? { ...m, [k]: value } : m); return; }
+    const [grp, k] = key.split('.');
+    if (grp === 'o') { const o = { ...s.o, [k]: value }; if (k === 'recv') { o.pinned = 'recv'; o.send = this.calcSend(value); } if (k === 'send') { o.pinned = 'send'; o.recv = this.calcRecv(value); } s.o = o; const el = document.querySelector(`[data-bind="o.${k === 'recv' ? 'send' : 'recv'}"]`); if (el) el.value = k === 'recv' ? o.send : o.recv; if (k === 'recv' || k === 'send') this.later('oq', 700, () => this.render()); return; }
+    if (grp === 'sf') { s.sf = { ...s.sf, [k]: value }; return; }
+    s.form = { ...s.form, [k]: value };
+  }
 
-  /* ---------- manual-mode actions (data-act) ---------- */
+  /* ---------- self-service actions (data-act) ---------- */
   act(name, arg) {
-    const s = this.state, T = this.T();
+    const s = this.state, T = this.T(), o = s.o;
+    const O = p => this.setState({ o: { ...this.state.o, ...p } });
     const A = {
-      login: () => this.setState(T.login()),
-      nav: () => { if (arg === 'dashboard' || arg === 'list') this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
-      tab: () => this.setState({ tab: arg }),
-      period: () => this.setState({ period: arg }),
-      openCreate: () => this.setState(T.openCreate()),
-      backToList: () => this.setState({ screen: 'list' }),
+      login: () => this.setState({ screen: 'dashboard' }),
+      nav: () => { if (['dashboard', 'list', 'senders', 'orders'].includes(arg)) this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
+      tab: () => this.setState({ tab: arg }), period: () => this.setState({ period: arg }),
+      openCreate: () => this.setState({ ...OPEN_CREATE, form: { ...INIT.form } }),
+      openSender: () => this.setState({ ...OPEN_SENDER, sf: { ...SF_EMPTY } }),
+      openOrder: () => this.setState({ ...OPEN_ORDER, o: { ...O_EMPTY } }),
+      backToList: () => this.setState({ screen: SCREEN_OF[s.flow] }),
       entity: () => this.setState({ entity: arg }),
       toggleCountry: () => this.setState({ countryOpen: !s.countryOpen, openSel: null }),
       country: () => this.setState({ country: arg, countryOpen: false }),
       upload: () => this.setState({ upload: arg === 'cancel' ? null : arg }),
       pick: () => { if (s.upload === 'drop') this.setState({ upload: 'picked' }); },
       read: () => { if (s.upload !== 'picked') return; this.setState({ upload: 'reading' }); this.later('read', 3400, () => this.state.upload === 'reading' && this.setState({ upload: 'results' })); },
-      fill: () => this.setState(T.fillForm(s)),
-      done: () => this.setState({ upload: 'collapsed' }),
-      startOver: () => this.setState({ upload: null }),
+      fill: () => this.setState(s.flow === 'sender' ? { upload: 'filled', filled: true, sf: { ...s.sf, ...SFILL } } : T.fillForm(s)),
+      done: () => this.setState({ upload: 'collapsed' }), startOver: () => this.setState({ upload: null }),
       sel: () => this.setState({ openSel: s.openSel === arg ? null : arg, countryOpen: false }),
-      pickOpt: () => { const [k, v] = arg.split('|'); const [grp, key, idx] = k.split('.'); if (grp === 'form') this.setState({ form: { ...s.form, [key]: v }, openSel: null }); else this.setState({ methods: s.methods.map((m, i) => i === +idx ? { ...m, [key]: v } : m), openSel: null }); },
+      pickOpt: () => { const [k, v] = arg.split('|'); const [grp, key, idx] = k.split('.'); if (grp === 'form') this.setState({ form: { ...s.form, [key]: v }, openSel: null }); else if (grp === 'sf') this.setState({ sf: { ...s.sf, [key]: v }, openSel: null }); else if (grp === 'o') this.setState({ o: { ...s.o, [key]: v }, openSel: null }); else this.setState({ methods: s.methods.map((m, i) => i === +idx ? { ...m, [key]: v } : m), openSel: null }); },
       removeDoc: () => this.setState({ form: { ...s.form, popDoc: '' } }),
-      continue: () => this.setState({ formStep: 2, openSel: null }),
-      back: () => this.setState({ formStep: 1, openSel: null }),
+      continue: () => this.setState({ formStep: s.formStep + 1, openSel: null }),
+      back: () => this.setState({ formStep: Math.max(1, s.formStep - 1), openSel: null }),
       addMethod: () => this.setState({ methods: [...s.methods, s.methods.length === 0 ? BANK : WALLET] }),
       removeMethod: () => this.setState({ methods: s.methods.filter((_, i) => i !== +arg) }),
       swift: () => this.setState({ methods: s.methods.map((m, i) => i === +arg ? { ...m, swift: !m.swift } : m) }),
-      submit: () => {
-        this.setState({ modal: 'sending', openSel: null });
-        this.later('m1', 2600, () => this.setState({ modal: null, success: true }));
-        this.later('m2', 5200, () => this.setState({ screen: 'list', success: false, created: true, newStatus: 'pending' }));
-      },
-      saveExit: () => this.setState({ screen: 'list', toast: 'Draft saved · synced to your account' }),
-      closeDd: () => this.setState({ openSel: null, countryOpen: false })
+      submit: () => { this.setState({ modal: 'sending', openSel: null }); this.later('m1', 2600, () => this.setState({ modal: null, success: true })); this.later('m2', 5200, () => this.setState({ screen: 'list', success: false, created: true, newStatus: 'pending' })); },
+      submitSender: () => { this.setState({ modal: 'sending', openSel: null }); this.later('m1', 2600, () => this.setState({ modal: null, success: true, created: true, newStatus: 'pending' })); },
+      saveExit: () => this.setState({ screen: SCREEN_OF[s.flow], toast: 'Draft saved · synced to your account' }),
+      closeDd: () => this.setState({ openSel: null, countryOpen: false, o: { ...o, srcOpen: false, dstOpen: false, fromOpen: false, toOpen: false } }),
+      pep: () => { const [i, v] = arg.split('|'); const owners = (s.sf.owners || OWNERS).map((w, j) => j === +i ? { ...w, pep: v } : w); this.setState({ sf: { ...s.sf, owners } }); },
+      toggleNature: () => { const n = s.sf.nature.includes(arg) ? s.sf.nature.filter(x => x !== arg) : [...s.sf.nature, arg]; this.setState({ sf: { ...s.sf, nature: n } }); },
+      juris: () => this.setState({ sf: { ...s.sf, juris: s.sf.juris.includes('IN') ? [] : ['IN'] } }),
+      /* orders */
+      srcToggle: () => O({ srcOpen: !o.srcOpen, dstOpen: false }), dstToggle: () => O({ dstOpen: !o.dstOpen, srcOpen: false }),
+      pickSrc: () => O({ sendCur: arg, srcOpen: false, send: o.recv ? this.calcSend(o.recv) : o.send }), pickDst: () => O({ recvCur: arg, dstOpen: false }),
+      xfer: () => { if (arg === 'rtp') return; O({ transfer: arg, xferTouched: true }); },
+      lockRate: () => { if (!o.recvCur || !(o.recv || o.send)) return this.setState({ toast: 'Enter an amount and pick both currencies first' }); this.setState({ formStep: 2, toast: 'Rate locked successfully', o: { ...o, srcOpen: false, dstOpen: false } }); },
+      fromOpen: () => O({ fromOpen: !o.fromOpen, toOpen: false }), pickFrom: () => O({ from: arg, fromOpen: false }), clearFrom: () => O({ from: '', method: '' }),
+      toOpen: () => O({ toOpen: !o.toOpen, fromOpen: false, toQuery: o.toQuery || 'fort' }), pickTo: () => O({ to: arg, toOpen: false }), clearTo: () => O({ to: '', method: '' }),
+      method: () => O({ method: arg }),
+      toReview: () => { if (!o.from || !o.to || !o.method) return this.setState({ toast: 'Pick the sender, the beneficiary and a payment method first' }); this.setState({ formStep: 3, openSel: null }); },
+      oback: () => this.setState(s.formStep === 1 ? { screen: 'orders' } : { formStep: s.formStep - 1 }),
+      sendPayment: () => this.setState({ screen: 'orderDetail', created: true, o: { ...o, status: 'Created' }, toast: 'Payment created successfully!' }),
+      backToOrders: () => this.setState({ screen: 'orders', o: { ...o, status: s.created && o.status === 'Created' ? 'Awaiting funds' : o.status } })
     };
     A[name] && A[name]();
   }
@@ -668,13 +943,13 @@ class Component {
   render() { this.renderBar(); this.renderApp(); this.placePrompt(); }
   renderBar() {
     const s = this.state, steps = this.steps(), st = steps[s.step], ci = this.subIndex(s, st), sub = st.subs[ci] || null, finished = this.allDone(s);
-    const hint = finished ? 'Flow complete. The beneficiary is ready to receive payments through Ohana. Reset to run it again, or click through freely.' : sub ? sub.say : st.title;
+    const hint = finished ? 'Flow complete. Reset to run it again, or click through freely.' : sub ? sub.say : st.title;
     const fs = !!document.fullscreenElement;
     document.getElementById('presenter').innerHTML = `
       <div class="row">
         <span class="brand">OHANA DEMO</span>
         <span class="pill">Step ${s.step + 1} of ${steps.length}</span>
-        <span class="pill actor">Create a Beneficiary</span>
+        <span class="pill actor">${esc(this.flow().title)}</span>
         <span class="title">${esc(finished ? 'Flow complete' : st.title)}</span>
         <span class="sp"></span>
         <button class="btn" data-bar="prev">Back</button>
@@ -682,34 +957,30 @@ class Component {
         <button class="btn" data-bar="fullscreen" title="Toggle full screen">${fs ? 'Exit full screen' : '⤢ Full screen'}</button>
         <button class="btn" data-bar="reset">Reset</button>
       </div>
-      <div class="row">
-        <span class="hint">${esc(hint)}</span>
-        <div class="dots">${steps.map((x, i) => `<span class="${i === s.step ? 'cur' : i < s.step ? 'past' : ''}" title="${i + 1}. ${esc(x.title)}" data-dot="${i}"></span>`).join('')}</div>
-      </div>
+      <div class="row"><span class="hint">${esc(hint)}</span>
+        <div class="dots">${steps.map((x, i) => `<span class="${i === s.step ? 'cur' : i < s.step ? 'past' : ''}" title="${i + 1}. ${esc(x.title)}" data-dot="${i}"></span>`).join('')}</div></div>
       <div class="row subs">${st.subs.map((x, j) => `<span class="sub ${j < ci || finished ? 'done' : j === ci ? 'cur' : ''}"><i>${j < ci || finished ? '✓' : j + 1}</i>${esc(x.t)}</span>`).join('<span class="sep"></span>')}</div>`;
   }
   renderApp() {
-    const s = this.state;
-    const app = document.getElementById('app');
-    const main = app.querySelector('.content');
-    const scroll = main ? main.scrollTop : 0;
+    const s = this.state, app = document.getElementById('app'), main = app.querySelector('.content'), scroll = main ? main.scrollTop : 0;
+    const focus = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.bind : null;
     app.innerHTML = s.screen === 'login' ? this.rLogin() : this.rShell();
-    const m2 = app.querySelector('.content');
-    if (m2) { m2.style.scrollBehavior = 'auto'; m2.scrollTop = scroll; m2.style.scrollBehavior = ''; }
+    const m2 = app.querySelector('.content'); if (m2) { m2.style.scrollBehavior = 'auto'; m2.scrollTop = scroll; m2.style.scrollBehavior = ''; }
+    /* a prompt scroll was in flight: land on the target instead of the old scroll position */
+    if (this._promptScrolling) { const el = demoFind(this._promptScrolling.target, !!this._promptScrolling.bar); if (el) el.scrollIntoView({ block: 'center' }); }
+    if (focus) { const el = app.querySelector(`[data-bind="${focus}"]`); if (el) { el.focus(); try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) {} } }
   }
-  /* shell-local coordinates (the shell is scaled to fit the window) */
   local(el) { const k = this._k || 1, sr = this._shell.getBoundingClientRect(), r = el.getBoundingClientRect(); return { x: (r.left - sr.left) / k, y: (r.top - sr.top) / k, w: r.width / k, h: r.height / k }; }
   visible(el) { const c = el.closest('.content'); if (!c) return true; const cr = c.getBoundingClientRect(), r = el.getBoundingClientRect(); return r.bottom > cr.top + 4 && r.top < cr.bottom - 4; }
-  /* self-service prompt: ring + label on the exact element the viewer must use next */
   placePrompt() {
     const L = this._prompts; if (!L) return;
     const hide = () => { L.style.display = 'none'; };
     if (this._play) return hide();
     const s = this.state, st = this.steps()[s.step], sub = this.curSub(s, st);
-    if (!sub || !sub.target || s.modal || s.success) return hide();
+    if (!sub || !sub.target || s.modal || (s.success && s.flow === 'beneficiary')) return hide();
     const el = demoFind(sub.target, !!sub.bar);
     if (!el) return hide();
-    if (this._promptKey !== sub.t) { this._promptKey = sub.t; if (!this.visible(el)) el.scrollIntoView({ block: 'center', behavior: 'smooth' }); clearTimeout(this._t.pp); this._t.pp = setTimeout(() => this.placePrompt(), 520); }
+    if (this._promptKey !== sub.t) { this._promptKey = sub.t; if (!this.visible(el)) { el.scrollIntoView({ block: 'center', behavior: 'smooth' }); this._promptScrolling = sub; } clearTimeout(this._t.pp); this._t.pp = setTimeout(() => { this._promptScrolling = null; this.placePrompt(); }, 520); }
     if (!this.visible(el)) return hide();
     const b = this.local(el), below = b.y + b.h + 90 < 900;
     L.style.display = 'block';
@@ -718,65 +989,49 @@ class Component {
     Object.assign(this._tip.style, { left: Math.min(Math.max(b.x + b.w / 2, 200), 1400) + 'px', top: (below ? b.y + b.h + 16 : b.y - 16) + 'px' });
     this._tipText.textContent = sub.say;
   }
+
+  /* ---------- shared chrome ---------- */
   rShell() {
-    const s = this.state;
-    const nav = (key, icon, label, on) => `<div class="nav ${on ? 'on' : ''}" data-act="nav" data-arg="${key}">${ic(icon)}${label}</div>`;
-    const crumb = { dashboard: '<b>Home</b>', list: 'Home &nbsp;/&nbsp; <b>Beneficiaries</b>', create: 'Home &nbsp;/&nbsp; <b>Create beneficiary</b>' }[s.screen];
-    const body = { dashboard: this.rDash, list: this.rList, create: this.rCreate }[s.screen].call(this);
+    const s = this.state, navOf = { dashboard: 'dashboard', list: 'list', create: 'list', senders: 'senders', createSender: 'senders', orders: 'orders', createOrder: 'orders', orderDetail: 'orders' }[s.screen];
+    const nav = (key, icon, label) => `<div class="nav ${navOf === key ? 'on' : ''}" data-act="nav" data-arg="${key}">${ic(icon)}${label}</div>`;
+    const crumb = { dashboard: '<b>Home</b>', list: 'Home &nbsp;/&nbsp; <b>Beneficiaries</b>', create: 'Home &nbsp;/&nbsp; <b>Create beneficiary</b>', senders: 'Home &nbsp;/&nbsp; <b>Senders</b>', createSender: 'Home &nbsp;/&nbsp; <b>Create sender</b>', orders: 'Home &nbsp;/&nbsp; <b>Orders</b>', createOrder: 'Home &nbsp;/&nbsp; <b>Create payment</b>', orderDetail: 'Home &nbsp;/&nbsp; Orders &nbsp;/&nbsp; <b>adfb43…2609ac</b>' }[s.screen];
+    const body = { dashboard: this.rDash, list: this.rList, create: this.rCreate, senders: this.rSenders, createSender: this.rCreateSender, orders: this.rOrders, createOrder: this.rCreateOrder, orderDetail: this.rOrderDetail }[s.screen].call(this);
+    const modal = s.modal === 'sending' ? this.rSending() : '';
     return `
       <div class="side">
         <div class="logo">${LOGO}</div>
-        <div class="sec mono">Home</div>
-        ${nav('dashboard', 'home', 'Dashboard', s.screen === 'dashboard')}
-        <div class="sec mono">Payments</div>
-        ${nav('orders', 'orders', 'Orders')}${nav('tx', 'tx', 'Transactions')}
-        <div class="sec mono">Directory</div>
-        ${nav('senders', 'users', 'Senders')}${nav('list', 'users', 'Beneficiaries', s.screen !== 'dashboard')}
-        <div class="sec mono">Sender portal</div>
-        ${nav('portal', 'portal', 'Portal')}
-        <div class="sec mono">Money</div>
-        ${nav('balances', 'wallet', 'Balances')}${nav('deposits', 'card', 'Deposits')}${nav('third', 'alert', 'Third-party deposits')}${nav('earn', 'dollar', 'Earnings')}
-        <div class="sec mono">Developer</div>
-        ${nav('api', 'key', 'API keys')}${nav('hooks', 'hook', 'Webhooks')}${nav('settings', 'gear', 'Settings')}
+        <div class="sec mono">Home</div>${nav('dashboard', 'home', 'Dashboard')}
+        <div class="sec mono">Payments</div>${nav('orders', 'orders', 'Orders')}${nav('tx', 'tx', 'Transactions')}
+        <div class="sec mono">Directory</div>${nav('senders', 'users', 'Senders')}${nav('list', 'users', 'Beneficiaries')}
+        <div class="sec mono">Sender portal</div>${nav('portal', 'portal', 'Portal')}
+        <div class="sec mono">Money</div>${nav('balances', 'wallet', 'Balances')}${nav('deposits', 'card', 'Deposits')}${nav('third', 'alert', 'Third-party deposits')}${nav('earn', 'dollar', 'Earnings')}
+        <div class="sec mono">Developer</div>${nav('api', 'key', 'API keys')}${nav('hooks', 'hook', 'Webhooks')}${nav('settings', 'gear', 'Settings')}
       </div>
       <div class="main">
-        <div class="top">
-          <span class="crumb">${crumb}</span><span class="sp"></span>
-          <span class="search">${ic('search', 'sm')} Search <kbd>⌘K</kbd></span>
-          <span class="acct"><span class="t"><b>Mesta Payments LLC</b><span>ashok@mesta.xyz</span></span><span class="av">MP</span>${ic('down', 'sm')}</span>
-        </div>
-        <div class="content">${body}</div>
-        ${s.modal === 'sending' ? this.rSending() : ''}
-        ${s.toast ? `<div class="toast">${esc(s.toast)}</div>` : ''}
+        <div class="top"><span class="crumb">${crumb}</span><span class="sp"></span><span class="search">${ic('search', 'sm')} Search <kbd>⌘K</kbd></span>
+          <span class="acct"><span class="t"><b>Mesta Payments LLC</b><span>ashok@mesta.xyz</span></span><span class="av">MP</span>${ic('down', 'sm')}</span></div>
+        <div class="content">${body}</div>${modal}
+        ${s.toast ? `<div class="toast ${/success|locked/i.test(s.toast) ? 'ok' : ''}">${/success|locked/i.test(s.toast) ? ic('check', 'sm') : ''}${esc(s.toast)}</div>` : ''}
       </div>`;
   }
   rLogin() {
-    const tk = (st, cls, a, b, c) => `<div class="tk" style="${st}"><div class="a">${a}</div><div class="b">${b}</div><div class="c">${c}</div></div>`;
-    return `<div class="login">
-      <div class="left">
+    const tk = (st, a, b, c) => `<div class="tk" style="${st}"><div class="a">${a}</div><div class="b">${b}</div><div class="c">${c}</div></div>`;
+    return `<div class="login"><div class="left">
         <div class="meta"><div><span class="live">●</span> LIVE</div><div>70+ COUNTRIES · 50+ RAILS · 4 CHAINS</div><div style="margin-top:10px"><b>1,847,290</b> ORDERS SETTLED</div><div><b>$1,525,637,236</b> ROUTED</div></div>
-        ${tk('left:62%;top:19%', '', '<span>ON-RAMP · 8S</span><span>3S AGO</span>', '🇬🇧 GBP <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">SOL</span>', '<span>£ 940</span><span class="ar">→</span><span>1,180 USDC</span>')}
-        ${tk('left:14%;top:38%', '', '<span>SPEI · MEXICO CITY · 28S</span><span>2S AGO</span>', '🇺🇸 USD <span class="ar">→</span> 🇲🇽 MXN', '<span>$ 2,500</span><span class="ar">→</span><span>MX$ 42,800</span>')}
-        ${tk('left:54%;top:38%', '', '<span>ON-RAMP · 18S</span><span class="ok">✓ SETTLED</span>', '🇪🇺 EUR <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">POL</span>', '<span>€ 1,180</span><span class="ar">→</span><span>1,280 USDC</span>')}
-        ${tk('left:55%;top:60%', '', '<span>BRIDGE · 30S</span><span>3S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">POL</span> <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">ETH</span>', '<span>800 USDC</span><span class="ar">→</span><span>800 USDC</span>')}
-        ${tk('left:6%;top:79%', '', '<span>BANK · JOHANNESBURG</span><span>SAME DAY · 2S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">ETH</span> <span class="ar">→</span> 🇿🇦 ZAR', '<span>1,650 USDC</span><span class="ar">→</span><span>R 30,560</span>')}
+        ${tk('left:62%;top:19%', '<span>ON-RAMP · 8S</span><span>3S AGO</span>', '🇬🇧 GBP <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">SOL</span>', '<span>£ 940</span><span class="ar">→</span><span>1,180 USDC</span>')}
+        ${tk('left:14%;top:38%', '<span>SPEI · MEXICO CITY · 28S</span><span>2S AGO</span>', '🇺🇸 USD <span class="ar">→</span> 🇲🇽 MXN', '<span>$ 2,500</span><span class="ar">→</span><span>MX$ 42,800</span>')}
+        ${tk('left:54%;top:38%', '<span>ON-RAMP · 18S</span><span class="ok">✓ SETTLED</span>', '🇪🇺 EUR <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">POL</span>', '<span>€ 1,180</span><span class="ar">→</span><span>1,280 USDC</span>')}
+        ${tk('left:55%;top:60%', '<span>BRIDGE · 30S</span><span>3S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">POL</span> <span class="ar">→</span> <span class="coin">◎ USDC</span> <span class="n">ETH</span>', '<span>800 USDC</span><span class="ar">→</span><span>800 USDC</span>')}
+        ${tk('left:6%;top:79%', '<span>BANK · JOHANNESBURG</span><span>SAME DAY · 2S AGO</span>', '<span class="coin">◎ USDC</span> <span class="n">ETH</span> <span class="ar">→</span> 🇿🇦 ZAR', '<span>1,650 USDC</span><span class="ar">→</span><span>R 30,560</span>')}
       </div>
-      <div class="right"><div class="lform">
-        <div class="logo">${LOGO}</div>
-        <div class="k mono">Sign in</div>
-        <h1>Welcome back</h1>
-        <div class="s">Sign in to your merchant dashboard</div>
+      <div class="right"><div class="lform"><div class="logo">${LOGO}</div><div class="k mono">Sign in</div><h1>Welcome back</h1><div class="s">Sign in to your merchant dashboard</div>
         <button class="btn pk" data-act="login">${ic('finger')} Sign in with a passkey</button>
-        <div class="n">Don't have a passkey yet? Sign in with password + code below — you can add one after.</div>
-        <div class="or mono">Or use your password</div>
+        <div class="n">Don't have a passkey yet? Sign in with password + code below — you can add one after.</div><div class="or mono">Or use your password</div>
         <div class="fld"><label class="lbl">Email<i>*</i></label><input class="inp" aria-label="Email" value="ashok@mesta.xyz"></div>
         <div class="fld"><label class="lbl">Password<i>*</i></label><div style="position:relative"><input class="inp" type="password" aria-label="Password" value="correct-horse-battery" style="padding-right:40px"><span style="position:absolute;right:12px;top:11px;color:var(--mute)">${ic('eye')}</span></div></div>
         <div class="rw"><label class="chk"><span class="b"></span>Remember me</label><a>Forgot password?</a></div>
-        <button class="btn dark go" data-act="login">Sign in · password + code</button>
-        <div class="bk">Use a backup code</div>
-        <div class="na">Need access? Contact your Mesta administrator</div>
-      </div></div>
-    </div>`;
+        <button class="btn dark go" data-act="login">Sign in · password + code</button><div class="bk">Use a backup code</div><div class="na">Need access? Contact your Mesta administrator</div>
+      </div></div></div>`;
   }
   rDash() {
     const s = this.state;
@@ -784,146 +1039,107 @@ class Component {
     const stat = (k, v, d, extra = '') => `<div class="stat"><div class="k mono">${k}</div><div class="v">${v}</div><div class="d">${d}</div>${extra}</div>`;
     const spark = '<svg class="spark" viewBox="0 0 300 28" preserveAspectRatio="none"><path d="M0 26 L18 24 L30 6 L42 22 L60 26 L300 26" fill="none" stroke="#c7cfdd" stroke-width="1.2"/></svg>';
     const ord = (a, net, flag, b, amt, cur, hash, when, st, ok, note) => `<div class="ord"><div class="r1"><span class="coin">◎ ${a}</span><span class="net">${net}</span><span style="color:var(--faint)">→</span><span>${flag} ${b}</span><span class="sp"></span><span class="amt"><b>${amt}</b><span>${cur}</span></span></div><div class="r2"><span>${hash} · ${when}</span><span class="sp"></span><span class="st ${ok ? 'ok' : ''}">${st}</span></div>${note ? `<div class="r3">${note}</div>` : ''}</div>`;
-    return `
-      <div class="page-h"><div><h1>Dashboard</h1><div class="sub" style="margin-top:4px"><span style="color:var(--green)">●</span> Live · updated just now · recent settlement Jul 6 · 11:46 PM</div></div><div class="sp"></div>
+    return `<div class="page-h"><div><h1>Dashboard</h1><div class="sub" style="margin-top:4px"><span style="color:var(--green)">●</span> Live · updated just now · recent settlement Jul 6 · 11:46 PM</div></div><div class="sp"></div>
         <div class="pills">${['Today', 'Last 7 days', 'Last 30 days', 'Last 90 days', 'All time', 'Custom'].map(pill).join('')}</div><button class="btn" style="border-radius:999px;padding:9px">${ic('refresh')}</button></div>
-      <div class="stats">
-        ${stat('Volume', '$499,782.50', 'settled · orders created last 30 days', spark)}
-        ${stat('Orders', '34', '23 delivered · 0 in flight', '<div class="bar"><i style="flex:23;background:var(--green)"></i><i style="flex:11;background:#d97706"></i></div><div class="att">11 need attention →</div>' + spark)}
-        ${stat('Success rate', '67.6%', '23 of 34 created orders')}
-        ${stat('Avg order value', '$21,729.67', 'volume ÷ completed · orders created last 30 days')}
-        ${stat('Avg settlement', '24h 56m', 'created → settled · orders created last 30 days')}
-      </div>
-      <div class="two">
-        <div class="dcard">
-          <div class="h"><div class="ic">${ic('chart')}</div><div class="t"><b>Settled volume</b><span>Per day · UTC · orders counted in the day they were created</span></div><div class="kk"><span>$499.8K volume</span><span>23 completed</span></div></div>
+      <div class="stats">${stat('Volume', '$499,782.50', 'settled · orders created last 30 days', spark)}${stat('Orders', '34', '23 delivered · 0 in flight', '<div class="bar"><i style="flex:23;background:var(--green)"></i><i style="flex:11;background:#d97706"></i></div><div class="att">11 need attention →</div>' + spark)}${stat('Success rate', '67.6%', '23 of 34 created orders')}${stat('Avg order value', '$21,729.67', 'volume ÷ completed · orders created last 30 days')}${stat('Avg settlement', '24h 56m', 'created → settled · orders created last 30 days')}</div>
+      <div class="two"><div class="dcard"><div class="h"><div class="ic">${ic('chart')}</div><div class="t"><b>Settled volume</b><span>Per day · UTC · orders counted in the day they were created</span></div><div class="kk"><span>$499.8K volume</span><span>23 completed</span></div></div>
           <div class="chart"><svg viewBox="0 0 760 260" width="100%" height="260" font-family="Geist Mono" font-size="10" fill="#6b7280">
             ${[0, 1, 2, 3, 4].map(i => `<line x1="56" x2="704" y1="${20 + i * 52}" y2="${20 + i * 52}" stroke="#eef0f2" stroke-dasharray="3 3"/><text x="48" y="${24 + i * 52}" text-anchor="end">${['$600.0K', '$450.0K', '$300.0K', '$150.0K', '$0'][i]}</text><text x="712" y="${24 + i * 52}">${[12, 9, 6, 3, 0][i]}</text>`).join('')}
             <path d="M56 228 L70 212 L84 60 L96 228 L110 228 L704 228 Z" fill="rgba(107,91,207,.15)"/><path d="M56 228 L70 212 L84 60 L96 228 L110 228 L704 228" fill="none" stroke="#6b5bcf" stroke-width="2"/>
             <path d="M56 228 L96 228 L112 90 L128 228 L150 228 L160 200 L172 228 L370 228 L384 170 L398 228 L430 228 L444 190 L458 228 L704 228" fill="none" stroke="#10a86a" stroke-width="1.5" stroke-dasharray="4 3"/>
             ${['Jun 15', 'Jun 17', 'Jun 19', 'Jun 22', 'Jun 25', 'Jun 28', 'Jul 1', 'Jul 4', 'Jul 7', 'Jul 10', 'Jul 12', 'Jul 14'].map((d, i) => `<text x="${56 + i * 58}" y="250" text-anchor="middle">${d}</text>`).join('')}
-          </svg><div class="cap">Settled USD volume (area) · completed orders (dashed)</div></div>
-        </div>
-        <div class="dcard">
-          <div class="h"><div class="ic">${ic('orders')}</div><div class="t"><b>Recent orders</b><span>Latest payment activity across active corridors</span></div><a>View all →</a></div>
-          ${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'b23c77...8fe102', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}
-          ${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'f4c42b...84935d', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}
-          ${ord('USDC', 'POL', '🇮🇳', 'INR', '8K', 'USDC', 'c44602...0b37c3', 'Jul...', 'Awaiting funds timed out', false, 'action: resend funds')}
-          ${ord('USDT', 'TRX', '🇪🇺', 'EUR', '10', 'USDT', '363d7f...a93dba', 'Jul 6 · 11:29 PM', 'Success', true, '')}
-        </div>
-      </div>`;
+          </svg><div class="cap">Settled USD volume (area) · completed orders (dashed)</div></div></div>
+        <div class="dcard"><div class="h"><div class="ic">${ic('orders')}</div><div class="t"><b>Recent orders</b><span>Latest payment activity across active corridors</span></div><a>View all →</a></div>
+          ${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'b23c77...8fe102', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}${ord('USDC', 'ETH', '🇺🇸', 'USD', '8.5K', 'USDC', 'f4c42b...84935d', 'Yes...', 'Awaiting funds timed out', false, 'action: resend funds')}${ord('USDC', 'POL', '🇮🇳', 'INR', '8K', 'USDC', 'c44602...0b37c3', 'Jul...', 'Awaiting funds timed out', false, 'action: resend funds')}${ord('USDT', 'TRX', '🇪🇺', 'EUR', '10', 'USDT', '363d7f...a93dba', 'Jul 6 · 11:29 PM', 'Success', true, '')}
+        </div></div>`;
   }
-  rList() {
-    const s = this.state;
-    const rows = [...ROWS];
-    if (s.created) rows.unshift({ n: 'Lincoln Strategy Labs LLP', t: 'Business', f: '🇮🇳', cc: 'IN', cur: 'INR', s: s.newStatus === 'approved' ? 'Approved' : 'Pending', c: 'Just now', l: 'Just now', isNew: true });
-    const total = 55 + (s.created ? 1 : 0), active = 43 + (s.newStatus === 'approved' ? 1 : 0), pct = Math.round(active / total * 100);
-    const shown = rows.filter(r => s.tab === 'All' || r.s === s.tab);
-    const cls = { Approved: 'g', Declined: 'r', Pending: 'a' };
-    return `
-      <div class="page-h"><div><div class="kicker mono">Beneficiaries · ${total} total · ${active} verified · live</div><h1>Beneficiaries</h1><div class="sub">Verified recipients · KYC-screened and routed via local rails (PIX in BR, SPEI in MX, SEPA in EU, UPI in IN, M-Pesa in KE, USDC on-chain)</div></div><div class="sp"></div>
-        <button class="btn">${ic('export')} Export</button><button class="btn dark" data-act="openCreate">${ic('plus')} Create beneficiary · KYC screen + route</button></div>
-      <div class="card" style="margin-top:22px">
-        <div class="tabs">${['All', 'Approved', 'Pending', 'Declined', 'Unverified'].map(t => `<div class="${s.tab === t ? 'on' : ''}" data-act="tab" data-arg="${t}">${t}</div>`).join('')}</div>
-        <div class="filters"><span class="f">Name</span><span class="f">Email</span><span class="f">Phone number</span><span class="sp"></span><span class="sel" style="padding:8px 12px"><span>Newest</span>${ic('down', 'sm')}</span></div>
-      </div>
-      <div class="card" style="margin-top:14px"><div class="statrow mono"><span class="dot"></span>${total} beneficiaries · ${active} active · ${pct}% verified<span class="sp"></span><span class="k">Active:<b>${active}</b></span><span class="k">Verification:<b>${pct}%</b></span></div></div>
-      <div class="card" style="margin-top:14px;overflow:hidden"><table>
-        <thead><tr><th class="mono">Name</th><th class="mono">Type</th><th class="mono">Country</th><th class="mono">Status</th><th class="mono">Created</th><th class="mono">Last activity</th><th></th></tr></thead>
-        <tbody>${shown.map(r => `<tr class="${r.isNew ? 'new' : ''}"><td><span class="nm"><span class="bi ${cls[r.s]}">${ic(r.t === 'Business' ? 'bldg' : 'user')}</span>${esc(r.n)}</span></td><td><span class="ty">${ic(r.t === 'Business' ? 'bldg' : 'user', 'sm')}${r.t}</span></td><td><span class="cc">${r.f} ${r.cc} <span class="cur">· ${r.cur}</span></span></td><td><span class="chip ${cls[r.s]}">${r.s}</span></td><td>${r.c}</td><td>${r.l}</td><td class="arr">${ic('right', 'sm')}</td></tr>`).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--mute);padding:30px">No beneficiaries in this view</td></tr>'}</tbody>
-      </table></div>`;
-  }
-  /* custom select: looks like the product's select, opens a list on click */
   sel(key, value, placeholder, opts, extra = '', dis = false) {
-    const s = this.state, open = s.openSel === key, grp = key.split('.')[0];
+    const s = this.state, open = s.openSel === key;
     return `<div class="sel ${dis ? 'dis' : ''} ${open ? 'focus' : ''}" ${dis ? '' : `data-act="sel" data-arg="${key}"`}>${extra}<span class="${value ? 'ph' : ''}" style="${value ? '' : 'color:var(--ink)'}">${esc(value || placeholder)}</span><span class="sp"></span>${ic('down', 'sm')}
       ${open ? `<div class="dd light" data-stop="1">${opts.map(o => `<div class="${o === value ? 'on' : ''}" data-act="pickOpt" data-arg="${key}|${esc(o)}">${esc(o)}</div>`).join('')}</div>` : ''}</div>`;
   }
-  inp(key, value, label, placeholder = '', cls = '') {
-    return `<input class="inp ${cls}" data-bind="${key}" aria-label="${esc(label)}" placeholder="${esc(placeholder)}" value="${esc(value)}">`;
+  inp(key, value, label, placeholder = '', cls = '') { return `<input class="inp ${cls}" data-bind="${key}" aria-label="${esc(label)}" placeholder="${esc(placeholder)}" value="${esc(value)}">`; }
+  countryPick(list, selected) {
+    const s = this.state, val = selected ? `${selected} ${CNAME[selected]}` : '';
+    return `<div class="fld" style="max-width:560px"><label class="lbl">Country<i>*</i></label>
+      <div class="sel ${s.countryOpen ? 'focus' : ''}" data-act="toggleCountry">${ic('globe')}<span>${val ? esc(val) : 'Select country'}</span><span class="sp"></span>${ic('down', 'sm')}
+        ${s.countryOpen ? `<div class="dd" data-stop="1">${list.map(([c, fl, n]) => `<div class="${c === selected ? 'on' : ''}" data-act="country" data-arg="${c}"><span class="cd">${c}</span> <span>${fl}</span> <span>${n}</span></div>`).join('')}</div>` : ''}</div>
+      <div class="help">${s.flow === 'sender' ? "Only countries we currently support for senders appear here — each loads that jurisdiction's KYC rules and document checklist." : 'Only countries we currently support for payouts appear here — each loads its local rail (PIX, SPEI, SEPA, UPI…) and payout fields.'}</div></div>`;
+  }
+  entityPick(a, b) {
+    const s = this.state;
+    return `<div class="fld"><label class="lbl">${s.flow === 'sender' ? 'Entity type' : 'Beneficiary type'}<i>*</i></label><div class="choice">
+        <div class="c ${s.entity === 'business' ? 'on' : ''}" data-act="entity" data-arg="business">${ic('bldg', 'lg')}<div><b>Business</b><span>${a}</span></div></div>
+        <div class="c ${s.entity === 'individual' ? 'on' : ''}" data-act="entity" data-arg="individual">${ic('user', 'lg')}<div><b>Individual</b><span>${b}</span></div></div></div></div>`;
+  }
+
+  /* ---------- Beneficiary screens ---------- */
+  rList() {
+    const s = this.state, rows = [...ROWS];
+    if (s.created) rows.unshift({ n: 'Lincoln Strategy Labs LLP', t: 'Business', f: '🇮🇳', cc: 'IN', cur: 'INR', s: s.newStatus === 'approved' ? 'Approved' : 'Pending', c: 'Just now', l: 'Just now', isNew: true });
+    const total = 55 + (s.created ? 1 : 0), active = 43 + (s.newStatus === 'approved' ? 1 : 0), pct = Math.round(active / total * 100);
+    const shown = rows.filter(r => s.tab === 'All' || r.s === s.tab), cls = { Approved: 'g', Declined: 'r', Pending: 'a' };
+    return `<div class="page-h"><div><div class="kicker mono">Beneficiaries · ${total} total · ${active} verified · live</div><h1>Beneficiaries</h1><div class="sub">Verified recipients · KYC-screened and routed via local rails (PIX in BR, SPEI in MX, SEPA in EU, UPI in IN, M-Pesa in KE, USDC on-chain)</div></div><div class="sp"></div>
+        <button class="btn">${ic('export')} Export</button><button class="btn dark" data-act="openCreate">${ic('plus')} Create beneficiary · KYC screen + route</button></div>
+      <div class="card" style="margin-top:22px"><div class="tabs">${['All', 'Approved', 'Pending', 'Declined', 'Unverified'].map(t => `<div class="${s.tab === t ? 'on' : ''}" data-act="tab" data-arg="${t}">${t}</div>`).join('')}</div>
+        <div class="filters"><span class="f">Name</span><span class="f">Email</span><span class="f">Phone number</span><span class="sp"></span><span class="sel" style="padding:8px 12px"><span>Newest</span>${ic('down', 'sm')}</span></div></div>
+      <div class="card" style="margin-top:14px"><div class="statrow mono"><span class="dot"></span>${total} beneficiaries · ${active} active · ${pct}% verified<span class="sp"></span><span class="k">Active:<b>${active}</b></span><span class="k">Verification:<b>${pct}%</b></span></div></div>
+      <div class="card" style="margin-top:14px;overflow:hidden"><table><thead><tr><th class="mono">Name</th><th class="mono">Type</th><th class="mono">Country</th><th class="mono">Status</th><th class="mono">Created</th><th class="mono">Last activity</th><th></th></tr></thead>
+        <tbody>${shown.map(r => `<tr class="${r.isNew ? 'new' : ''}"><td><span class="nm"><span class="bi ${cls[r.s]}">${ic(r.t === 'Business' ? 'bldg' : 'user')}</span>${esc(r.n)}</span></td><td><span class="ty">${ic(r.t === 'Business' ? 'bldg' : 'user', 'sm')}${r.t}</span></td><td><span class="cc">${r.f} ${r.cc} <span class="cur">· ${r.cur}</span></span></td><td><span class="chip ${cls[r.s]}">${r.s}</span></td><td>${r.c}</td><td>${r.l}</td><td class="arr">${ic('right', 'sm')}</td></tr>`).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--mute);padding:30px">No beneficiaries in this view</td></tr>'}</tbody></table></div>`;
   }
   rCreate() {
-    const s = this.state, f = s.form;
-    const countryVal = s.country ? `IN 🇮🇳 India` : '';
+    const s = this.state;
     const head = `<div class="page-h"><div><h1>Create beneficiary</h1><div class="sub">Pick recipient type + destination country first · we'll load the exact payout fields and compliance checklist for that rail (PIX/SPEI/SEPA/UPI/M-Pesa/USDC/+)</div></div><div class="sp"></div><button class="btn" data-act="backToList">Back to beneficiaries</button></div>`;
-    const typeCountry = `
-      <div class="fld"><label class="lbl">Beneficiary type<i>*</i></label>
-        <div class="choice">
-          <div class="c ${s.entity === 'business' ? 'on' : ''}" data-act="entity" data-arg="business">${ic('bldg', 'lg')}<div><b>Business</b><span>Company / org · KYC-screened, routed via local rails</span></div></div>
-          <div class="c ${s.entity === 'individual' ? 'on' : ''}" data-act="entity" data-arg="individual">${ic('user', 'lg')}<div><b>Individual</b><span>Personal recipient · KYC-screened, routed via local rails</span></div></div>
-        </div></div>
-      <div class="fld" style="max-width:560px"><label class="lbl">Country<i>*</i></label>
-        <div class="sel ${s.countryOpen ? 'focus' : ''}" data-act="toggleCountry">${ic('globe')}<span>${countryVal ? esc(countryVal) : 'Select country'}</span><span class="sp"></span>${ic('down', 'sm')}
-          ${s.countryOpen ? `<div class="dd" data-stop="1">${COUNTRIES.map(([c, fl, n]) => `<div class="${c === 'IN' && s.country === 'IN' ? 'on' : ''}" data-act="country" data-arg="${c}"><span class="cd">${c}</span> <span>${fl}</span> <span>${n}</span></div>`).join('')}</div>` : ''}
-        </div>
-        <div class="help">Only countries we currently support for payouts appear here — each loads its local rail (PIX, SPEI, SEPA, UPI…) and payout fields.</div></div>`;
-    if (s.success) {
-      return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="success"><div class="ring">${ic('check')}</div><b>Beneficiary created successfully</b><span>The beneficiary has been sent for verification. You will be redirected to the beneficiaries list shortly…</span><div class="rd2"><i></i>Redirecting…</div></div></div>`;
-    }
-    if (!s.country) {
-      return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="empty"><b>Pick a country to load its payout form</b><span>Brazil routes via PIX, Mexico via SPEI, the EU via SEPA, India via UPI — we fit the exact payout fields and compliance checklist to the rail.</span></div></div>`;
-    }
+    const typeCountry = this.entityPick('Company / org · KYC-screened, routed via local rails', 'Personal recipient · KYC-screened, routed via local rails') + this.countryPick(COUNTRIES, s.country);
+    if (s.success) return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="success"><div class="ring">${ic('check')}</div><b>Beneficiary created successfully</b><span>The beneficiary has been sent for verification. You will be redirected to the beneficiaries list shortly…</span><div class="rd2"><i></i>Redirecting…</div></div></div>`;
+    if (!s.country) return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="empty"><b>Pick a country to load its payout form</b><span>Brazil routes via PIX, Mexico via SPEI, the EU via SEPA, India via UPI — we fit the exact payout fields and compliance checklist to the rail.</span></div></div>`;
     const stepper = `<div class="stepper"><div class="st ${s.formStep === 1 ? '' : 'off'}"><div class="d"></div>Basic information</div><div class="ln"></div><div class="st ${s.formStep === 2 ? '' : 'off'}"><div class="d"></div>Payment information</div></div>`;
-    const body = s.formStep === 1 ? this.rBasic() : this.rPayment();
-    return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<hr style="border:0;border-top:1px solid var(--line2);margin:8px 0 18px">${s.formStep === 1 ? this.rUpload() : ''}${stepper}${body}</div>`;
+    return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<hr style="border:0;border-top:1px solid var(--line2);margin:8px 0 18px">${s.formStep === 1 ? this.rUpload() : ''}${stepper}${s.formStep === 1 ? this.rBasic() : this.rPayment()}</div>`;
   }
   rUpload() {
-    const u = this.state.upload;
+    const s = this.state, u = s.upload, snd = s.flow === 'sender';
     const dark = (label, act, extra = '') => `<button class="btn dark" data-act="${act}" ${extra}>${label}</button>`;
-    if (!u) return `<div class="banner" id="skip-banner"><div class="ic">${ic('sparkle', 'fill')}</div><div class="t"><b>Skip the typing · fill this form from documents</b><span>A bank letter, voided check, or invoice with payment instructions · I'll read it and fill the beneficiary's details and bank information, with receipts.</span></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
-    if (u === 'collapsed') return `<div class="banner" id="skip-banner" style="background:#fff"><div class="ic" style="background:var(--green-bg);color:var(--green)">${ic('check')}</div><div class="t"><b style="font-weight:500">Filled 14 fields from your documents — upload more anytime.</b></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
-    if (u === 'drop' || u === 'picked') return `<div class="ucard" id="skip-banner"><div class="lead">Drop whatever you have · bank letter, voided check, invoice with payment instructions. You review every value; nothing submits without you.</div>
-      <div class="drop ${u === 'picked' ? 'has' : ''}" data-act="pick">${u === 'picked' ? `<span class="pdf">PDF</span><span>${esc(DOC)}</span><span style="color:var(--mute);font-size:12px">· 184 KB</span>` : 'Drop files here or click to browse · PDF, PNG, JPG, WEBP, GIF — or an iPhone photo (HEIC)'}</div>
+    const TXT = snd ? { skip: "Skip the typing · fill this form from the sender's documents", desc: "Business registration, proof of address, owners' register, bank statement · I'll read them, fill every field they prove, and show you receipts.", drop: 'Drop whatever you have · business registration, proof of address, owners\' register, bank statement. You review every value; nothing submits without you.', files: SDOCS, reading: 'Reading your documents', readingLine: 'Reading them', readingSub: '…cross-referencing details across the documents', found: 'Read 3 documents · found <b>31 details</b>. Fill the form in one click — your answers are never overwritten, and nothing submits.', filled: 'Filled 26 fields. Saved to your draft — step through to review; nothing submits until you do it.', still: 'Onboarding & risk profile · Number of employees, Primary counterparty jurisdictions', collapsed: 'Filled 26 fields from your documents — upload more anytime.', ledger: '› 23 verbatim values · 3 documents recognized · show the full ledger', left: 'Left 2 fields you\'d already answered untouched.' }
+      : { skip: 'Skip the typing · fill this form from documents', desc: "A bank letter, voided check, or invoice with payment instructions · I'll read it and fill the beneficiary's details and bank information, with receipts.", drop: 'Drop whatever you have · bank letter, voided check, invoice with payment instructions. You review every value; nothing submits without you.', files: [DOC], reading: 'Reading your document', readingLine: 'Reading them', readingSub: '…deriving the risk profile from the financials', found: 'Read 1 document · found <b>17 details</b>. Fill the form in one click — your answers are never overwritten, and nothing submits.', filled: 'Filled 14 fields. Saved to your draft — step through to review; nothing submits until you do it.', still: 'Basic information · Full name, Purpose of payment document', collapsed: 'Filled 14 fields from your documents — upload more anytime.', ledger: '› 11 verbatim values · show the full ledger', left: "Left 1 field you'd already answered untouched." };
+    if (!u) return `<div class="banner" id="skip-banner"><div class="ic">${ic('sparkle', 'fill')}</div><div class="t"><b>${TXT.skip}</b><span>${TXT.desc}</span></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
+    if (u === 'collapsed') return `<div class="banner" id="skip-banner" style="background:#fff"><div class="ic" style="background:var(--green-bg);color:var(--green)">${ic('check')}</div><div class="t"><b style="font-weight:500">${TXT.collapsed}</b></div>${dark('Upload documents', 'upload', 'data-arg="drop"')}</div>`;
+    if (u === 'drop' || u === 'picked') return `<div class="ucard" id="skip-banner"><div class="lead">${TXT.drop}</div>
+      <div class="drop ${u === 'picked' ? 'has' : ''}" data-act="pick" style="${u === 'picked' ? 'flex-wrap:wrap' : ''}">${u === 'picked' ? TXT.files.map(f => `<span style="display:inline-flex;align-items:center;gap:8px;margin-right:18px"><span class="pdf">PDF</span><span>${esc(f)}</span></span>`).join('') : 'Drop files here or click to browse · PDF, PNG, JPG, WEBP, GIF — or an iPhone photo (HEIC)'}</div>
       <div class="acts">${dark('Read documents', 'read', u === 'picked' ? '' : 'disabled')}<button class="btn link" data-act="upload" data-arg="cancel">Cancel</button></div></div>`;
-    if (u === 'reading') return `<div class="ucard" id="skip-banner"><div class="glow"></div><div class="rd">
-      <div class="h">${ic('sparkle', 'fill')}Reading your document<span class="sp"></span><span class="tm">19s</span></div>
-      <div class="ln ok">${ic('check', 'sm')}<span>Loaded your document</span></div>
-      <div class="ln run">${ic('loader', 'sm')}<span><b>Reading them</b><small>${esc(DOC)}</small><small>…deriving the risk profile from the financials</small></span></div>
-      <div class="ln wait">${ic('dot', 'sm')}<span>Compiling your receipts</span></div>
-      <div class="pbar"><i></i></div>
+    if (u === 'reading') return `<div class="ucard" id="skip-banner"><div class="glow"></div><div class="rd"><div class="h">${ic('sparkle', 'fill')}${TXT.reading}<span class="sp"></span><span class="tm">19s</span></div>
+      <div class="ln ok">${ic('check', 'sm')}<span>Loaded your document${snd ? 's' : ''}</span></div>
+      <div class="ln run">${ic('loader', 'sm')}<span><b>${TXT.readingLine}</b><small>${esc(TXT.files[0])}</small><small>${TXT.readingSub}</small></span></div>
+      <div class="ln wait">${ic('dot', 'sm')}<span>Compiling your receipts</span></div><div class="pbar"><i></i></div>
       <div class="note">Every value arrives with its source and evidence — nothing fills in until you approve it.</div></div></div>`;
-    if (u === 'results') return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>Read 1 document · found <b>17 details</b>. Fill the form in one click — your answers are never overwritten, and nothing submits.</span><span class="sp"></span>${dark('Fill the form', 'fill')}<button class="btn link" data-act="startOver">Start over</button></div>
-      <div class="abox"><div class="k mono">Needs your eyes · 4 values were interpreted, not copied</div>
-        <div class="it"><span>Business type</span><b>Partnership</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Lincoln Labs LLP"</small></div>
-        <div class="it"><span>Address · state/region code</span><b>KA</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bengaluru Karnataka 560001 India"</small></div>
-        <div class="it"><span>Payment rail</span><b>Bank account</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bank Details … Account Number: 009705000187"</small></div></div>
-      <div class="abox"><div class="k mono">Confirm from your documents — 2 values we read but need you to attest</div>
-        <div class="it row"><div class="t"><span>Relationship to the beneficiary</span><b>Supplier</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Supplier Lincoln Labs LLP"</small></div><button class="btn sm">Confirm</button></div>
-        <div class="it row"><div class="t"><span>Purpose of payment</span><b>Vendor payment</b><small>from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "TAX INVOICE (FICTIONAL SAMPLE)"</small></div><button class="btn sm">Confirm</button></div></div>
-      <div class="ledger">› 11 verbatim values · show the full ledger</div></div>`;
-    if (u === 'filled') return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>Filled 14 fields. Saved to your draft — step through to review; nothing submits until you do it.</span><span class="sp"></span><button class="btn" data-act="done">Done</button></div>
-      <div class="still"><div style="color:var(--ink2)">Left 1 field you'd already answered untouched.</div><div class="k mono">Still needs you · no document can prove these</div><div>Basic information · Full name, Purpose of payment document</div></div></div>`;
+    if (u === 'results') {
+      const items = snd ? [['Business type', 'Limited liability company', 'from 1.Brazil_Mock_CNPJ_Certificate_Authentic.pdf · "Natureza Jurídica 206-2 Sociedade Empresária Limitada"'], ['Company website URL', 'https://atlanticonexus.com.br', 'from 1.Brazil_Mock_CNPJ_Certificate_Authentic.pdf · "email domain contato@atlanticonexus.com.br"'], ['Is the business a licensed financial institution?', 'False', 'from 1.Brazil_Mock_CNPJ_Certificate_Authentic.pdf · "CNAE 46.19-2/00"'], ['Owner 1 · Lucas Henrique Almeida · Owner ID document type', 'NATIONAL_ID', 'from 2.Brazil_Mock_Contrato_Social.pdf · "CPF 384.917.620-21"']]
+        : [['Business type', 'Partnership', 'from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Lincoln Labs LLP"'], ['Address · state/region code', 'KA', 'from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bengaluru Karnataka 560001 India"'], ['Payment rail', 'Bank account', 'from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Bank Details … Account Number: 009705000187"']];
+      const conf = snd ? [['Source of funds', 'Business income', 'from 0.Brazil_Mock_Bank_Statement_Authentic.pdf · "03/06 Recebimento Cliente 125,000.00"'], ['Average transaction size (USD)', '104862', 'from 0.Brazil_Mock_Bank_Statement_Authentic.pdf · "125,000.00 / 48,200.00 / 31,750.00 / 214,500.00"']]
+        : [['Relationship to the beneficiary', 'Supplier', 'from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "Supplier Lincoln Labs LLP"'], ['Purpose of payment', 'Vendor payment', 'from 0.Lincoln_Strategy_Labs_Invoice_July_20.pdf · "TAX INVOICE (FICTIONAL SAMPLE)"']];
+      return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>${TXT.found}</span><span class="sp"></span>${dark('Fill the form', 'fill')}<button class="btn link" data-act="startOver">Start over</button></div>
+      <div class="abox"><div class="k mono">Needs your eyes · ${snd ? 8 : 4} values were interpreted, not copied</div>${items.map(([a, b, c]) => `<div class="it"><span>${a}</span><b>${b}</b><small>${c}</small></div>`).join('')}</div>
+      <div class="abox"><div class="k mono">Confirm from your documents — ${snd ? 4 : 2} values we read but need you to attest (volumes, source of funds, payment purpose)</div>${conf.map(([a, b, c]) => `<div class="it row"><div class="t"><span>${a}</span><b>${b}</b><small>${c}</small></div><button class="btn sm">Confirm</button></div>`).join('')}</div>
+      <div class="ledger">${TXT.ledger}</div></div>`;
+    }
+    if (u === 'filled') return `<div class="ucard res" id="skip-banner"><div class="h"><span class="chk">${ic('check', 'sm')}</span><span>${TXT.filled}</span><span class="sp"></span><button class="btn" data-act="done">Done</button></div>
+      <div class="still"><div style="color:var(--ink2)">${TXT.left}</div><div class="k mono">Still needs you · no document can prove these</div><div>${TXT.still}</div></div></div>`;
     return '';
   }
   rBasic() {
     const s = this.state, f = s.form;
-    return `<div class="fcard" id="form-card" style="padding:22px 26px">
-      <div class="stephead mono">Step 1 of 2 · Next: payment information</div>
-      <h3>${ic('userplus', 'lg')}Basic information</h3>
-      <div class="desc">Enter the business's details — we verify them during KYC screening.</div>
-      <div class="fld" id="fullname-field" style="max-width:640px"><label class="lbl">Full name<i>*</i></label>${this.inp('fullName', f.fullName, 'Full name')}</div>
-      <div class="box"><h4>Address</h4><div class="g2">
-        <div><label class="lbl">Street</label>${this.inp('street', f.street, 'Street', 'Start typing an address…')}</div>
-        <div><label class="lbl">City<i>*</i></label>${this.inp('city', f.city, 'City')}</div>
-        <div><label class="lbl">Postal code<i>*</i></label>${this.inp('postal', f.postal, 'Postal code')}</div>
-        <div><label class="lbl">Country</label>${this.sel('form.country', 'IN 🇮🇳 India', '', [], '', true)}</div>
-      </div></div>
-      <div class="g2" id="biz-details">
-        <div><label class="lbl">Beneficiary relationship<i>*</i></label>${this.sel('form.relationship', f.relationship, 'Select Beneficiary relationship', OPTS.relationship)}</div>
-        <div><label class="lbl">Purpose of payment<i>*</i></label>${this.sel('form.purpose', f.purpose, 'Select Purpose of payment', OPTS.purpose)}</div>
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><div class="stephead mono">Step 1 of 2 · Next: payment information</div><h3>${ic('userplus', 'lg')}Basic information</h3><div class="desc">Enter the business's details — we verify them during KYC screening.</div>
+      <div class="fld" id="fullname-field" style="max-width:640px"><label class="lbl">Full name<i>*</i></label>${this.inp('form.fullName', f.fullName, 'Full name')}</div>
+      <div class="box"><h4>Address</h4><div class="g2"><div><label class="lbl">Street</label>${this.inp('form.street', f.street, 'Street', 'Start typing an address…')}</div><div><label class="lbl">City<i>*</i></label>${this.inp('form.city', f.city, 'City')}</div><div><label class="lbl">Postal code<i>*</i></label>${this.inp('form.postal', f.postal, 'Postal code')}</div><div><label class="lbl">Country</label>${this.sel('form.country', 'IN 🇮🇳 India', '', [], '', true)}</div></div></div>
+      <div class="g2" id="biz-details"><div><label class="lbl">Beneficiary relationship<i>*</i></label>${this.sel('form.relationship', f.relationship, 'Select Beneficiary relationship', OPTS.relationship)}</div><div><label class="lbl">Purpose of payment<i>*</i></label>${this.sel('form.purpose', f.purpose, 'Select Purpose of payment', OPTS.purpose)}</div>
         <div id="pop-doc"><label class="lbl">Purpose of payment document</label>${f.popDoc ? `<div class="filechip"><div class="t"><b>${esc(f.popDoc)}</b><span>Saved to your draft ✓ · restored on resume</span></div><span class="rm" data-act="removeDoc">Remove</span></div>` : `<div class="drop" style="padding:12px">Drop a file here or click to browse · PDF, PNG, JPG</div>`}</div>
-        <div><label class="lbl">Business type<i>*</i></label>${this.sel('form.businessType', f.businessType, 'Select Business type', OPTS.businessType)}</div>
-        <div><label class="lbl">Business registration number<i>*</i></label>${this.inp('regNo', f.regNo, 'Business registration number')}</div>
-      </div>
-      <div style="display:flex;justify-content:flex-end;margin-top:22px"><button class="btn dark" data-act="continue">Continue</button></div>
-    </div>`;
+        <div><label class="lbl">Business type<i>*</i></label>${this.sel('form.businessType', f.businessType, 'Select Business type', OPTS.businessType)}</div><div><label class="lbl">Business registration number<i>*</i></label>${this.inp('form.regNo', f.regNo, 'Business registration number')}</div></div>
+      <div style="display:flex;justify-content:flex-end;margin-top:22px"><button class="btn dark" data-act="continue">Continue</button></div></div>`;
   }
   rPayment() {
     const s = this.state;
     const pm = (m, i) => {
       const isBank = m.type === 'Bank account';
-      const fields = isBank ? (m.swift
-        ? `<div class="g2"><div><label class="lbl">Account number / IBAN</label>${this.inp('m' + i + '.acct', m.acct, 'Account number / IBAN')}</div><div><label class="lbl">BIC/SWIFT code</label>${this.inp('m' + i + '.bic', m.bic, 'BIC/SWIFT code')}</div><div><label class="lbl">IFSC code</label>${this.inp('m' + i + '.ifsc', m.ifsc, 'IFSC code')}</div></div>`
+      const fields = isBank ? (m.swift ? `<div class="g2"><div><label class="lbl">Account number / IBAN</label>${this.inp('m' + i + '.acct', m.acct, 'Account number / IBAN')}</div><div><label class="lbl">BIC/SWIFT code</label>${this.inp('m' + i + '.bic', m.bic, 'BIC/SWIFT code')}</div><div><label class="lbl">IFSC code</label>${this.inp('m' + i + '.ifsc', m.ifsc, 'IFSC code')}</div></div>`
         : `<div class="g2"><div><label class="lbl">Bank</label>${this.sel('methods.bank.' + i, m.bank, 'Select bank', OPTS.bank)}</div><div><label class="lbl">IFSC code</label>${this.inp('m' + i + '.ifsc', m.ifsc, 'IFSC code')}</div><div><label class="lbl">Account type</label>${this.sel('methods.acctType.' + i, m.acctType, 'Select', OPTS.acctType)}</div><div><label class="lbl">Account number</label>${this.inp('m' + i + '.acct', m.acct, 'Account number')}</div></div>`)
         : `<div class="g2"><div><label class="lbl">Wallet address</label>${this.inp('m' + i + '.address', m.address, 'Wallet address')}</div><div><label class="lbl">Blockchain network</label>${this.sel('methods.network.' + i, m.network, 'Select…', OPTS.network)}</div></div>`;
       return `<div class="pm"><div class="hd"><span class="tag">${isBank ? ic('bank') : '<b style="font-family:Geist Mono">$</b>'} Payment method ${i + 1}</span><span class="sp"></span><span data-act="removeMethod" data-arg="${i}">${ic('trash')}</span></div>
@@ -931,54 +1147,211 @@ class Component {
         <div class="fld" style="margin-bottom:6px"><label class="lbl">Payment method label</label>${this.inp('m' + i + '.label', m.label, 'Payment method label', 'Enter a label for this payment method')}<div class="help">Give this payment method a descriptive label (e.g., "Primary Bank Account", "Business Checking")</div></div>
         <hr>${isBank ? `<label class="chk ${m.swift ? 'on' : ''}" data-act="swift" data-arg="${i}"><span class="b">${m.swift ? ic('check', 'sm') : ''}</span>Use SWIFT payment (international wire)</label>` : ''}${fields}</div>`;
     };
-    return `<div class="fcard" id="form-card" style="padding:22px 26px">
-      <div class="stephead mono">Step 2 of 2 · Review, then create</div>
-      <h3>${ic('card', 'lg')}Payment information</h3>
-      <div class="desc">Add payment methods for receiving funds</div>
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><div class="stephead mono">Step 2 of 2 · Review, then create</div><h3>${ic('card', 'lg')}Payment information</h3><div class="desc">Add payment methods for receiving funds</div>
       <div class="sec-h"><h4>Payment methods</h4><button class="btn dark sm" data-act="addMethod" style="padding:8px 12px">${ic('plus')} Add payment method</button></div>
       <div class="fld" style="max-width:320px"><label class="lbl">Destination country</label>${this.sel('form.dest', 'IN 🇮🇳 India', '', [], '', true)}<div class="help">Where the funds will be sent · determines available payment methods</div></div>
-      ${s.methods.length ? s.methods.map(pm).join('') : `<div class="pm-empty">${ic('card', 'lg')}<b>No payment methods yet</b>Add Bank account · Crypto Wallet details — the beneficiary is paid out through the method you add here.</div>`}
-    </div>
+      ${s.methods.length ? s.methods.map(pm).join('') : `<div class="pm-empty">${ic('card', 'lg')}<b>No payment methods yet</b>Add Bank account · Crypto Wallet details — the beneficiary is paid out through the method you add here.</div>`}</div>
     <div class="foot" id="create-btn"><button class="btn" data-act="back">Back</button><button class="btn" data-act="saveExit">Save &amp; exit</button><span class="draft">Draft saved just now · synced to your account</span><span class="sp"></span><button class="btn dark" data-act="submit">Create beneficiary</button></div>`;
   }
   rSending() {
+    const snd = this.state.flow === 'sender';
     const st = (cls, icon, label) => `<div class="s ${cls}"><div class="c">${ic(icon)}</div><span>${label}</span></div>`;
-    return `<div class="ov"><div class="modal"><div class="msteps">${st('ok', 'check', 'Creating beneficiary')}${st('ok', 'check', 'Adding payment methods')}${st('run', 'shield', 'Sending for verification')}${st('off', 'check', 'Complete!')}</div><div class="spin"></div><h3>Sending for verification</h3><p>Saving and validating against the country's compliance rules — typically a few seconds.</p></div></div>`;
+    return `<div class="ov"><div class="modal"><div class="msteps">${st('ok', 'check', snd ? 'Creating sender' : 'Creating beneficiary')}${st('ok', 'check', snd ? 'Creating UBOs' : 'Adding payment methods')}${st('run', 'shield', 'Sending for verification')}${st('off', 'check', 'Complete!')}</div><div class="spin"></div><h3>Sending for verification</h3><p>Saving and validating against the country's compliance rules — typically a few seconds.</p></div></div>`;
   }
 
-  /* ---------- mount ---------- */
+  /* ---------- Sender screens ---------- */
+  rSenders() {
+    const s = this.state, rows = [...SROWS], ap = s.newStatus === 'approved';
+    if (s.created) rows.unshift({ n: 'Atlântico Nexus Comércio L…', e: 'contato@atlanticonexus.com.br', f: '🇧🇷', cc: 'BR', cur: 'BRL', kyb: ap ? 'Approved' : 'Pending', ubo: ap ? '2/2 Approved' : '0/2 Approved', tos: ap ? 'Accepted' : 'Pending', st: ap ? 'Active' : 'Inactive', c: 'Just now', isNew: true });
+    const total = 31 + (s.created ? 1 : 0), ver = 10 + (ap ? 1 : 0), pct = Math.round(ver / total * 100);
+    const shown = rows.filter(r => s.tab === 'All' || r.kyb === s.tab);
+    const cls = v => ({ Approved: 'g', Declined: 'r', Pending: 'a', Accepted: 'g', Expired: 'r', Active: 'g', Inactive: 'k' })[v] || 'k';
+    return `<div class="page-h"><div><div class="kicker mono">Senders · ${total} total · ${ver} verified · live</div><h1>Senders</h1><div class="sub">Onboard, KYC-verify, and manage payers · KYC-screened via our compliance partners before the sender can transact</div></div><div class="sp"></div>
+        <button class="btn">${ic('export')} Export</button><button class="btn dark" data-act="openSender">${ic('plus')} Create sender · start KYB verify</button></div>
+      <div class="card" style="margin-top:22px"><div class="tabs">${['All', 'Approved', 'Pending', 'Declined', 'Unverified'].map(t => `<div class="${s.tab === t ? 'on' : ''}" data-act="tab" data-arg="${t}">${t}</div>`).join('')}</div>
+        <div class="filters"><span class="f">Name</span><span class="f">Email</span><span class="f">Phone</span><span class="sp"></span><span class="sel" style="padding:8px 12px"><span>Newest</span>${ic('down', 'sm')}</span></div></div>
+      <div class="card" style="margin-top:14px"><div class="statrow mono"><span class="dot"></span>${total} senders · ${ver} active · ${pct}% verified<span class="sp"></span><span class="k">Active:<b>${ver}</b></span><span class="k">Verification:<b>${pct}%</b></span></div></div>
+      <div class="card" style="margin-top:14px;overflow:hidden"><table><thead><tr><th class="mono">Name</th><th class="mono">Type</th><th class="mono">Country</th><th class="mono">KYB/KYC</th><th class="mono">UBO KYC</th><th class="mono">TOS</th><th class="mono">Status</th><th class="mono">Created</th></tr></thead>
+        <tbody>${shown.map(r => `<tr class="${r.isNew ? 'new' : ''}"><td><span class="nm"><span class="bi ${cls(r.kyb)}">${ic('bldg')}</span><span><span style="display:block">${esc(r.n)}</span><span style="display:block;font-size:11.5px;color:var(--mute);font-weight:400">${esc(r.e)}</span></span></span></td><td><span class="ty">${ic('bldg', 'sm')}Business</span></td><td><span class="cc">${r.f} ${r.cc} <span class="cur">· ${r.cur}</span></span></td><td><span class="chip ${cls(r.kyb)}">${r.kyb}</span></td><td><span class="chip ${r.ubo.startsWith('0/') ? 'a' : 'g'}">${r.ubo}</span></td><td><span class="chip ${cls(r.tos)}">${r.tos}</span></td><td><span class="chip ${cls(r.st)}">${r.st}</span></td><td>${r.c}</td></tr>`).join('') || '<tr><td colspan="8" style="text-align:center;color:var(--mute);padding:30px">No senders in this view</td></tr>'}</tbody></table></div>`;
+  }
+  rCreateSender() {
+    const s = this.state;
+    const head = `<div class="page-h"><div><h1>Create sender</h1><div class="sub">Pick entity type + country first · we'll load the exact KYC fields, document checklist, and routing rules for that jurisdiction</div></div><div class="sp"></div><button class="btn" data-act="backToList">Back to senders</button></div>`;
+    const typeCountry = this.entityPick('Company / org · KYB-screened before first payment', 'Personal sender · KYC-screened before first payment') + this.countryPick(SCOUNTRIES, s.country);
+    if (s.success) return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="success" style="padding:40px 20px"><div class="ring">${ic('check')}</div><b>Business sender created successfully</b><span>The sender has been sent for verification.</span>
+        <div class="links" id="links"><h5>${ic('hook', 'sm')}Terms of Service link</h5><div class="d">Share this link with the sender to accept the Terms of Service.</div><div class="lnk"><span>https://ohana.mesta.xyz/accept-terms/zuH9rIIP1X4C7do1IPCg85EAOc07m49w…</span>${ic('file', 'sm')}</div>
+          <h5 id="ubo-links">${ic('users', 'sm')}UBO identity verification links</h5><div class="d">Share these links with each UBO to complete their identity verification via selfie/liveness check.</div>
+          ${OWNERS.map((w, i) => `<div class="ubo"><div class="h">${w.first} ${w.last}<span class="sp"></span><span class="ns">NOT STARTED</span></div><div class="lnk"><span>https://verify.aiprise.com/?verification_session_id=${i ? '753c4fe6-c8e1-43…' : '3a62def9-af64-4e…'}</span>${ic('file', 'sm')}</div><div class="ex">Expires Jul 20 · 6:24 AM</div></div>`).join('')}</div>
+        <div style="margin-top:22px"><button class="btn" data-act="openSender">Create another sender</button></div></div></div>`;
+    if (!s.country) return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<div class="empty"><b>Pick a country to load its KYC form</b><span>Brazil asks for CPF/CNPJ, Mexico for RFC, the EU for VAT/registration, India for PAN — we fit the exact KYC fields and document checklist to the jurisdiction.</span></div></div>`;
+    const labels = ['Business information', 'Document upload', 'Onboarding & risk profile', 'Ultimate beneficial owners'];
+    const stepper = `<div class="stepper s4">${labels.map((l, i) => `${i ? '<div class="ln"></div>' : ''}<div class="st ${s.formStep === i + 1 ? '' : s.formStep > i + 1 ? 'done' : 'off'}"><div class="d">${s.formStep > i + 1 ? ic('check') : ''}</div>${l}</div>`).join('')}</div>`;
+    const body = [this.rSenderStep1, this.rSenderStep2, this.rSenderStep3, this.rSenderStep4][s.formStep - 1].call(this);
+    return head + `<div class="fcard" style="margin-top:22px">${typeCountry}<hr style="border:0;border-top:1px solid var(--line2);margin:8px 0 18px">${this.rUpload()}${stepper}${body}</div>`;
+  }
+  sfoot(last) { return `<div class="foot" id="${last ? 'create-btn' : 'sfoot'}"><button class="btn" data-act="back">Back</button><button class="btn" data-act="saveExit">Save &amp; exit</button><span class="draft">Draft saved just now · synced to your account</span><span class="sp"></span>${last ? '<button class="btn dark" data-act="submitSender">Create sender</button>' : '<button class="btn dark" data-act="continue">Continue</button>'}</div>`; }
+  rSenderStep1() {
+    const f = this.state.sf;
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><h3>Business information</h3><div class="desc">Provide business details and registration information</div>
+      <div class="g2" id="biz-fields"><div><label class="lbl">Full name</label>${this.inp('sf.fullName', f.fullName, 'Full name')}</div><div><label class="lbl">Email</label>${this.inp('sf.email', f.email, 'Email')}</div>
+        <div><label class="lbl">Phone number<i>*</i></label><div class="flagpre">🇧🇷 <span style="color:var(--mute)">+55</span><input data-bind="sf.phone" aria-label="Phone number" value="${esc(f.phone)}"></div></div><div><label class="lbl">Sender type</label>${this.sel('sf.senderType', f.senderType, 'Select', OPTS.senderType)}</div>
+        <div><label class="lbl">Date of registration</label>${this.inp('sf.regDate', f.regDate, 'Date of registration')}</div><div><label class="lbl">Business registration number</label>${this.inp('sf.regNo', f.regNo, 'Business registration number')}<div class="help">Business registration number or tax ID</div></div>
+        <div><label class="lbl">Business type</label>${this.sel('sf.businessType', f.businessType, 'Select Business type', OPTS.businessType)}</div></div>
+      <div class="box"><h4>Address</h4><div class="g2"><div><label class="lbl">Street</label>${this.inp('sf.street', f.street, 'Street', 'Start typing an address…')}</div><div><label class="lbl">City</label>${this.inp('sf.city', f.city, 'City')}</div><div><label class="lbl">Postal code</label>${this.inp('sf.postal', f.postal, 'Postal code')}</div><div><label class="lbl">Country</label>${this.sel('sf.country', 'BR 🇧🇷 Brazil', '', [], '', true)}<div class="help">Country is determined by the selection above</div></div></div></div></div>${this.sfoot(false)}`;
+  }
+  rSenderStep2() {
+    const f = this.state.sf, chip = n => `<div class="filechip"><div class="t"><b>${esc(n)}</b><span>Saved to your draft ✓ · restored on resume</span></div><span class="rm">Remove</span></div>`;
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><h3>Document upload</h3><div class="desc">Upload required documents for verification</div>
+      <div class="g2" id="doc-fields"><div class="box" style="margin:0"><label class="lbl">Business registration document</label>${chip(f.docReg)}</div><div class="box" style="margin:0"><label class="lbl">Proof of address</label>${chip(f.docAddr)}</div></div></div>${this.sfoot(false)}`;
+  }
+  rSenderStep3() {
+    const f = this.state.sf, nat = ['Payroll', 'Vendor Payment', 'Business Profits'];
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><h3>Onboarding &amp; risk profile</h3><div class="desc">Verification and AML risk-profile details for this sender</div>
+      <div class="secbox" id="risk-fields"><h4>${ic('shield', 'sm')}Onboarding &amp; risk profile</h4><div class="d">Required for KYC/KYB verification and AML risk scoring — drives screening depth and corridor limits.</div>
+        <div class="g2"><div><label class="lbl">Is the business a financial institution?<i>*</i></label>${this.sel('sf.fin', f.fin, 'Select', OPTS.yesno)}</div><div><label class="lbl">Number of employees<i>*</i></label>${this.sel('sf.employees', f.employees, 'Select', OPTS.employees)}</div>
+          <div><label class="lbl">Website URL</label>${this.inp('sf.website', f.website, 'Website URL')}</div><div><label class="lbl">Source of funds<i>*</i></label>${this.sel('sf.sof', f.sof, 'Select', OPTS.sof)}</div>
+          <div><label class="lbl">Expected monthly volume (USD)<i>*</i></label>${this.sel('sf.volume', f.volume, 'Select', OPTS.volume)}</div><div><label class="lbl">Average transaction size (USD)<i>*</i></label>${this.inp('sf.avgTx', f.avgTx, 'Average transaction size')}</div>
+          <div><label class="lbl">Nature of payments<i>*</i></label><div class="chipsel">${nat.map(n => `<span data-act="toggleNature" data-arg="${n}" style="${f.nature.includes(n) ? '' : 'opacity:.35'}">${n} ${ic('plus', 'sm')}</span>`).join('')}<span class="sp" style="background:none"></span>${ic('down', 'sm')}</div></div>
+          <div><label class="lbl">Primary counterparty jurisdictions<i>*</i></label><div class="chipsel" data-act="juris">${f.juris.includes('IN') ? '<span>IN 🇮🇳 India ✕</span>' : '<span style="background:none;color:var(--mute)">Select jurisdictions…</span>'}<span class="sp" style="background:none"></span>${ic('down', 'sm')}</div></div></div></div></div>${this.sfoot(false)}`;
+  }
+  rSenderStep4() {
+    const owners = this.state.sf.owners || OWNERS;
+    const own = (w, i) => `<div class="owner"><div class="oh mono">Owner ${i + 1} · ${w.first} ${w.last} · ${w.pct}%<span class="sp"></span>${ic('trash')}</div>
+      <h5>Personal information</h5><div class="g2"><div><label class="lbl">First name<i>*</i></label>${this.inp('x.f' + i, w.first, 'First name')}</div><div><label class="lbl">Last name<i>*</i></label>${this.inp('x.l' + i, w.last, 'Last name')}</div><div><label class="lbl">Email<i>*</i></label>${this.inp('x.e' + i, w.email, 'Email')}</div><div><label class="lbl">Phone<i>*</i></label>${this.inp('x.p' + i, w.phone, 'Phone')}</div><div><label class="lbl">Ownership percentage<i>*</i></label>${this.inp('x.o' + i, w.pct, 'Ownership percentage')}</div><div><label class="lbl">Date of birth<i>*</i></label>${this.inp('x.d' + i, w.dob, 'Date of birth')}</div></div>
+      <h5>Address information</h5><div class="g2"><div class="full"><label class="lbl">Street<i>*</i></label>${this.inp('x.s' + i, w.street, 'Street')}</div><div><label class="lbl">City<i>*</i></label>${this.inp('x.c' + i, w.city, 'City')}</div><div><label class="lbl">Country<i>*</i></label>${this.sel('x.cc' + i, 'BR 🇧🇷 Brazil', '', [], '', true)}</div><div><label class="lbl">Postal code<i>*</i></label>${this.inp('x.z' + i, w.postal, 'Postal code')}</div></div>
+      <h5>Identity information</h5><div class="g2"><div><label class="lbl">Country code<i>*</i></label>${this.sel('x.ic' + i, 'BR 🇧🇷 Brazil', '', [], '', true)}<div class="help" style="color:var(--green-tx)">Identity requirements updated for Brazil.</div></div><div><label class="lbl">Document type<i>*</i></label>${this.sel('x.dt' + i, 'National Id', '', [], '', true)}</div><div class="full"><label class="lbl">Document number<i>*</i></label>${this.inp('x.dn' + i, w.doc, 'Document number')}</div></div>
+      <h5>PEP declaration</h5><div class="help" style="margin:0 0 8px;color:var(--ink2)">Is this person — or an immediate family member or close associate — entrusted with a prominent public function? <i style="color:var(--red);font-style:normal">*</i></div><div class="pep"><div class="${w.pep === 'Yes' ? '' : 'on'}" data-act="pep" data-arg="${i}|No">No</div><div class="${w.pep === 'Yes' ? 'on' : ''}" data-act="pep" data-arg="${i}|Yes">Yes</div></div>
+      <h5>Source of funds document (optional)</h5><div class="help" style="margin:-4px 0 8px">Proof of the origin of this UBO's funds.</div><div class="drop" style="padding:24px">${ic('upload')}<br>Drop files here or click to browse</div>
+      <h5>Verification report (optional)</h5><div class="help" style="margin:-4px 0 8px">Third-party identity/background verification report for this UBO, if you have one.</div><div class="drop" style="padding:24px">${ic('upload')}<br>Drop files here or click to browse</div></div>`;
+    return `<div class="fcard" id="form-card" style="padding:22px 26px"><h3>Ultimate beneficial owners</h3><div class="desc">Add individuals who own or control the business</div>${owners.map(own).join('')}<button class="btn">${ic('userplus')} Add another UBO</button></div>${this.sfoot(true)}`;
+  }
+
+  /* ---------- Order screens ---------- */
+  coin(k) { return k === 'usdc' ? '<span class="coin c-usdc">$</span>' : k === 'usdt' ? '<span class="coin c-usdt">T</span>' : `<span class="coin c-fiat">${k}</span>`; }
+  rOrders() {
+    const s = this.state, rows = [...OROWS], st = s.o.status;
+    if (s.created) rows.unshift({ id: 'adfb43...2609ac', d: 'JUST NOW', sa: '8,502.56', sc: 'USDC-ETH', sk: 'usdc', ra: '8,500.00', rc: 'USD', rk: '🇺🇸', st: st === 'Created' ? 'Awaiting funds' : st, from: 'Mesta Payments LLC', to: 'FORTULL INC', isNew: true });
+    const total = 801 + (s.created ? 1 : 0);
+    const cls = v => ({ Success: 'g', 'Funds timeout': 'a', 'Awaiting funds': 'a', 'In progress': 'b', Created: 'k' })[v] || 'k';
+    return `<div class="page-h"><div><div class="kicker mono">Orders · ${total} total · live</div><h1>Orders</h1><div class="sub">Cross-border payments across 41 currencies — PIX, SPEI, SEPA, M-Pesa, UPI, USDC and more · track, filter, and reconcile</div></div><div class="sp"></div>
+        <button class="btn">${ic('export')} Export · CSV / Excel / PDF</button><button class="btn dark" data-act="openOrder">${ic('plus')} Create payment · Lock a rate for 5 min</button></div>
+      <div class="card" style="margin-top:22px;padding:14px 14px 4px"><div class="inp" style="display:flex;align-items:center;gap:10px;color:#8a8f98">${ic('search', 'sm')}Search by order ID</div>
+        <div class="qf" style="padding:14px 0 10px"><span class="lbl mono">Quick filters</span>${["Today's orders", 'Created', 'In progress', 'Awaiting funds', 'Awaiting funds timeout', 'Funds received', 'Success', 'Failed', 'Refunded', 'Rejected', 'Returned', 'Cancelled'].map(x => `<span>${x}</span>`).join('')}</div>
+        <div style="display:flex;justify-content:flex-end;padding-bottom:10px"><button class="btn sm">${ic('tx', 'sm')} Advanced filters</button></div></div>
+      <div class="card" style="margin-top:14px"><div class="statrow mono"><span class="dot"></span>${total} orders · live · refreshes 30s</div></div>
+      <div class="card" style="margin-top:14px;overflow:hidden"><table><thead><tr><th class="mono">Order</th><th class="mono">Send → Receive</th><th class="mono">Status</th><th class="mono">Sender</th><th class="mono">Beneficiary</th><th></th></tr></thead>
+        <tbody>${rows.map(r => `<tr class="${r.isNew ? 'new' : ''}"><td><span class="oid">${r.id} ${ic('file', 'sm')}<small>${r.d}</small></span></td><td><span class="amt2">${this.coin(r.sk)}<span>${r.sa}<small>${r.sc}</small></span><span class="ar">→</span>${this.coin(r.rk)}<span>${r.ra}<small>${r.rc}</small></span></span></td><td><span class="chip ${cls(r.st)}">${r.st}</span></td><td>${esc(r.from)}</td><td>${esc(r.to)}</td><td class="arr">${ic('right', 'sm')}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+  curSel(which) {
+    const s = this.state, o = s.o, key = which === 'src' ? o.sendCur : o.recvCur, c = key ? CUR_BY[key] : null, open = which === 'src' ? o.srcOpen : o.dstOpen;
+    const icon = c ? (c[3] === 'usdc' ? '<span class="coin c-usdc" style="width:22px;height:22px;border-radius:50%;background:#2775ca;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px Geist">$</span>' : c[3]) : '';
+    const rows = which === 'src' ? `<div class="srch">${ic('search', 'sm')}usdc</div><div class="sec mono">Stablecoin currencies</div>${CURS.stable.map(x => `<div class="row" data-act="pickSrc" data-arg="${x[0]}"><span class="ic"><span class="coin c-usdc" style="width:24px;height:24px;border-radius:50%;background:#2775ca;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 11px Geist">$</span></span><div class="t"><b>${x[1]}</b><span>${x[2]}</span></div></div>`).join('')}`
+      : `<div class="srch">${ic('search', 'sm')}usd</div><div class="sec mono">Fiat currencies</div>${CURS.fiat.map(x => `<div class="row" data-act="pickDst" data-arg="${x[0]}"><span class="ic">${x[3]}</span><div class="t"><b>${x[1]}</b><span>${x[2]}</span></div></div>`).join('')}`;
+    return `<div class="cur ${open ? 'on' : ''}" data-act="${which === 'src' ? 'srcToggle' : 'dstToggle'}"><span class="ic">${icon}</span><div class="t">${c ? `<b>${c[1]}</b>${c[3] === 'usdc' ? `<small>${c[2]}</small>` : ''}` : '<span class="ph">Select currency</span>'}</div>${ic('down', 'sm')}${open ? `<div class="cdd" data-stop="1">${rows}</div>` : ''}</div>`;
+  }
+  rSummary() {
+    const s = this.state, o = s.o, ready = o.recvCur && (o.send || o.recv) && s.formStep >= 1 && o.sendCur !== 'USD';
+    if (!ready) return `<div class="sum"><h4>Your payment</h4><div class="emp">Complete Step 1 to see your payment summary</div></div>`;
+    const x = XFERS.find(t => t[0] === o.transfer) || XFERS[0];
+    return `<div class="sum"><h4>Your payment</h4>
+      <div class="ln"><span class="coin c-usdc" style="width:20px;height:20px;border-radius:50%;background:#2775ca;color:#fff;display:inline-flex;align-items:center;justify-content:center;font:700 10px Geist">$</span><span class="net">Ethereum</span>${fmt(o.send)} USDC</div><div class="dn">↓</div>
+      <div class="ln">🇺🇸 ${fmt(o.recv)} USD</div>
+      <div class="kv"><b>Rate</b><span>1 USDC = 0.9997 USD</span></div><div class="kv"><b>Delivery</b><span>${x[1]} · same-day, US hours</span></div>
+      <div class="tot"><span>Total you pay<small>All fees included · recipient amount pinned</small></span><b>${fmt(o.send)} USDC</b></div>
+      <div class="q">${ic('loader', 'sm')} Quote expires in 4m 58s${s.formStep >= 2 ? ' · renews automatically' : ''}</div>
+      <div class="nx">${s.formStep === 1 ? 'Step 2: Select parties<br>Step 3: Review &amp; send' : `${o.from ? 'From: ' + esc(o.from) + '<br>' : ''}${o.to ? 'To: ' + esc(o.to) + '<br>' : ''}${o.method ? 'Via: Bank Account ···5377<br>' : ''}Step 3: Review &amp; send`}</div></div>`;
+  }
+  rCreateOrder() {
+    const s = this.state, o = s.o, step = s.formStep;
+    const stepper = `<div class="stepper s3" id="ostepper">${['Amount', 'Parties', 'Review'].map((l, i) => `${i ? '<div class="ln"></div>' : ''}<div class="st ${step === i + 1 ? '' : step > i + 1 ? 'done' : 'off'}"><div class="d">${step > i + 1 ? ic('check') : ''}</div>${l}${step === 1 && i === 0 && o.recvCur && o.recv ? '<small>Quote ready</small>' : step === 2 && i === 1 ? '<small>Choose sender and recipient</small>' : ''}</div>`).join('')}</div>`;
+    const head = `<div class="ohead"><span class="bk" data-act="oback"><span style="transform:scaleX(-1);display:inline-flex">${ic('right', 'sm')}</span>${step === 1 ? 'Back to orders' : 'Back'}</span><span class="ttl">Create payment</span><span class="stp mono">Step ${step} of 3</span></div>${stepper}`;
+    if (step === 1) {
+      const quote = o.recvCur && (o.recv || o.send) && o.sendCur !== 'USD';
+      return head + `<div class="ocols"><div>
+        <div class="acard"><span class="tag mono">${o.pinned === 'recv' && o.recv ? 'Recipient gets exactly' : 'You send exactly'}</span>
+          <div class="lb" id="you-send">${ic('upload', 'sm')} You send</div><div class="arow"><input class="amt" data-bind="o.send" aria-label="You send" placeholder="0.00" value="${esc(o.send)}">${this.curSel('src')}</div>
+          <div class="swap"><i></i><span>↓</span><i></i></div>
+          <div class="lb">${ic('card', 'sm')} They receive</div><div class="arow"><input class="amt" data-bind="o.recv" aria-label="They receive" placeholder="—" value="${esc(o.recv)}">${this.curSel('dst')}</div>
+          ${quote ? '<div class="route"><b>Stablecoin → Fiat</b> · Funded from USDC on Ethereum · paid out in USD</div>' : ''}</div>
+        ${quote ? `<div class="xfer"><div class="h">${ic('bank', 'sm')} Transfer type<i style="color:var(--red);font-style:normal">*</i><span class="sp"></span><span class="mn">You send · live</span></div><div class="d">Domestic Wire is the default — change anytime, your quote updates instantly.</div>
+          ${XFERS.map(x => `<div class="xo ${o.transfer === x[0] ? 'on' : ''}" data-act="xfer" data-arg="${x[0]}"><span class="rb"></span><span class="ic">${ic(x[5] === 'zap' ? 'sparkle' : x[5], 'sm')}</span><div class="t"><b>${x[1]}${x[4] ? '<em>Default</em>' : ''}</b><span>${x[2]}</span></div><span class="pr">${x[3]} USDC</span></div>`).join('')}
+          <div class="xo off"><span class="rb"></span><span class="ic">${ic('refresh', 'sm')}</span><div class="t"><b>Real-Time Payments</b><span>Typically instant when supported</span></div><span class="soon">COMING SOON</span></div></div>` : ''}
+        <div class="adv">+ Show advanced options</div>
+        <div class="ofoot"><button class="btn" data-act="oback">Cancel</button><button class="btn dark" data-act="lockRate">Continue · lock your rate</button></div>
+      </div>${this.rSummary()}</div>`;
+    }
+    if (step === 2) {
+      const senders = [['Mesta Payments LLC', 'United States of America'], ['Test Sender', 'United States of America']];
+      const benes = [['Fortull Inc', 'Mexico'], ['FORTULL INC', 'United States of America']];
+      const dd = (list, act) => `<div class="pdd" data-stop="1">${list.map(([n, c]) => `<div class="row" data-act="${act}" data-arg="${esc(n)}"><span class="bi">${ic('bldg', 'sm')}</span><div class="t"><b>${esc(n)}</b><span>${c === 'Mexico' ? '🇲🇽' : '🇺🇸'} ${c}</span></div><span class="ok">${ic('shield', 'sm')}</span></div>`).join('')}</div>`;
+      const methods = [['brex', 'bank', 'Bank Account', 'Brex Acc', '<i>Wire</i>····5377 · COLUMN NA BREX 🇺🇸 US'], ['ach', 'bank', 'Bank Account', 'BREX-ACH', '<i>Ach</i>····5377 · COLUMN NA BREX 🇺🇸 US'], ['eth', 'eth', 'Crypto Wallet', 'Test Eth Crypto (Nitin)', '<i>Ethereum</i>0x2F7d...cfB4'], ['trx', 'trx', 'Crypto Wallet', 'Test Tron (Nitin)', '<i>Tron</i>TCd8oo...8mbq']];
+      return head + `<div class="ocols"><div>
+        <div class="plabel">FROM</div><div class="psearch ${o.fromOpen ? 'on' : ''} ${o.from ? 'filled' : ''}" data-act="${o.from ? '' : 'fromOpen'}">${o.from ? `<span class="q">${esc(o.from)}</span><span class="x" data-act="clearFrom">✕</span>` : `<input class="q" style="border:0;outline:none;font:inherit;color:inherit;background:transparent" placeholder="Search senders by name, email, phone, country, or currency…" aria-label="Search senders" data-act="fromOpen" readonly>${ic('search', 'sm')}`}${o.fromOpen && !o.from ? dd(senders, 'pickFrom') : ''}</div>
+        <div class="plabel">TO</div><div class="psearch ${o.toOpen ? 'on' : ''} ${o.to ? 'filled' : ''}" data-act="${o.to ? '' : 'toOpen'}">${o.to ? `<span class="q">${esc(o.to)}</span><span class="x" data-act="clearTo">✕</span>` : `<input class="q" style="border:0;outline:none;font:inherit;color:inherit;background:transparent" placeholder="Search beneficiaries by name, email, phone, country, or currency…" aria-label="Search beneficiaries" value="${o.toOpen ? esc(o.toQuery) : ''}" data-act="toOpen" readonly>${ic('search', 'sm')}`}${o.toOpen && !o.to ? dd(benes, 'pickTo') : ''}</div>
+        ${o.from && o.to ? `<div class="sec-t">Payment method</div><div class="sec-d">Select how the beneficiary will receive the funds</div>
+          ${methods.map(m => `<div class="pm-opt ${o.method === m[0] ? 'on' : ''}" data-act="method" data-arg="${m[0]}"><span class="ic ${m[1]}">${ic(m[1] === 'bank' ? 'bank' : 'shield', 'sm')}</span><div class="t"><b>${m[2]}<em>${m[3]}</em></b><span>${m[4]}</span></div><span class="rb">${o.method === m[0] ? ic('check') : ''}</span></div>`).join('')}
+          <div class="sec-t" id="pay-details">Payment details</div><div class="g2">
+            <div><label class="lbl">${ic('circle', 'sm')} Purpose<i>*</i></label>${this.sel('o.purpose', o.purpose, 'Select purpose…', OPTS.opurpose)}<div class="help">Purpose is required for compliance reporting on every payment.</div></div>
+            <div><label class="lbl">${ic('bank', 'sm')} Source of funds<i>*</i></label>${this.sel('o.sof', o.sof, 'Select source…', OPTS.osof)}<div class="help">Source of funds is required for AML compliance on every payment.</div></div>
+            <div><label class="lbl">${ic('users', 'sm')} Relationship<i>*</i></label>${this.sel('o.rel', o.rel, 'Select relationship…', OPTS.orel)}<div class="help">Beneficiary relationship is required for KYC on every payment.</div></div>
+            <div><label class="lbl">Reference (optional)</label>${this.inp('o.ref', '', 'Reference', 'e.g. INV-2024-001')}</div></div>
+          <div style="font-size:13.5px;margin-top:14px;color:var(--ink2)">${ic('file', 'sm')} Supporting documents (optional)</div>` : ''}
+        <div class="ofoot"><button class="btn" data-act="oback">Back</button><button class="btn dark" data-act="toReview">Continue · review your payment next</button></div>
+      </div>${this.rSummary()}</div>`;
+    }
+    return head + `<div id="review-top" class="rcard" style="margin-top:10px"><div class="h">Payment summary</div>
+        <div class="kv"><span>You send</span><b class="mono"><span class="net" style="font-size:10.5px;background:#f1f2f4;border-radius:4px;padding:2px 6px;margin-right:8px">Ethereum</span>${fmt(o.send)} USDC</b></div><div class="kv"><span>They receive</span><b class="mono">🇺🇸 ${fmt(o.recv)} USD</b></div><div class="kv"><span>Effective rate</span><b class="mono">1 USDC = 0.9997 USD <small style="color:var(--mute)">FEES INCLUDED</small></b></div><div class="kv"><span>Transfer method</span><b>Domestic Wire · same-day, US hours</b></div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:#f1f2f4;border-radius:8px;padding:6px 10px;font-size:12.5px;margin-top:8px"><span style="color:var(--green)">●</span> Rate expires in 4m 15s</div></div>
+      <div class="rcard"><div class="h">Participants<span class="sp"></span><span class="ed">${ic('file', 'sm')} Edit</span></div>
+        <div class="party"><span class="bi">${ic('bldg', 'sm')}</span><div class="t"><small>From</small><b>${esc(o.from)}</b><span>Business · KYB Approved</span></div></div><div style="text-align:center;color:var(--ink2);margin:4px 0">↓</div>
+        <div class="party"><span class="bi">${ic('bldg', 'sm')}</span><div class="t"><small>To</small><b>${esc(o.to)}</b><span>Business · Approved</span></div></div>
+        <div class="via"><span class="bi">${ic('bank', 'sm')}</span><div class="t"><small>Via</small><b>Bank Account</b><span><i style="font-style:normal;background:#f1f2f4;border-radius:4px;padding:1px 5px;margin-right:6px">Wire</i>····5377 · COLUMN NA BREX 🇺🇸 US</span></div></div></div>
+      <div class="rcard"><div class="h">Payment details<span class="sp"></span><span class="ed">${ic('file', 'sm')} Edit</span></div><div class="kv"><span>Purpose</span><b>${esc(o.purpose)}</b></div><div class="kv"><span>Source of funds</span><b>${esc(o.sof)}</b></div><div class="kv"><span>Relationship</span><b>${esc(o.rel)}</b></div></div>
+      <div class="auth">By submitting, you authorize this payment of <b>${fmt(o.send)} USDC</b></div>
+      <div class="ofoot"><button class="btn" data-act="oback">Back</button><button class="btn dark" data-act="sendPayment">Send payment · dispatch irreversibly</button></div>`;
+  }
+  rOrderDetail() {
+    const s = this.state, o = s.o;
+    return `<div class="ohead" style="margin-bottom:14px"><span class="bk" data-act="backToOrders"><span style="transform:scaleX(-1);display:inline-flex">${ic('right', 'sm')}</span>Back to orders</span><span class="sp" style="flex:1"></span><button class="btn">${ic('refresh', 'sm')} Refresh status</button></div>
+      <div style="display:flex;align-items:center;gap:14px"><span class="pill-st"><span class="chip k">Created</span><span>next: Awaiting funds</span><span>adfb43...2609ac</span>${ic('file', 'sm')}</span><span class="sp" style="flex:1"></span><button class="btn" style="background:var(--red);color:#fff;border-color:var(--red)">Cancel order</button></div>
+      <div class="big2"><div class="bx"><small>Sending (USDC)</small><div class="v"><span class="coin c-usdc">$</span><span>${fmt(o.send)}<small>USDC</small></span></div></div><div class="ar">→</div><div class="bx"><small>Receiving (USD)</small><div class="v"><span style="font-size:30px">🇺🇸</span><span>${fmt(o.recv)}<small>USD</small></span></div></div></div>
+      <div class="dcols"><div>
+        <div class="card" style="padding:18px 22px"><h4 style="margin:0 0 6px;font-size:16px">Order info</h4><div class="kvt"><span>Order ID</span><span class="mono">adfb43...2609ac</span></div><div class="kvt"><span>Status</span><span class="chip k">Created</span></div><div class="kvt"><span>Created</span><span>Just now</span></div><div class="kvt"><span>Updated</span><span>Just now</span></div></div>
+        <div class="card" style="padding:18px 22px;margin-top:14px"><h4 style="margin:0 0 6px;font-size:16px">Parties</h4><div class="kvt"><span>Sender</span><span>${esc(o.from)}<br><span class="mono" style="color:var(--mute)">2c476d...f3c8f9</span></span></div><div class="kvt"><span>Beneficiary</span><span>${esc(o.to)}<br><span class="mono" style="color:var(--mute)">cb413c...34d2c3</span></span></div><div class="kvt"><span>Merchant</span><span>Mesta Payments LLC</span></div></div></div>
+        <div><div class="card" style="padding:18px 20px"><div style="display:flex;align-items:center"><div><h4 style="margin:0;font-size:16px">Order status</h4><div style="font-size:12px;color:var(--mute)">Live event history</div></div><span class="sp" style="flex:1"></span><span class="chip g">Live</span></div>
+          <div class="stage"><small>Current stage</small><b>Created</b><span style="font-size:12px;color:var(--mute)">Just now · in this stage 3s</span><div class="bar"><i></i></div><div class="mn">0 of 1 stages · 3s so far</div><div style="font-size:12.5px;margin-top:6px">Next: Awaiting funds</div></div>
+          <div class="tl"><span class="d"></span><div><b>Created</b><span>Just now</span></div></div></div>
+        <div class="card" style="padding:18px 20px;margin-top:14px"><h4 style="margin:0 0 8px;font-size:16px">Quick links</h4><div class="ql">${ic('user', 'sm')} View sender</div><div class="ql">${ic('users', 'sm')} View beneficiary</div><div class="ql">${ic('file', 'sm')} View quote</div></div></div></div>`;
+  }
+
+  /* ---------- mount + autoplay ---------- */
   mount() {
     this._shell = document.getElementById('shell');
     const L = document.createElement('div'); L.id = 'prompts'; L.style.display = 'none';
     L.innerHTML = '<div class="beacon"></div><div class="tip below"><svg class="ico" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z"/></svg><span></span></div>';
     this._shell.appendChild(L); this._prompts = L; this._beacon = L.firstChild; this._tip = L.lastChild; this._tipText = this._tip.lastChild;
-    const q0 = new URLSearchParams(location.search); this._play = q0.get('play') === '1' && !!DEMOS[q0.get('demo')];
+    const q = new URLSearchParams(location.search);
+    const flow = FLOWS[q.get('flow')] ? q.get('flow') : DEMO_FLOW[q.get('demo')] || 'beneficiary';
+    this.state = { ...this.state, flow };
+    this._play = q.get('play') === '1';
     const fit = () => { const k = Math.min(innerWidth / 1600, innerHeight / 900); this._k = k; this._shell.style.transform = `translate(-50%,-50%) scale(${k})`; this.placePrompt(); };
     addEventListener('resize', fit); fit();
     document.addEventListener('fullscreenchange', () => { this.renderBar(); fit(); });
     document.addEventListener('scroll', () => this.placePrompt(), true);
     this.render();
     document.addEventListener('click', e => {
-      const bar = e.target.closest('[data-bar]');
-      if (bar) return this[bar.dataset.bar]();
-      const dot = e.target.closest('[data-dot]');
-      if (dot) return this.goStep(+dot.dataset.dot);
-      const act = e.target.closest('[data-act]');
-      if (act) { e.stopPropagation(); return this.act(act.dataset.act, act.dataset.arg); }
-      if (this.state.openSel || this.state.countryOpen) this.act('closeDd');
+      const bar = e.target.closest('[data-bar]'); if (bar) return this[bar.dataset.bar]();
+      const dot = e.target.closest('[data-dot]'); if (dot) return this.goStep(+dot.dataset.dot);
+      const act = e.target.closest('[data-act]'); if (act && act.dataset.act) { e.stopPropagation(); return this.act(act.dataset.act, act.dataset.arg); }
+      if (e.target.closest('[data-stop]')) return;
+      const s = this.state; if (s.openSel || s.countryOpen || s.o.srcOpen || s.o.dstOpen || s.o.fromOpen || s.o.toOpen) this.act('closeDd');
     });
-    document.addEventListener('input', e => {
-      const k = e.target.dataset.bind; if (!k) return;
-      if (k.startsWith('m')) { const [mi, key] = k.split('.'); const i = +mi.slice(1); this.state.methods = this.state.methods.map((m, j) => j === i ? { ...m, [key]: e.target.value } : m); }
-      else this.state.form = { ...this.state.form, [k]: e.target.value };
-      this.renderBar(); this.placePrompt();
-    });
-    this.componentDidMount();
+    document.addEventListener('input', e => { const k = e.target.dataset.bind; if (!k) return; this.bindSet(k, e.target.value); this.renderBar(); this.placePrompt(); });
+    this.componentDidMount(q);
   }
-  componentDidMount() {
-    const q = new URLSearchParams(location.search), ops = DEMOS[q.get('demo')];
-    if (!ops) return;
-    const play = q.get('play') === '1';
+  componentDidMount(q) {
+    const f = this.flow(), ops = f.ops, caps = f.caps;
+    if (!(q.get('demo') || q.get('flow'))) return;
     const apply = ([op, a]) => {
       if (op === 'go') return this.goStep(a);
       if (op === 'next') return this.next();
@@ -987,43 +1360,29 @@ class Component {
       if (sc) { const el = document.querySelector(sc); el && el.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
       if (ty) this.typeInto(ty[0], ty[1]);
     };
-    if (!play) { if (ops[0][0] === 'go') apply(ops[0]); return; }
+    if (!this._play) { if (ops[0][0] === 'go') apply(ops[0]); return; }
     const cur = document.createElement('div');
     cur.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 3l14 8-6.5 1.5L9 19z" fill="#0F0F16" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>';
     Object.assign(cur.style, { position: 'absolute', left: '50%', top: '60%', zIndex: 9999, pointerEvents: 'none', transition: 'left .9s cubic-bezier(.22,1,.36,1), top .9s cubic-bezier(.22,1,.36,1)', filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.3))' });
     this._shell.appendChild(cur);
-    const ripple = (x, y) => {
-      const r = document.createElement('div');
-      Object.assign(r.style, { position: 'absolute', left: x - 18 + 'px', top: y - 18 + 'px', width: '36px', height: '36px', borderRadius: '50%', border: '3px solid #6b5bcf', zIndex: 9998, pointerEvents: 'none' });
-      this._shell.appendChild(r);
-      r.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], { duration: 500, easing: 'ease-out', fill: 'forwards' });
-      setTimeout(() => r.remove(), 600);
-    };
+    const ripple = (x, y) => { const r = document.createElement('div'); Object.assign(r.style, { position: 'absolute', left: x - 18 + 'px', top: y - 18 + 'px', width: '36px', height: '36px', borderRadius: '50%', border: '3px solid #6b5bcf', zIndex: 9998, pointerEvents: 'none' }); this._shell.appendChild(r); r.animate([{ transform: 'scale(.3)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], { duration: 500, easing: 'ease-out', fill: 'forwards' }); setTimeout(() => r.remove(), 600); };
     const cap = document.createElement('div');
     Object.assign(cap.style, { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
     this._shell.appendChild(cap);
-    const caps = CAPS[q.get('demo')] || [];
-    /* the pill's counter is the main step (1-5), not the op index */
-    const say = k => { const n = this.state.step + 1, total = this.steps().length; cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + n + '/' + total + '</span><span></span>'; cap.lastChild.textContent = caps[k] || ''; cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
-    this._cap = cap;
-    this._mult = q.get('slow') === '1' ? 1.8 : 1; this._paused = false;
+    /* the pill's counter is the main step (1-5); a caption repeated across ops is not re-animated */
+    const say = k => { const n = this.state.step + 1, total = this.steps().length, txt = caps[k] || ''; const same = cap.dataset.txt === txt; cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + n + '/' + total + '</span><span></span>'; cap.lastChild.textContent = txt; cap.dataset.txt = txt; if (!same) cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
+    this._cap = cap; this._mult = q.get('slow') === '1' ? 1.8 : 1; this._paused = false;
     const T = (fn, ms) => { this._demo = setTimeout(() => (this._paused ? (this._held = fn) : fn()), ms * this._mult); };
-    this._msg = e => {
-      const d = e.data || {}; if (d.type !== 'demo') return;
-      if ('speed' in d) this._mult = d.speed;
-      if (d.cmd === 'pause') this._paused = true;
-      if (d.cmd === 'play') { this._paused = false; const fn = this._held; this._held = null; fn && fn(); }
-      if (d.cmd === 'restart') { clearTimeout(this._demo); this._held = null; this._paused = false; run(0); }
-    };
+    this._msg = e => { const d = e.data || {}; if (d.type !== 'demo') return; if ('speed' in d) this._mult = d.speed; if (d.cmd === 'pause') this._paused = true; if (d.cmd === 'play') { this._paused = false; const fn = this._held; this._held = null; fn && fn(); } if (d.cmd === 'restart') { clearTimeout(this._demo); this._held = null; this._paused = false; run(0); } };
     addEventListener('message', this._msg);
     const run = k => {
-      if (k === 0) { Object.values(this._t).forEach(clearTimeout); this.setState({ ...INIT }); }
+      if (k === 0) { Object.values(this._t).forEach(clearTimeout); this.setState(this.freshInit()); }
       const o = ops[k], last = k === ops.length - 1, nextK = () => T(() => run(last ? 0 : k + 1), last ? 6000 : 3400);
       say(k);
       if (!o[2]) { apply(o); return nextK(); }
       const go = () => {
         const el = demoFind(o[2]);
-        if (!el) { apply(o); return nextK(); }
+        if (!el) { console.warn('demo target not found', o[2]); apply(o); return nextK(); }
         const b = this.local(el), x = b.x + Math.min(b.w / 2, 160), y = b.y + b.h / 2;
         cur.style.left = x - 5 + 'px'; cur.style.top = y - 3 + 'px';
         T(() => { ripple(x, y); cur.animate([{ transform: 'scale(1)' }, { transform: 'scale(.85)' }, { transform: 'scale(1)' }], { duration: 220 }); T(() => { apply(o); nextK(); }, 260); }, 1000);
@@ -1032,18 +1391,19 @@ class Component {
       if (pre) { pre.scrollIntoView({ block: 'center', behavior: 'smooth' }); T(go, 450); } else go();
     };
     T(() => run(0), 300);
-    this._cur = cur; this._apply = apply; this._run = run; /* debug: app._jump(k) */
-    this._jump = k => { clearTimeout(this._demo); this._held = null; this.setState({ ...INIT }); for (let i = 0; i < k; i++) apply(ops[i]); run(k); };
+    this._cur = cur; this._apply = apply; this._run = run;
+    this._jump = k => { clearTimeout(this._demo); this._held = null; this.setState(this.freshInit()); for (let i = 0; i < k; i++) apply(ops[i]); run(k); };
   }
   typeInto(key, value) {
-    const el = document.querySelector(`[data-bind="${key}"]`); if (!el) { this.setState({ form: { ...this.state.form, [key]: value } }); return; }
+    const el = document.querySelector(`[data-bind="${key}"]`); if (!el) { this.bindSet(key, value); return; }
     el.classList.add('typing'); el.focus();
-    let i = 0; const step = () => { i++; el.value = value.slice(0, i); this.state.form = { ...this.state.form, [key]: el.value }; if (i < value.length) this._t.type = setTimeout(step, 42 * this._mult); else el.classList.remove('typing'); };
+    let i = 0; const step = () => { i++; el.value = value.slice(0, i); this.bindSet(key, el.value); if (i < value.length) this._t.type = setTimeout(step, 42 * this._mult); else el.classList.remove('typing'); };
     this._t.type = setTimeout(step, 120);
   }
 }
 const app = new Component();
 app.mount();
+
 </script>
 </body>
 </html>

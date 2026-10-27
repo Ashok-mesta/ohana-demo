@@ -1,0 +1,600 @@
+{
+ "text": " Now, sender pricing. On this page, you can add custom sender pricing, specific per sender pricing. This pricing tier overrides the default pricing setup when the chosen sender processes a transaction on the portal. First, select the sender name, click on the override button, then add the tiers and pricing details for this sender. Remember, the volume from column in the first tier and the volume to column in the last tier must always be set to 0 and 1 trillion. Once you add the details, review the pricing and click on confirm and save. These custom pricing details will now appear on this page.",
+ "segments": [
+  {
+   "start": 2.2599999999999993,
+   "end": 4.36,
+   "text": " Now, sender pricing.",
+   "words": [
+    {
+     "w": " Now,",
+     "s": 2.2599999999999993,
+     "e": 3.06
+    },
+    {
+     "w": " sender",
+     "s": 3.92,
+     "e": 3.92
+    },
+    {
+     "w": " pricing.",
+     "s": 3.92,
+     "e": 4.36
+    }
+   ]
+  },
+  {
+   "start": 5.24,
+   "end": 11.26,
+   "text": " On this page, you can add custom sender pricing, specific per sender pricing.",
+   "words": [
+    {
+     "w": " On",
+     "s": 5.24,
+     "e": 5.52
+    },
+    {
+     "w": " this",
+     "s": 5.52,
+     "e": 5.68
+    },
+    {
+     "w": " page,",
+     "s": 5.68,
+     "e": 5.98
+    },
+    {
+     "w": " you",
+     "s": 6.72,
+     "e": 6.94
+    },
+    {
+     "w": " can",
+     "s": 6.94,
+     "e": 7.1
+    },
+    {
+     "w": " add",
+     "s": 7.1,
+     "e": 7.46
+    },
+    {
+     "w": " custom",
+     "s": 7.46,
+     "e": 8.22
+    },
+    {
+     "w": " sender",
+     "s": 8.22,
+     "e": 8.58
+    },
+    {
+     "w": " pricing,",
+     "s": 8.58,
+     "e": 9.02
+    },
+    {
+     "w": " specific",
+     "s": 9.76,
+     "e": 10.16
+    },
+    {
+     "w": " per",
+     "s": 10.16,
+     "e": 10.56
+    },
+    {
+     "w": " sender",
+     "s": 10.56,
+     "e": 10.88
+    },
+    {
+     "w": " pricing.",
+     "s": 10.88,
+     "e": 11.26
+    }
+   ]
+  },
+  {
+   "start": 12.2,
+   "end": 18.2,
+   "text": " This pricing tier overrides the default pricing setup when the chosen sender processes a transaction",
+   "words": [
+    {
+     "w": " This",
+     "s": 12.2,
+     "e": 12.44
+    },
+    {
+     "w": " pricing",
+     "s": 12.44,
+     "e": 12.88
+    },
+    {
+     "w": " tier",
+     "s": 12.88,
+     "e": 13.22
+    },
+    {
+     "w": " overrides",
+     "s": 13.22,
+     "e": 14.0
+    },
+    {
+     "w": " the",
+     "s": 14.0,
+     "e": 14.26
+    },
+    {
+     "w": " default",
+     "s": 14.26,
+     "e": 14.66
+    },
+    {
+     "w": " pricing",
+     "s": 14.66,
+     "e": 15.14
+    },
+    {
+     "w": " setup",
+     "s": 15.14,
+     "e": 15.52
+    },
+    {
+     "w": " when",
+     "s": 15.52,
+     "e": 16.08
+    },
+    {
+     "w": " the",
+     "s": 16.08,
+     "e": 16.28
+    },
+    {
+     "w": " chosen",
+     "s": 16.28,
+     "e": 16.58
+    },
+    {
+     "w": " sender",
+     "s": 16.58,
+     "e": 16.96
+    },
+    {
+     "w": " processes",
+     "s": 16.96,
+     "e": 17.5
+    },
+    {
+     "w": " a",
+     "s": 17.5,
+     "e": 17.76
+    },
+    {
+     "w": " transaction",
+     "s": 17.76,
+     "e": 18.2
+    }
+   ]
+  },
+  {
+   "start": 18.2,
+   "end": 19.02,
+   "text": " on the portal.",
+   "words": [
+    {
+     "w": " on",
+     "s": 18.2,
+     "e": 18.6
+    },
+    {
+     "w": " the",
+     "s": 18.6,
+     "e": 18.7
+    },
+    {
+     "w": " portal.",
+     "s": 18.7,
+     "e": 19.02
+    }
+   ]
+  },
+  {
+   "start": 19.98,
+   "end": 27.56,
+   "text": " First, select the sender name, click on the override button, then add the tiers and pricing",
+   "words": [
+    {
+     "w": " First,",
+     "s": 19.98,
+     "e": 20.34
+    },
+    {
+     "w": " select",
+     "s": 21.02,
+     "e": 21.5
+    },
+    {
+     "w": " the",
+     "s": 21.5,
+     "e": 21.72
+    },
+    {
+     "w": " sender",
+     "s": 21.72,
+     "e": 21.96
+    },
+    {
+     "w": " name,",
+     "s": 21.96,
+     "e": 22.42
+    },
+    {
+     "w": " click",
+     "s": 22.76,
+     "e": 23.2
+    },
+    {
+     "w": " on",
+     "s": 23.2,
+     "e": 23.4
+    },
+    {
+     "w": " the",
+     "s": 23.4,
+     "e": 23.52
+    },
+    {
+     "w": " override",
+     "s": 23.52,
+     "e": 23.94
+    },
+    {
+     "w": " button,",
+     "s": 23.94,
+     "e": 24.38
+    },
+    {
+     "w": " then",
+     "s": 24.88,
+     "e": 25.36
+    },
+    {
+     "w": " add",
+     "s": 25.36,
+     "e": 25.64
+    },
+    {
+     "w": " the",
+     "s": 25.64,
+     "e": 25.82
+    },
+    {
+     "w": " tiers",
+     "s": 25.82,
+     "e": 26.22
+    },
+    {
+     "w": " and",
+     "s": 26.22,
+     "e": 27.08
+    },
+    {
+     "w": " pricing",
+     "s": 27.08,
+     "e": 27.56
+    }
+   ]
+  },
+  {
+   "start": 27.56,
+   "end": 29.04,
+   "text": " details for this sender.",
+   "words": [
+    {
+     "w": " details",
+     "s": 27.56,
+     "e": 28.04
+    },
+    {
+     "w": " for",
+     "s": 28.04,
+     "e": 28.48
+    },
+    {
+     "w": " this",
+     "s": 28.48,
+     "e": 28.68
+    },
+    {
+     "w": " sender.",
+     "s": 28.68,
+     "e": 29.04
+    }
+   ]
+  },
+  {
+   "start": 30.38,
+   "end": 35.38,
+   "text": " Remember, the volume from column in the first tier and the volume to column in the last",
+   "words": [
+    {
+     "w": " Remember,",
+     "s": 30.38,
+     "e": 30.38
+    },
+    {
+     "w": " the",
+     "s": 31.04,
+     "e": 31.26
+    },
+    {
+     "w": " volume",
+     "s": 31.26,
+     "e": 31.64
+    },
+    {
+     "w": " from",
+     "s": 31.64,
+     "e": 31.92
+    },
+    {
+     "w": " column",
+     "s": 31.92,
+     "e": 32.3
+    },
+    {
+     "w": " in",
+     "s": 32.3,
+     "e": 32.74
+    },
+    {
+     "w": " the",
+     "s": 32.74,
+     "e": 32.88
+    },
+    {
+     "w": " first",
+     "s": 32.88,
+     "e": 33.16
+    },
+    {
+     "w": " tier",
+     "s": 33.16,
+     "e": 33.5
+    },
+    {
+     "w": " and",
+     "s": 33.5,
+     "e": 33.9
+    },
+    {
+     "w": " the",
+     "s": 33.9,
+     "e": 34.02
+    },
+    {
+     "w": " volume",
+     "s": 34.02,
+     "e": 34.36
+    },
+    {
+     "w": " to",
+     "s": 34.36,
+     "e": 34.56
+    },
+    {
+     "w": " column",
+     "s": 34.56,
+     "e": 34.84
+    },
+    {
+     "w": " in",
+     "s": 34.84,
+     "e": 35.02
+    },
+    {
+     "w": " the",
+     "s": 35.02,
+     "e": 35.14
+    },
+    {
+     "w": " last",
+     "s": 35.14,
+     "e": 35.38
+    }
+   ]
+  },
+  {
+   "start": 35.38,
+   "end": 38.74,
+   "text": " tier must always be set to 0 and 1 trillion.",
+   "words": [
+    {
+     "w": " tier",
+     "s": 35.38,
+     "e": 35.78
+    },
+    {
+     "w": " must",
+     "s": 35.78,
+     "e": 36.3
+    },
+    {
+     "w": " always",
+     "s": 36.3,
+     "e": 36.86
+    },
+    {
+     "w": " be",
+     "s": 36.86,
+     "e": 37.14
+    },
+    {
+     "w": " set",
+     "s": 37.14,
+     "e": 37.36
+    },
+    {
+     "w": " to",
+     "s": 37.36,
+     "e": 37.6
+    },
+    {
+     "w": " 0",
+     "s": 37.6,
+     "e": 37.9
+    },
+    {
+     "w": " and",
+     "s": 37.9,
+     "e": 38.18
+    },
+    {
+     "w": " 1",
+     "s": 38.18,
+     "e": 38.52
+    },
+    {
+     "w": " trillion.",
+     "s": 38.52,
+     "e": 38.74
+    }
+   ]
+  },
+  {
+   "start": 39.86,
+   "end": 44.74,
+   "text": " Once you add the details, review the pricing and click on confirm and save.",
+   "words": [
+    {
+     "w": " Once",
+     "s": 39.86,
+     "e": 40.12
+    },
+    {
+     "w": " you",
+     "s": 40.12,
+     "e": 40.32
+    },
+    {
+     "w": " add",
+     "s": 40.32,
+     "e": 40.56
+    },
+    {
+     "w": " the",
+     "s": 40.56,
+     "e": 40.74
+    },
+    {
+     "w": " details,",
+     "s": 40.74,
+     "e": 41.28
+    },
+    {
+     "w": " review",
+     "s": 41.84,
+     "e": 42.06
+    },
+    {
+     "w": " the",
+     "s": 42.06,
+     "e": 42.24
+    },
+    {
+     "w": " pricing",
+     "s": 42.24,
+     "e": 42.58
+    },
+    {
+     "w": " and",
+     "s": 42.58,
+     "e": 43.42
+    },
+    {
+     "w": " click",
+     "s": 43.42,
+     "e": 43.62
+    },
+    {
+     "w": " on",
+     "s": 43.62,
+     "e": 43.84
+    },
+    {
+     "w": " confirm",
+     "s": 43.84,
+     "e": 44.16
+    },
+    {
+     "w": " and",
+     "s": 44.16,
+     "e": 44.44
+    },
+    {
+     "w": " save.",
+     "s": 44.44,
+     "e": 44.74
+    }
+   ]
+  },
+  {
+   "start": 45.76,
+   "end": 49.66,
+   "text": " These custom pricing details will now appear on this page.",
+   "words": [
+    {
+     "w": " These",
+     "s": 45.76,
+     "e": 46.08
+    },
+    {
+     "w": " custom",
+     "s": 46.08,
+     "e": 46.5
+    },
+    {
+     "w": " pricing",
+     "s": 46.5,
+     "e": 46.84
+    },
+    {
+     "w": " details",
+     "s": 46.84,
+     "e": 47.4
+    },
+    {
+     "w": " will",
+     "s": 47.4,
+     "e": 48.04
+    },
+    {
+     "w": " now",
+     "s": 48.04,
+     "e": 48.32
+    },
+    {
+     "w": " appear",
+     "s": 48.32,
+     "e": 48.78
+    },
+    {
+     "w": " on",
+     "s": 48.78,
+     "e": 49.12
+    },
+    {
+     "w": " this",
+     "s": 49.12,
+     "e": 49.36
+    },
+    {
+     "w": " page.",
+     "s": 49.36,
+     "e": 49.66
+    }
+   ]
+  }
+ ]
+}

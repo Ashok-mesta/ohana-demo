@@ -1,6 +1,7 @@
 # Ohana click-through demos
 
-Interactive, captioned walkthroughs of Ohana (Mesta's payments product), built the way the
+Interactive, captioned walkthroughs of Ohana (Mesta's payments product): Create a Beneficiary,
+Create a Sender and Create a Payment Order,, built the way the
 AiPrise Token Sharing demo is built: the product UI is rebuilt as stateful HTML, and one step
 list drives the fake cursor, the ripple clicks, the caption pill and the screen changes. Because
 cursor, caption and screen all come from the same op, they cannot drift apart.
@@ -17,10 +18,11 @@ mesta-logo.svg    Mesta wordmark (inlined into prototype.html at the top of the 
 
 | URL | What it does |
 |---|---|
-| `prototype.html` | self-service prototype: click the real buttons; a pulsing ring and a label mark the exact element to use next, and the presenter bar advances when a substep's `done()` is true |
-| `prototype.html?demo=1` | same, but a static preview for thumbnails |
-| `prototype.html?demo=1&play=1` | guided demo: cursor, ripple, captions, loops after the last op |
-| `prototype.html?demo=1&play=1&slow=1` | guided demo at 1.8x the hold times |
+| `prototype.html?flow=beneficiary` | self-service prototype: click the real buttons; a pulsing ring and a label mark the exact element to use next, and the presenter bar advances when a substep's `done()` is true |
+| `prototype.html?flow=sender` / `?flow=order` | the other two flows, same shell |
+| `prototype.html?flow=sender&play=1` | guided demo: cursor, ripple, captions, loops after the last op |
+| `prototype.html?flow=order&play=1&slow=1` | guided demo at 1.8x the hold times |
+| `prototype.html?demo=1` (2, 3) | legacy aliases for beneficiary / sender / order; `&demo=1` without `play` is a static preview for thumbnails |
 
 The page is a fixed 1600x900 design that scales itself to fill whatever window or iframe it is in,
 and the presenter bar has a Full screen button (Fullscreen API; inside an iframe it asks the parent).
@@ -33,10 +35,12 @@ Run locally with any static server, e.g. `python3 -m http.server 8765` in this f
 
 ## How a demo is wired
 
-Everything lives in the `<script>` of `prototype.html`:
+Everything lives in the `<script>` of `prototype.html`. `FLOWS` is the registry: one entry per flow
+(`beneficiary`, `sender`, `order`) holding its `title`, `steps(c)`, `ops` and `caps`; `?flow=` picks one.
 
-1. **`INIT`** - the state object (`screen`, `entity`, `country`, `upload`, `form`, `methods`, `modal`, ...).
-2. **`steps()`** - five main steps, each with nested substeps:
+1. **`INIT`** - the shared state object (`screen`, `entity`, `country`, `upload`, `form`, `methods`, `modal`, ...)
+   plus per-flow sub-objects (`sf` for the sender form, `o` for the order).
+2. **`steps(c)`** - five main steps, each with nested substeps:
    `{ title, screen, doneIf?, subs: [{ t, target, say, act(state), done(state) }] }`.
    - `target` is the on-screen element the viewer must use (same label syntax as the demo ops;
      `bar: true` allows a presenter-bar button such as "Do it for me").
@@ -64,7 +68,7 @@ Everything lives in the `<script>` of `prototype.html`:
 Timing (from the reference): the cursor travels 0.9s, waits 1.0s, clicks (ripple + press squash),
 the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from a fresh `INIT`.
 
-## Adding demo 2 (Create a Sender) and demo 3 (Create a Payment Order)
+## Adding another flow
 
 1. **Pull the screens from the footage.** Extract one frame every 2s from the approved MP4
    (`ffmpeg -i video.mp4 -vf fps=1/2 frames/f_%03d.jpg`), tile them into a contact sheet, and list
@@ -81,11 +85,12 @@ the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from 
 4. **Transcribe the narration.** `python3 transcribe.py "Sender- OHANA.mp4" out.json` with whisper
    `small.en` (word timestamps on), fix "Ojana" -> "Ohana", then split each sentence into short
    chunks: one chunk per click, `set` ops with no target for explanatory chunks.
-5. **Write `DEMOS[2]` and `CAPS[2]`** (same length). Every click target must be unique text on
+5. **Write the flow's `ops` and `caps`** (same length) in its `FLOWS` entry. Every click target must be unique text on
    that screen among `cursor:pointer` elements; prefix with `=` when a longer label shares a prefix.
-6. **Embed it.** In `index.html` add a second frame (`prototype.html?demo=2`) and a step list, or
-   turn the demo picker into a `<select>` like the reference's "Demo layout" section.
-7. Open `prototype.html?demo=2&play=1`, watch a full loop, and check the console is clean.
+6. **Embed it.** Add an entry to `DEMOS` in `index.html` (title, intro, the five steps with substeps);
+   the gallery, thumbnails and the shared lightbox are generated from it.
+7. Open `prototype.html?flow=<key>&play=1`, watch a full loop, and check the console is clean
+   (a missing click target logs `demo target not found`).
 
 ## Publishing to GitHub Pages
 
