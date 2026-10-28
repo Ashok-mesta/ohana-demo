@@ -1,4 +1,3 @@
-document.documentElement.className = 'js';
 const DEMOS = [
   { flow: 'beneficiary', group: 'Ohana', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
     ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']], ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
@@ -27,46 +26,38 @@ const DEMOS = [
 ];
 const GROUP = { 'Ohana': 'ohana', 'Portal Studio': 'portal', 'Aloha · sender portal': 'aloha' };
 const BEATS = { beneficiary: 33, sender: 33, order: 30, 'portal-setup': 45, 'portal-default': 14, 'portal-sender': 13, 'portal-senders': 8, 'aloha-register': 43, 'aloha-wallet': 17, 'aloha-account': 13, 'aloha-beneficiary': 22, 'aloha-payment': 74 };
-const BUILD = 'v' + 20261028 + 'b'; /* bump to bypass the Pages/browser cache for the embedded prototype */
-const mins = b => { const m = Math.round(b * 5.3 / 60); return m <= 1 ? 'about a minute' : `about ${m} min`; };
-const PRODUCT = document.body.dataset.product || '';
-const SHOWN = PRODUCT ? DEMOS.filter(d => GROUP[d.group] === PRODUCT) : DEMOS;
+const BUILD = 'v' + 20261028 + 'c'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+const mins = b => Math.max(1, Math.round(b * 5.3 / 60));
 const $ = id => document.getElementById(id);
-let mode = 'guided';
-try { mode = localStorage.getItem('demo-mode') === 'self' ? 'self' : 'guided'; } catch (e) {}
+const PRODUCT = document.body.dataset.product || '';
+const ICON = {
+  play: '<svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  steps: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h6"/></svg>',
+  hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l12 7-5 1.5L10 17z"/></svg>'
+};
 
-/* home: the demo titles inside each product door */
-document.querySelectorAll('[data-door-list]').forEach(ul => {
-  ul.innerHTML = DEMOS.filter(d => GROUP[d.group] === ul.dataset.doorList).map(d => `<li>${d.title}<span>· ${mins(BEATS[d.flow])}</span></li>`).join('');
+/* home: demo lists inside the product cards */
+document.querySelectorAll('[data-list]').forEach(ul => {
+  ul.innerHTML = DEMOS.filter(d => GROUP[d.group] === ul.dataset.list).map(d => `<li>${d.title}<span>${mins(BEATS[d.flow])} min</span></li>`).join('');
 });
 
-/* product page: only that product's demos */
-if ($('demos')) $('demos').innerHTML = SHOWN.map((d, i) => `<article class="item reveal" style="--i:${i % 2}" id="d-${d.flow}">
-  <button class="tile ${GROUP[d.group]}" data-open="${d.flow}" aria-label="Open ${d.title}"><span class="shot"><img src="assets/stills/${d.flow}.jpg" width="800" height="450" alt="${d.title}: a frame from the demo" loading="lazy"></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-  <h3>${d.title}</h3><p class="fact">Five steps · ${BEATS[d.flow]} beats · ${mins(BEATS[d.flow])}</p><p class="intro2">${d.intro}</p><p class="alt"><button data-open="${d.flow}" data-alt="1"></button></p>
-</article>`).join('');
-
-const QA = [
-  ['Share', 'How do I share a demo?', 'Send this page, or open a demo and press Copy link in the bottom bar: the link opens that demo full screen on its own, no sign-in and nothing to install.'],
-  ['Full screen', 'Why does every demo open full screen?', 'A demo on a call should fill the screen whether it plays itself or you drive it. The frame is 16:9 and scales to any window. Press Esc, or Close in the bottom bar, to come back.'],
-  ['Speed', 'What do Pause, Slow and Restart do?', 'Pause holds the cursor where it is and Play resumes. Slow keeps every beat on screen 1.8 times longer, for narrating over it. Restart replays from the first beat.'],
-  ['Data', 'Whose data is on screen?', 'Demo data only. The account is Ashok at ashok@mesta.xyz. Nothing is live and nothing is submitted; the verification steps are played by the demo itself.']
-];
-if ($('cards')) {
-  $('cards').innerHTML = QA.map((q, i) => `<div class="card reveal c-${['ink', 'gold', 'cyan'][i % 3]} ${i === 0 ? 'open' : ''}" style="--x:calc(var(--step) * ${i})"><span class="tab">${q[0]}</span><button class="q" aria-expanded="${i === 0}" data-card="${i}"><span>${q[1]}</span><span class="st">${i === 0 ? 'Close' : 'Open'}</span></button><div class="a">${q[2]}</div></div>`).join('');
-  $('cards').addEventListener('click', e => { const b = e.target.closest('[data-card]'); if (!b) return; const i = +b.dataset.card; [...document.querySelectorAll('.card')].forEach((c, j) => { c.classList.toggle('open', j === i); c.querySelector('.q').setAttribute('aria-expanded', j === i); c.querySelector('.st').textContent = j === i ? 'Close' : 'Open'; }); });
+/* product page: its demos */
+const shown = DEMOS.filter(d => GROUP[d.group] === PRODUCT);
+if ($('demos')) {
+  $('demos').innerHTML = shown.map((d, i) => `<article class="demo" id="d-${d.flow}">
+    <button class="thumb" data-open="${d.flow}" data-mode="guided" aria-label="Watch ${d.title}"><img src="assets/stills/${d.flow}.jpg" width="800" height="450" alt="" loading="lazy"><span class="play">${ICON.play}</span></button>
+    <div class="body"><div class="num">Demo ${i + 1} of ${shown.length}</div><h3>${d.title}</h3><p class="desc">${d.intro}</p>
+      <div class="facts"><span>${ICON.steps}5 steps</span><span>${ICON.clock}About ${mins(BEATS[d.flow])} min</span></div>
+      <div class="acts"><button class="btn btn-primary btn-sm" data-open="${d.flow}" data-mode="guided">${ICON.play}Watch</button><button class="btn btn-secondary btn-sm" data-open="${d.flow}" data-mode="self">Try it yourself</button></div></div>
+  </article>`).join('');
+  if (shown.length === 4) $('demos').classList.add('two');
+  const total = shown.reduce((a, d) => a + mins(BEATS[d.flow]), 0);
+  if ($('m-count')) $('m-count').textContent = shown.length;
+  if ($('m-time')) $('m-time').textContent = total + ' min';
 }
 
-const setMode = m => {
-  mode = m; try { localStorage.setItem('demo-mode', m); } catch (e) {}
-  if ($('mode')) $('mode').dataset.mode = m;
-  if ($('modeword')) $('modeword').textContent = m === 'self' ? 'Try' : 'Watch';
-  document.querySelectorAll('.switch button').forEach(b => { const on = b.dataset.set === m; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-  document.querySelectorAll('[data-alt]').forEach(b => { b.textContent = m === 'self' ? 'or watch it with captions' : 'or try it yourself'; });
-};
-const sw = document.querySelector('.switch'); if (sw) sw.addEventListener('click', e => { const b = e.target.closest('[data-set]'); if (b) setMode(b.dataset.set); });
-setMode(mode);
-
+/* lightbox */
 const lb = $('lb');
 if (lb) {
   const lbf = $('lbf'), lbplay = $('lbplay');
@@ -77,16 +68,12 @@ if (lb) {
   const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
   const open = (g, f) => {
     guided = g; flow = f; paused = false; lb.hidden = false; lbf.src = src();
-    const d = DEMOS.find(x => x.flow === f); $('lbt').textContent = d.title + (g ? ' · guided' : ' · hands-on');
-    lbplay.style.display = g ? '' : 'none'; $('lbspeed').style.display = g ? '' : 'none'; $('lbspeedl').style.display = g ? '' : 'none';
+    const d = DEMOS.find(x => x.flow === f); $('lbt').textContent = d.title + (g ? ' · Guided' : ' · Try it yourself');
+    [lbplay, $('lbspeed'), $('lbspeedl')].forEach(el => { el.style.display = g ? '' : 'none'; });
     lbplay.textContent = 'Pause'; goFull();
   };
   const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
-  document.addEventListener('click', e => {
-    const t = e.target.closest('[data-open]'); if (!t) return; e.preventDefault();
-    const alt = t.hasAttribute('data-alt'), force = t.dataset.force;
-    open(force ? force === 'guided' : alt ? mode === 'self' : mode === 'guided', t.dataset.open);
-  });
+  document.addEventListener('click', e => { const t = e.target.closest('[data-open]'); if (!t) return; e.preventDefault(); open(t.dataset.mode !== 'self', t.dataset.open); });
   $('lbclose').onclick = close;
   $('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
   lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };
@@ -96,14 +83,8 @@ if (lb) {
   $('lbcopy').onclick = async () => { const b = $('lbcopy'); try { await navigator.clipboard.writeText(shareUrl()); b.textContent = 'Link copied'; } catch (e) { b.textContent = shareUrl(); } setTimeout(() => { b.textContent = 'Copy link'; }, 1800); };
   addEventListener('message', e => { const d = e.data || {}; if (d.type === 'demo' && d.cmd === 'fullscreen' && !lb.hidden) goFull(); });
   addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden && !document.fullscreenElement) close(); });
-  document.addEventListener('fullscreenchange', () => { $('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : '⤢ Full screen'; });
-  /* page.html#flow lands on that demo's tile */
+  document.addEventListener('fullscreenchange', () => { $('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen'; });
   const h = location.hash.slice(1); if (h && $('d-' + h)) setTimeout(() => $('d-' + h).scrollIntoView({ block: 'center' }), 200);
 }
 
 fetch('mesta-logo.svg').then(r => r.text()).then(t => { const s = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); document.querySelectorAll('.logo-slot').forEach(el => { el.innerHTML = s; }); }).catch(() => {});
-
-const arrive = () => { document.querySelectorAll('.shutter').forEach(x => x.classList.add('is-in')); const h1 = $('h1'); if (h1) h1.classList.add('is-in'); };
-requestAnimationFrame(() => requestAnimationFrame(arrive)); setTimeout(arrive, 120);
-const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } }), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-document.querySelectorAll('.reveal').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); else io.observe(el); });
