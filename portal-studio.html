@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Portal Studio demos · set up the white-label sender portal</title>
+<meta name="description" content="Set up the white-label sender portal: branding and URL, default pricing, per-sender pricing and inviting senders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-product="portal">
+<section class="hero">
+  <div class="field">
+    <div class="bar"><a class="mark" href="index.html" aria-label="Mesta home"><span class="logo-slot"></span></a><nav><a href="ohana.html">Ohana</a><a href="portal-studio.html" class="on" aria-current="page">Portal Studio</a><a href="aloha.html">Aloha</a></nav></div>
+    <h1 id="h1">Portal<br>Studio</h1><p class="under">Click-through demos of Portal Studio in Ohana.</p>
+    <figure class="scrap shutter"><img src="assets/hero-portal.jpg" width="1600" height="900" alt="Portal Studio: branding, colours and the live preview"></figure>
+    <a class="back" href="index.html">← All products</a>
+  </div>
+  <div class="band"><p>Set up the white-label sender portal: branding and URL, default pricing, per-sender pricing and inviting senders.</p><a class="act" href="#programme">See the demos</a></div>
+</section>
+
+<section class="mode" id="mode" data-mode="guided">
+  <div class="copy reveal"><h2><span id="modeword">Watch</span> each demo</h2><p>This switch sets how every demo below opens: a captioned playthrough you can pause and slow down, or the live prototype with a pulsing prompt on the exact element to use next.</p></div>
+  <div class="switch" data-ui role="group" aria-label="How every demo opens"><button class="on" data-set="guided" aria-pressed="true">Guided</button><button data-set="self" aria-pressed="false">Hands-on</button></div>
+</section>
+
+<section class="programme" id="programme"><div class="wrap g12">
+  <div class="lead reveal"><h2>Portal Studio demos</h2><p>Four demos of the Portal Studio tab in Ohana, five steps each. Every one opens full screen; Esc brings you back.</p></div>
+  <div class="tiles" id="demos"></div>
+</div></section>
+
+<section class="faq" id="questions"><div class="wrap g12"><div class="inner">
+  <h2 class="reveal">Questions</h2>
+  <div class="cards" id="cards"></div>
+</div></div></section>
+
+<a class="play" href="prototype.html?flow=portal-setup&play=1" data-open="portal-setup" data-force="guided"><p>Opens Set up your portal full screen with captions. Esc brings you back here.</p><svg class="arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38 38 10M14 10h24v24"/></svg><span class="word">Play</span></a>
+
+<footer><div class="wrap g12">
+  <div class="top"><h2>Questions about Portal Studio?</h2><a class="act" href="mailto:support@mesta.xyz?subject=Ohana%20and%20Aloha%20demos">Write to the account team</a></div>
+  <div class="links"><a href="index.html">All products</a><a href="ohana.html">Ohana demos</a><a href="portal-studio.html">Portal Studio demos</a><a href="aloha.html">Aloha demos</a><a href="https://github.com/Ashok-mesta/ohana-demo" target="_blank" rel="noopener">GitHub repository</a></div>
+</div>
+  <div class="legal"><span>Built from the product UI · demo data only · the account on screen is ashok@mesta.xyz</span><span>Mesta · 2026</span></div>
+  <div class="mark" aria-hidden="true"><span class="logo-slot"></span></div>
+</footer>
+
+<div class="lb" id="lb" hidden>
+  <iframe id="lbf" title="Demo" allow="fullscreen" allowfullscreen></iframe>
+  <div class="lbc">
+    <span class="ttl" id="lbt">Demo</span>
+    <button class="btn p" id="lbplay">Pause</button>
+    <button class="btn" id="lbrestart">Restart</button>
+    <span class="lbl" id="lbspeedl">Speed</span>
+    <div class="seg" id="lbspeed"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
+    <button class="btn" id="lbcopy">Copy link</button>
+    <span class="sp"></span>
+    <button class="btn" id="lbfs">⤢ Full screen</button>
+    <button class="btn" id="lbclose">Close</button>
+  </div>
+</div>
+<script src="site.js"></script>
+</body>
+</html>

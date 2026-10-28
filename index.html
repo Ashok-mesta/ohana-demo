@@ -4,383 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:,">
-<title>Now showing · Ohana &amp; Aloha demos</title>
-<meta name="description" content="Twelve click-through demos of the Ohana merchant dashboard, Portal Studio and the Aloha sender portal. Watch each one with captions, or try it yourself with a prompt on the next element.">
+<title>Product demos · Ohana, Portal Studio & Aloha</title>
+<meta name="description" content="Click-through demos of three Mesta products: Ohana, Portal Studio and the Aloha sender portal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0A0A0B; --ink2:#16161A; --ink3:#1F1F24; --cream:#F7F5EE; --paper:#FEFDF8;
-  --gold:#B08D57; --gold-deep:#9E7B45; --cyan:#0EA5E9; --cyan-deep:#0B7DB0;
-  --soft:#5A5547; --cream-soft:rgba(247,245,238,.66);
-  --m:24px; --max:1240px;
-  --t-s:13px; --t-b:17px; --t-m:20px; --t-h:clamp(34px,4vw,56px);
-  --ease:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.65,0,.35,1);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-color:var(--ink2) var(--cream)}
-body{margin:0;overflow-x:clip;background:var(--cream);color:var(--ink);font:400 var(--t-b)/1.5 'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums;caret-color:var(--gold-deep)}
-::selection{background:var(--gold);color:var(--ink)}
-::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:var(--ink2);border:3px solid var(--cream)}
-:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
-h1,h2,h3,p{margin:0}
-svg{display:block}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--m)}
-.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-
-/* ===== hero: flush-left shout, seam picture ===== */
-.hero{height:100svh;min-height:640px;display:grid;grid-template-rows:82% 18%;overflow:hidden}
-.hero .field{position:relative;background:var(--ink);color:var(--cream);overflow:visible}
-.hero .bar{position:absolute;left:var(--m);right:var(--m);top:22px;display:flex;align-items:center;gap:24px;z-index:3}
-.hero .bar .mark svg{height:28px;width:auto;color:var(--cream)}
-.hero .bar nav{margin-left:auto;display:flex;gap:28px;font-size:var(--t-b);font-weight:500}
-.hero .bar nav a{padding:6px 0;border-bottom:2px solid transparent;transition:border-color .25s var(--ease)}
-.hero .bar nav a:hover{border-bottom-color:var(--gold)}
-.hero h1{position:absolute;left:var(--m);top:16%;width:62%;font:900 clamp(80px,12vw,190px)/.84 'Fraunces',serif;font-variation-settings:'opsz' 144;letter-spacing:-.035em;text-wrap:balance;z-index:1}
-.hero .scrap{position:absolute;left:47%;top:-9%;height:112%;aspect-ratio:3/4;margin:0;transform:rotate(5deg);border-radius:50% 50% 0 0 / 38% 38% 0 0;overflow:hidden;background:var(--ink3);z-index:2}
-.hero .scrap img{width:100%;height:100%;object-fit:cover;display:block}
-.hero .band{background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--m)}
-.hero .band p{font-size:var(--t-m);line-height:1.35;max-width:40ch;text-wrap:pretty}
-.hero .under{display:none}
-.act{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--cream);font-size:var(--t-m);font-weight:600;padding:18px 28px;white-space:nowrap;transition:background .2s var(--ease),color .2s var(--ease)}
-.act:hover{background:var(--cream);color:var(--ink)}
-
-/* ===== mode: one control, blown up ===== */
-.mode{position:relative;min-height:92svh;overflow:hidden;background:var(--cyan);color:var(--ink);padding:56px var(--m);transition:background .35s var(--ease)}
-.mode[data-mode="self"]{background:var(--gold)}
-.mode h2{font-size:var(--t-h);font-weight:700;letter-spacing:-.025em;line-height:1.05;max-width:12ch}
-.mode p{margin-top:16px;max-width:44ch;font-size:var(--t-b)}
-.switch{--u:min(46vh,24vw);position:absolute;right:calc(var(--u) * -.3);bottom:calc(var(--u) * -.2);height:var(--u);display:flex;padding:calc(var(--u) * .07);gap:calc(var(--u) * .04);border-radius:999px;background:rgba(10,10,11,.14)}
-.switch button{height:100%;padding:0 calc(var(--u) * .34);border-radius:999px;font-size:calc(var(--u) * .22);font-weight:600;letter-spacing:-.025em;white-space:nowrap;color:var(--ink);transition:background .25s var(--ease),color .25s var(--ease)}
-.switch button:hover{background:rgba(10,10,11,.1)}
-.switch button.on{background:var(--ink);color:var(--cream)}
-.switch button.on:hover{background:var(--ink)}
-
-/* ===== programme: specimens on colour tiles ===== */
-.programme{padding:112px 0 96px}
-.programme .lead{grid-column:1/4}
-.programme .lead h2{font-size:clamp(32px,3vw,44px);font-weight:700;letter-spacing:-.025em;line-height:1.05}
-.programme .lead p{margin-top:16px;max-width:30ch;font-size:var(--t-b)}
-.programme .lead .key{margin-top:28px;display:flex;flex-direction:column;gap:10px;font-size:var(--t-b)}
-.programme .lead .key span{display:flex;align-items:center;gap:10px}
-.programme .lead .key i{width:14px;height:14px;display:inline-block;flex:none}
-.tiles{grid-column:4/13;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 10px}
-.item h3{margin-top:14px;font-size:var(--t-m);font-weight:500;letter-spacing:-.01em;line-height:1.25}
-.item .fact{margin-top:4px;font-size:var(--t-b);color:var(--soft)}
-.item .alt{margin-top:6px;font-size:var(--t-b)}
-.item .alt button{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold-deep);text-decoration-thickness:1.5px}
-.item .alt button:hover{text-decoration-color:var(--ink)}
-.tile{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;text-align:left}
-.tile.ohana{background:var(--ink2)}.tile.portal{background:var(--gold)}.tile.aloha{background:var(--cyan)}
-.tile .shot{position:absolute;left:6%;width:88%;top:50%;transform:translateY(-50%);aspect-ratio:16/9;overflow:hidden;background:#0f1014}
-.tile .shot img{position:absolute;inset:0;width:100%;height:100%;display:block}
-.tile .go{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--cream);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:transform .35s var(--ease),background .2s var(--ease)}
-.tile .go svg{width:22px;height:22px;margin-left:3px;fill:currentColor}
-.tile:hover .go,.tile:focus-visible .go{transform:scale(1.12);background:#fff}
-
-/* ===== figure: one number owns the screen ===== */
-.figure{background:var(--ink);color:var(--cream);min-height:90svh;display:grid;grid-template-rows:auto 1fr auto;padding:56px var(--m) 48px}
-.figure h2{font-size:var(--t-h);font-weight:600;letter-spacing:-.02em;line-height:1.1}
-.figure .num{align-self:end;font:700 clamp(180px,23vw,380px)/.8 'Geist',sans-serif;letter-spacing:-.05em;display:inline-flex;align-items:flex-start;width:max-content}
-.figure .num sup{font-size:.25em;line-height:1;margin-top:.12em;margin-left:.06em;font-weight:500;letter-spacing:-.02em;vertical-align:top}
-.figure .cap{margin-top:28px;max-width:32ch;font-size:var(--t-b);line-height:1.5;color:var(--cream-soft)}
-.figure .src{margin-top:24px;text-align:right;font-size:var(--t-s);color:var(--cream-soft)}
-
-/* ===== questions: tabbed index cards ===== */
-.faq{padding:112px 0 120px}
-.faq .inner{grid-column:3/11}
-.faq h2{font-size:var(--t-h);font-weight:700;letter-spacing:-.025em;line-height:1.05;margin-bottom:40px}
-.cards{display:flex;flex-direction:column}
-.card{--tab:200px;--step:min(120px,calc((100% - 200px) / 4));position:relative;margin-top:-40px;padding-top:40px;clip-path:polygon(var(--x) 0,calc(var(--x) + var(--tab)) 0,calc(var(--x) + var(--tab)) 40px,100% 40px,100% 100%,0 100%,0 40px,var(--x) 40px)}
-.card:first-child{margin-top:0}
-.card.c-ink{background:var(--ink);color:var(--cream)}.card.c-gold{background:var(--gold);color:var(--ink)}.card.c-cyan{background:var(--cyan);color:var(--ink)}
-.card .tab{position:absolute;top:0;left:var(--x);width:var(--tab);height:40px;display:flex;align-items:center;padding:0 20px;white-space:nowrap;font-size:var(--t-b);font-weight:500}
-.card .q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;min-height:56px;font-size:var(--t-m);font-weight:500;text-align:left;line-height:1.3}
-.card .q .st{flex:none;font-size:var(--t-b);font-weight:500;opacity:.75}
-.card .a{display:none;padding:0 22px 64px;max-width:50ch;font-size:var(--t-b);line-height:1.5}
-.card.open .a{display:block}
-.card .a a{text-decoration:underline;text-underline-offset:3px}
-.card:not(.open){padding-bottom:40px}
-
-/* ===== play: one word is the button ===== */
-.play{position:relative;display:block;height:66svh;min-height:420px;overflow:hidden;background:var(--gold);color:var(--ink);border-radius:8vw 8vw 0 0;transition:background .15s,color .15s}
-.play:hover,.play:focus-visible{background:var(--ink);color:var(--gold)}
-.play p{position:absolute;left:var(--m);top:28px;max-width:40ch;font-size:var(--t-m);line-height:1.35}
-.play .arrow{position:absolute;right:var(--m);top:28px;width:48px;height:48px;stroke:currentColor;stroke-width:2.2;fill:none}
-.play .word{position:absolute;left:var(--m);right:var(--m);bottom:24px;font:900 min(44vw,48svh)/.78 'Fraunces',serif;font-variation-settings:'opsz' 144;letter-spacing:-.045em;white-space:nowrap;text-align:left}
-
-/* ===== footer: invitation over a cropped name ===== */
-footer{position:relative;background:var(--ink);color:var(--cream);min-height:86svh;overflow:hidden;padding:88px 0 0}
-footer .top{grid-column:1/8}
-footer .top h2{font:700 var(--t-h)/1 'Fraunces',serif;font-variation-settings:'opsz' 144;letter-spacing:-.025em;max-width:11ch}
-footer .top .act{margin-top:32px;background:var(--cream);color:var(--ink)}
-footer .top .act:hover{background:var(--gold);color:var(--ink)}
-footer .links{grid-column:10/13;display:flex;flex-direction:column;gap:12px;font-size:var(--t-b)}
-footer .links a{width:max-content;border-bottom:1.5px solid transparent;transition:border-color .2s}
-footer .links a:hover{border-bottom-color:var(--gold)}
-footer .mark{position:absolute;left:var(--m);right:0;bottom:0;width:30vw;transform:translateY(30%);color:var(--cream);white-space:nowrap}
-footer .mark svg{width:30vw;height:auto}
-footer .legal{position:absolute;left:var(--m);right:var(--m);bottom:calc(30vw * .55 * .7 + 24px);display:flex;justify-content:space-between;gap:24px;font-size:var(--t-s);color:var(--cream-soft)}
-
-/* ===== lightbox (unchanged behaviour) ===== */
-.lb{position:fixed;inset:0;z-index:50;background:var(--ink);display:flex;flex-direction:column}
-.lb[hidden]{display:none}
-.lb iframe{flex:1;width:100%;border:0;background:var(--ink)}
-.lbc{flex:none;height:60px;display:flex;align-items:center;gap:8px;padding:0 16px;background:var(--ink);color:var(--cream)}
-.lbc .ttl{font-weight:600;font-size:var(--t-b);margin-right:12px}
-.lbc .btn{border-radius:999px;padding:9px 18px;font-size:var(--t-b);font-weight:500;background:rgba(247,245,238,.12);color:var(--cream);transition:background .2s}
-.lbc .btn:hover{background:rgba(247,245,238,.22)}
-.lbc .btn.p{background:var(--gold);color:var(--ink)}
-.lbc .btn.p:hover{background:#c9a56a}
-.lbc .lbl{font-size:var(--t-b);color:var(--cream-soft)}
-.lbc .sp{flex:1}
-.seg{display:flex;gap:3px;background:rgba(247,245,238,.12);border-radius:999px;padding:3px}
-.seg button{border-radius:999px;padding:6px 14px;font-size:var(--t-b);font-weight:500;color:var(--cream)}
-.seg button.on{background:var(--cream);color:var(--ink)}
-
-/* ===== motion ===== */
-.shutter{overflow:hidden}
-@media (prefers-reduced-motion:no-preference){
-  .js .shutter{clip-path:inset(0 0 100% 0);transition:clip-path 1100ms var(--ease-io)}
-  .js .shutter img{transform:scale(1.12);transition:transform 1500ms var(--ease)}
-  .js .shutter.is-in{clip-path:inset(0)}
-  .js .shutter.is-in img{transform:none}
-  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .9s var(--ease)}
-  .js .reveal.is-in{opacity:1;transform:none}
-  .js .item.reveal{transition-delay:calc(var(--i) * 60ms)}
-  .js .card.reveal:not(.is-in){transform:translateX(-28px)}
-  .js .figure .num.reveal:not(.is-in){transform:translateY(40px)}
-  .js .hero h1{opacity:0;transform:translateY(12px);transition:opacity .9s var(--ease) .2s,transform 1.1s var(--ease) .2s}
-  .js .hero h1.is-in{opacity:1;transform:none}
-}
-
-/* ===== phone ===== */
-@media (max-width:760px){
-  :root{--m:16px}
-  .g12{display:block}
-  .hero{grid-template-rows:78% 22%;min-height:600px}
-  .hero .bar nav{gap:16px;font-size:16px}
-  .hero .bar nav a:nth-child(2){display:none}
-  .hero h1{top:12%;width:auto;right:var(--m);font-size:19vw;z-index:3}
-  .hero .scrap{left:auto;right:-6%;top:auto;bottom:2%;height:auto;width:52%}
-  .hero .band{flex-direction:column;align-items:stretch;justify-content:center;gap:12px;padding:14px var(--m)}
-  .hero .band p{display:none}
-  .hero .under{display:block;position:absolute;left:var(--m);right:var(--m);top:calc(12% + 2 * 19vw * .84 + 20px);font-size:var(--t-m);line-height:1.35;color:var(--cream-soft);z-index:1;max-width:28ch}
-  .act{padding:14px 20px;font-size:var(--t-b)}
-  .mode{min-height:68svh;padding:40px var(--m)}
-  :root{--t-h:28px}
-  .mode h2{font-size:var(--t-h)}
-  .mode p{font-size:var(--t-b)}
-  .switch{--u:31vw;left:0;right:auto;bottom:calc(var(--u) * -.12)}
-  .programme{padding:72px 0 64px}
-  .programme .lead h2{font-size:var(--t-h)}
-  .programme .lead p{max-width:none}
-  .tiles{margin-top:36px;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 8px}
-  .item h3{font-size:var(--t-b)}
-  .item .fact,.item .alt{font-size:16px}
-  .tile .go{width:48px;height:48px;margin:-24px 0 0 -24px}
-  .figure{min-height:80svh;padding:40px var(--m) 32px}
-  .figure h2{font-size:var(--t-h)}
-  .figure .num{font-size:46vw}
-  .figure .cap{max-width:80%}
-  .faq{padding:72px 0 80px}
-  .faq h2{font-size:var(--t-h);margin-bottom:28px}
-  .card{--tab:136px;--step:44px}
-  .card .q{font-size:var(--t-b);padding:14px 16px}
-  .card .a{padding:0 16px 56px}
-  .play{height:46svh;min-height:260px;border-radius:12vw 12vw 0 0}
-  .play p{font-size:var(--t-b);max-width:60%}
-  .play .arrow{width:32px;height:32px}
-  .play .word{font-size:min(38vw,36svh)}
-  footer{padding:56px 0 calc(34vw * .4 + 120px);min-height:0}
-  footer .top h2{font-size:36px;max-width:none}
-  footer .top .act{width:100%}
-  footer .links{margin-top:32px;flex-direction:row;flex-wrap:wrap;gap:8px 18px}
-  footer .mark,footer .mark svg{width:34vw}
-  footer .mark{transform:translate(0,30%)}
-  footer .legal{bottom:calc(34vw * .55 * .7 + 18px);flex-direction:column;gap:4px}
-  .lbc{height:auto;flex-wrap:wrap;padding:10px 12px}
-  .lbc .ttl{width:100%}
-}
-@media (min-width:761px) and (max-width:1100px){
-  .mode{min-height:70svh}
-  .switch{--u:min(40vh,30vw);right:calc(var(--u) * -.3)}
-  .figure{min-height:72svh}
-  .hero h1{z-index:3}
-  .hero .scrap{left:auto;right:-6%;top:auto;bottom:-6%;height:70%}
-  footer{min-height:0;padding-bottom:calc(30vw * .4 + 150px)}
-  .programme .lead{grid-column:1/13}
-  .tiles{grid-column:1/13;margin-top:36px}
-  .faq .inner{grid-column:1/13}
-  footer .top{grid-column:1/9}footer .links{grid-column:9/13}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-
 <section class="hero">
   <div class="field">
-    <div class="bar"><a class="mark" href="#" aria-label="Mesta"><span id="logo"></span></a>
-      <nav><a href="#programme">Programme</a><a href="#questions">Questions</a><a href="prototype.html?flow=beneficiary" target="_blank" rel="noopener">Prototype ↗</a></nav></div>
-    <h1 id="h1">Now<br>showing</h1><p class="under">Twelve click-through demos of Ohana, Portal Studio and the Aloha sender portal.</p>
-    <figure class="scrap shutter" id="scrap"><img src="assets/hero-scrap.jpg" width="900" height="1200" alt="The Aloha sender portal mid-demo: the Get verified onboarding form with the business documents step open"></figure>
+    <div class="bar"><a class="mark" href="index.html" aria-label="Mesta home"><span class="logo-slot"></span></a><nav><a href="ohana.html">Ohana</a><a href="portal-studio.html">Portal Studio</a><a href="aloha.html">Aloha</a></nav></div>
+    <h1 id="h1">Product<br>demos</h1><p class="under">Click-through demos of Ohana, Portal Studio and the Aloha sender portal.</p>
+    <figure class="scrap shutter"><img src="assets/hero-home.jpg" width="1600" height="900" alt="The Aloha sender portal mid-demo: the Get verified onboarding form"></figure>
   </div>
-  <div class="band"><p>Twelve click-through demos of Ohana, Portal Studio and the Aloha sender portal. Each one plays with captions, or runs live with a prompt on the next element.</p><a class="act" href="#programme">See the programme</a></div>
+  <div class="band"><p>Three products, twelve demos. Pick a product to see its demos, then watch each one with captions or try it yourself.</p><a class="act" href="#products">Choose a product</a></div>
 </section>
 
-<section class="mode" id="mode" data-mode="guided">
-  <div class="copy reveal"><h2><span id="modeword">Watch</span> each demo</h2><p>This switch sets how every tile on the programme opens: a captioned playthrough with a cursor you can pause and slow down, or the live prototype with a pulsing prompt on the exact element to use next.</p></div>
-  <div class="switch" data-ui role="group" aria-label="How every demo opens"><button class="on" data-set="guided" aria-pressed="true">Guided</button><button data-set="self" aria-pressed="false">Hands-on</button></div>
+<section class="doors" id="products">
+  <a class="door ohana reveal" href="ohana.html">
+    <div class="txt"><div><h2>Ohana</h2><p class="what">The merchant dashboard: beneficiaries, senders and payment orders.</p></div><ul data-door-list="ohana"></ul><span class="go">See the Ohana demos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span></div>
+    <figure class="pic"><img src="assets/stills/beneficiary.jpg" width="800" height="450" alt="Ohana: Create a beneficiary, the document read and pre-filled" loading="lazy"></figure>
+  </a>
+  <a class="door portal reveal" href="portal-studio.html">
+    <div class="txt"><div><h2>Portal Studio</h2><p class="what">Set up the white-label sender portal: branding, pricing and senders.</p></div><ul data-door-list="portal"></ul><span class="go">See the Portal Studio demos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span></div>
+    <figure class="pic"><img src="assets/stills/portal-setup.jpg" width="800" height="450" alt="Portal Studio: the Setup tab with the live preview" loading="lazy"></figure>
+  </a>
+  <a class="door aloha reveal" href="aloha.html">
+    <div class="txt"><div><h2>Aloha</h2><p class="what">The sender portal itself: registration, wallets, accounts, beneficiaries and payments.</p></div><ul data-door-list="aloha"></ul><span class="go">See the Aloha demos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></span></div>
+    <figure class="pic"><img src="assets/stills/aloha-payment.jpg" width="800" height="450" alt="Aloha: Create a payment, fiat to stable with a live quote" loading="lazy"></figure>
+  </a>
 </section>
-
-<section class="programme" id="programme"><div class="wrap g12">
-  <div class="lead reveal"><h2>The programme</h2><p>Three products, twelve demos, five steps each. Every one opens full screen; Esc brings you back.</p>
-    <div class="key"><span><i style="background:var(--ink2)"></i>Ohana, the merchant dashboard</span><span><i style="background:var(--gold)"></i>Portal Studio, the white-label setup</span><span><i style="background:var(--cyan)"></i>Aloha, the sender portal</span></div></div>
-  <div class="tiles" id="demos"></div>
-</div></section>
 
 <section class="figure">
   <h2 class="reveal">Five steps, every demo</h2>
   <div class="num reveal" aria-label="5 steps">5<sup>steps</sup></div>
-  <div><p class="cap">Each demo is cut to five main steps with its substeps nested beneath, so the caption counts 1/5 to 5/5 instead of running to 33. Counted across all twelve demos on 28 October 2026.</p><p class="src">Team standard set on 21 October 2026</p></div>
+  <div><p class="cap">Each demo is cut to five main steps with its substeps nested beneath, so the caption counts 1/5 to 5/5. True of all twelve demos.</p><p class="src">Team standard set on 21 October 2026</p></div>
 </section>
-
-<section class="faq" id="questions"><div class="wrap g12"><div class="inner">
-  <h2 class="reveal">Questions</h2>
-  <div class="cards" id="cards"></div>
-</div></div></section>
-
-<a class="play" id="playband" href="prototype.html?flow=beneficiary&play=1" data-open="beneficiary" data-force="guided"><p>Opens Create a Beneficiary full screen with captions. Esc brings you back here.</p><svg class="arrow" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38 38 10M14 10h24v24"/></svg><span class="word">Play</span></a>
-
 <footer><div class="wrap g12">
   <div class="top"><h2>Questions about the demos?</h2><a class="act" href="mailto:support@mesta.xyz?subject=Ohana%20and%20Aloha%20demos">Write to the account team</a></div>
-  <div class="links"><a href="https://github.com/Ashok-mesta/ohana-demo" target="_blank" rel="noopener">GitHub repository</a><a href="prototype.html?flow=beneficiary" target="_blank" rel="noopener">Open the prototype</a><a href="https://github.com/Ashok-mesta/ohana-demo#readme" target="_blank" rel="noopener">Read the README</a><a href="mailto:support@mesta.xyz">support@mesta.xyz</a></div>
+  <div class="links"><a href="index.html">All products</a><a href="ohana.html">Ohana demos</a><a href="portal-studio.html">Portal Studio demos</a><a href="aloha.html">Aloha demos</a><a href="https://github.com/Ashok-mesta/ohana-demo" target="_blank" rel="noopener">GitHub repository</a></div>
 </div>
   <div class="legal"><span>Built from the product UI · demo data only · the account on screen is ashok@mesta.xyz</span><span>Mesta · 2026</span></div>
-  <div class="mark" aria-hidden="true"><span id="logo2"></span></div>
+  <div class="mark" aria-hidden="true"><span class="logo-slot"></span></div>
 </footer>
-
-<div class="lb" id="lb" hidden>
-  <iframe id="lbf" title="Demo" allow="fullscreen" allowfullscreen></iframe>
-  <div class="lbc">
-    <span class="ttl" id="lbt">Create a Beneficiary</span>
-    <button class="btn p" id="lbplay">Pause</button>
-    <button class="btn" id="lbrestart">Restart</button>
-    <span class="lbl" id="lbspeedl">Speed</span>
-    <div class="seg" id="lbspeed"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
-    <button class="btn" id="lbcopy">Copy link</button>
-    <span class="sp"></span>
-    <button class="btn" id="lbfs">⤢ Full screen</button>
-    <button class="btn" id="lbclose">Close</button>
-  </div>
-</div>
-
-<script>
-document.documentElement.className = 'js';
-const DEMOS = [
-  { flow: 'beneficiary', group: 'Ohana', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
-    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']], ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
-  { flow: 'sender', group: 'Ohana', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
-    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']], ['Business details and documents', ['Business details', 'Supporting documents']], ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']], ['Create and verify', ['Verification links', 'KYB approved']] ] },
-  { flow: 'order', group: 'Ohana', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
-    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']], ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']], ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']], ['Review and send', ['Send payment']], ['Track the order', ['Back to orders', 'Funds and settlement']] ] },
-  { flow: 'portal-setup', group: 'Portal Studio', num: '04', title: 'Set up your portal', intro: 'The white-label sender portal in four stages. Step 1: branding (logos, favicon, colours), portal details (name, terms, support email), the portal URL and a custom domain, the settlement wallet, then Save Changes and switch the portal on.', steps: [
-    ['Log in and open Portal Studio', ['Sign in', 'Open Portal Studio']], ['Branding', ['Dark logo', 'Light logo', 'Favicon', 'Brand colour', 'Accent colour']], ['Portal details', ['Portal name', 'Terms URL', 'Support email']], ['Portal URL and settlement wallet', ['Portal address', 'Custom domain', 'Settlement network', 'Wallet address']], ['Save and switch the portal on', ['Save changes', 'Update URL', 'Portal on']] ] },
-  { flow: 'portal-default', group: 'Portal Studio', num: '05', title: 'Set your default pricing', intro: 'Tiered pricing across every corridor you operate in, applied to all senders uniformly. Add tiers by transaction volume (first tier from 0, last tier to 1 trillion), set an effective date, review the structure, fees and what you earn, then confirm and save.', steps: [
-    ['Open Default pricing', ['Default pricing tab']], ['Add a default', ['Add default', 'Currency pair']], ['Tier ladder', ['Add tier', 'Volume from', 'Volume to']], ['Effective date and review', ['Effective from', 'Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
-  { flow: 'portal-sender', group: 'Portal Studio', num: '06', title: 'Add custom sender pricing', intro: 'Per-sender overrides that replace the default pricing when that sender transacts on the portal. Select the sender, add an override with its tiers, review and confirm.', steps: [
-    ['Open Sender pricing', ['Sender pricing tab']], ['Select the sender', ['Filter by sender', 'Pick Prateek Jain', 'Add override']], ['Tiers and pricing', ['Add tiers', 'Volume from', 'Volume to']], ['Review', ['Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
-  { flow: 'portal-senders', group: 'Portal Studio', num: '07', title: 'Manage your senders', intro: 'Invite new senders by email, share the invite link on any channel, and track existing senders through verification until they can transact on the portal.', steps: [
-    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] },
-  { flow: 'aloha-register', group: 'Aloha · sender portal', num: '08', title: 'Sender registration', intro: 'From the invitation email to a verified, onboarded profile on the white-label sender portal: create the account with multi-factor authentication, select the country, provide the business information by manual entry or by uploading a business document the portal reads and fills in, submit for review, then share the UBO verification link.', steps: [
-    ['Open the invitation and create your account', ['Invitation link', 'Password', 'Confirm password', 'Accept the terms', 'Set up account', 'Scan the QR code', 'Authentication code', 'Verify code', 'Passkey (later)']], ['Select the country and enter business details', ['Country', 'Continue', 'Full name', 'Phone number', 'Business type', 'Continue · Documents']], ['Documents, risk profile and beneficial owners', ['Business registration document', 'Proof of address', 'Continue · Risk profile', 'Number of employees', 'Source of funds', 'Continue · Owners', 'First name', 'Last name', 'Ownership percentage']], ['Or upload documents and let the portal fill the form', ['Business details', 'Upload documents', 'Pick a business document', 'Read documents', 'Fill the form']], ['Submit for review and get verified', ['Review the owners', 'PEP declaration', 'Submit for review', 'UBO verification link', 'Verification']] ] },
-  { flow: 'aloha-wallet', group: 'Aloha · sender portal', num: '09', title: 'Create a self-custody wallet', intro: 'Pick a network, create the wallet, and keep an encrypted backup: the security overview, Ethereum / Polygon / Tron, key generation in the browser, the password-protected backup file, and the acknowledgement before the wallet is ready.', steps: [
-    ['Log in and open Wallets', ['Sign in', 'Open Wallets', 'Create wallet']], ['Read the security overview', ['Continue']], ['Pick a network and generate the wallet', ['Polygon', 'Create wallet']], ['Back up with a password', ['Back up with password', 'Encryption password', 'Download backup', 'Acknowledge', 'Continue to wallet']], ['Your wallet is ready', ['Done']] ] },
-  { flow: 'aloha-account', group: 'Aloha · sender portal', num: '10', title: 'Generate a virtual named account', intro: 'Request a named fiat account in USD, EUR, GBP or MXN: open Fiat accounts, request the first account, choose the currency, generate it, wait for provisioning, then reveal the account number.', steps: [
-    ['Log in and open Fiat accounts', ['Sign in', 'Fiat accounts']], ['Request your first account', ['Request your first account']], ['Choose the currency', ['Currency']], ['Generate the account', ['Generate account']], ['Your account is live', ['Reveal the account number', 'Next accounts']] ] },
-  { flow: 'aloha-beneficiary', group: 'Aloha · sender portal', num: '11', title: 'Add a beneficiary', intro: 'Create a verified payee from the sender portal: entity type and country, then either upload the invoice and let the portal pre-fill the application, or enter the details and a payment method manually. The beneficiary moves from Pending to Approved.', steps: [
-    ['Log in and open Beneficiaries', ['Sign in', 'Beneficiaries', 'Add beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Option 1 · upload the invoice', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done']], ['Option 2 · enter the details manually', ['Full name', 'Continue', 'Bank account']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
-  { flow: 'aloha-payment', group: 'Aloha · sender portal', num: '12', title: 'Create a payment', intro: 'Three payment types from the sender portal: fiat to stablecoin from a fiat account, stablecoin to fiat and stablecoin to stablecoin from the self-custody wallet, each with the beneficiary, payment method, purpose, source of funds and relationship, the review, and for wallet payments the authorization with a 6-digit code. All three orders then appear on the Orders page.', steps: [
-    ['Log in, open Orders and choose a payment type', ['Sign in', 'Orders', 'Create payment']], ['Option 1 · Fiat to stable', ['Fiat → Stable', 'Source account', 'Stablecoin', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Send payment']], ['Option 2 · Stable to fiat', ['Back to orders', 'Create payment', 'Stable → Fiat', 'Source wallet', 'Recipient currency', 'Payment rail', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Option 3 · Stable to stable', ['Back to orders', 'Create payment', 'Stable → Stable', 'Source wallet', 'Receive asset', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Track all three orders', ['Back to orders', 'Track the status']] ] }
-];
-const STILL = { beneficiary: 15, sender: 12, order: 10, 'portal-setup': 14, 'portal-default': 6, 'portal-sender': 4, 'portal-senders': 3, 'aloha-register': 19, 'aloha-wallet': 7, 'aloha-account': 5, 'aloha-beneficiary': 12, 'aloha-payment': 11 };
-const BEATS = { beneficiary: 33, sender: 33, order: 30, 'portal-setup': 45, 'portal-default': 14, 'portal-sender': 13, 'portal-senders': 8, 'aloha-register': 43, 'aloha-wallet': 17, 'aloha-account': 13, 'aloha-beneficiary': 22, 'aloha-payment': 74 };
-const GROUP = { 'Ohana': 'ohana', 'Portal Studio': 'portal', 'Aloha · sender portal': 'aloha' };
-const BUILD = 'v' + 20261028 + 'a'; /* bump to bypass the Pages/browser cache for the embedded prototype */
-const mins = b => { const m = Math.round(b * 5.3 / 60); return m <= 0 ? 'under a minute' : m === 1 ? 'about a minute' : `about ${m} min`; };
-let mode = 'guided';
-try { mode = localStorage.getItem('demo-mode') === 'self' ? 'self' : 'guided'; } catch (e) {}
-
-const demosEl = document.getElementById('demos');
-demosEl.innerHTML = DEMOS.map((d, i) => `<article class="item reveal" style="--i:${i % 3}">
-  <button class="tile ${GROUP[d.group] || 'ohana'}" data-open="${d.flow}" aria-label="Open ${d.title}"><span class="shot"><img src="assets/stills/${d.flow}.jpg" width="800" height="450" alt="${d.title}: a frame from the demo" loading="lazy"></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-  <h3>${d.title}</h3><p class="fact">Five steps · ${BEATS[d.flow]} beats · ${mins(BEATS[d.flow])}</p><p class="alt"><button data-open="${d.flow}" data-alt="1"></button></p>
-</article>`).join('');
-
-const QA = [
-  ['Share', 'How do I share a demo?', 'Send this page, or open a demo and press Copy link in the bottom bar: the link opens that demo full screen on its own, no sign-in and nothing to install. Every demo also has a plain address of the form prototype.html?flow=…&play=1.'],
-  ['Full screen', 'Why does every demo open full screen?', 'The team asked for it: a demo on a call should fill the screen whether it plays itself or you drive it. The frame is 16:9 and scales to any window. Press Esc, or Close in the bottom bar, to come back here.'],
-  ['Speed', 'What do Pause, Slow and Restart do?', 'Pause holds the cursor where it is and Play resumes. Slow keeps every beat on screen 1.8 times longer, for narrating over it. Restart replays from the first beat. In a hands-on run, Restart reloads the prototype at its first step.'],
-  ['Data', 'Whose data is on screen?', 'Demo data only. The account is Ashok at ashok@mesta.xyz, the beneficiary is Lincoln Strategy Labs LLP, the sender portal is Global Fincon. Nothing is live and nothing is submitted; the verification steps are played by the demo itself.'],
-  ['Adding', 'How do we add another flow?', 'The README’s “Adding another flow” section: one entry in the FLOWS registry with five main steps, the ordered beats and their captions, then push main and the gh-pages branch. The Aloha flows show how a second product skin sits on the same engine.']
-];
-document.getElementById('cards').innerHTML = QA.map((q, i) => `<div class="card reveal c-${['ink', 'gold', 'cyan'][i % 3]} ${i === 0 ? 'open' : ''}" style="--x:calc(var(--step) * ${i})"><span class="tab">${q[0]}</span><button class="q" aria-expanded="${i === 0}" data-card="${i}"><span>${q[1]}</span><span class="st">${i === 0 ? "Close" : "Open"}</span></button><div class="a">${q[2]}</div></div>`).join('');
-document.getElementById('cards').addEventListener('click', e => { const b = e.target.closest('[data-card]'); if (!b) return; const i = +b.dataset.card; [...document.querySelectorAll('.card')].forEach((c, j) => { c.classList.toggle('open', j === i); c.querySelector('.q').setAttribute('aria-expanded', j === i); c.querySelector('.st').textContent = j === i ? 'Close' : 'Open'; }); });
-
-/* the one live control: how every tile opens */
-const setMode = m => {
-  mode = m; try { localStorage.setItem('demo-mode', m); } catch (e) {}
-  document.getElementById('mode').dataset.mode = m;
-  document.getElementById('modeword').textContent = m === 'self' ? 'Try' : 'Watch';
-  document.querySelectorAll('.switch button').forEach(b => { const on = b.dataset.set === m; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
-  document.querySelectorAll('[data-alt]').forEach(b => { b.textContent = m === 'self' ? 'or watch it with captions' : 'or try it yourself'; });
-};
-document.querySelector('.switch').addEventListener('click', e => { const b = e.target.closest('[data-set]'); if (b) setMode(b.dataset.set); });
-setMode(mode);
-
-/* lightbox */
-const lb = document.getElementById('lb'), lbf = document.getElementById('lbf'), lbplay = document.getElementById('lbplay');
-let guided = true, paused = false, slow = false, flow = 'beneficiary';
-const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
-const src = () => 'prototype.html?flow=' + flow + (guided ? '&play=1' + (slow ? '&slow=1' : '') : '&manual=1') + '&b=' + BUILD;
-const shareUrl = () => new URL('prototype.html?flow=' + flow + (guided ? '&play=1' : ''), location.href).href;
-const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
-const open = (g, f) => {
-  guided = g; flow = f; paused = false; lb.hidden = false; lbf.src = src();
-  const d = DEMOS.find(x => x.flow === f); document.getElementById('lbt').textContent = d.title + (g ? ' · guided' : ' · hands-on');
-  lbplay.style.display = g ? '' : 'none'; document.getElementById('lbspeed').style.display = g ? '' : 'none'; document.getElementById('lbspeedl').style.display = g ? '' : 'none';
-  lbplay.textContent = 'Pause'; goFull();
-};
-const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
-document.addEventListener('click', e => {
-  const t = e.target.closest('[data-open]'); if (!t) return; e.preventDefault();
-  const alt = t.hasAttribute('data-alt'), force = t.dataset.force;
-  const g = force ? force === 'guided' : alt ? mode === 'self' : mode === 'guided';
-  open(g, t.dataset.open);
-});
-document.getElementById('lbclose').onclick = close;
-document.getElementById('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
-lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };
-document.getElementById('lbrestart').onclick = () => { paused = false; lbplay.textContent = 'Pause'; if (guided) post({ cmd: 'restart' }); else lbf.src = src(); };
-const seg = v => { slow = v; document.getElementById('slow').classList.toggle('on', v); document.getElementById('normal').classList.toggle('on', !v); post({ speed: v ? 1.8 : 1 }); };
-document.getElementById('slow').onclick = () => seg(true);
-document.getElementById('normal').onclick = () => seg(false);
-document.getElementById('lbcopy').onclick = async () => { const b = document.getElementById('lbcopy'); try { await navigator.clipboard.writeText(shareUrl()); b.textContent = 'Link copied'; } catch (e) { b.textContent = shareUrl(); } setTimeout(() => { b.textContent = 'Copy link'; }, 1800); };
-addEventListener('message', e => { const d = e.data || {}; if (d.type === 'demo' && d.cmd === 'fullscreen' && !lb.hidden) goFull(); });
-addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden && !document.fullscreenElement) close(); });
-document.addEventListener('fullscreenchange', () => { document.getElementById('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : '⤢ Full screen'; });
-
-/* wordmark, twice */
-fetch('mesta-logo.svg').then(r => r.text()).then(t => { const s = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); document.getElementById('logo').innerHTML = s; document.getElementById('logo2').innerHTML = s; }).catch(() => {});
-
-/* motion: the shutter on the hero picture, then one entrance per part as it arrives */
-const arrive = () => { document.getElementById('scrap').classList.add('is-in'); document.getElementById('h1').classList.add('is-in'); };
-requestAnimationFrame(() => requestAnimationFrame(arrive)); setTimeout(arrive, 120);
-const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } }), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-document.querySelectorAll('.reveal').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); else io.observe(el); });
-</script>
+<script src="site.js"></script>
 </body>
 </html>

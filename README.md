@@ -72,9 +72,9 @@ Everything lives in the `<script>` of `prototype.html`. `FLOWS` is the registry:
 Timing (from the reference): the cursor travels 0.9s, waits 1.0s, clicks (ripple + press squash),
 the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from a fresh `INIT`.
 
-## The landing page
+## The site
 
-`index.html` is the programme: a hero with the shout and a tilted product still (`assets/hero-scrap.jpg`, a 3:4 crop of a 1600x900 still at 2x), the one live control (Guided / Hands-on, remembered per browser, it decides how every tile opens), twelve colour tiles whose previews are `still=1&jump=K` frames of the prototype, the five-steps figure, the index-card questions, the Play band and the footer. It was built with the design-taste-frontend skill (`.taste-skill/direction.json` holds the dealt direction; `inspect.mjs` measures the page) on the Mesta tokens: ink `#0A0A0B`, cream `#F7F5EE`, gold `#B08D57`, cyan `#0EA5E9`, Geist and Fraunces. The previous card-list page is kept as `index.v1-gallery.html.bak`.
+Four pages share `site.css` and `site.js`. `index.html` is the home page with one panel per product; each panel links to its page. `ohana.html` (3 demos), `portal-studio.html` (4 demos) and `aloha.html` (5 demos) each show only their own demos, filtered by `<body data-product="…">` against the `group` in the `DEMOS` registry in `site.js`. Every page has the Guided / Hands-on switch, the full-screen lightbox with Copy link, and the shared nav. `page.html#flow` lands on that demo's tile. The look is deliberately plain: white and stone grounds, ink type, Geist only. Tile pictures are `assets/stills/<flow>.jpg`, captured from `prototype.html?flow=…&still=1&jump=K`.
 
 ## Aloha · the sender-portal skin
 

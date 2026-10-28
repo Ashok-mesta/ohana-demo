@@ -1,0 +1,109 @@
+document.documentElement.className = 'js';
+const DEMOS = [
+  { flow: 'beneficiary', group: 'Ohana', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']], ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'sender', group: 'Ohana', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
+    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']], ['Business details and documents', ['Business details', 'Supporting documents']], ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']], ['Create and verify', ['Verification links', 'KYB approved']] ] },
+  { flow: 'order', group: 'Ohana', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
+    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']], ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']], ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']], ['Review and send', ['Send payment']], ['Track the order', ['Back to orders', 'Funds and settlement']] ] },
+  { flow: 'portal-setup', group: 'Portal Studio', num: '04', title: 'Set up your portal', intro: 'The white-label sender portal in four stages. Step 1: branding (logos, favicon, colours), portal details (name, terms, support email), the portal URL and a custom domain, the settlement wallet, then Save Changes and switch the portal on.', steps: [
+    ['Log in and open Portal Studio', ['Sign in', 'Open Portal Studio']], ['Branding', ['Dark logo', 'Light logo', 'Favicon', 'Brand colour', 'Accent colour']], ['Portal details', ['Portal name', 'Terms URL', 'Support email']], ['Portal URL and settlement wallet', ['Portal address', 'Custom domain', 'Settlement network', 'Wallet address']], ['Save and switch the portal on', ['Save changes', 'Update URL', 'Portal on']] ] },
+  { flow: 'portal-default', group: 'Portal Studio', num: '05', title: 'Set your default pricing', intro: 'Tiered pricing across every corridor you operate in, applied to all senders uniformly. Add tiers by transaction volume (first tier from 0, last tier to 1 trillion), set an effective date, review the structure, fees and what you earn, then confirm and save.', steps: [
+    ['Open Default pricing', ['Default pricing tab']], ['Add a default', ['Add default', 'Currency pair']], ['Tier ladder', ['Add tier', 'Volume from', 'Volume to']], ['Effective date and review', ['Effective from', 'Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-sender', group: 'Portal Studio', num: '06', title: 'Add custom sender pricing', intro: 'Per-sender overrides that replace the default pricing when that sender transacts on the portal. Select the sender, add an override with its tiers, review and confirm.', steps: [
+    ['Open Sender pricing', ['Sender pricing tab']], ['Select the sender', ['Filter by sender', 'Pick Prateek Jain', 'Add override']], ['Tiers and pricing', ['Add tiers', 'Volume from', 'Volume to']], ['Review', ['Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-senders', group: 'Portal Studio', num: '07', title: 'Manage your senders', intro: 'Invite new senders by email, share the invite link on any channel, and track existing senders through verification until they can transact on the portal.', steps: [
+    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] },
+  { flow: 'aloha-register', group: 'Aloha · sender portal', num: '08', title: 'Sender registration', intro: 'From the invitation email to a verified, onboarded profile on the white-label sender portal: create the account with multi-factor authentication, select the country, provide the business information by manual entry or by uploading a business document the portal reads and fills in, submit for review, then share the UBO verification link.', steps: [
+    ['Open the invitation and create your account', ['Invitation link', 'Password', 'Confirm password', 'Accept the terms', 'Set up account', 'Scan the QR code', 'Authentication code', 'Verify code', 'Passkey (later)']], ['Select the country and enter business details', ['Country', 'Continue', 'Full name', 'Phone number', 'Business type', 'Continue · Documents']], ['Documents, risk profile and beneficial owners', ['Business registration document', 'Proof of address', 'Continue · Risk profile', 'Number of employees', 'Source of funds', 'Continue · Owners', 'First name', 'Last name', 'Ownership percentage']], ['Or upload documents and let the portal fill the form', ['Business details', 'Upload documents', 'Pick a business document', 'Read documents', 'Fill the form']], ['Submit for review and get verified', ['Review the owners', 'PEP declaration', 'Submit for review', 'UBO verification link', 'Verification']] ] },
+  { flow: 'aloha-wallet', group: 'Aloha · sender portal', num: '09', title: 'Create a self-custody wallet', intro: 'Pick a network, create the wallet, and keep an encrypted backup: the security overview, Ethereum / Polygon / Tron, key generation in the browser, the password-protected backup file, and the acknowledgement before the wallet is ready.', steps: [
+    ['Log in and open Wallets', ['Sign in', 'Open Wallets', 'Create wallet']], ['Read the security overview', ['Continue']], ['Pick a network and generate the wallet', ['Polygon', 'Create wallet']], ['Back up with a password', ['Back up with password', 'Encryption password', 'Download backup', 'Acknowledge', 'Continue to wallet']], ['Your wallet is ready', ['Done']] ] },
+  { flow: 'aloha-account', group: 'Aloha · sender portal', num: '10', title: 'Generate a virtual named account', intro: 'Request a named fiat account in USD, EUR, GBP or MXN: open Fiat accounts, request the first account, choose the currency, generate it, wait for provisioning, then reveal the account number.', steps: [
+    ['Log in and open Fiat accounts', ['Sign in', 'Fiat accounts']], ['Request your first account', ['Request your first account']], ['Choose the currency', ['Currency']], ['Generate the account', ['Generate account']], ['Your account is live', ['Reveal the account number', 'Next accounts']] ] },
+  { flow: 'aloha-beneficiary', group: 'Aloha · sender portal', num: '11', title: 'Add a beneficiary', intro: 'Create a verified payee from the sender portal: entity type and country, then either upload the invoice and let the portal pre-fill the application, or enter the details and a payment method manually. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Beneficiaries', 'Add beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Option 1 · upload the invoice', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done']], ['Option 2 · enter the details manually', ['Full name', 'Continue', 'Bank account']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'aloha-payment', group: 'Aloha · sender portal', num: '12', title: 'Create a payment', intro: 'Three payment types from the sender portal: fiat to stablecoin from a fiat account, stablecoin to fiat and stablecoin to stablecoin from the self-custody wallet, each with the beneficiary, payment method, purpose, source of funds and relationship, the review, and for wallet payments the authorization with a 6-digit code. All three orders then appear on the Orders page.', steps: [
+    ['Log in, open Orders and choose a payment type', ['Sign in', 'Orders', 'Create payment']], ['Option 1 · Fiat to stable', ['Fiat → Stable', 'Source account', 'Stablecoin', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Send payment']], ['Option 2 · Stable to fiat', ['Back to orders', 'Create payment', 'Stable → Fiat', 'Source wallet', 'Recipient currency', 'Payment rail', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Option 3 · Stable to stable', ['Back to orders', 'Create payment', 'Stable → Stable', 'Source wallet', 'Receive asset', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Track all three orders', ['Back to orders', 'Track the status']] ] }
+];
+const GROUP = { 'Ohana': 'ohana', 'Portal Studio': 'portal', 'Aloha · sender portal': 'aloha' };
+const BEATS = { beneficiary: 33, sender: 33, order: 30, 'portal-setup': 45, 'portal-default': 14, 'portal-sender': 13, 'portal-senders': 8, 'aloha-register': 43, 'aloha-wallet': 17, 'aloha-account': 13, 'aloha-beneficiary': 22, 'aloha-payment': 74 };
+const BUILD = 'v' + 20261028 + 'b'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+const mins = b => { const m = Math.round(b * 5.3 / 60); return m <= 1 ? 'about a minute' : `about ${m} min`; };
+const PRODUCT = document.body.dataset.product || '';
+const SHOWN = PRODUCT ? DEMOS.filter(d => GROUP[d.group] === PRODUCT) : DEMOS;
+const $ = id => document.getElementById(id);
+let mode = 'guided';
+try { mode = localStorage.getItem('demo-mode') === 'self' ? 'self' : 'guided'; } catch (e) {}
+
+/* home: the demo titles inside each product door */
+document.querySelectorAll('[data-door-list]').forEach(ul => {
+  ul.innerHTML = DEMOS.filter(d => GROUP[d.group] === ul.dataset.doorList).map(d => `<li>${d.title}<span>· ${mins(BEATS[d.flow])}</span></li>`).join('');
+});
+
+/* product page: only that product's demos */
+if ($('demos')) $('demos').innerHTML = SHOWN.map((d, i) => `<article class="item reveal" style="--i:${i % 2}" id="d-${d.flow}">
+  <button class="tile ${GROUP[d.group]}" data-open="${d.flow}" aria-label="Open ${d.title}"><span class="shot"><img src="assets/stills/${d.flow}.jpg" width="800" height="450" alt="${d.title}: a frame from the demo" loading="lazy"></span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></button>
+  <h3>${d.title}</h3><p class="fact">Five steps · ${BEATS[d.flow]} beats · ${mins(BEATS[d.flow])}</p><p class="intro2">${d.intro}</p><p class="alt"><button data-open="${d.flow}" data-alt="1"></button></p>
+</article>`).join('');
+
+const QA = [
+  ['Share', 'How do I share a demo?', 'Send this page, or open a demo and press Copy link in the bottom bar: the link opens that demo full screen on its own, no sign-in and nothing to install.'],
+  ['Full screen', 'Why does every demo open full screen?', 'A demo on a call should fill the screen whether it plays itself or you drive it. The frame is 16:9 and scales to any window. Press Esc, or Close in the bottom bar, to come back.'],
+  ['Speed', 'What do Pause, Slow and Restart do?', 'Pause holds the cursor where it is and Play resumes. Slow keeps every beat on screen 1.8 times longer, for narrating over it. Restart replays from the first beat.'],
+  ['Data', 'Whose data is on screen?', 'Demo data only. The account is Ashok at ashok@mesta.xyz. Nothing is live and nothing is submitted; the verification steps are played by the demo itself.']
+];
+if ($('cards')) {
+  $('cards').innerHTML = QA.map((q, i) => `<div class="card reveal c-${['ink', 'gold', 'cyan'][i % 3]} ${i === 0 ? 'open' : ''}" style="--x:calc(var(--step) * ${i})"><span class="tab">${q[0]}</span><button class="q" aria-expanded="${i === 0}" data-card="${i}"><span>${q[1]}</span><span class="st">${i === 0 ? 'Close' : 'Open'}</span></button><div class="a">${q[2]}</div></div>`).join('');
+  $('cards').addEventListener('click', e => { const b = e.target.closest('[data-card]'); if (!b) return; const i = +b.dataset.card; [...document.querySelectorAll('.card')].forEach((c, j) => { c.classList.toggle('open', j === i); c.querySelector('.q').setAttribute('aria-expanded', j === i); c.querySelector('.st').textContent = j === i ? 'Close' : 'Open'; }); });
+}
+
+const setMode = m => {
+  mode = m; try { localStorage.setItem('demo-mode', m); } catch (e) {}
+  if ($('mode')) $('mode').dataset.mode = m;
+  if ($('modeword')) $('modeword').textContent = m === 'self' ? 'Try' : 'Watch';
+  document.querySelectorAll('.switch button').forEach(b => { const on = b.dataset.set === m; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  document.querySelectorAll('[data-alt]').forEach(b => { b.textContent = m === 'self' ? 'or watch it with captions' : 'or try it yourself'; });
+};
+const sw = document.querySelector('.switch'); if (sw) sw.addEventListener('click', e => { const b = e.target.closest('[data-set]'); if (b) setMode(b.dataset.set); });
+setMode(mode);
+
+const lb = $('lb');
+if (lb) {
+  const lbf = $('lbf'), lbplay = $('lbplay');
+  let guided = true, paused = false, slow = false, flow = '';
+  const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
+  const src = () => 'prototype.html?flow=' + flow + (guided ? '&play=1' + (slow ? '&slow=1' : '') : '&manual=1') + '&b=' + BUILD;
+  const shareUrl = () => new URL('prototype.html?flow=' + flow + (guided ? '&play=1' : ''), location.href).href;
+  const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
+  const open = (g, f) => {
+    guided = g; flow = f; paused = false; lb.hidden = false; lbf.src = src();
+    const d = DEMOS.find(x => x.flow === f); $('lbt').textContent = d.title + (g ? ' · guided' : ' · hands-on');
+    lbplay.style.display = g ? '' : 'none'; $('lbspeed').style.display = g ? '' : 'none'; $('lbspeedl').style.display = g ? '' : 'none';
+    lbplay.textContent = 'Pause'; goFull();
+  };
+  const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
+  document.addEventListener('click', e => {
+    const t = e.target.closest('[data-open]'); if (!t) return; e.preventDefault();
+    const alt = t.hasAttribute('data-alt'), force = t.dataset.force;
+    open(force ? force === 'guided' : alt ? mode === 'self' : mode === 'guided', t.dataset.open);
+  });
+  $('lbclose').onclick = close;
+  $('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
+  lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };
+  $('lbrestart').onclick = () => { paused = false; lbplay.textContent = 'Pause'; if (guided) post({ cmd: 'restart' }); else lbf.src = src(); };
+  const seg = v => { slow = v; $('slow').classList.toggle('on', v); $('normal').classList.toggle('on', !v); post({ speed: v ? 1.8 : 1 }); };
+  $('slow').onclick = () => seg(true); $('normal').onclick = () => seg(false);
+  $('lbcopy').onclick = async () => { const b = $('lbcopy'); try { await navigator.clipboard.writeText(shareUrl()); b.textContent = 'Link copied'; } catch (e) { b.textContent = shareUrl(); } setTimeout(() => { b.textContent = 'Copy link'; }, 1800); };
+  addEventListener('message', e => { const d = e.data || {}; if (d.type === 'demo' && d.cmd === 'fullscreen' && !lb.hidden) goFull(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden && !document.fullscreenElement) close(); });
+  document.addEventListener('fullscreenchange', () => { $('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : '⤢ Full screen'; });
+  /* page.html#flow lands on that demo's tile */
+  const h = location.hash.slice(1); if (h && $('d-' + h)) setTimeout(() => $('d-' + h).scrollIntoView({ block: 'center' }), 200);
+}
+
+fetch('mesta-logo.svg').then(r => r.text()).then(t => { const s = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); document.querySelectorAll('.logo-slot').forEach(el => { el.innerHTML = s; }); }).catch(() => {});
+
+const arrive = () => { document.querySelectorAll('.shutter').forEach(x => x.classList.add('is-in')); const h1 = $('h1'); if (h1) h1.classList.add('is-in'); };
+requestAnimationFrame(() => requestAnimationFrame(arrive)); setTimeout(arrive, 120);
+const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('is-in'); io.unobserve(x.target); } }), { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in'); else io.observe(el); });
