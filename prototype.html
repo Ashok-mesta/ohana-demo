@@ -1799,6 +1799,8 @@ class Component {
   componentDidMount(q) {
     const f = this.flow(), ops = f.ops, caps = f.caps;
     if (!(q.get('demo') || q.get('flow'))) return;
+    /* ?still=1&jump=K renders the state after op K with no cursor or captions (thumbnails, screenshots) */
+    if (q.get('still') === '1') { const k = Math.max(0, Math.min(ops.length - 1, +q.get('jump') || 0)); for (let i = 0; i <= k; i++) { const [op, a] = ops[i]; if (op === 'go') { this.goStep(a); continue; } if (op === 'next') { this.next(); continue; } const p = { ...(typeof a === 'function' ? a(this.state) : a) }; const ty = p._type; delete p._scroll; delete p._type; this.setState(p); if (ty) { this.bindSet(ty[0], ty[1]); this.render(); } } return; }
     const apply = ([op, a]) => {
       if (op === 'go') return this.goStep(a);
       if (op === 'next') return this.next();

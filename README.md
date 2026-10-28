@@ -26,6 +26,7 @@ mesta-logo.svg    Mesta wordmark (inlined into prototype.html at the top of the 
 | `prototype.html?flow=portal-setup` / `portal-default` / `portal-sender` / `portal-senders` | the four Portal Studio flows (Ohana admin, Global Fincon account) |
 | `prototype.html?flow=aloha-register` / `aloha-wallet` / `aloha-account` / `aloha-beneficiary` / `aloha-payment` | the five Aloha sender-portal flows (the white-label portal a sender uses; `aloha.css` + `aloha.js` add the skin, screens and flows on top of the same engine) |
 | `prototype.html?demo=4` … `demo=12` | numeric aliases: 4–7 Portal Studio, 8–12 Aloha |
+| `prototype.html?flow=…&still=1&jump=K` | a still frame: the state after op K, no cursor or captions (the landing page's tiles and the screenshot capture use it) |
 
 The page is a fixed 1600x900 design that scales itself to fill whatever window or iframe it is in,
 and the presenter bar has a Full screen button (Fullscreen API; inside an iframe it asks the parent).
@@ -70,6 +71,10 @@ Everything lives in the `<script>` of `prototype.html`. `FLOWS` is the registry:
 
 Timing (from the reference): the cursor travels 0.9s, waits 1.0s, clicks (ripple + press squash),
 the op applies, then holds 3.4s. The last op holds 6s, then the demo loops from a fresh `INIT`.
+
+## The landing page
+
+`index.html` is the programme: a hero with the shout and a tilted product still (`assets/hero-scrap.jpg`, a 3:4 crop of a 1600x900 still at 2x), the one live control (Guided / Hands-on, remembered per browser, it decides how every tile opens), twelve colour tiles whose previews are `still=1&jump=K` frames of the prototype, the five-steps figure, the index-card questions, the Play band and the footer. It was built with the design-taste-frontend skill (`.taste-skill/direction.json` holds the dealt direction; `inspect.mjs` measures the page) on the Mesta tokens: ink `#0A0A0B`, cream `#F7F5EE`, gold `#B08D57`, cyan `#0EA5E9`, Geist and Fraunces. The previous card-list page is kept as `index.v1-gallery.html.bak`.
 
 ## Aloha · the sender-portal skin
 

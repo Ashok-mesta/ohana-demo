@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>Ohana &amp; Aloha · click-through demos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15171f;--ink2:#3c3f46;--mute:#6b7280;--line:#e4e6ea;--bg:#fdfdfd;--navy:#1a162d;--violet:#6b5bcf;--panel:#f3f4f7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--violet);text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:rgba(253,253,253,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;padding:14px 24px}
+header svg{height:26px;width:auto;color:var(--ink)}
+header .ttl{font-family:'Geist',sans-serif;font-weight:600;font-size:14px;color:var(--ink2);padding-left:14px;border-left:1px solid var(--line)}
+header .sp{flex:1}
+header nav{display:flex;gap:22px;font-size:14px;font-weight:500}
+header nav a{color:var(--ink);padding:4px 0;border-bottom:2px solid transparent}
+header nav a.on{color:var(--violet);border-bottom-color:var(--violet)}
+.hero{background:linear-gradient(160deg,#f3f1fb 0%,#eef3fb 45%,#fdfdfd 100%)}
+.hero .wrap{padding:76px 24px 64px;display:flex;flex-direction:column;gap:18px}
+.tags{display:flex;gap:8px}
+.tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.tag.v{color:var(--violet);background:color-mix(in srgb,var(--violet) 10%,#fff);border-color:transparent}
+h1{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-.025em;color:var(--navy);max-width:820px;text-wrap:balance}
+.lead{margin:0;font-size:18px;line-height:28px;color:var(--ink2);max-width:680px;text-wrap:pretty}
+section.demo .wrap{padding:72px 24px 80px;display:flex;flex-direction:column;gap:28px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--violet)}
+h2{margin:0;font-family:'Geist',sans-serif;font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.1;letter-spacing:-.02em;color:var(--navy)}
+.sub{margin:0;font-size:16px;line-height:26px;color:var(--ink2);max-width:680px}
+.grid{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start;padding:40px 0;border-top:1px solid var(--line)}
+.grid h3{margin:0 0 4px;font-family:'Geist',sans-serif;font-size:22px;letter-spacing:-.02em;color:var(--navy)}
+.grid .num{font-size:13px;font-weight:600;color:var(--violet);margin-bottom:6px}
+.grid .intro{font-size:14px;color:var(--ink2);margin:0 0 14px;line-height:1.5}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.steps{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--line)}
+.step{display:flex;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);font-size:14px;line-height:20px}
+.step .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font:600 11px 'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;margin-top:-2px}
+.step b{display:block;font-weight:600;color:var(--ink)}
+.step span{color:var(--mute);font-size:13px}
+.step ul{margin:6px 0 0;padding:0 0 0 2px;list-style:none;display:flex;flex-wrap:wrap;gap:4px 6px}
+.step li{font-size:12px;color:var(--ink2);background:var(--panel);border-radius:999px;padding:2px 9px}
+.lb{position:fixed;inset:0;z-index:50;background:#0f1014;display:flex;flex-direction:column}
+.lb[hidden]{display:none}
+.lb iframe{flex:1;width:100%;border:0;background:#0f1014}
+.lbc{flex:none;height:56px;display:flex;align-items:center;gap:8px;padding:0 16px;background:#0f1014;border-top:1px solid rgba(255,255,255,.08)}
+.lbc .btn{background:rgba(255,255,255,.1);color:#fff}
+.lbc .btn.p{background:var(--violet)}
+.lbc .lbl{color:rgba(255,255,255,.7)}
+.lbc .seg{background:rgba(255,255,255,.1)}
+.lbc .seg button{color:#fff}
+.lbc .seg button.on{background:#fff;color:var(--ink)}
+.lbc .ttl{color:#fff;font-weight:600;font-size:15px;margin-right:8px}
+.frame{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--panel);border:1px solid var(--line);position:relative;box-shadow:0 8px 24px rgba(15,15,22,.08)}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+.frame .ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(15,15,22,.18)}
+.frame .ov span{width:64px;height:64px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(15,15,22,.16);display:flex;align-items:center;justify-content:center}
+.frame .ov svg{width:24px;height:24px;margin-left:4px;fill:var(--ink)}
+.frame.playing .ov{display:none}
+.ctl{display:flex;align-items:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:999px;padding:9px 18px;font:500 14px 'DM Sans',sans-serif;cursor:pointer;background:var(--panel);color:var(--ink)}
+.btn.p{background:var(--violet);color:#fff;min-width:92px}
+.ctl .sp{flex:1}
+.ctl .lbl{font-size:13px;color:var(--mute)}
+.seg{display:flex;gap:3px;background:var(--panel);border-radius:999px;padding:3px}
+.seg button{border:0;border-radius:999px;padding:6px 14px;font:500 13px 'DM Sans',sans-serif;cursor:pointer;background:transparent;color:var(--ink)}
+.seg button.on{background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.try{font-size:14px;font-weight:500}
+footer{background:var(--navy);color:#fff}
+footer .wrap{padding:52px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+footer .t{flex:1;min-width:260px}
+footer b{display:block;font-family:'Geist',sans-serif;font-size:24px;letter-spacing:-.02em;margin-bottom:6px}
+footer p{margin:0;font-size:15px;line-height:24px;opacity:.85}
+footer a{background:#fff;color:var(--navy);font-weight:500;font-size:14px;padding:11px 18px;border-radius:999px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span id="logo"></span><span class="ttl">Ohana &amp; Aloha · Product demos</span><span class="sp"></span>
+  <nav><a class="on" href="#demo">Demos</a><a href="prototype.html?flow=beneficiary" target="_blank" rel="noopener">Open the prototype ↗</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="tags"><span class="tag v">Ohana</span><span class="tag">Click-through demo</span></div>
+  <h1>Ohana &amp; Aloha product demos</h1>
+  <p class="lead">Click-through demos of the Ohana merchant dashboard: create a beneficiary, onboard a business sender, create a payment order, and set up the white-label sender portal in Portal Studio. Each one plays as a guided demo with captions, or opens as a self-service run that points at the exact element to use next.</p>
+</div></section>
+
+<section class="demo" id="demo"><div class="wrap">
+  <div><div class="eyebrow">Demo videos</div><h2 style="margin-top:10px">See each flow end to end</h2><p class="sub" style="margin-top:10px">The product UI, replayed step by step with captions. Press play, slow it down, or try it yourself with on-screen prompts. Every demo opens full screen.</p></div>
+  <div id="demos"></div>
+</div></section>
+
+<div class="lb" id="lb" hidden>
+  <iframe id="lbf" title="Create a Beneficiary in Ohana" allow="fullscreen" allowfullscreen></iframe>
+  <div class="lbc">
+    <span class="ttl" id="lbt">Create a Beneficiary</span>
+    <button class="btn p" id="lbplay">Pause</button>
+    <button class="btn" id="lbrestart">Restart</button>
+    <span class="lbl" id="lbspeedl">Speed</span>
+    <div class="seg" id="lbspeed"><button id="slow">Slow</button><button id="normal" class="on">Normal</button></div>
+    <span class="sp"></span>
+    <button class="btn" id="lbfs">⤢ Full screen</button>
+    <button class="btn" id="lbclose">Close</button>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <div class="t"><b>Questions about Ohana?</b><p>Your Mesta account team can walk you through beneficiaries, senders and payment orders on your own data.</p></div>
+  <a href="mailto:support@mesta.xyz">Contact your account team</a>
+</div></footer>
+
+<script>
+const DEMOS = [
+  { flow: 'beneficiary', group: 'Ohana', num: '01', title: 'Create a Beneficiary', intro: 'Add a business beneficiary: pick the entity type and country, upload a document and let Ohana pre-fill the form, add bank, SWIFT or wallet payment methods, then create. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Open Beneficiaries', 'Create beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Upload a document and complete the details', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done', 'Full name', 'Continue']], ['Add payment methods', ['Bank account', 'SWIFT', 'Crypto wallet']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'sender', group: 'Ohana', num: '02', title: 'Create a Sender', intro: 'Onboard a business sender: entity type and country, business details, supporting documents, the onboarding and risk profile, and the ultimate beneficial owners. Or upload the business documents and let Ohana pre-fill the application. Verification links are generated for each owner.', steps: [
+    ['Log in and open Senders', ['Sign in', 'Open Senders', 'Create sender']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick Brazil']], ['Business details and documents', ['Business details', 'Supporting documents']], ['Risk profile and beneficial owners', ['Onboarding & risk profile', 'Beneficial owners']], ['Create and verify', ['Verification links', 'KYB approved']] ] },
+  { flow: 'order', group: 'Ohana', num: '03', title: 'Create a Payment Order', intro: 'Create a payment in three steps: set the amount and lock the rate, choose the sender, beneficiary and payment method, then review and send. Track the order from Created through Awaiting funds to Success.', steps: [
+    ['Log in and open Orders', ['Sign in', 'Open Orders', 'Create payment']], ['Set the amount and lock the rate', ['Source currency', 'Pick USDC', 'Destination currency', 'Pick USD', 'Amount', 'Transfer type', 'Lock the rate']], ['Choose the parties', ['Sender', 'Pick Mesta Payments LLC', 'Beneficiary', 'Pick FORTULL INC', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue']], ['Review and send', ['Send payment']], ['Track the order', ['Back to orders', 'Funds and settlement']] ] },
+  { flow: 'portal-setup', group: 'Portal Studio', num: '04', title: 'Set up your portal', intro: 'The white-label sender portal in four stages. Step 1: branding (logos, favicon, colours), portal details (name, terms, support email), the portal URL and a custom domain, the settlement wallet, then Save Changes and switch the portal on.', steps: [
+    ['Log in and open Portal Studio', ['Sign in', 'Open Portal Studio']], ['Branding', ['Dark logo', 'Light logo', 'Favicon', 'Brand colour', 'Accent colour']], ['Portal details', ['Portal name', 'Terms URL', 'Support email']], ['Portal URL and settlement wallet', ['Portal address', 'Custom domain', 'Settlement network', 'Wallet address']], ['Save and switch the portal on', ['Save changes', 'Update URL', 'Portal on']] ] },
+  { flow: 'portal-default', group: 'Portal Studio', num: '05', title: 'Set your default pricing', intro: 'Tiered pricing across every corridor you operate in, applied to all senders uniformly. Add tiers by transaction volume (first tier from 0, last tier to 1 trillion), set an effective date, review the structure, fees and what you earn, then confirm and save.', steps: [
+    ['Open Default pricing', ['Default pricing tab']], ['Add a default', ['Add default', 'Currency pair']], ['Tier ladder', ['Add tier', 'Volume from', 'Volume to']], ['Effective date and review', ['Effective from', 'Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-sender', group: 'Portal Studio', num: '06', title: 'Add custom sender pricing', intro: 'Per-sender overrides that replace the default pricing when that sender transacts on the portal. Select the sender, add an override with its tiers, review and confirm.', steps: [
+    ['Open Sender pricing', ['Sender pricing tab']], ['Select the sender', ['Filter by sender', 'Pick Prateek Jain', 'Add override']], ['Tiers and pricing', ['Add tiers', 'Volume from', 'Volume to']], ['Review', ['Review pricing']], ['Confirm and save', ['Confirm & save']] ] },
+  { flow: 'portal-senders', group: 'Portal Studio', num: '07', title: 'Manage your senders', intro: 'Invite new senders by email, share the invite link on any channel, and track existing senders through verification until they can transact on the portal.', steps: [
+    ['Open Senders', ['Senders tab']], ['Invite a new sender', ['Sender email', 'Send invitation']], ['Share the invite link', ['Copy the link']], ['Track existing senders', ['Existing senders']], ['Verified senders can transact', ['Verification']] ] },
+  { flow: 'aloha-register', group: 'Aloha · sender portal', num: '08', title: 'Sender registration', intro: 'From the invitation email to a verified, onboarded profile on the white-label sender portal: create the account with multi-factor authentication, select the country, provide the business information by manual entry or by uploading a business document the portal reads and fills in, submit for review, then share the UBO verification link.', steps: [
+    ['Open the invitation and create your account', ['Invitation link', 'Password', 'Confirm password', 'Accept the terms', 'Set up account', 'Scan the QR code', 'Authentication code', 'Verify code', 'Passkey (later)']], ['Select the country and enter business details', ['Country', 'Continue', 'Full name', 'Phone number', 'Business type', 'Continue · Documents']], ['Documents, risk profile and beneficial owners', ['Business registration document', 'Proof of address', 'Continue · Risk profile', 'Number of employees', 'Source of funds', 'Continue · Owners', 'First name', 'Last name', 'Ownership percentage']], ['Or upload documents and let the portal fill the form', ['Business details', 'Upload documents', 'Pick a business document', 'Read documents', 'Fill the form']], ['Submit for review and get verified', ['Review the owners', 'PEP declaration', 'Submit for review', 'UBO verification link', 'Verification']] ] },
+  { flow: 'aloha-wallet', group: 'Aloha · sender portal', num: '09', title: 'Create a self-custody wallet', intro: 'Pick a network, create the wallet, and keep an encrypted backup: the security overview, Ethereum / Polygon / Tron, key generation in the browser, the password-protected backup file, and the acknowledgement before the wallet is ready.', steps: [
+    ['Log in and open Wallets', ['Sign in', 'Open Wallets', 'Create wallet']], ['Read the security overview', ['Continue']], ['Pick a network and generate the wallet', ['Polygon', 'Create wallet']], ['Back up with a password', ['Back up with password', 'Encryption password', 'Download backup', 'Acknowledge', 'Continue to wallet']], ['Your wallet is ready', ['Done']] ] },
+  { flow: 'aloha-account', group: 'Aloha · sender portal', num: '10', title: 'Generate a virtual named account', intro: 'Request a named fiat account in USD, EUR, GBP or MXN: open Fiat accounts, request the first account, choose the currency, generate it, wait for provisioning, then reveal the account number.', steps: [
+    ['Log in and open Fiat accounts', ['Sign in', 'Fiat accounts']], ['Request your first account', ['Request your first account']], ['Choose the currency', ['Currency']], ['Generate the account', ['Generate account']], ['Your account is live', ['Reveal the account number', 'Next accounts']] ] },
+  { flow: 'aloha-beneficiary', group: 'Aloha · sender portal', num: '11', title: 'Add a beneficiary', intro: 'Create a verified payee from the sender portal: entity type and country, then either upload the invoice and let the portal pre-fill the application, or enter the details and a payment method manually. The beneficiary moves from Pending to Approved.', steps: [
+    ['Log in and open Beneficiaries', ['Sign in', 'Beneficiaries', 'Add beneficiary']], ['Choose the entity type and country', ['Entity type', 'Country list', 'Pick India']], ['Option 1 · upload the invoice', ['Upload documents', 'Pick the invoice', 'Read documents', 'Fill the form', 'Done']], ['Option 2 · enter the details manually', ['Full name', 'Continue', 'Bank account']], ['Create and verify', ['Create beneficiary', 'Verification']] ] },
+  { flow: 'aloha-payment', group: 'Aloha · sender portal', num: '12', title: 'Create a payment', intro: 'Three payment types from the sender portal: fiat to stablecoin from a fiat account, stablecoin to fiat and stablecoin to stablecoin from the self-custody wallet, each with the beneficiary, payment method, purpose, source of funds and relationship, the review, and for wallet payments the authorization with a 6-digit code. All three orders then appear on the Orders page.', steps: [
+    ['Log in, open Orders and choose a payment type', ['Sign in', 'Orders', 'Create payment']], ['Option 1 · Fiat to stable', ['Fiat → Stable', 'Source account', 'Stablecoin', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Send payment']], ['Option 2 · Stable to fiat', ['Back to orders', 'Create payment', 'Stable → Fiat', 'Source wallet', 'Recipient currency', 'Payment rail', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Option 3 · Stable to stable', ['Back to orders', 'Create payment', 'Stable → Stable', 'Source wallet', 'Receive asset', 'Network', 'Amount', 'Continue', 'Beneficiary', 'Payment method', 'Purpose', 'Source of funds', 'Relationship', 'Continue', 'Create payment', 'Pay from your wallet', 'Authentication code', 'Verify code']], ['Track all three orders', ['Back to orders', 'Track the status']] ] }
+];
+const BUILD = 'v' + 20261027 + 'd'; /* bump to bypass the Pages/browser cache for the embedded prototype */
+document.getElementById('demos').innerHTML = DEMOS.map(d => `<div class="grid" id="demo-${d.flow}">
+  <div><div class="num">${d.num} / ${d.group}</div><h3>${d.title}</h3><p class="intro">${d.intro}</p>
+    <div class="steps">${d.steps.map(([t, subs], i) => `<div class="step"><span class="n">${i + 1}</span><div><b>${t}</b><ul>${subs.map(x => `<li>${x}</li>`).join('')}</ul></div></div>`).join('')}</div></div>
+  <div><div class="frame"><iframe src="prototype.html?flow=${d.flow}&demo=1&b=${BUILD}" title="${d.title}" tabindex="-1" loading="lazy"></iframe><div class="ov" data-play="${d.flow}"><span><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span></div></div>
+    <div class="ctl"><button class="btn p" data-play="${d.flow}">▶ Play the guided demo</button><button class="btn" data-self="${d.flow}">Try it yourself</button><span class="sp"></span><span class="lbl">Both open full screen. Press Esc to leave.</span></div></div>
+</div>`).join('');
+const lb = document.getElementById('lb'), lbf = document.getElementById('lbf'), lbplay = document.getElementById('lbplay');
+let guided = false, paused = false, slow = false, flow = 'beneficiary';
+const post = m => lbf.contentWindow && lbf.contentWindow.postMessage({ type: 'demo', ...m }, '*');
+const src = () => 'prototype.html?flow=' + flow + (guided ? '&play=1' + (slow ? '&slow=1' : '') : '&manual=1') + '&b=' + BUILD;
+const goFull = () => { if (!document.fullscreenElement && lb.requestFullscreen) lb.requestFullscreen().catch(() => {}); };
+const open = (g, f) => {
+  guided = g; flow = f; paused = false; lb.hidden = false; lbf.src = src();
+  const d = DEMOS.find(x => x.flow === f); document.getElementById('lbt').textContent = d.title + (g ? ' · guided demo' : ' · try it yourself');
+  lbplay.style.display = g ? '' : 'none'; document.getElementById('lbspeed').style.display = g ? '' : 'none'; document.getElementById('lbspeedl').style.display = g ? '' : 'none';
+  lbplay.textContent = 'Pause'; goFull();
+};
+const close = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); lb.hidden = true; lbf.src = 'about:blank'; };
+document.addEventListener('click', e => { const p = e.target.closest('[data-play]'); if (p) return open(true, p.dataset.play); const m = e.target.closest('[data-self]'); if (m) return open(false, m.dataset.self); });
+document.getElementById('lbclose').onclick = close;
+document.getElementById('lbfs').onclick = () => document.fullscreenElement ? document.exitFullscreen() : goFull();
+lbplay.onclick = () => { paused = !paused; post({ cmd: paused ? 'pause' : 'play' }); lbplay.textContent = paused ? 'Play' : 'Pause'; };
+document.getElementById('lbrestart').onclick = () => { paused = false; lbplay.textContent = 'Pause'; if (guided) post({ cmd: 'restart' }); else lbf.src = src(); };
+const seg = v => { slow = v; document.getElementById('slow').classList.toggle('on', v); document.getElementById('normal').classList.toggle('on', !v); post({ speed: v ? 1.8 : 1 }); };
+document.getElementById('slow').onclick = () => seg(true);
+document.getElementById('normal').onclick = () => seg(false);
+addEventListener('message', e => { const d = e.data || {}; if (d.type === 'demo' && d.cmd === 'fullscreen' && !lb.hidden) goFull(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !lb.hidden && !document.fullscreenElement) close(); });
+document.addEventListener('fullscreenchange', () => { document.getElementById('lbfs').textContent = document.fullscreenElement ? 'Exit full screen' : '⤢ Full screen'; });
+fetch('mesta-logo.svg').then(r => r.text()).then(t => { document.getElementById('logo').innerHTML = t.replace(/\s(class|style|width|height)="[^"]*"/g, ''); }).catch(() => {});
+</script>
+</body>
+</html>
