@@ -661,6 +661,16 @@ td .act{display:flex;align-items:center;gap:18px;color:var(--ink2);font-size:13p
 .dlg .bx .f{display:flex;justify-content:flex-end;gap:14px;align-items:center}
 .ptlogo .sidebar-dot{display:none}
 
+/* closing step shared by every flow: Questions? support@mesta.xyz */
+#support-pill{position:absolute;right:28px;bottom:28px;z-index:60;display:flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:var(--bar);color:#fff;font:600 17px/1 'DM Sans',sans-serif;cursor:pointer;box-shadow:0 10px 28px rgba(15,15,22,.28)}
+#support-pill svg{width:18px;height:18px}
+#support-scrim{position:absolute;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding-bottom:110px;background:rgba(15,15,22,.42);backdrop-filter:blur(2px)}
+#support-card{width:560px;background:#fff;border-radius:16px;padding:36px 40px 32px;box-shadow:0 24px 60px rgba(15,15,22,.3);text-align:center;font-family:'DM Sans',sans-serif;color:#0F0F16}
+#support-card .ic{width:56px;height:56px;margin:0 auto 18px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--accent) 14%,#fff);color:var(--accent)}
+#support-card .ic svg{width:26px;height:26px}
+#support-card h3{margin:0 0 10px;font-size:28px;font-weight:700;letter-spacing:-.01em}
+#support-card p{margin:0 0 22px;font-size:18px;line-height:1.45;color:#4a4a57}
+#support-card a{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:10px;background:var(--accent);color:#fff;font-size:19px;font-weight:600;text-decoration:none;cursor:pointer}
 </style>
 </head>
 <body>
@@ -711,7 +721,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;',
 /* ============================================================
    Ohana click-through demos — multi-flow shell
    Flows: beneficiary (demo=1) · sender (demo=2) · order (demo=3)
-   Mechanism from the AiPrise Token Sharing prototype: INIT state → five main
+   Mechanism from the AiPrise Token Sharing prototype: INIT state → six main
    steps with nested substeps {t,target,say,act,done} → DEMOS op list → CAPS →
    autoplay runner (cursor, ripple, caption pill) + self-service prompt beacon.
    ============================================================ */
@@ -810,7 +820,7 @@ const PT_LOGGED = { screen: 'portal' };
 
 /* ---------- state ---------- */
 const INIT = {
-  flow: 'beneficiary', step: 0, screen: 'login', tab: 'All', period: 'Last 30 days',
+  flow: 'beneficiary', step: 0, screen: 'login', support: false, tab: 'All', period: 'Last 30 days',
   entity: null, country: null, countryOpen: false, openSel: null,
   upload: null, filled: false, formStep: 1,
   form: { fullName: '', street: '', city: '', postal: '', relationship: '', purpose: '', popDoc: POP_DOC, businessType: '', regNo: '' },
@@ -1133,6 +1143,12 @@ const FLOWS = {
   },
 };
 const DEMO_FLOW = { 1: 'beneficiary', 2: 'sender', 3: 'order', 4: 'portal-setup', 5: 'portal-default', 6: 'portal-sender', 7: 'portal-senders' };
+/* the closing step every flow ends on (added 2026-11-23): Questions? support@mesta.xyz */
+const SUPPORT_EMAIL = 'support@mesta.xyz';
+const SUPPORT_CAP = 'If you have questions, please reach out to ' + SUPPORT_EMAIL + '.';
+const SUPPORT_STEP = { title: 'Questions? Contact support', support: true, subs: [
+  { t: 'Contact support', target: ['Questions? Contact support'], say: SUPPORT_CAP, act: () => ({ support: true }), done: s => !!s.support } ] };
+const SUPPORT_OP = ['next', 0, ['Questions? Contact support']];
 for (const k in FLOWS) { const f = FLOWS[k]; if (f.ops.length !== f.caps.length) console.error('ops/caps length mismatch in', k, f.ops.length, f.caps.length); }
 
 /* find a click target by its visible text (startsWith; "=" prefix = exact). Inputs match on aria-label / placeholder. */
@@ -1158,12 +1174,12 @@ class Component {
   calcSend(recv) { const v = parseFloat(String(recv).replace(/,/g, '')); return isNaN(v) ? '' : (Math.ceil(v / RATE * 100) / 100).toFixed(2); }
   calcRecv(send) { const v = parseFloat(String(send).replace(/,/g, '')); return isNaN(v) ? '' : (Math.floor(v * RATE * 100) / 100).toFixed(2); }
   flow() { return FLOWS[this.state.flow]; }
-  steps() { const f = this.flow(); return f.steps(this).map(st => ({ ...st, done: s => st.subs.every(x => x.done(s)) || (st.doneIf ? st.doneIf(s) : false) })); }
+  steps() { const f = this.flow(); return [...f.steps(this), SUPPORT_STEP].map(st => ({ ...st, done: s => st.subs.every(x => x.done(s)) || (st.doneIf ? st.doneIf(s) : false) })); }
   curSub(s, st = this.steps()[s.step]) { return st.subs.find(x => !x.done(s)) || null; }
   subIndex(s, st = this.steps()[s.step]) { const i = st.subs.findIndex(x => !x.done(s)); return i < 0 ? st.subs.length : i; }
   allDone(s) { const steps = this.steps(); return s.step === steps.length - 1 && steps[s.step].done(s); }
   freshInit() { const f = FLOWS[this.state.flow] || FLOWS.beneficiary; const st = f.start ? JSON.parse(JSON.stringify(f.start)) : {}; return { ...INIT, flow: this.state.flow, form: { ...INIT.form }, sf: { ...SF_EMPTY }, o: { ...O_EMPTY }, pt: JSON.parse(JSON.stringify(PT_EMPTY)), ...st }; }
-  screensFor(i) { const st = this.steps()[i]; return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' }; }
+  screensFor(i) { const st = this.steps()[i]; if (st.support) return { modal: null, countryOpen: false, openSel: null, toast: '' }; return { screen: st.screen, modal: null, countryOpen: false, openSel: null, toast: '' }; }
   stateAt(i) { const steps = this.steps(); let s = this.freshInit(); for (let k = 0; k < i; k++) for (const sub of steps[k].subs) s = { ...s, ...sub.act(s) }; return { ...s, ...this.screensFor(i), step: i }; }
   goStep = i => this.setState(this.stateAt(i));
   next = () => { const sub = this.curSub(this.state); if (sub) this.setState(sub.act(this.state)); };
@@ -1201,6 +1217,7 @@ class Component {
     const s = this.state, T = this.T(), o = s.o;
     const O = p => this.setState({ o: { ...this.state.o, ...p } });
     const A = {
+      askSupport: () => this.setState({ support: true }),
       login: () => this.setState({ screen: 'dashboard' }),
       nav: () => { if (['dashboard', 'list', 'senders', 'orders', 'portal'].includes(arg)) this.setState({ screen: arg, openSel: null, countryOpen: false }); else this.setState({ toast: 'Not part of this demo' }); },
       tab: () => this.setState({ tab: arg }), period: () => this.setState({ period: arg }),
@@ -1269,7 +1286,19 @@ class Component {
   }
 
   /* ---------- render ---------- */
-  render() { this.renderBar(); this.renderApp(); this.placePrompt(); }
+  render() { this.renderBar(); this.renderApp(); this.renderSupport(); this.placePrompt(); }
+  renderSupport() {
+    const app = document.getElementById('app'); if (!app) return;
+    const old = app.querySelector('#support-layer'); if (old) old.remove();
+    const s = this.state, steps = this.steps(), atSupport = !!steps[s.step].support;
+    if (!s.support && !atSupport) return;
+    const mail = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+    const L = document.createElement('div'); L.id = 'support-layer';
+    L.innerHTML = s.support
+      ? `<div id="support-scrim"><div id="support-card" data-stop><div class="ic">${mail}</div><h3>Questions?</h3><p>If you have questions, please reach out to</p><a href="mailto:${SUPPORT_EMAIL}">${mail}${SUPPORT_EMAIL}</a></div></div>`
+      : `<div id="support-pill" data-act="askSupport">${mail}Questions? Contact support</div>`;
+    app.appendChild(L);
+  }
   renderBar() {
     const s = this.state, steps = this.steps(), st = steps[s.step], ci = this.subIndex(s, st), sub = st.subs[ci] || null, finished = this.allDone(s);
     const hint = finished ? 'Flow complete. Reset to run it again, or click through freely.' : sub ? sub.say : st.title;
@@ -1797,7 +1826,7 @@ class Component {
     this.componentDidMount(q);
   }
   componentDidMount(q) {
-    const f = this.flow(), ops = f.ops, caps = f.caps;
+    const f = this.flow(), ops = [...f.ops, SUPPORT_OP], caps = [...f.caps, SUPPORT_CAP];
     if (!(q.get('demo') || q.get('flow'))) return;
     /* ?still=1&jump=K renders the state after op K with no cursor or captions (thumbnails, screenshots) */
     if (q.get('still') === '1') { const k = Math.max(0, Math.min(ops.length - 1, +q.get('jump') || 0)); for (let i = 0; i <= k; i++) { const [op, a] = ops[i]; if (op === 'go') { this.goStep(a); continue; } if (op === 'next') { this.next(); continue; } const p = { ...(typeof a === 'function' ? a(this.state) : a) }; const ty = p._type; delete p._scroll; delete p._type; this.setState(p); if (ty) { this.bindSet(ty[0], ty[1]); this.render(); } } return; }
@@ -1818,7 +1847,7 @@ class Component {
     const cap = document.createElement('div');
     Object.assign(cap.style, { position: 'absolute', left: '50%', bottom: '64px', transform: 'translateX(-50%)', zIndex: 9997, pointerEvents: 'none', maxWidth: '1100px', background: '#1a162d', color: '#FDFDFC', font: "500 24px/1.35 'DM Sans',sans-serif", padding: '14px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(15,15,22,.3)', display: 'flex', gap: '16px', alignItems: 'baseline', textAlign: 'left' });
     this._shell.appendChild(cap);
-    /* the pill's counter is the main step (1-5); a caption repeated across ops is not re-animated */
+    /* the pill's counter is the main step (1-6); a caption repeated across ops is not re-animated */
     const say = k => { const n = this.state.step + 1, total = this.steps().length, txt = caps[k] || ''; const same = cap.dataset.txt === txt; cap.innerHTML = '<span style="flex:none;font-size:17px;opacity:.75">' + n + '/' + total + '</span><span></span>'; cap.lastChild.textContent = txt; cap.dataset.txt = txt; if (!same) cap.animate([{ opacity: 0, transform: 'translate(-50%,8px)' }, { opacity: 1, transform: 'translate(-50%,0)' }], { duration: 260, easing: 'cubic-bezier(.22,1,.36,1)' }); };
     this._cap = cap; this._mult = q.get('slow') === '1' ? 1.8 : 1; this._paused = false;
     const T = (fn, ms) => { this._demo = setTimeout(() => (this._paused ? (this._held = fn) : fn()), ms * this._mult); };

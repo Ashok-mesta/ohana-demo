@@ -44,7 +44,10 @@ Everything lives in the `<script>` of `prototype.html`. `FLOWS` is the registry:
 
 1. **`INIT`** - the shared state object (`screen`, `entity`, `country`, `upload`, `form`, `methods`, `modal`, ...)
    plus per-flow sub-objects (`sf` for the sender form, `o` for the order).
-2. **`steps(c)`** - five main steps, each with nested substeps:
+2. **`steps(c)`** - five main steps, each with nested substeps. The engine appends a sixth,
+   shared closing step to every flow (`SUPPORT_STEP`: a "Questions? Contact support" pill that opens a
+   card pointing to support@mesta.xyz; the guided run ends on `SUPPORT_OP` / `SUPPORT_CAP`), so flows
+   define only their own five:
    `{ title, screen, doneIf?, subs: [{ t, target, say, act(state), done(state) }] }`.
    - `target` is the on-screen element the viewer must use (same label syntax as the demo ops;
      `bar: true` allows a presenter-bar button such as "Do it for me").
